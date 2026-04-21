@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astrological Chart Readings · Pedro & Kaoveri · April 2026</title>
+
+<!-- Fonts: Fraunces (display serif) + Work Sans (body) from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,200;1,9..144,300;1,9..144,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===========================================
+   CSS CUSTOM PROPERTIES — CELESTIAL DUSK THEME
+   Deep indigo night sky · blush · gold · violet
+   Edit :root to retheme the entire presentation
+   =========================================== */
+:root {
+  /* Celestial Dusk palette */
+  --deep:        #161328;
+  --mid:         #231e42;
+  --surface:     rgba(255,255,255,0.04);
+  --border:      rgba(255,255,255,0.08);
+
+  --ivory:       #f0ede6;
+  --ivory-muted: rgba(240,237,230,0.55);
+  --gold:        #e8c97e;
+  --gold-dim:    rgba(232,201,126,0.25);
+  --blush:       #e8b4b0;
+  --blush-dim:   rgba(232,180,176,0.18);
+  --violet:      #9b8dc4;
+  --violet-dim:  rgba(155,141,196,0.2);
+  --sage:        #8aab96;
+  --muted:       #7a7096;
+
+  /* Typography — always clamp() */
+  --title-size:    clamp(2.2rem, 6.5vw, 5.2rem);
+  --h2-size:       clamp(1.5rem, 4vw, 3rem);
+  --h3-size:       clamp(1.1rem, 2.5vw, 1.75rem);
+  --body-size:     clamp(0.8rem, 1.5vw, 1.05rem);
+  --small-size:    clamp(0.65rem, 1vw, 0.8rem);
+  --label-size:    clamp(0.6rem, 0.9vw, 0.75rem);
+
+  /* Spacing — always clamp() */
+  --slide-padding: clamp(1.5rem, 5vw, 5rem);
+  --content-gap:   clamp(0.5rem, 2vw, 1.8rem);
+  --item-gap:      clamp(0.4rem, 1vw, 0.9rem);
+
+  /* Animation */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur:       0.7s;
+}
+
+/* ===========================================
+   RESET
+   =========================================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ul { list-style: none; }
+
+/* ===========================================
+   VIEWPORT BASE — MANDATORY
+   Ensures slides fit exactly 100vh, no scroll
+   =========================================== */
+html, body { height: 100%; overflow-x: hidden; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+body { background: var(--deep); font-family: 'Work Sans', sans-serif; color: var(--ivory); }
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.slide-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 100%;
+  overflow: hidden;
+  padding: var(--slide-padding);
+  position: relative;
+  z-index: 2;
+}
+
+img, .image-container { max-width: 100%; max-height: min(50vh, 400px); object-fit: contain; }
+
+/* Short viewports */
+@media (max-height: 700px) {
+  :root { --slide-padding: clamp(1rem, 3vw, 2.5rem); --content-gap: clamp(0.4rem, 1.5vw, 1rem); --title-size: clamp(1.5rem, 5vw, 3rem); --h2-size: clamp(1.1rem, 3vw, 2rem); }
+}
+@media (max-height: 600px) {
+  :root { --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem); --title-size: clamp(1.2rem, 4vw, 2.2rem); --body-size: clamp(0.7rem, 1.2vw, 0.9rem); }
+  .nav-dots, .keyboard-hint { display: none; }
+}
+@media (max-height: 500px) {
+  :root { --slide-padding: clamp(0.5rem, 2vw, 1rem); --title-size: clamp(1rem, 3.5vw, 1.8rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ===========================================
+   SHARED BACKGROUND — CELESTIAL SKY
+   Every slide gets the same deep sky base
+   =========================================== */
+.sky-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, #2d1f60 0%, transparent 65%),
+    radial-gradient(ellipse 60% 70% at 100% 100%, #3d1a55 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 0% 80%, #12244a 0%, transparent 55%),
+    var(--deep);
+  z-index: 0;
+}
+
+/* Subtle dot-grid texture for depth */
+.sky-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ===========================================
+   ENTRANCE ANIMATIONS — .reveal triggers on .visible
+   Applied via IntersectionObserver in JS
+   =========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur) var(--ease-expo),
+              transform var(--dur) var(--ease-expo);
+}
+.reveal-left  { opacity: 0; transform: translateX(-32px); transition: opacity var(--dur) var(--ease-expo), transform var(--dur) var(--ease-expo); }
+.reveal-scale { opacity: 0; transform: scale(0.92);       transition: opacity var(--dur) var(--ease-expo), transform var(--dur) var(--ease-expo); }
+
+.slide.visible .reveal,
+.slide.visible .reveal-left,
+.slide.visible .reveal-scale { opacity: 1; transform: none; }
+
+/* Stagger children */
+.slide.visible .reveal:nth-child(1)      { transition-delay: 0.05s; }
+.slide.visible .reveal:nth-child(2)      { transition-delay: 0.15s; }
+.slide.visible .reveal:nth-child(3)      { transition-delay: 0.25s; }
+.slide.visible .reveal:nth-child(4)      { transition-delay: 0.35s; }
+.slide.visible .reveal:nth-child(5)      { transition-delay: 0.45s; }
+.slide.visible .reveal:nth-child(6)      { transition-delay: 0.55s; }
+.slide.visible .reveal-left:nth-child(1) { transition-delay: 0.05s; }
+.slide.visible .reveal-left:nth-child(2) { transition-delay: 0.18s; }
+.slide.visible .reveal-left:nth-child(3) { transition-delay: 0.31s; }
+.slide.visible .reveal-left:nth-child(4) { transition-delay: 0.44s; }
+.slide.visible .reveal-left:nth-child(5) { transition-delay: 0.57s; }
+.slide.visible .reveal-left:nth-child(6) { transition-delay: 0.70s; }
+
+/* ===========================================
+   PROGRESS BAR — top edge
+   =========================================== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--violet), var(--gold));
+  z-index: 1000;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* ===========================================
+   NAVIGATION DOTS — right edge
+   =========================================== */
+.nav-dots {
+  position: fixed;
+  right: clamp(0.8rem, 2vw, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(5px, 1vh, 9px);
+  z-index: 1000;
+  list-style: none;
+}
+
+.nav-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.nav-dot.active {
+  background: var(--gold);
+  transform: scale(1.5);
+}
+
+/* ===========================================
+   CHAPTER SIDEBAR — left edge (collapsible)
+   =========================================== */
+.chapter-nav {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.chapter-item {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: var(--label-size);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  padding: clamp(0.6rem, 1.5vh, 1rem) clamp(0.4rem, 1vw, 0.8rem);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  border: none;
+  background: none;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.chapter-item:hover,
+.chapter-item.active { color: var(--gold); }
+
+/* ===========================================
+   SHARED COMPONENTS
+   =========================================== */
+
+/* Section eyebrow label */
+.eyebrow {
+  font-size: var(--label-size);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  margin-bottom: clamp(0.6rem, 1.5vw, 1.2rem);
+}
+
+/* Thin gold divider */
+.divider {
+  width: clamp(2rem, 5vw, 3.5rem);
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin: clamp(0.6rem, 1.5vw, 1.2rem) 0;
+}
+
+/* Card surface */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+}
+
+/* Colored accent tags */
+.tag {
+  display: inline-block;
+  padding: 0.25em 0.8em;
+  border-radius: 100px;
+  font-size: var(--label-size);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.tag-gold   { background: var(--gold-dim);   color: var(--gold);   border: 1px solid rgba(232,201,126,0.3); }
+.tag-blush  { background: var(--blush-dim);  color: var(--blush);  border: 1px solid rgba(232,180,176,0.3); }
+.tag-violet { background: var(--violet-dim); color: var(--violet); border: 1px solid rgba(155,141,196,0.3); }
+.tag-sage   { background: rgba(138,171,150,0.15); color: var(--sage); border: 1px solid rgba(138,171,150,0.3); }
+
+/* Bullet list styled for the theme */
+.bullet-list { display: flex; flex-direction: column; gap: var(--item-gap); }
+.bullet-list li {
+  font-size: var(--body-size);
+  color: var(--ivory-muted);
+  line-height: 1.5;
+  display: flex;
+  gap: clamp(0.5rem, 1vw, 0.8rem);
+  align-items: flex-start;
+}
+.bullet-list li::before {
+  content: '·';
+  color: var(--gold);
+  font-size: 1.2em;
+  flex-shrink: 0;
+  margin-top: -0.05em;
+}
+.bullet-list li strong { color: var(--ivory); font-weight: 500; }
+
+/* Two-column grid for content slides */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  max-height: min(75vh, 600px);
+}
+@media (max-width: 680px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ===========================================
+   SLIDE 1 — TITLE
+   =========================================== */
+.title-slide .slide-content {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Atmospheric orbs for title */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+.orb-violet { width: 50vw; height: 50vw; background: rgba(124,106,173,0.2); top: -15%; right: -10%; animation: orbDrift 9s ease-in-out infinite alternate; }
+.orb-blush  { width: 38vw; height: 38vw; background: rgba(232,180,176,0.12); bottom: -8%; left: 5%;  animation: orbDrift 7s ease-in-out infinite alternate-reverse; }
+.orb-gold   { width: 28vw; height: 28vw; background: rgba(232,201,126,0.1); top: 40%; left: -8%;  animation: orbDrift 11s ease-in-out infinite alternate; }
+
+@keyframes orbDrift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(2%, 3%) scale(1.06); }
+}
+
+.title-glyph {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--gold);
+  letter-spacing: 0.6em;
+  margin-bottom: clamp(1rem, 2.5vw, 2rem);
+  opacity: 0.7;
+}
+
+h1.display {
+  font-family: 'Fraunces', serif;
+  font-size: var(--title-size);
+  font-weight: 300;
+  line-height: 1.0;
+  color: var(--ivory);
+  letter-spacing: -0.015em;
+  margin-bottom: clamp(0.4rem, 1vw, 0.8rem);
+}
+
+h1.display em {
+  font-style: italic;
+  color: var(--blush);
+  font-weight: 200;
+}
+
+.title-sub {
+  font-size: var(--body-size);
+  color: var(--muted);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.title-tags { display: flex; gap: clamp(0.5rem, 1.5vw, 1rem); justify-content: center; flex-wrap: wrap; }
+
+/* Vertical accent line */
+.v-line {
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity: 0.3;
+}
+.v-line-left  { left: clamp(2rem, 5vw, 5rem); }
+.v-line-right { right: clamp(2rem, 5vw, 5rem); }
+
+/* ===========================================
+   SLIDE 2, 9, 13 — SECTION DIVIDERS
+   Full-screen chapter announcement
+   =========================================== */
+.divider-slide .slide-content {
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-bottom: clamp(3rem, 8vh, 7rem);
+}
+
+.divider-slide .part-num {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(6rem, 18vw, 16rem);
+  font-weight: 700;
+  line-height: 0.85;
+  color: rgba(255,255,255,0.04);
+  position: absolute;
+  top: clamp(1rem, 4vh, 3rem);
+  left: var(--slide-padding);
+  user-select: none;
+}
+
+.divider-slide .part-label {
+  font-size: var(--label-size);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.divider-slide h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--ivory);
+  letter-spacing: -0.02em;
+}
+
+.divider-slide h2 em {
+  font-style: italic;
+  color: var(--blush);
+}
+
+.divider-slide .part-desc {
+  font-size: var(--body-size);
+  color: var(--muted);
+  font-weight: 300;
+  margin-top: clamp(0.8rem, 2vw, 1.5rem);
+  max-width: 42ch;
+  line-height: 1.6;
+}
+
+/* Horizontal accent line on dividers */
+.h-rule {
+  position: absolute;
+  left: var(--slide-padding);
+  right: var(--slide-padding);
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  opacity: 0.3;
+}
+
+/* ===========================================
+   SLIDES 3–8 — PEDRO'S CHART
+   =========================================== */
+
+/* Slide 3: Key Themes — big stat style */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.6rem, 1.5vw, 1.2rem);
+  max-height: min(65vh, 500px);
+}
+@media (max-width: 600px) { .theme-grid { grid-template-columns: 1fr; } }
+
+.theme-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: clamp(1rem, 2vw, 1.8rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  transition: border-color 0.3s ease;
+}
+.theme-card:hover { border-color: rgba(232,201,126,0.25); }
+
+.theme-icon {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--gold);
+  opacity: 0.8;
+}
+
+.theme-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.3rem);
+  font-weight: 600;
+  color: var(--ivory);
+  line-height: 1.2;
+}
+
+.theme-desc {
+  font-size: var(--small-size);
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Slide 7: Life Timeline table */
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--small-size);
+}
+
+.timeline-table th {
+  text-align: left;
+  padding: 0.5em 0.8em;
+  font-size: var(--label-size);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.timeline-table td {
+  padding: clamp(0.3rem, 0.8vh, 0.6rem) 0.8em;
+  color: var(--ivory-muted);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.timeline-table td:first-child {
+  color: var(--gold);
+  font-family: 'Fraunces', serif;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.timeline-table td strong { color: var(--ivory); font-weight: 500; }
+
+.timeline-table tr.highlight td { background: rgba(232,201,126,0.06); }
+
+/* Slide 8: Quote slide */
+.quote-slide .slide-content { align-items: center; justify-content: center; text-align: center; }
+
+blockquote {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.2rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ivory);
+  line-height: 1.35;
+  max-width: 34ch;
+  position: relative;
+}
+
+blockquote::before {
+  content: '\201C';
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: var(--gold);
+  opacity: 0.15;
+  position: absolute;
+  top: calc(-1 * clamp(2rem, 5vw, 4rem));
+  left: calc(-1 * clamp(1rem, 2.5vw, 2rem));
+  line-height: 1;
+  font-style: normal;
+}
+
+.quote-attribution {
+  font-size: var(--small-size);
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: clamp(1rem, 2.5vw, 2rem);
+}
+
+/* ===========================================
+   CLOSING SLIDE
+   =========================================== */
+.closing-slide .slide-content { align-items: center; justify-content: center; text-align: center; }
+
+.closing-planet {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  letter-spacing: 0.4em;
+  opacity: 0.12;
+  color: var(--ivory);
+  margin-bottom: clamp(1rem, 3vh, 2.5rem);
+  display: block;
+}
+
+.closing-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.3rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ivory);
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.closing-sub {
+  font-size: var(--body-size);
+  color: var(--muted);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  max-width: 40ch;
+  line-height: 1.6;
+}
+
+/* ===========================================
+   KEYBOARD HINT — bottom center
+   =========================================== */
+.keyboard-hint {
+  position: fixed;
+  bottom: clamp(0.8rem, 2vh, 1.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--label-size);
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  z-index: 999;
+  pointer-events: none;
+  transition: opacity 3s ease;
+}
+
+.keyboard-hint.hidden { opacity: 0; }
+
+/* ===========================================
+   SLIDE COUNTER — top right
+   =========================================== */
+.slide-counter {
+  position: fixed;
+  top: clamp(0.8rem, 2vh, 1.5rem);
+  right: clamp(2rem, 5vw, 4rem);
+  font-size: var(--label-size);
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em;
+  z-index: 1000;
+  font-family: 'Work Sans', sans-serif;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Progress bar: fills as you scroll through slides -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation dots: clickable, right edge -->
+<nav class="nav-dots" id="navDots" aria-label="Slide navigation"></nav>
+
+<!-- Slide counter: top right -->
+<div class="slide-counter" id="slideCounter">1 / 17</div>
+
+<!-- Chapter navigation: left edge -->
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <button class="chapter-item active" data-slide="1">Pedro</button>
+  <button class="chapter-item" data-slide="9">Kaoveri</button>
+  <button class="chapter-item" data-slide="13">Together</button>
+</nav>
+
+<!-- Keyboard hint -->
+<div class="keyboard-hint" id="keyboardHint">↑ ↓ &nbsp; Arrow keys or scroll to navigate</div>
+
+
+<!-- =============================================
+     SLIDE 1 — TITLE
+     ============================================= -->
+<section class="slide title-slide" data-slide="1">
+  <div class="sky-bg"></div>
+  <div class="orb orb-violet"></div>
+  <div class="orb orb-blush"></div>
+  <div class="orb orb-gold"></div>
+  <div class="v-line v-line-left"></div>
+  <div class="v-line v-line-right"></div>
+
+  <div class="slide-content">
+    <div class="title-glyph reveal">☽ &nbsp; ☉ &nbsp; ♃</div>
+    <h1 class="display reveal">Astrological<br><em>Chart Readings</em></h1>
+    <p class="title-sub reveal">Insights drawn from a personal Vedic reading</p>
+    <div class="title-tags reveal">
+      <span class="tag tag-gold">Pedro's Chart</span>
+      <span class="tag tag-blush">Kaoveri's Chart</span>
+      <span class="tag tag-violet">Compatibility</span>
+    </div>
+    <div class="divider reveal" style="margin: clamp(1rem,2.5vw,2rem) auto 0;"></div>
+    <div class="eyebrow reveal" style="margin-top:clamp(0.5rem,1vw,0.8rem);">April 2026</div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 2 — SECTION DIVIDER: PEDRO
+     ============================================= -->
+<section class="slide divider-slide" data-slide="2">
+  <div class="sky-bg"></div>
+  <div class="h-rule" style="top: clamp(2rem,5vh,4rem);"></div>
+
+  <div class="part-num">I</div>
+
+  <div class="slide-content">
+    <div class="part-label reveal">Part One</div>
+    <h2 class="reveal">Pedro's<br><em>Chart</em></h2>
+    <p class="part-desc reveal">Leadership, communication, spiritual purpose — and a clear career path toward psychology, coaching, and teaching.</p>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 3 — PEDRO: KEY THEMES
+     ============================================= -->
+<section class="slide" data-slide="3">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Pedro's Chart</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Key Themes</h2>
+
+    <div class="theme-grid reveal">
+      <div class="theme-card">
+        <div class="theme-icon">☿</div>
+        <div class="theme-title">Communication & Leadership</div>
+        <div class="theme-desc">These two threads run through the entire chart. Multiple placements reinforce them — Libra ascendant, Rahu in 3rd house, Leo stellium.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-icon">♃</div>
+        <div class="theme-title">Exalted Jupiter — Soul Purpose</div>
+        <div class="theme-desc">Jupiter in Cancer in the 10th house of dharma. Social work, counseling, helping people rebuild. This is the Atmakaraka — the soul's deepest calling.</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-icon">☽</div>
+        <div class="theme-title">Past-Life Spiritual Path</div>
+        <div class="theme-desc">Ketu in the 9th house signals prior spiritual practice. That's why a good guru was found in this life. Aquarius Moon places thoughts ahead of their time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 4 — PEDRO: STRENGTHS (PART 1)
+     ============================================= -->
+<section class="slide" data-slide="4">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Pedro's Chart</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Strengths <span style="color:var(--muted); font-size:0.65em;">1 of 2</span></h2>
+
+    <ul class="bullet-list">
+      <li class="reveal-left"><div><strong>Exceptional communicator</strong> — Libra ascendant + Rahu in the 3rd house of communication, repeating throughout. Words naturally protect and defend others.</div></li>
+      <li class="reveal-left"><div><strong>Natural leader — the Warrior</strong> — Three planets in Leo (Venus, Mercury, Mars) in the 11th house. Mars in Leo appears in both main chart and soul chart: <em>"Kshatriya,"</em> brave, hardworking.</div></li>
+      <li class="reveal-left"><div><strong>Exalted Jupiter in Cancer (10th house)</strong> — Excellent for social work, counseling, coaching, helping people rebuild their lives. Strong moral compass and righteousness.</div></li>
+      <li class="reveal-left"><div><strong>Intuitive intellect via Ketu</strong> — Perceives what others cannot. Well-suited to psychology, astrology, Ayurveda, reading people's mental states.</div></li>
+      <li class="reveal-left"><div><strong>Structured mind</strong> — Saturn in Capricorn in the 4th house. Exceptional ability to manage complex projects, build schedules, organize departments. Good writer.</div></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 5 — PEDRO: STRENGTHS (PART 2)
+     ============================================= -->
+<section class="slide" data-slide="5">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Pedro's Chart</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Strengths <span style="color:var(--muted); font-size:0.65em;">2 of 2</span></h2>
+
+    <ul class="bullet-list">
+      <li class="reveal-left"><div><strong>Moon in Aquarius — ahead of the time</strong> — Public speaking and teaching talent. Ideas and speeches may not be immediately understood because the thinking is ahead of others' understanding.</div></li>
+      <li class="reveal-left"><div><strong>Mercury in Gemini (soul chart)</strong> — Deeply scholarly. Interested in many fields of knowledge. Intellectual range is a gift.</div></li>
+      <li class="reveal-left"><div><strong>Financially sound overall</strong> — The financial situation is described as <em>"quite on point."</em> Strong income periods are indicated, especially after age 43.</div></li>
+      <li class="reveal-left"><div><strong>Spiritual karma from past life</strong> — Ketu in the 9th house means spiritual work was done in a previous life. The result: finding the right guru naturally in this life.</div></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 6 — PEDRO: CHALLENGES
+     ============================================= -->
+<section class="slide" data-slide="6">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Pedro's Chart</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Challenges & Areas to Watch</h2>
+
+    <ul class="bullet-list">
+      <li class="reveal-left"><div><strong>Sun debilitated in Libra (soul chart)</strong> — Periods where leadership falters. Moments when <em>"nobody listens, nobody follows"</em> — leading to self-disappointment. Overcome through persistent meditation.</div></li>
+      <li class="reveal-left"><div><strong>Relationship tension — Venus &amp; Mars in soul chart</strong> — Venus in the 6th house (Cancer) can mean breakups or strong quarrels after the 30s. Mars in the 7th creates a tendency to dominate and lead in relationships, which can cause conflict.</div></li>
+      <li class="reveal-left"><div><strong>Leo narcissism</strong> — Venus and Mars in Leo create a strong desire to always look good, shine, and be admired. Awareness helps manage this tendency.</div></li>
+      <li class="reveal-left"><div><strong>Breadth over depth</strong> — Mercury in Gemini brings wide curiosity but can lead to surface-level knowledge in many areas rather than deep expertise in one.</div></li>
+      <li class="reveal-left"><div><strong>High expenditure</strong> — Despite good income potential, spending is also high. Financial discipline matters.</div></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 7 — PEDRO: ADVICE & GUIDANCE
+     ============================================= -->
+<section class="slide" data-slide="7">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Pedro's Chart</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Advice &amp; Guidance</h2>
+
+    <div class="two-col">
+      <ul class="bullet-list">
+        <li class="reveal-left"><div><strong>Forget monastic life</strong> — Previous advice retracted. <em>"There is no combination of planets for monk life."</em></div></li>
+        <li class="reveal-left"><div><strong>Pursue leadership + psychology</strong> — These are the two strongest vocational indicators. Start your own courses, coaching practice, or spiritual programs.</div></li>
+        <li class="reveal-left"><div><strong>Work in partnership</strong> — Profit comes best through reliable, like-minded co-founders or collaborators.</div></li>
+        <li class="reveal-left"><div><strong>Teach and train others</strong> — Mentor people in organizational or spiritual contexts. This is what the chart points to most consistently.</div></li>
+      </ul>
+      <ul class="bullet-list">
+        <li class="reveal-left"><div><strong>Continue current work</strong> — Peer advocacy, substance abuse counseling, social work: <em>"what you are doing now is your purpose."</em></div></li>
+        <li class="reveal-left"><div><strong>Read John Maxwell on leadership</strong> — <em>Developing the Leader Within You</em> and his teamwork laws book were specifically recommended by the astrologer.</div></li>
+        <li class="reveal-left"><div><strong>Meditate consistently</strong> — Strengthens leadership confidence and reduces moments of self-doubt tied to the Sun debilitation.</div></li>
+        <li class="reveal-left"><div><strong>Follow Jupiter (Atmakaraka)</strong> — Prioritize spiritual and psychological work over purely material pursuits. This brings deepest soul satisfaction.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 8 — PEDRO: LIFE TIMELINE
+     ============================================= -->
+<section class="slide" data-slide="8">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Pedro's Chart</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Life Timeline</h2>
+
+    <div class="reveal" style="overflow:hidden; max-height:min(65vh,480px);">
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th>Age</th>
+            <th>What's indicated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>~26 (now)</td><td>Decent income. Sufficient. Career building phase.</td></tr>
+          <tr><td>33–34</td><td>Good income period.</td></tr>
+          <tr class="highlight"><td>38</td><td><strong>High probability of marriage.</strong> Possible children.</td></tr>
+          <tr><td>39–41</td><td>Okay financially — not great, not bad.</td></tr>
+          <tr class="highlight"><td>43–46</td><td><strong>Very strong financially.</strong></td></tr>
+          <tr><td>48</td><td>Second strong window for marriage if first hasn't happened.</td></tr>
+          <tr class="highlight"><td>49–50</td><td><strong>"This is when you get rich, really really rich. Lots of money will come."</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 9 — PEDRO: MEMORABLE QUOTE
+     ============================================= -->
+<section class="slide quote-slide" data-slide="9">
+  <div class="sky-bg"></div>
+  <div class="orb orb-gold" style="opacity:0.08; bottom:-10%; right:-5%;"></div>
+
+  <div class="slide-content">
+    <blockquote class="reveal">
+      "I told you to become a monk — forget about it, you don't need to be a monk, because there is no combination of planets for monk life."
+    </blockquote>
+    <p class="quote-attribution reveal">— The Astrologer</p>
+
+    <div class="divider reveal" style="margin-top:clamp(1.5rem,3vw,2.5rem);"></div>
+    <p class="reveal" style="font-size:var(--body-size); color:var(--muted); max-width:42ch; line-height:1.6; margin-top:clamp(0.5rem,1vw,0.8rem);">
+      Also: <em>"Your knowledge is a little bit ahead of their understandings"</em> — Moon in Aquarius speaks before its time.
+    </p>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 10 — SECTION DIVIDER: KAOVERI
+     ============================================= -->
+<section class="slide divider-slide" data-slide="10">
+  <div class="sky-bg"></div>
+  <div class="h-rule" style="top: clamp(2rem,5vh,4rem);"></div>
+
+  <div class="part-num">II</div>
+
+  <div class="slide-content">
+    <div class="part-label reveal">Part Two</div>
+    <h2 class="reveal">Kaoveri's<br><em>Chart</em></h2>
+    <p class="part-desc reveal">Deep spirituality, natural wisdom, and a path that harmonises teaching with love — she is meant for both, not one or the other.</p>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 11 — KAOVERI: KEY THEMES & STRENGTHS
+     ============================================= -->
+<section class="slide" data-slide="11">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Kaoveri's Chart</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Themes &amp; Strengths</h2>
+
+    <ul class="bullet-list">
+      <li class="reveal-left"><div><strong>Scorpio sign</strong> — Strong psychological insight, strategic mind, drawn to life's mysteries and depth.</div></li>
+      <li class="reveal-left"><div><strong>Exalted Jupiter in the 9th house (house of Guru)</strong> — Exceptional potential to become a spiritual teacher. Yoga, meditation, philosophy are natural domains. This is the single most powerful placement.</div></li>
+      <li class="reveal-left"><div><strong>Jyeshtha nakshatra in the 1st house</strong> — <em>"Jyeshtha means wise."</em> Gifted in communication and advice, sees things others don't see. Natural counselor.</div></li>
+      <li class="reveal-left"><div><strong>Financial stability</strong> — Unlikely to suffer money loss. Described as <em>"kind of a rich person,"</em> especially before age 30. Possible wealthy family background.</div></li>
+      <li class="reveal-left"><div><strong>Old soul with past-life spiritual imprints</strong> — Deep, innate connection to spirituality. The path may have been discovered as early as age 15–17.</div></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 12 — KAOVERI: CHALLENGES, ADVICE & TIMELINE
+     ============================================= -->
+<section class="slide" data-slide="12">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Kaoveri's Chart</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Challenges, Guidance &amp; Timeline</h2>
+
+    <div class="two-col">
+      <div>
+        <p class="reveal" style="font-size:var(--small-size); color:var(--gold); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.6em;">Challenges</p>
+        <ul class="bullet-list">
+          <li class="reveal-left"><div><strong>Strong introversion (Ketu in 1st house)</strong> — Tendency to prefer solitude. Must be balanced with worldly engagement.</div></li>
+          <li class="reveal-left"><div><strong>Spirituality vs. relationships</strong> — Rahu says relationships are a life purpose. She is <em>not</em> meant to renounce the world, despite the deep spiritual pull.</div></li>
+          <li class="reveal-left"><div><strong>Financial shift after 30</strong> — The ease of earlier wealth may change in the 30s.</div></li>
+        </ul>
+      </div>
+      <div>
+        <p class="reveal" style="font-size:var(--small-size); color:var(--gold); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.6em;">Guidance &amp; Timeline</p>
+        <ul class="bullet-list">
+          <li class="reveal-left"><div><strong>She can have both</strong> — Teaching yoga and meditation <em>and</em> being in a relationship. These are not mutually exclusive.</div></li>
+          <li class="reveal-left"><div><strong>Career peaks at 26</strong> — Focus energy here. This is projected to be her highest professional achievement point.</div></li>
+          <li class="reveal-left"><div><strong>Marriage windows: 26 and 29</strong> — These are the strongest. The 24–29 range carries a 50–60% probability overall. A possible child around age 24–25 if marriage is early.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 13 — SECTION DIVIDER: COMPATIBILITY
+     ============================================= -->
+<section class="slide divider-slide" data-slide="13">
+  <div class="sky-bg"></div>
+  <div class="h-rule" style="top: clamp(2rem,5vh,4rem);"></div>
+
+  <div class="part-num">III</div>
+
+  <div class="slide-content">
+    <div class="part-label reveal">Part Three</div>
+    <h2 class="reveal">Pedro &amp; Kaoveri<br><em>Together</em></h2>
+    <p class="part-desc reveal">Spiritual alignment is the greatest strength. The inner bond deepens with time — especially after their 30s.</p>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 14 — COMPATIBILITY: STRENGTHS
+     ============================================= -->
+<section class="slide" data-slide="14">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Compatibility</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">What Works</h2>
+
+    <ul class="bullet-list">
+      <li class="reveal-left"><div><strong>Jupiter in the same sign — the most important factor</strong> — Both have Jupiter exalted in Cancer. Shared family values rooted in spirituality and moral principles. The astrologer said this is what matters most for marriage.</div></li>
+      <li class="reveal-left"><div><strong>Navamsa (soul chart) alignment — both Aquarius, 1-to-1</strong> — Their inner selves deeply understand each other, especially in spiritual matters. Rated as the best possible soul-level alignment.</div></li>
+      <li class="reveal-left"><div><strong>Mercury compatibility</strong> — They will always have interesting things to talk about. The conversation never runs dry.</div></li>
+      <li class="reveal-left"><div><strong>Moon, Venus, Ascendant — all neutral</strong> — No conflict. Fire and air don't harm each other. Shared desires and outward personalities don't clash.</div></li>
+      <li class="reveal-left"><div><strong>The bond grows stronger over time</strong> — Especially after both are in their 30s. The inner connection deepens with shared spiritual growth.</div></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 15 — COMPATIBILITY: CHALLENGES
+     ============================================= -->
+<section class="slide" data-slide="15">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Compatibility</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Points of Friction</h2>
+
+    <ul class="bullet-list">
+      <li class="reveal-left"><div><strong>2-12 Ascendant — asymmetric attachment</strong> — Pedro is significantly more attached than Kaoveri. He is the more emotionally invested one; she is less bound to him.</div></li>
+      <li class="reveal-left"><div><strong>Moon in 3-11 (sibling dynamic)</strong> — What they feel toward each other resembles sibling-like love. Once initial passion fades, the emotional connection may feel more platonic than romantic.</div></li>
+      <li class="reveal-left"><div><strong>Venus also 3-11</strong> — Even the love karaka echoes this: affectionate but not deeply passionate. This is not bad — but it's worth naming clearly.</div></li>
+      <li class="reveal-left"><div><strong>Not each other's astrological "ideal type"</strong> — Pedro is looking for an Aries-type woman (fiery, energetic). Kaoveri is looking for a Taurus-type man (stable, earthy, comfort-giving).</div></li>
+      <li class="reveal-left"><div><strong>Maturity gap</strong> — She is notably younger. Pedro would need to invest significant time guiding and teaching her — which requires patience.</div></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 16 — COMPATIBILITY: ADVICE & VERDICT
+     ============================================= -->
+<section class="slide" data-slide="16">
+  <div class="sky-bg"></div>
+
+  <div class="slide-content">
+    <div class="eyebrow reveal">Compatibility</div>
+    <h2 class="reveal" style="font-family:'Fraunces',serif; font-size:var(--h2-size); font-weight:300; color:var(--ivory); margin-bottom:var(--content-gap);">Guidance &amp; Verdict</h2>
+
+    <div class="two-col">
+      <ul class="bullet-list">
+        <li class="reveal-left"><div><strong>Prioritise the spiritual foundation</strong> — Shared Jupiter exaltation and Navamsa alignment are the relationship's greatest assets. Lead with that.</div></li>
+        <li class="reveal-left"><div><strong>Be realistic about emotional dynamics</strong> — Passion may naturally cool into sibling-like warmth. This can be a stable, loving relationship — awareness helps.</div></li>
+        <li class="reveal-left"><div><strong>Dedicate consciously</strong> — The astrologer: <em>"It will be very successful if you decide to dedicate your lives towards living with each other."</em></div></li>
+      </ul>
+      <div class="reveal card" style="background:rgba(155,141,196,0.08); border-color:rgba(155,141,196,0.2);">
+        <p style="font-size:var(--small-size); color:var(--gold); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.6em;">Overall Verdict</p>
+        <p style="font-family:'Fraunces',serif; font-size:clamp(1rem,2.5vw,1.6rem); font-style:italic; font-weight:300; color:var(--ivory); line-height:1.35; margin-bottom:0.8em;">"Very high compatibility. It could last."</p>
+        <p style="font-size:var(--small-size); color:var(--muted); line-height:1.5;">The chart says yes. The astrologer's personal intuition slightly diverges — he senses Pedro may ultimately seek someone different. Trust your own heart and the Guru's blessings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =============================================
+     SLIDE 17 — CLOSING
+     ============================================= -->
+<section class="slide closing-slide" data-slide="17">
+  <div class="sky-bg"></div>
+  <div class="orb orb-violet" style="opacity:0.12;"></div>
+  <div class="orb orb-blush"  style="opacity:0.08;"></div>
+  <div class="v-line v-line-left"></div>
+  <div class="v-line v-line-right"></div>
+
+  <div class="slide-content">
+    <span class="closing-planet reveal">☽ ☉ ♃</span>
+    <p class="closing-title reveal">The stars illuminate the path.<br>The steps are yours to take.</p>
+    <div class="divider reveal" style="margin:clamp(0.8rem,2vw,1.5rem) auto;"></div>
+    <p class="closing-sub reveal">Vedic Astrology Reading · Pedro &amp; Kaoveri · April 2026</p>
+    <div class="reveal" style="margin-top:clamp(1.2rem,3vw,2.5rem); display:flex; gap:0.7rem; justify-content:center; flex-wrap:wrap;">
+      <span class="tag tag-gold">Pedro</span>
+      <span class="tag tag-blush">Kaoveri</span>
+      <span class="tag tag-violet">Together</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================================
+     JAVASCRIPT — PRESENTATION CONTROLLER
+     Handles: scroll-snap, keyboard nav, touch,
+     IntersectionObserver, progress bar, nav dots
+     =========================================== -->
+<script>
+class SlidePresentation {
+  constructor() {
+    this.slides     = Array.from(document.querySelectorAll('.slide'));
+    this.total      = this.slides.length;
+    this.current    = 0;
+    this.isScrolling = false;
+
+    this.progressBar  = document.getElementById('progressBar');
+    this.navDots      = document.getElementById('navDots');
+    this.slideCounter = document.getElementById('slideCounter');
+    this.keyHint      = document.getElementById('keyboardHint');
+    this.chapterBtns  = document.querySelectorAll('.chapter-item');
+
+    this.buildNavDots();
+    this.setupIntersectionObserver();
+    this.setupKeyboardNav();
+    this.setupTouchNav();
+    this.setupChapterNav();
+    this.setupScrollUpdate();
+    this.hideHintAfterDelay();
+  }
+
+  /* Build one dot per slide */
+  buildNavDots() {
+    this.slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'nav-dot' + (i === 0 ? ' active' : '');
+      btn.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      btn.addEventListener('click', () => this.goTo(i));
+      this.navDots.appendChild(btn);
+    });
+    this.dots = Array.from(this.navDots.querySelectorAll('.nav-dot'));
+  }
+
+  /* Intersection Observer — adds .visible to trigger CSS animations */
+  setupIntersectionObserver() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          const idx = this.slides.indexOf(entry.target);
+          this.updateUI(idx);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    this.slides.forEach(s => observer.observe(s));
+  }
+
+  /* Update progress bar, nav dots, counter, chapter highlight */
+  updateUI(idx) {
+    this.current = idx;
+
+    // Progress bar
+    const pct = this.total > 1 ? (idx / (this.total - 1)) * 100 : 100;
+    this.progressBar.style.width = pct + '%';
+
+    // Nav dots
+    this.dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+
+    // Slide counter
+    this.slideCounter.textContent = `${idx + 1} / ${this.total}`;
+
+    // Chapter nav
+    const slide = this.slides[idx];
+    const num = parseInt(slide.dataset.slide, 10);
+    this.chapterBtns.forEach(btn => {
+      const start = parseInt(btn.dataset.slide, 10);
+      btn.classList.toggle('active', num >= start);
+    });
+    // Only the last active chapter stays highlighted
+    let lastActive = null;
+    this.chapterBtns.forEach(btn => {
+      const start = parseInt(btn.dataset.slide, 10);
+      if (num >= start) lastActive = btn;
+    });
+    this.chapterBtns.forEach(btn => btn.classList.toggle('active', btn === lastActive));
+  }
+
+  /* Navigate to slide index */
+  goTo(idx) {
+    if (idx < 0 || idx >= this.total) return;
+    this.slides[idx].scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* Keyboard navigation */
+  setupKeyboardNav() {
+    document.addEventListener('keydown', e => {
+      if (e.target.getAttribute('contenteditable')) return;
+      if (['ArrowDown', 'ArrowRight', ' ', 'PageDown'].includes(e.key)) {
+        e.preventDefault();
+        this.goTo(this.current + 1);
+        this.keyHint.classList.add('hidden');
+      }
+      if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) {
+        e.preventDefault();
+        this.goTo(this.current - 1);
+      }
+      if (e.key === 'Home') { e.preventDefault(); this.goTo(0); }
+      if (e.key === 'End')  { e.preventDefault(); this.goTo(this.total - 1); }
+    });
+  }
+
+  /* Touch/swipe navigation */
+  setupTouchNav() {
+    let startY = 0;
+    document.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
+    document.addEventListener('touchend', e => {
+      const diff = startY - e.changedTouches[0].clientY;
+      if (Math.abs(diff) > 40) {
+        diff > 0 ? this.goTo(this.current + 1) : this.goTo(this.current - 1);
+      }
+    }, { passive: true });
+  }
+
+  /* Chapter sidebar buttons */
+  setupChapterNav() {
+    this.chapterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const slideNum = parseInt(btn.dataset.slide, 10);
+        const idx = this.slides.findIndex(s => parseInt(s.dataset.slide, 10) === slideNum);
+        if (idx !== -1) this.goTo(idx);
+      });
+    });
+  }
+
+  /* Update UI on scroll (catches smooth scroll mid-progress) */
+  setupScrollUpdate() {
+    window.addEventListener('scroll', () => {
+      const center = window.scrollY + window.innerHeight / 2;
+      let closest = 0;
+      let minDist = Infinity;
+      this.slides.forEach((s, i) => {
+        const dist = Math.abs(s.getBoundingClientRect().top + window.scrollY + s.offsetHeight / 2 - center);
+        if (dist < minDist) { minDist = dist; closest = i; }
+      });
+      this.updateUI(closest);
+    }, { passive: true });
+  }
+
+  /* Hide keyboard hint after 5 seconds */
+  hideHintAfterDelay() {
+    setTimeout(() => this.keyHint.classList.add('hidden'), 5000);
+  }
+}
+
+// Boot presentation
+new SlidePresentation();
+</script>
+
+</body>
+</html>
