@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>pealmeida.com — probably building something</title>
+<style>
+  :root {
+    --bg: #0e0e10;
+    --fg: #f4f1ea;
+    --accent: #ff6b35;
+    --muted: #7a7a7a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+  }
+  .wrap {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .blink {
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 1;
+    animation: blink 2s infinite;
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    max-width: 20ch;
+  }
+  h1 .accent { color: var(--accent); }
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--muted);
+    max-width: 44ch;
+    line-height: 1.5;
+  }
+  .tag {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--muted);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .footer {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .footer a { color: var(--muted); text-decoration: none; border-bottom: 1px dashed var(--muted); }
+  .footer a:hover { color: var(--fg); border-color: var(--fg); }
+  @keyframes blink {
+    0%, 45%, 100% { opacity: 1; }
+    50%, 95% { opacity: 0.2; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .blink { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="blink" aria-hidden="true">🚧</div>
+    <h1>Pedro is <span class="accent">definitely</span> building something here.</h1>
+    <p>Probably. The site is between ideas. Come back later and it'll either be brilliant or deleted.</p>
+    <span class="tag">Status: vibes only</span>
+  </main>
+  <div class="footer">
+    Got here by accident? <a href="https://www.linkedin.com/in/pedroalmeidaux/">Say hi on LinkedIn.</a>
+  </div>
+</body>
+</html>
