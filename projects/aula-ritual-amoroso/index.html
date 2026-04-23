@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Ritual Amoroso · Caderno de estudo</title>
+
+<!-- Paper & Ink: Cormorant Garamond (display) + Source Serif 4 (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+
+<style>
+/* ===========================================
+   THEME — Paper & Ink
+   Warm cream paper, charcoal ink, muted crimson accent.
+   Change these four tokens to retint the whole deck.
+   =========================================== */
+:root {
+    --bg:      #faf9f7;   /* warm cream paper */
+    --ink:     #1a1a1a;   /* near-black */
+    --muted:   #5a564f;   /* warm grey */
+    --rule:    #cfc8bd;   /* hairline rule */
+    --accent:  #9a2a2a;   /* muted crimson, less loud than full red */
+    --accent-soft: rgba(154, 42, 42, 0.08);
+
+    /* Typography tokens (all clamped for viewport fit) */
+    --font-display: "Cormorant Garamond", "Source Serif 4", Georgia, serif;
+    --font-body:    "Source Serif 4", Georgia, serif;
+
+    --title-size:    clamp(2rem,  6.5vh, 5rem);
+    --huge-size:     clamp(2.5rem, 9vh, 7rem);
+    --h2-size:       clamp(1.25rem, 3.2vh, 2rem);
+    --body-size:     clamp(0.95rem, 1.9vh, 1.2rem);
+    --lede-size:     clamp(1rem,  2.1vh, 1.35rem);
+    --meta-size:     clamp(0.65rem, 1.2vh, 0.85rem);
+
+    --slide-padding: clamp(1.25rem, 4vh, 3.75rem) clamp(1.25rem, 5vw, 5rem);
+    --content-gap:   clamp(0.75rem, 2.2vh, 1.75rem);
+
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ===========================================
+   VIEWPORT FITTING — mandatory base styles
+   (from frontend-slides skill)
+   =========================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--body-size);
+    line-height: 1.55;
+    background-image:
+      radial-gradient(circle at 15% 10%, var(--accent-soft), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(26,26,26,0.04), transparent 40%);
+}
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: var(--slide-padding);
+    gap: clamp(0.75rem, 2vh, 1.5rem);
+}
+
+/* Short viewports */
+@media (max-height: 700px) {
+    :root {
+        --slide-padding: clamp(0.85rem, 3vh, 2rem) clamp(1rem, 4vw, 3rem);
+        --title-size: clamp(1.5rem, 5.5vh, 3rem);
+        --huge-size:  clamp(2rem, 7.5vh, 4rem);
+        --h2-size:    clamp(1.1rem, 2.8vh, 1.6rem);
+    }
+}
+@media (max-height: 600px) {
+    :root {
+        --title-size: clamp(1.3rem, 4.8vh, 2.2rem);
+        --body-size: clamp(0.85rem, 1.6vh, 1rem);
+        --lede-size: clamp(0.9rem, 1.8vh, 1.1rem);
+    }
+    .chapter-sidebar, .keyboard-hint { display: none; }
+}
+@media (max-width: 640px) {
+    :root {
+        --title-size: clamp(1.6rem, 7vw, 2.5rem);
+    }
+    .two-col { grid-template-columns: 1fr !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.2s !important;
+    }
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ===========================================
+   MASTHEAD / FOOTER — consistent page furniture
+   =========================================== */
+.masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: var(--meta-size);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: clamp(0.5rem, 1.2vh, 0.9rem);
+    border-bottom: 1px solid var(--rule);
+}
+.masthead .dot { color: var(--accent); margin: 0 0.3em; }
+
+.folio {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    font-family: var(--font-body);
+    font-size: var(--meta-size);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: clamp(0.5rem, 1.2vh, 0.9rem);
+    border-top: 1px solid var(--rule);
+}
+.folio .num { font-variant-numeric: tabular-nums; }
+
+/* ===========================================
+   MAIN LAYOUT — per-slide content region
+   =========================================== */
+main {
+    display: grid;
+    align-content: center;
+    gap: var(--content-gap);
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* ===========================================
+   TYPOGRAPHY ELEMENTS
+   =========================================== */
+.kicker {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(0.95rem, 1.9vh, 1.25rem);
+    color: var(--accent);
+    letter-spacing: 0.01em;
+}
+
+h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--title-size);
+    line-height: 0.98;
+    letter-spacing: -0.01em;
+    max-width: 18ch;
+}
+h1.huge { font-size: var(--huge-size); max-width: 12ch; }
+h1 em { font-style: italic; color: var(--accent); }
+
+h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--h2-size);
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+}
+h2 em { font-style: italic; color: var(--accent); }
+
+.lede {
+    font-size: var(--lede-size);
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 58ch;
+}
+.body {
+    font-size: var(--body-size);
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 58ch;
+}
+.body strong { color: var(--ink); font-weight: 600; }
+
+/* Drop cap for opening slide */
+.dropcap::first-letter {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 9vh, 5.5rem);
+    float: left;
+    line-height: 0.82;
+    padding: 0.08em 0.14em 0 0;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* ===========================================
+   PULL QUOTE — editorial block
+   =========================================== */
+.pullquote {
+    position: relative;
+    padding-left: clamp(1rem, 2vw, 1.5rem);
+    border-left: 2px solid var(--accent);
+    max-width: 32ch;
+}
+.pullquote blockquote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 4.5vh, 3rem);
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+}
+.pullquote cite {
+    display: block;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: var(--meta-size);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: clamp(0.8rem, 2vh, 1.4rem);
+}
+.pullquote.center {
+    padding-left: 0;
+    border-left: 0;
+    text-align: center;
+    max-width: 24ch;
+    margin: 0 auto;
+}
+.pullquote.center blockquote::before,
+.pullquote.center blockquote::after {
+    content: "";
+    display: block;
+    width: clamp(40px, 6vw, 80px);
+    height: 1px;
+    background: var(--rule);
+    margin: clamp(0.8rem, 2vh, 1.2rem) auto;
+}
+
+/* ===========================================
+   BULLET LIST — elegant ornament
+   =========================================== */
+ul.bullets {
+    list-style: none;
+    display: grid;
+    gap: clamp(0.55rem, 1.3vh, 0.9rem);
+    max-width: 56ch;
+}
+ul.bullets li {
+    font-size: var(--body-size);
+    line-height: 1.5;
+    color: var(--ink);
+    padding-left: clamp(1.4rem, 2.2vw, 2rem);
+    position: relative;
+}
+ul.bullets li::before {
+    content: "·";
+    position: absolute;
+    left: clamp(0.4rem, 1vw, 0.9rem);
+    top: -0.05em;
+    color: var(--accent);
+    font-size: 2em;
+    line-height: 1;
+}
+ul.bullets li em {
+    font-style: italic;
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-weight: 500;
+}
+
+/* Numbered steps */
+ol.steps {
+    list-style: none;
+    display: grid;
+    gap: clamp(0.6rem, 1.5vh, 1rem);
+    max-width: 62ch;
+    counter-reset: step;
+}
+ol.steps li {
+    counter-increment: step;
+    font-size: var(--body-size);
+    line-height: 1.45;
+    padding-left: clamp(2.4rem, 3.2vw, 3.2rem);
+    position: relative;
+    color: var(--ink);
+}
+ol.steps li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-body);
+    font-size: clamp(0.7rem, 1.3vh, 0.9rem);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    padding-top: 0.1em;
+}
+ol.steps li .title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.05rem, 2.3vh, 1.4rem);
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.1em;
+}
+ol.steps li .desc {
+    color: var(--muted);
+    font-size: calc(var(--body-size) * 0.92);
+    line-height: 1.45;
+}
+
+/* ===========================================
+   TWO-COLUMN LAYOUT
+   =========================================== */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.25rem, 3vw, 3rem);
+    align-items: start;
+}
+.two-col > div {
+    display: grid;
+    gap: clamp(0.5rem, 1.3vh, 0.9rem);
+    align-content: start;
+}
+.col-label {
+    font-family: var(--font-body);
+    font-size: var(--meta-size);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: clamp(0.3rem, 0.8vh, 0.55rem);
+}
+
+/* ===========================================
+   STEP HEADER — big chapter number + title
+   =========================================== */
+.step-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: end;
+    gap: clamp(1rem, 2.5vw, 2.2rem);
+}
+.step-number {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(4rem, 14vh, 9rem);
+    color: var(--accent);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+}
+.step-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.2rem, 7vh, 5rem);
+    line-height: 0.95;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    padding-bottom: clamp(0.3rem, 1vh, 0.6rem);
+}
+
+/* ===========================================
+   ABSTRACT ORNAMENTS (CSS only — no images)
+   =========================================== */
+.ornament {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.6;
+}
+.ornament.corner-tr {
+    top: clamp(1rem, 3vh, 2rem);
+    right: clamp(1rem, 3vw, 2.5rem);
+    width: clamp(40px, 6vw, 80px);
+    height: clamp(40px, 6vw, 80px);
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+}
+.ornament.corner-tr::after {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.15;
+}
+.ornament.corner-bl {
+    bottom: clamp(4rem, 8vh, 7rem);
+    left: clamp(1rem, 3vw, 2.5rem);
+    width: 1px;
+    height: clamp(50px, 8vh, 120px);
+    background: linear-gradient(to top, var(--rule), transparent);
+}
+.ornament.blot {
+    width: clamp(180px, 28vw, 380px);
+    height: clamp(180px, 28vw, 380px);
+    border-radius: 50%;
+    filter: blur(60px);
+    background: radial-gradient(circle, var(--accent-soft), transparent 70%);
+    opacity: 0.7;
+}
+.ornament.blot.tr { top: -10%; right: -10%; }
+.ornament.blot.bl { bottom: -15%; left: -8%; }
+
+/* ===========================================
+   ANIMATION — reveal on entering viewport
+   =========================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+        opacity 0.9s var(--ease),
+        transform 0.9s var(--ease);
+}
+.slide.visible .reveal { opacity: 1; transform: none; }
+.slide.visible .reveal:nth-child(1) { transition-delay: 0.05s; }
+.slide.visible .reveal:nth-child(2) { transition-delay: 0.15s; }
+.slide.visible .reveal:nth-child(3) { transition-delay: 0.25s; }
+.slide.visible .reveal:nth-child(4) { transition-delay: 0.35s; }
+.slide.visible .reveal:nth-child(5) { transition-delay: 0.45s; }
+.slide.visible .reveal:nth-child(6) { transition-delay: 0.55s; }
+
+/* ===========================================
+   PROGRESS BAR + NAV DOTS + KEYBOARD HINT
+   =========================================== */
+.progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    background: var(--accent);
+    width: 0;
+    z-index: 100;
+    transition: width 0.25s linear;
+}
+
+.nav-dots {
+    position: fixed;
+    right: clamp(0.75rem, 1.5vw, 1.25rem);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.4rem, 0.9vh, 0.7rem);
+    z-index: 50;
+}
+.nav-dots button {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid var(--muted);
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+.nav-dots button:hover { transform: scale(1.3); }
+.nav-dots button.active { background: var(--accent); border-color: var(--accent); }
+@media (max-width: 640px) { .nav-dots { display: none; } }
+
+.keyboard-hint {
+    position: fixed;
+    bottom: clamp(0.5rem, 1.2vh, 1rem);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(0.6rem, 1.1vh, 0.75rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0;
+    animation: hintFade 1.2s var(--ease) 1s forwards;
+    z-index: 40;
+    pointer-events: none;
+}
+@keyframes hintFade {
+    0%   { opacity: 0; }
+    20%  { opacity: 0.7; }
+    80%  { opacity: 0.7; }
+    100% { opacity: 0; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<nav class="nav-dots" id="navDots" aria-label="Navegação"></nav>
+<div class="keyboard-hint">setas · espaço · toque</div>
+
+<!-- =========================================================
+     SLIDE 01 — Cover
+     Warm opening with drop-cap, editorial masthead.
+     ========================================================= -->
+<section class="slide" aria-label="Capa">
+    <header class="masthead reveal">
+        <span>Aula &middot; Ritual Amoroso <span class="dot">·</span> caderno de estudo</span>
+        <span>em Português</span>
+    </header>
+    <main>
+        <span class="kicker reveal">um caderno para reler em calma</span>
+        <h1 class="huge reveal">O ritual como <em>gesto</em> de presença</h1>
+        <p class="lede dropcap reveal">Notas e passagens da aula, reunidas para os que já estiveram presentes. Cinco passos, algumas imagens que ficaram, e o espaço para voltar àquilo que foi vivido.</p>
+    </main>
+    <footer class="folio reveal">
+        <span>Iniciação tântrica</span>
+        <span class="num">001 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 02 — O que é um ritual
+     ========================================================= -->
+<section class="slide" aria-label="O que é um ritual">
+    <div class="ornament corner-tr" aria-hidden="true"></div>
+    <header class="masthead reveal">
+        <span>Capítulo I <span class="dot">·</span> Abertura</span>
+        <span>Definição</span>
+    </header>
+    <main>
+        <span class="kicker reveal">o que é, afinal, um ritual</span>
+        <h1 class="reveal">Uma <em>sequência de passos</em> que opera em diferentes planos</h1>
+        <p class="lede reveal">Antes das velas e dos incensos, lembremo-nos: o ritual tem um propósito específico, uma sequência de passos, que cumpre aquilo para que foi desenhado. Nós operamos num plano de consciência para ter resultados noutro.</p>
+    </main>
+    <footer class="folio">
+        <span>Tradição tântrica</span>
+        <span class="num">002 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 03 — Os níveis da manifestação
+     ========================================================= -->
+<section class="slide" aria-label="Níveis da manifestação">
+    <header class="masthead reveal">
+        <span>Capítulo I <span class="dot">·</span> Abertura</span>
+        <span>Os planos</span>
+    </header>
+    <main>
+        <span class="kicker reveal">em que planos operamos</span>
+        <h2 class="reveal">Todo o nosso ser <em>participa</em> no ritual</h2>
+        <ul class="bullets reveal">
+            <li><em>Físico</em> &mdash; o corpo, os sentidos, o toque</li>
+            <li><em>Energético</em> &mdash; a energia que percorre e liga</li>
+            <li><em>Mental / emocional</em> &mdash; intenção, afeto, atenção</li>
+            <li><em>Supramental</em> &mdash; a alma, o que transcende a forma</li>
+        </ul>
+        <p class="body reveal" style="margin-top: clamp(0.5rem, 1.5vh, 1rem);">Mundo físico, astral, causal &mdash; quando oramos com palavras interiores, operam-se muitas vezes milagres físicos. <strong>É a isto que chamamos ritual.</strong></p>
+    </main>
+    <footer class="folio">
+        <span>Tradição tântrica</span>
+        <span class="num">003 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 04 — Para que serve
+     ========================================================= -->
+<section class="slide" aria-label="Para que serve">
+    <div class="ornament blot tr" aria-hidden="true"></div>
+    <header class="masthead reveal">
+        <span>Capítulo I <span class="dot">·</span> Abertura</span>
+        <span>Propósito</span>
+    </header>
+    <main>
+        <span class="kicker reveal">para que serve o ritual amoroso</span>
+        <h1 class="reveal">Elevar a consciência, pela <em>transmutação</em> e <em>sublimação</em> da polaridade</h1>
+        <ul class="bullets reveal">
+            <li>Aprimorar a <em>continência erótica amorosa</em> no casal</li>
+            <li>Atingir pleno controlo das energias e despertar da alma</li>
+            <li>Fundir &mdash; corpo, energia, pensamento, emoção, alma</li>
+            <li>Assimilar as <em>magníficas virtudes</em> e a unicidade do outro</li>
+        </ul>
+    </main>
+    <footer class="folio">
+        <span>Tradição tântrica</span>
+        <span class="num">004 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 05 — Pull quote: lugar privilegiado
+     ========================================================= -->
+<section class="slide" aria-label="Citação — lugar privilegiado">
+    <header class="masthead reveal">
+        <span>Capítulo I <span class="dot">·</span> Abertura</span>
+        <span>Passagem</span>
+    </header>
+    <main style="align-content: center; justify-items: center;">
+        <div class="pullquote center reveal">
+            <blockquote>
+                &ldquo;O ritual de amor é um lugar <em>privilegiado</em> para desenvolvermos estas virtudes. Depois a vida pede-nos.&rdquo;
+            </blockquote>
+            <cite>Da aula</cite>
+        </div>
+    </main>
+    <footer class="folio">
+        <span>Tradição tântrica</span>
+        <span class="num">005 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 06 — Os passos (overview)
+     ========================================================= -->
+<section class="slide" aria-label="Os passos">
+    <header class="masthead reveal">
+        <span>Capítulo II <span class="dot">·</span> Os passos</span>
+        <span>Panorâmica</span>
+    </header>
+    <main>
+        <span class="kicker reveal">os cinco passos que a aula cobriu</span>
+        <h2 class="reveal">Do <em>altar interior</em> ao encontro</h2>
+        <ol class="steps reveal">
+            <li><span class="title">Consagração</span><span class="desc">oferecer o ato e os seus frutos, com a oração das 21 invocações</span></li>
+            <li><span class="title">Intenção</span><span class="desc">concreta, partilhada ou complementar entre os amados</span></li>
+            <li><span class="title">Energia do Início</span><span class="desc">mãos dadas, música, reinvocar o primeiro momento</span></li>
+            <li><span class="title">Transfiguração</span><span class="desc">ver Shiva e Shakti, o arquétipo dentro e através do outro</span></li>
+            <li><span class="title">Miminhos &middot; Preliminares</span><span class="desc">ternura, toque consciente, presença sem pressa</span></li>
+        </ol>
+    </main>
+    <footer class="folio">
+        <span>Tradição tântrica</span>
+        <span class="num">006 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 07 — Passo 1 · Consagração
+     ========================================================= -->
+<section class="slide" aria-label="Passo 1 — Consagração">
+    <div class="ornament corner-bl" aria-hidden="true"></div>
+    <header class="masthead reveal">
+        <span>Capítulo II <span class="dot">·</span> Os passos</span>
+        <span>Passo 1</span>
+    </header>
+    <main>
+        <div class="step-header reveal">
+            <span class="step-number">i.</span>
+            <span class="step-title">Consagração</span>
+        </div>
+        <p class="lede reveal">O ponto de partida. A <em>consagração</em> tem de ser positiva para ambos. Oferecemo-nos, incondicionalmente, preparando o altar interior.</p>
+        <ul class="bullets reveal">
+            <li>Recomenda-se fazer <em>sete consagrações curtas</em> &mdash; cerca de um minuto cada</li>
+            <li>Em mãos dadas, de preferência, durante todo o período</li>
+            <li>A direção só se estipula <em>depois</em> da consagração &mdash; na intenção</li>
+        </ul>
+    </main>
+    <footer class="folio">
+        <span>Altar interior</span>
+        <span class="num">007 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 08 — A oração (pull quote)
+     ========================================================= -->
+<section class="slide" aria-label="A oração">
+    <div class="ornament blot bl" aria-hidden="true"></div>
+    <header class="masthead reveal">
+        <span>Capítulo II <span class="dot">·</span> Os passos</span>
+        <span>A oração &middot; 21×</span>
+    </header>
+    <main style="align-content: center;">
+        <span class="kicker reveal" style="text-align: center; justify-self: center;">repete-se vinte e uma vezes, antes da consagração</span>
+        <div class="pullquote reveal" style="justify-self: center;">
+            <blockquote>
+                &ldquo;Deus Pai, eu vos <em>imploro</em>, tende misericórdia de mim, de acordo com a tua <em>imensa compaixão</em>.&rdquo;
+            </blockquote>
+            <cite>Fórmula cristã &middot; versão simples</cite>
+        </div>
+        <p class="body reveal" style="justify-self: center; text-align: center;">Tu ou Vós, como preferires. Uma compaixão que, quando pedida, derrama a graça. Ressoa com a Deusa Tará, a Virgem em Fátima &mdash; a mesma graça vivífica.</p>
+    </main>
+    <footer class="folio">
+        <span>Altar interior</span>
+        <span class="num">008 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 09 — Passo 2 · Intenção
+     ========================================================= -->
+<section class="slide" aria-label="Passo 2 — Intenção">
+    <header class="masthead reveal">
+        <span>Capítulo II <span class="dot">·</span> Os passos</span>
+        <span>Passo 2</span>
+    </header>
+    <main>
+        <div class="step-header reveal">
+            <span class="step-number">ii.</span>
+            <span class="step-title">Intenção</span>
+        </div>
+        <p class="lede reveal">Relembrar <em>porque</em> se faz isto. Uma frase que toca, não algo só mental. Concreta &mdash; pode ser aprofundar a continência, cuidar do outro, abrir o coração, experimentar estados de <em>Samadhi</em>.</p>
+        <div class="two-col reveal">
+            <div>
+                <span class="col-label">Entre os amados</span>
+                <p class="body">A intenção deve ser <strong>a mesma</strong>, ou minimamente complementar por polaridade. Uma questão de reforço em amor.</p>
+            </div>
+            <div>
+                <span class="col-label">Cuidado</span>
+                <p class="body">Evitar o genérico. Uma intenção que sabes que <strong>mexe com o coração</strong> &mdash; aí está.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="folio">
+        <span>Altar interior</span>
+        <span class="num">009 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 10 — Passo 3 · Energia do Início
+     ========================================================= -->
+<section class="slide" aria-label="Passo 3 — Energia do Início">
+    <div class="ornament corner-tr" aria-hidden="true"></div>
+    <header class="masthead reveal">
+        <span>Capítulo II <span class="dot">·</span> Os passos</span>
+        <span>Passo 3</span>
+    </header>
+    <main>
+        <div class="step-header reveal">
+            <span class="step-number">iii.</span>
+            <span class="step-title">Energia do Início</span>
+        </div>
+        <p class="lede reveal"><em>&ldquo;O aspirante tântrico está sempre no início.&rdquo;</em> &mdash; Parar, dar as mãos, e invocar a energia que se sentiu no primeiro encontro. Pode acompanhar-se com música sem letra, que traga entusiasmo e novidade.</p>
+        <ul class="bullets reveal">
+            <li>Cuidado com ficar <em>na mente</em> a passar memórias</li>
+            <li>Usar esses momentos apenas para <em>catapultar</em> para o estado</li>
+            <li>Ancorar no aqui e agora &mdash; este é o início, não há antes</li>
+        </ul>
+    </main>
+    <footer class="folio">
+        <span>Encontro</span>
+        <span class="num">010 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 11 — Passo 4 · Transfiguração
+     ========================================================= -->
+<section class="slide" aria-label="Passo 4 — Transfiguração">
+    <header class="masthead reveal">
+        <span>Capítulo II <span class="dot">·</span> Os passos</span>
+        <span>Passo 4</span>
+    </header>
+    <main>
+        <div class="step-header reveal">
+            <span class="step-number">iv.</span>
+            <span class="step-title">Transfiguração</span>
+        </div>
+        <p class="lede reveal">Ver para além da forma. O homem vê <em>Shakti</em>, um poder cósmico; ela vê <em>Shiva</em>, a consciência que a abraça. Um canal para todo o universo se manifestar através de ambos.</p>
+        <ul class="bullets reveal">
+            <li>Somos feitos à imagem e semelhança de Deus &mdash; <em>a semente está lá</em></li>
+            <li>Transfigurar é <em>reconhecer</em>, não imaginar</li>
+            <li>Estabelece-se neste passo &mdash; mantém-se durante todo o ritual</li>
+        </ul>
+    </main>
+    <footer class="folio">
+        <span>Encontro</span>
+        <span class="num">011 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 12 — Pull quote: a transfiguração transforma
+     ========================================================= -->
+<section class="slide" aria-label="Citação — a transfiguração transforma">
+    <div class="ornament blot tr" aria-hidden="true"></div>
+    <header class="masthead reveal">
+        <span>Capítulo II <span class="dot">·</span> Os passos</span>
+        <span>Passagem</span>
+    </header>
+    <main style="align-content: center; justify-items: center;">
+        <div class="pullquote center reveal">
+            <blockquote>
+                &ldquo;A transfiguração <em>transforma</em>. O outro vibra na frequência em que o vemos.&rdquo;
+            </blockquote>
+            <cite>Da aula</cite>
+        </div>
+        <p class="body reveal" style="text-align: center; max-width: 42ch; margin: 0 auto;">Ao ver a alma do outro, ela desperta. Durante o ritual, e cada vez mais, em <em>oitavas</em> mais profundas.</p>
+    </main>
+    <footer class="folio">
+        <span>Encontro</span>
+        <span class="num">012 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 13 — Passo 5 · Miminhos / Preliminares
+     ========================================================= -->
+<section class="slide" aria-label="Passo 5 — Miminhos">
+    <header class="masthead reveal">
+        <span>Capítulo II <span class="dot">·</span> Os passos</span>
+        <span>Passo 5</span>
+    </header>
+    <main>
+        <div class="step-header reveal">
+            <span class="step-number">v.</span>
+            <span class="step-title">Miminhos</span>
+        </div>
+        <p class="lede reveal">Ao contrário do que muita pornografia sugere, é o <em>homem</em> que começa, com massagem e toque consciente. Refazer a magia do primeiro encontro &mdash; &ldquo;cuida de mim, estou aqui para ti&rdquo;.</p>
+        <ul class="bullets reveal">
+            <li>Proporção indicativa: <em>70% ele activo</em>, 30% ela</li>
+            <li>Nunca chegar ao ponto de não retorno &mdash; avisar a tempo</li>
+            <li>O feedback é constante &mdash; respiração, mão no coração, silêncio</li>
+            <li>Cada mulher é única &mdash; o que funcionou antes não funciona agora</li>
+        </ul>
+    </main>
+    <footer class="folio">
+        <span>Encontro</span>
+        <span class="num">013 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 14 — Ele / Ela
+     ========================================================= -->
+<section class="slide" aria-label="Ele e Ela">
+    <header class="masthead reveal">
+        <span>Capítulo II <span class="dot">·</span> Os passos</span>
+        <span>Ele &middot; Ela</span>
+    </header>
+    <main>
+        <span class="kicker reveal">as virtudes que o ritual cultiva</span>
+        <h2 class="reveal">O que o ritual <em>pede</em> e <em>devolve</em></h2>
+        <div class="two-col reveal">
+            <div>
+                <span class="col-label">No homem</span>
+                <ul class="bullets">
+                    <li><em>Continência</em> erótica amorosa</li>
+                    <li>Verticalidade &mdash; firme, confiável, inabalável</li>
+                    <li>Presença empática, não repetição</li>
+                    <li>Preliminares começam <em>antes</em> &mdash; um sonho, um sincronismo</li>
+                </ul>
+            </div>
+            <div>
+                <span class="col-label">Na mulher</span>
+                <ul class="bullets">
+                    <li><em>Rendição</em> e abertura energética</li>
+                    <li>Controlo mental, das energias, empatia</li>
+                    <li>Feedback claro e amoroso, não crítica</li>
+                    <li>A Ioni desperta, chama o Linho &mdash; é química</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer class="folio">
+        <span>Encontro</span>
+        <span class="num">014 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 15 — A métrica dos 49 minutos (huge number slide)
+     ========================================================= -->
+<section class="slide" aria-label="49 minutos">
+    <div class="ornament blot bl" aria-hidden="true"></div>
+    <header class="masthead reveal">
+        <span>Capítulo III <span class="dot">·</span> Recomendações</span>
+        <span>Métrica</span>
+    </header>
+    <main style="align-content: center; justify-items: center;">
+        <span class="kicker reveal">o tempo como referência</span>
+        <h1 class="huge reveal" style="font-size: clamp(5rem, 22vh, 14rem); max-width: none; text-align: center; font-style: italic;">49'</h1>
+        <p class="lede reveal" style="text-align: center; max-width: 46ch;">A <em>métrica</em> do ritual completo. Tempo suficiente para massajar o corpo, deixar a energia fluir, haver tempo para ela e para ele &mdash; <strong>sem a meta de chegar a algum sítio</strong>.</p>
+    </main>
+    <footer class="folio">
+        <span>Recomendações</span>
+        <span class="num">015 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 16 — Ritual sem preliminares / sem consumação
+     ========================================================= -->
+<section class="slide" aria-label="Experimentar">
+    <header class="masthead reveal">
+        <span>Capítulo III <span class="dot">·</span> Recomendações</span>
+        <span>Prática</span>
+    </header>
+    <main>
+        <span class="kicker reveal">duas experiências recomendadas</span>
+        <h2 class="reveal">Praticar é <em>brincar</em> com as partes</h2>
+        <div class="two-col reveal">
+            <div>
+                <span class="col-label">Sem preliminares</span>
+                <p class="body">Fazer o ritual <em>até</em> à transfiguração &mdash; e não passar daí. Cristalizar cada passo com tempo. Ideal <strong>cinco minutos por passo</strong>, no mínimo.</p>
+            </div>
+            <div>
+                <span class="col-label">Sem consumação</span>
+                <p class="body">Rituais de <em>quinze</em> dias, um mês, três meses, quarenta e nove dias &mdash; deixar a energia subir sem a libertar. A transmutação acontece sozinha.</p>
+            </div>
+        </div>
+        <p class="body reveal" style="max-width: 62ch;"><strong>Para quem começa:</strong> fazer estes rituais &ldquo;incompletos&rdquo; <em>antes</em> de rituais completos. Às vezes o momento em que não se faz amor é mais intenso do que outros rituais que vieram a acontecer.</p>
+    </main>
+    <footer class="folio">
+        <span>Recomendações</span>
+        <span class="num">016 / 017</span>
+    </footer>
+</section>
+
+<!-- =========================================================
+     SLIDE 17 — Fecho
+     ========================================================= -->
+<section class="slide" aria-label="Fecho">
+    <div class="ornament blot tr" aria-hidden="true"></div>
+    <div class="ornament blot bl" aria-hidden="true"></div>
+    <header class="masthead reveal">
+        <span>Fecho &middot; continua na próxima aula</span>
+        <span>Caderno de estudo</span>
+    </header>
+    <main style="align-content: center; justify-items: center; text-align: center;">
+        <span class="kicker reveal">a base de tudo</span>
+        <h1 class="reveal" style="text-align: center; max-width: 16ch;">A base é <em>amor</em> e <em>responsabilidade</em></h1>
+        <p class="lede reveal" style="text-align: center; max-width: 46ch;">Cuidar do outro, cuidar de ti. Todas as técnicas, todas as recomendações, todos os passos &mdash; assentam nisto. Sem isto, nada.</p>
+        <div class="pullquote center reveal" style="margin-top: clamp(1rem, 3vh, 2rem); max-width: 32ch;">
+            <blockquote style="font-size: clamp(1.1rem, 2.8vh, 1.75rem);">
+                &ldquo;Esta iniciação começa só agora, de facto.&rdquo;
+            </blockquote>
+        </div>
+    </main>
+    <footer class="folio">
+        <span>Caderno de estudo</span>
+        <span class="num">017 / 017</span>
+    </footer>
+</section>
+
+<script>
+/* ===========================================
+   SLIDE PRESENTATION CONTROLLER
+   Keyboard, touch, nav dots, progress bar,
+   and Intersection Observer for reveal animations.
+   =========================================== */
+class SlidePresentation {
+    constructor() {
+        this.slides = Array.from(document.querySelectorAll('.slide'));
+        this.currentIndex = 0;
+        this.progressBar = document.getElementById('progressBar');
+        this.navContainer = document.getElementById('navDots');
+
+        this.setupObserver();
+        this.buildNavDots();
+        this.setupKeyboard();
+        this.setupTouch();
+        this.setupWheel();
+        this.updateProgress();
+    }
+
+    // Reveal slide content when it enters the viewport
+    setupObserver() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const idx = this.slides.indexOf(entry.target);
+                    if (idx !== -1) {
+                        this.currentIndex = idx;
+                        this.updateNavDots();
+                        this.updateProgress();
+                    }
+                }
+            });
+        }, { threshold: 0.55 });
+        this.slides.forEach(s => observer.observe(s));
+    }
+
+    // Build side nav dots
+    buildNavDots() {
+        this.slides.forEach((_, i) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+            btn.addEventListener('click', () => this.goTo(i));
+            this.navContainer.appendChild(btn);
+        });
+        this.updateNavDots();
+    }
+
+    updateNavDots() {
+        Array.from(this.navContainer.children).forEach((dot, i) => {
+            dot.classList.toggle('active', i === this.currentIndex);
+        });
+    }
+
+    updateProgress() {
+        const pct = (this.currentIndex / Math.max(1, this.slides.length - 1)) * 100;
+        this.progressBar.style.width = pct + '%';
+    }
+
+    goTo(i) {
+        const target = this.slides[Math.max(0, Math.min(i, this.slides.length - 1))];
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Keyboard navigation — arrows, space, page keys, home/end
+    setupKeyboard() {
+        document.addEventListener('keydown', (e) => {
+            const keys = {
+                'ArrowDown':  1, 'ArrowRight': 1, 'PageDown':   1, ' ':           1,
+                'ArrowUp':   -1, 'ArrowLeft': -1, 'PageUp':    -1
+            };
+            if (e.key in keys) {
+                e.preventDefault();
+                this.goTo(this.currentIndex + keys[e.key]);
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                this.goTo(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                this.goTo(this.slides.length - 1);
+            }
+        });
+    }
+
+    // Touch / swipe for mobile
+    setupTouch() {
+        let startY = null;
+        let startTime = 0;
+        window.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].clientY;
+            startTime = Date.now();
+        }, { passive: true });
+        window.addEventListener('touchend', (e) => {
+            if (startY === null) return;
+            const endY = e.changedTouches[0].clientY;
+            const dy = startY - endY;
+            const dt = Date.now() - startTime;
+            if (Math.abs(dy) > 50 && dt < 500) {
+                this.goTo(this.currentIndex + (dy > 0 ? 1 : -1));
+            }
+            startY = null;
+        }, { passive: true });
+    }
+
+    // Mouse wheel — throttled, native scroll-snap still does the work
+    setupWheel() {
+        let wheelLock = false;
+        window.addEventListener('wheel', (e) => {
+            if (wheelLock) return;
+            if (Math.abs(e.deltaY) < 30) return;
+            wheelLock = true;
+            setTimeout(() => { wheelLock = false; }, 700);
+        }, { passive: true });
+    }
+}
+
+new SlidePresentation();
+</script>
+
+</body>
+</html>
