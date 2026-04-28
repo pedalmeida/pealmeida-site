@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>AI Agency PT — Estratégia</title>
+<style>
+  :root {
+    --orange: #FF6B1A;
+    --orange-soft: #FFF1E8;
+    --ink: #1A1A1A;
+    --muted: #666;
+    --line: #EAEAEA;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .deck {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vh 10vw;
+    background: #fff;
+  }
+
+  .slide.active {
+    display: flex;
+    animation: fade 0.4s ease;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Branding bar */
+  .brand {
+    position: absolute;
+    top: 4vh;
+    left: 10vw;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .brand .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    transform: translateY(-2px);
+  }
+
+  /* Phase tag */
+  .phase {
+    display: inline-block;
+    background: var(--orange-soft);
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    width: fit-content;
+  }
+
+  /* Titles */
+  h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    max-width: 22ch;
+  }
+
+  h2 {
+    font-size: clamp(28px, 3.6vw, 48px);
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    max-width: 24ch;
+  }
+
+  h1 .accent, h2 .accent {
+    color: var(--orange);
+  }
+
+  .lede {
+    font-size: clamp(18px, 1.6vw, 22px);
+    color: var(--muted);
+    margin-top: 24px;
+    max-width: 60ch;
+    line-height: 1.5;
+  }
+
+  /* Cover slide */
+  .cover h1 {
+    font-size: clamp(44px, 6vw, 80px);
+  }
+  .cover .meta {
+    margin-top: 40px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .cover .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* Phase overview grid */
+  .phases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+  }
+  .phase-card {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .phase-card:hover { border-color: var(--orange); }
+  .phase-card .icon {
+    width: 32px;
+    height: 32px;
+    stroke: var(--orange);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .phase-card .num {
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Mechanic icon in Phase 1 sub-slides */
+  .mech-icon {
+    width: 56px;
+    height: 56px;
+    stroke: var(--orange);
+    margin-bottom: 20px;
+  }
+  .phase-card .when {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .phase-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 8px;
+    line-height: 1.3;
+  }
+  .phase-card p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* Timeline pill on phase intro slides */
+  .timeline-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    width: fit-content;
+    letter-spacing: 0.02em;
+  }
+  .timeline-pill .pulse {
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    border-radius: 50%;
+  }
+
+  /* Phase 1 sub-mechanics layout */
+  .mech {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 16px;
+  }
+  .mech-num {
+    font-size: clamp(60px, 7vw, 96px);
+    font-weight: 700;
+    color: var(--orange);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .mech-body {
+    flex: 1;
+  }
+  .mech-label {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  /* Closing slide */
+  .close {
+    display: none;
+    flex-direction: row !important;
+    padding: 0 !important;
+    gap: 0;
+  }
+  .close.active { display: flex !important; }
+  .close .close-content {
+    flex: 1;
+    padding: 8vh 6vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .close .close-image {
+    flex: 1;
+    background: var(--orange-soft);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 4vw;
+  }
+  .close .close-image img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  }
+  .close .close-image .caption {
+    position: absolute;
+    bottom: 4vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .close h2 {
+    font-size: clamp(32px, 4vw, 56px);
+    max-width: 16ch;
+  }
+  .close .prompts {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .close .prompts span {
+    font-size: 17px;
+    color: var(--muted);
+    padding-left: 24px;
+    position: relative;
+  }
+  .close .prompts span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 12px;
+    height: 2px;
+    background: var(--orange);
+  }
+  @media (max-width: 768px) {
+    .close { flex-direction: column !important; }
+    .close .close-image { min-height: 30vh; }
+  }
+
+  /* Dark section-intro with meme variant */
+  .section-intro.with-meme .meme-side {
+    background: rgba(255,255,255,0.05);
+    border-left: 1px solid rgba(255,255,255,0.08);
+  }
+  .section-intro.with-meme .caption {
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* Slide with side meme (used on slide 2) */
+  .with-meme {
+    flex-direction: row !important;
+    padding: 0 !important;
+    gap: 0;
+  }
+  .with-meme .meme-content {
+    flex: 1.4;
+    padding: 8vh 6vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .with-meme .meme-side {
+    flex: 1;
+    background: var(--orange-soft);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 3vw;
+    position: relative;
+  }
+  .with-meme .meme-side img {
+    max-width: 100%;
+    max-height: 60vh;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+  }
+  .with-meme .meme-side .caption {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    max-width: 28ch;
+    line-height: 1.5;
+  }
+  @media (max-width: 768px) {
+    .with-meme { flex-direction: column !important; }
+    .with-meme .meme-side { min-height: 30vh; }
+  }
+
+  /* Footer / nav */
+  .footer {
+    position: absolute;
+    bottom: 4vh;
+    left: 10vw;
+    right: 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .progress {
+    display: flex;
+    gap: 4px;
+  }
+  .progress span {
+    width: 18px;
+    height: 3px;
+    background: var(--line);
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .progress span.done { background: var(--orange); }
+
+  .nav-hint {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Section divider styling for Phase intro slides */
+  .section-intro {
+    background: var(--ink);
+    color: #fff;
+  }
+  .section-intro .brand { color: rgba(255,255,255,0.5); }
+  .section-intro .footer { color: rgba(255,255,255,0.4); }
+  .section-intro .progress span { background: rgba(255,255,255,0.15); }
+  .section-intro .progress span.done { background: var(--orange); }
+  .section-intro .phase {
+    background: rgba(255,107,26,0.15);
+  }
+
+  @media (max-width: 768px) {
+    .slide { padding: 8vh 6vw; }
+    .phases-grid { grid-template-columns: 1fr 1fr; }
+    .mech { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- 1. COVER -->
+  <section class="slide cover active" data-slide="1">
+    <span class="brand"><span class="dot"></span>Pedro Almeida · AI Agency PT</span>
+    <h1>🚀 Estou a construir uma agência de AI para PMEs em Portugal — quero o teu <span class="accent">olho crítico</span> antes de avançar 👀</h1>
+    <div class="meta">
+      <strong>Sessão de feedback informal</strong> · Abril 2026
+    </div>
+  </section>
+
+  <!-- 2. CONTEXT -->
+  <section class="slide with-meme" data-slide="2">
+    <div class="meme-content">
+      <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Contexto</span>
+      <h2>🤷 A maioria das PMEs em Portugal opera com <span class="accent">presença digital, funis e operações sub-otimizadas</span> — e nem sabem quanto isso lhes custa</h2>
+      <p class="lede">Não é só falta de site. É funil que não converte, operações manuais que não escalam, e processos que dependem de pessoas que não conseguem contratar.</p>
+    </div>
+    <div class="meme-side">
+      <img src="memes/patrick-confused.gif" alt="Patrick Star confused meme">
+      <span class="caption">PME média, quando lhe perguntam pelo funil de conversão</span>
+    </div>
+  </section>
+
+  <!-- 3. DISRUPTION -->
+  <section class="slide with-meme" data-slide="3">
+    <div class="meme-content">
+      <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>O que mudou</span>
+      <h2>⚡ AI tornou viável entregar <span class="accent">marketing, vendas e operações de qualidade enterprise a preço de PME</span> — pela primeira vez</h2>
+      <p class="lede">O que antes exigia equipa interna ou agência cara — campanhas, automações, software à medida, processos otimizados — hoje cabe num operador solo com o stack certo. A janela é agora.</p>
+    </div>
+    <div class="meme-side">
+      <img src="memes/anakin-padme.gif" alt="Anakin this changes everything">
+      <span class="caption">a primeira vez na história que a matemática faz sentido para PMEs</span>
+    </div>
+  </section>
+
+  <!-- 4. THESIS -->
+  <section class="slide with-meme" data-slide="4">
+    <div class="meme-content">
+      <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>A tese</span>
+      <h2>🎯 Entrar pelo <span class="accent">low-hanging fruit gratuito</span>, productizar por nicho, atacar o maior bottleneck do cliente, e licenciar o AIOS que sair daí</h2>
+      <p class="lede">Quatro fases. O bottleneck pode ser aquisição, automação, implementação de software, ou operações — depende do diagnóstico. Cada fase alimenta a próxima com cash, testemunhos e IP reutilizável.</p>
+    </div>
+    <div class="meme-side">
+      <img src="memes/charlie-conspiracy.gif" alt="Charlie conspiracy board" style="max-height:75vh;max-width:100%;width:auto;">
+      <span class="caption">eu, a explicar como tudo se conecta</span>
+    </div>
+  </section>
+
+  <!-- 5. PHASES OVERVIEW -->
+  <section class="slide" data-slide="5">
+    <span class="brand"><span class="dot"></span>Visão geral</span>
+    <h2>🗺️ A estratégia tem 4 fases — cada uma <span class="accent">alimenta a próxima</span></h2>
+    <div class="phases-grid">
+      <div class="phase-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+        <div class="num">Fase 1</div>
+        <div class="when">Abr — Jul 2026</div>
+        <h3>Aprender com pequenos</h3>
+        <p>Free projects, amigos, warm outreach. Construir reps, ativos e o motor.</p>
+      </div>
+      <div class="phase-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        <div class="num">Fase 2</div>
+        <div class="when">Ago — Dez 2026</div>
+        <h3>Productização vertical</h3>
+        <p>Escolher 1 nicho. Resolver bottleneck específico, não vender só "site".</p>
+      </div>
+      <div class="phase-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+        <div class="num">Fase 3</div>
+        <div class="when">Q1 2027</div>
+        <h3>Implementation partner</h3>
+        <p>Tornar-me o departamento de marketing+vendas+IT outsourced.</p>
+      </div>
+      <div class="phase-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+        <div class="num">Fase 4</div>
+        <div class="when">Q2 2027</div>
+        <h3>AIOS</h3>
+        <p>Construir o sistema operacional do negócio do cliente. Licenciar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PHASE 1 INTRO -->
+  <section class="slide section-intro" data-slide="6">
+    <span class="brand"><span class="dot"></span>Fase 1</span>
+    <span class="timeline-pill"><span class="pulse"></span>Abril → Julho 2026 · ~4 meses</span>
+    <h1>🌱 Aprender com pequenos: projetos free + warm outreach para construir reps, ativos e o <span class="accent">motor</span></h1>
+  </section>
+
+  <!-- 7. LEAD MAGNET -->
+  <section class="slide" data-slide="7">
+    <span class="brand"><span class="dot"></span>Fase 1 · Como entro</span>
+    <div class="mech">
+      <div class="mech-num">01</div>
+      <div class="mech-body">
+        <div class="mech-label">🧮 Lead magnet</div>
+        <h2>A porta de entrada é uma calculadora gratuita: <span class="accent">"quanto estás a perder?"</span></h2>
+        <p class="lede">Pontua presença online vs. concorrência do nicho — GBP, SEO, reviews, site. Calcula receita perdida. Em troca: email. Depois: nurture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. OUTBOUND -->
+  <section class="slide" data-slide="8">
+    <span class="brand"><span class="dot"></span>Fase 1 · Como abordo</span>
+    <div class="mech">
+      <div class="mech-num">02</div>
+      <div class="mech-body">
+        <div class="mech-label">📨 Outbound desarmado</div>
+        <h2>O outbound não pede nada: <span class="accent">"envio-te um relatório do teu nicho de qualquer maneira"</span></h2>
+        <p class="lede">Mesmo que nunca trabalhemos juntos. Reciprocidade primeiro, venda nunca na primeira mensagem. Filtra os curiosos dos sérios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. PARLOUR TRICKS -->
+  <section class="slide" data-slide="9">
+    <span class="brand"><span class="dot"></span>Fase 1 · Como converto</span>
+    <div class="mech">
+      <div class="mech-num">03</div>
+      <div class="mech-body">
+        <div class="mech-label">✨ Parlour tricks de AI</div>
+        <h2>Em reuniões e formações uso <span class="accent">efeitos-uau imediatos</span> com ferramentas grátis</h2>
+        <p class="lede">Backgrounds Teams, drafts automáticos de email, slides gerados com AI, Apps Script para Gmail. Dopamina logo no primeiro contacto. Eles assinam o "como é que isto é possível?"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. ENGINE -->
+  <section class="slide" data-slide="10">
+    <span class="brand"><span class="dot"></span>Fase 1 · Em paralelo</span>
+    <div class="mech">
+      <div class="mech-num">04</div>
+      <div class="mech-body">
+        <div class="mech-label">⚙️ O motor</div>
+        <h2>Em paralelo construo o motor: <span class="accent">scraper + lead identifier + website-builder em autopilot</span></h2>
+        <p class="lede">Cada cliente da Fase 1 é um teste para o sistema. O motor que sobreviver à Fase 1 é o futuro case study — e a base do AIOS.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. PHASE 2 -->
+  <section class="slide section-intro with-meme" data-slide="11">
+    <div class="meme-content">
+      <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Fase 2</span>
+      <span class="timeline-pill"><span class="pulse"></span>Agosto → Dezembro 2026 · ~5 meses</span>
+      <h1>🎯 Productização vertical: escolher <span class="accent">1 nicho</span> e atacar o seu maior bottleneck — não vendo "site", vendo solução completa</h1>
+    </div>
+    <div class="meme-side">
+      <img src="memes/sniper.gif" alt="Sniper precision">
+      <span class="caption">um nicho, uma dor, uma solução</span>
+    </div>
+  </section>
+
+  <!-- 12. PHASE 3 -->
+  <section class="slide section-intro with-meme" data-slide="12">
+    <div class="meme-content">
+      <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Fase 3</span>
+      <span class="timeline-pill"><span class="pulse"></span>Q1 2027</span>
+      <h1>🤝 Torno-me o departamento de <span class="accent">marketing + vendas + IT outsourced</span> que estas PMEs nunca vão poder contratar internamente</h1>
+    </div>
+    <div class="meme-side">
+      <img src="memes/avengers-team.gif" alt="Avengers assemble team">
+      <span class="caption">o teu departamento outsourced, sempre disponível</span>
+    </div>
+  </section>
+
+  <!-- 13. PHASE 4 -->
+  <section class="slide section-intro with-meme" data-slide="13">
+    <div class="meme-content">
+      <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Fase 4 · AIOS</span>
+      <span class="timeline-pill"><span class="pulse"></span>Q2 2027</span>
+      <h1>🧠 Cada PME passará a correr sobre uma <span class="accent">camada de inteligência</span> — eu construo esse AIOS por dentro, e depois licencio-o</h1>
+    </div>
+    <div class="meme-side">
+      <img src="memes/galaxy-brain.gif" alt="Galaxy brain expanding">
+      <span class="caption">de calculadora gratuita a sistema operacional</span>
+    </div>
+  </section>
+
+  <!-- 14. CLOSING -->
+  <section class="slide close" data-slide="14">
+    <div class="close-content">
+      <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Sobre ti</span>
+      <h2>🔍 Desconstrói isto. <span class="accent">Onde estás a ver falhas de raciocínio?</span></h2>
+      <div class="prompts">
+        <span>A escolha de fases — está na ordem certa?</span>
+        <span>O lead magnet — funciona como porta de entrada?</span>
+        <span>A tese de AIOS — é visão ou é fantasia?</span>
+        <span>O que falta? O que sobra?</span>
+      </div>
+    </div>
+    <div class="close-image">
+      <img src="memes/math-lady.gif" alt="Math lady confused meme">
+      <span class="caption">tu, a tentar perceber se isto faz mesmo sentido</span>
+    </div>
+  </section>
+
+  <!-- Footer (rendered once, updated by JS) -->
+  <div class="footer">
+    <span id="counter">1 / 14</span>
+    <div class="progress" id="progress"></div>
+    <span class="nav-hint">← → para navegar</span>
+  </div>
+
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  const counter = document.getElementById('counter');
+  const progress = document.getElementById('progress');
+  let current = 0;
+
+  // Build progress dots
+  for (let i = 0; i < total; i++) {
+    const s = document.createElement('span');
+    progress.appendChild(s);
+  }
+
+  function show(idx) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[idx].classList.add('active');
+    counter.textContent = `${idx + 1} / ${total}`;
+    progress.querySelectorAll('span').forEach((s, i) => {
+      s.classList.toggle('done', i <= idx);
+    });
+    // Adjust footer color for dark slides
+    const footer = document.querySelector('.footer');
+    if (slides[idx].classList.contains('section-intro')) {
+      footer.style.color = 'rgba(255,255,255,0.5)';
+    } else {
+      footer.style.color = '';
+    }
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      current = Math.min(current + 1, total - 1);
+      show(current);
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      current = Math.max(current - 1, 0);
+      show(current);
+    } else if (e.key === 'Home') {
+      current = 0; show(current);
+    } else if (e.key === 'End') {
+      current = total - 1; show(current);
+    } else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+
+  // Click navigation
+  document.addEventListener('click', e => {
+    const x = e.clientX;
+    const w = window.innerWidth;
+    if (x > w * 0.7) { current = Math.min(current + 1, total - 1); show(current); }
+    else if (x < w * 0.3) { current = Math.max(current - 1, 0); show(current); }
+  });
+
+  show(0);
+</script>
+
+</body>
+</html>
