@@ -183,6 +183,101 @@
     line-height: 1.5;
   }
 
+  /* Pipeline flow on slide 10 (engine) */
+  .pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  .pipeline-step {
+    flex: 1;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 14px;
+    transition: border-color 0.2s, transform 0.2s;
+    min-width: 0;
+  }
+  .pipeline-step:hover {
+    border-color: var(--orange);
+    transform: translateY(-2px);
+  }
+  .pipeline-emoji {
+    font-size: 32px;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+  .pipeline-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .pipeline-detail {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .pipeline-arrow {
+    color: var(--orange);
+    font-size: 20px;
+    font-weight: 700;
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  /* Phase 1 timeline (3 sequential steps) */
+  .phase1-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .phase1-step {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 22px;
+    position: relative;
+  }
+  .phase1-step:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    transform: translateY(-50%);
+    color: var(--orange);
+    font-size: 24px;
+    font-weight: 700;
+    z-index: 2;
+  }
+  .phase1-step .phase1-when {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .phase1-step .phase1-what {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .phase1-step .phase1-detail {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+  }
+  .phase1-step .phase1-detail em {
+    color: var(--orange);
+    font-style: normal;
+    font-weight: 500;
+  }
+
   /* Timeline pill on phase intro slides */
   .timeline-pill {
     display: inline-flex;
@@ -252,26 +347,25 @@
     background: var(--orange-soft);
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4vh 4vw;
+    padding: 4vh 3vw;
+    gap: 18px;
   }
   .close .close-image img {
     max-width: 100%;
-    max-height: 70vh;
+    max-height: 60vh;
     border-radius: 16px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
   }
   .close .close-image .caption {
-    position: absolute;
-    bottom: 4vh;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 13px;
     color: var(--muted);
     font-style: italic;
     text-align: center;
-    white-space: nowrap;
+    max-width: 32ch;
+    line-height: 1.5;
   }
   .close h2 {
     font-size: clamp(32px, 4vw, 56px);
@@ -498,7 +592,24 @@
   <section class="slide section-intro" data-slide="6">
     <span class="brand"><span class="dot"></span>Fase 1</span>
     <span class="timeline-pill"><span class="pulse"></span>Abril → Julho 2026 · ~4 meses</span>
-    <h1>🌱 Aprender com pequenos: projetos free + warm outreach para construir reps, ativos e o <span class="accent">motor</span></h1>
+    <h1>🌱 A Fase 1 tem 3 movimentos sobrepostos — começo com warm, ligo cold em paralelo, e contrato part-time aos <span class="accent">~3 meses</span></h1>
+    <div class="phase1-timeline">
+      <div class="phase1-step">
+        <div class="phase1-when">Abril → Maio</div>
+        <div class="phase1-what">Warm outreach</div>
+        <div class="phase1-detail">Sets para amigos. Construir reps e primeiros ativos. <em>Estou aqui agora.</em></div>
+      </div>
+      <div class="phase1-step">
+        <div class="phase1-when">Maio → Julho</div>
+        <div class="phase1-what">Cold outreach em paralelo</div>
+        <div class="phase1-detail">Pipeline scrape → script → call → site. ICP: micro empresas (1–2 pessoas, falo direto com o dono).</div>
+      </div>
+      <div class="phase1-step">
+        <div class="phase1-when">~Julho</div>
+        <div class="phase1-what">Part-time + paid + lead magnet</div>
+        <div class="phase1-detail">Cashflow paga part-time para chamadas/sites. Lead magnet vivo. Paid ads ligadas. ICP sobe gradualmente.</div>
+      </div>
+    </div>
   </section>
 
   <!-- 7. LEAD MAGNET -->
@@ -540,25 +651,68 @@
     </div>
   </section>
 
-  <!-- 10. ENGINE -->
+  <!-- 10. ENGINE / PIPELINE -->
   <section class="slide" data-slide="10">
     <span class="brand"><span class="dot"></span>Fase 1 · Em paralelo</span>
-    <div class="mech">
-      <div class="mech-num">04</div>
-      <div class="mech-body">
-        <div class="mech-label">⚙️ O motor</div>
-        <h2>Em paralelo construo o motor: <span class="accent">scraper + lead identifier + website-builder em autopilot</span></h2>
-        <p class="lede">Cada cliente da Fase 1 é um teste para o sistema. O motor que sobreviver à Fase 1 é o futuro case study — e a base do AIOS.</p>
+    <div class="mech-label" style="margin-bottom:8px;">⚙️ O motor</div>
+    <h2 style="font-size:clamp(24px,2.8vw,36px);margin-bottom:28px;">A pipeline produtizada que <span class="accent">o que dantes demorava dias, hoje demora horas</span></h2>
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="pipeline-emoji">🔍</div>
+        <div class="pipeline-title">Scrape</div>
+        <div class="pipeline-detail">Firecrawl + Apify identificam top performers e underperformers do nicho</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <div class="pipeline-emoji">📝</div>
+        <div class="pipeline-title">Script personalizado</div>
+        <div class="pipeline-detail">"Os teus pares estão a fazer X. Tu estás a deixar €Y na mesa por Z."</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <div class="pipeline-emoji">📞</div>
+        <div class="pipeline-title">Call · Diagnóstico</div>
+        <div class="pipeline-detail">Cross-sell na call 2: GBP, chatbot WhatsApp, automações. Identifico dores reais.</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <div class="pipeline-emoji">🏗️</div>
+        <div class="pipeline-title">Site builder</div>
+        <div class="pipeline-detail">WordPress + frontend custom (Claude Code). Templates por nicho, look premium.</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <div class="pipeline-emoji">🏆</div>
+        <div class="pipeline-title">Case study</div>
+        <div class="pipeline-detail">Alimenta o site da agência → paid ads → inbound. O motor escala-se sozinho.</div>
       </div>
     </div>
   </section>
 
-  <!-- 11. PHASE 2 -->
-  <section class="slide section-intro with-meme" data-slide="11">
+  <!-- 11. LEAD MAGNET — THE INBOUND SWITCH -->
+  <section class="slide with-meme" data-slide="11">
+    <div class="meme-content">
+      <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Fase 1 · O switch</span>
+      <h2>🧲 O lead magnet é o que faz <span class="accent">outbound virar inbound</span></h2>
+      <p class="lede"><strong>Digital Presence Checker</strong>: webapp grátis (já construída). Cada dono de negócio descobre quanto está a perder em €/mês — em troca do email. Depois entra na pipeline.</p>
+      <ul style="margin-top:24px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:12px;">
+        <li style="position:relative;padding-left:24px;font-size:15px;color:var(--muted);"><span style="position:absolute;left:0;top:9px;width:12px;height:2px;background:var(--orange);"></span>Score de presença digital (GBP, SEO, reviews, site) vs. nicho</li>
+        <li style="position:relative;padding-left:24px;font-size:15px;color:var(--muted);"><span style="position:absolute;left:0;top:9px;width:12px;height:2px;background:var(--orange);"></span>Quantifica receita perdida em € com base em ticket médio</li>
+        <li style="position:relative;padding-left:24px;font-size:15px;color:var(--muted);"><span style="position:absolute;left:0;top:9px;width:12px;height:2px;background:var(--orange);"></span>Combinado com case studies → paid ads → inbound automático</li>
+      </ul>
+    </div>
+    <div class="meme-side">
+      <img src="memes/galaxy-brain.gif" alt="Galaxy brain switch">
+      <span class="caption">o momento em que paras de caçar e começas a ser caçado</span>
+    </div>
+  </section>
+
+  <!-- 12. PHASE 2 -->
+  <section class="slide section-intro with-meme" data-slide="12">
     <div class="meme-content">
       <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Fase 2</span>
       <span class="timeline-pill"><span class="pulse"></span>Agosto → Dezembro 2026 · ~5 meses</span>
-      <h1>🎯 Productização vertical: escolher <span class="accent">1 nicho</span> e atacar o seu maior bottleneck — não vendo "site", vendo solução completa</h1>
+      <h1>🎯 Com o panorama dos nichos da Fase 1, escolho <span class="accent">um</span> e ataco o bottleneck completo — outbound, inbound, paid, automação, agents</h1>
     </div>
     <div class="meme-side">
       <img src="memes/sniper.gif" alt="Sniper precision">
@@ -566,34 +720,34 @@
     </div>
   </section>
 
-  <!-- 12. PHASE 3 -->
-  <section class="slide section-intro with-meme" data-slide="12">
+  <!-- 13. PHASE 3 -->
+  <section class="slide section-intro with-meme" data-slide="13">
     <div class="meme-content">
       <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Fase 3</span>
       <span class="timeline-pill"><span class="pulse"></span>Q1 2027</span>
-      <h1>🤝 Torno-me o departamento de <span class="accent">marketing + vendas + IT outsourced</span> que estas PMEs nunca vão poder contratar internamente</h1>
+      <h1>🤝 Torno-me o <span class="accent">parceiro de implementação</span> do nicho — marketing, vendas, IT, AI — tudo o que nunca vão poder contratar internamente</h1>
     </div>
     <div class="meme-side">
-      <img src="memes/avengers-team.gif" alt="Avengers assemble team">
-      <span class="caption">o teu departamento outsourced, sempre disponível</span>
+      <img src="memes/leslie-knope.gif" alt="Leslie Knope all-in">
+      <span class="caption">o parceiro que abraça o problema todo, não só uma fatia</span>
     </div>
   </section>
 
-  <!-- 13. PHASE 4 -->
-  <section class="slide section-intro with-meme" data-slide="13">
+  <!-- 14. PHASE 4 -->
+  <section class="slide section-intro with-meme" data-slide="14">
     <div class="meme-content">
       <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Fase 4 · AIOS</span>
       <span class="timeline-pill"><span class="pulse"></span>Q2 2027</span>
-      <h1>🧠 Cada PME passará a correr sobre uma <span class="accent">camada de inteligência</span> — eu construo esse AIOS por dentro, e depois licencio-o</h1>
+      <h1>🧠 Quando há product-market fit no nicho, <span class="accent">licencio o AIOS</span> a todos os outros — passo de serviço a produto</h1>
     </div>
     <div class="meme-side">
-      <img src="memes/galaxy-brain.gif" alt="Galaxy brain expanding">
-      <span class="caption">de calculadora gratuita a sistema operacional</span>
+      <img src="memes/matrix-neo.gif" alt="Neo I know kung fu">
+      <span class="caption">"I know SMB" — quando o sistema se torna o produto</span>
     </div>
   </section>
 
-  <!-- 14. CLOSING -->
-  <section class="slide close" data-slide="14">
+  <!-- 15. CLOSING -->
+  <section class="slide close" data-slide="15">
     <div class="close-content">
       <span class="brand" style="position:static;margin-bottom:24px;"><span class="dot"></span>Sobre ti</span>
       <h2>🔍 Desconstrói isto. <span class="accent">Onde estás a ver falhas de raciocínio?</span></h2>
