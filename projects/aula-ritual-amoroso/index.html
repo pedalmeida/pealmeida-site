@@ -503,6 +503,212 @@ ol.steps li .desc {
     100% { opacity: 0; }
 }
 
+/* ===========================================
+   ICONS — inline SVG, crimson stroke
+   =========================================== */
+.icon {
+    display: inline-block;
+    width: clamp(1rem, 1.6vh, 1.25rem);
+    height: clamp(1rem, 1.6vh, 1.25rem);
+    stroke: var(--accent);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -0.15em;
+    margin-right: 0.4em;
+    flex-shrink: 0;
+}
+.icon-lg {
+    width: clamp(2rem, 4vh, 3rem);
+    height: clamp(2rem, 4vh, 3rem);
+}
+.icon-xl {
+    width: clamp(3rem, 6vh, 4.5rem);
+    height: clamp(3rem, 6vh, 4.5rem);
+    stroke-width: 1.2;
+}
+
+/* Icon list — bullet replaced by inline icon */
+ul.bullets.iconed {
+    list-style: none;
+}
+ul.bullets.iconed li {
+    padding-left: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7em;
+}
+ul.bullets.iconed li::before {
+    content: none;
+}
+ul.bullets.iconed li .icon {
+    margin-top: 0.25em;
+    margin-right: 0;
+}
+
+/* Steps with icons in the number column */
+ol.steps.iconed li::before {
+    content: none;
+}
+ol.steps.iconed li {
+    display: grid;
+    grid-template-columns: clamp(2.4rem, 3.2vw, 3.2rem) 1fr;
+    gap: 0;
+    padding-left: 0;
+}
+ol.steps.iconed li .icon {
+    width: clamp(1.4rem, 2.4vh, 1.8rem);
+    height: clamp(1.4rem, 2.4vh, 1.8rem);
+    margin: 0.15em 0 0 0;
+}
+
+/* ===========================================
+   IMAGES — hero & background variants
+   =========================================== */
+
+/* Hero: full-bleed image on one half, content on the other */
+.slide.image-hero {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 0;
+    padding: 0;
+    column-gap: clamp(1.5rem, 4vw, 4rem);
+}
+.slide.image-hero .masthead {
+    grid-column: 1 / -1;
+    padding: var(--slide-padding);
+    padding-bottom: clamp(0.5rem, 1.2vh, 0.9rem);
+}
+.slide.image-hero main {
+    padding: 0 clamp(1.25rem, 5vw, 5rem);
+}
+.slide.image-hero .hero-image {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    margin: clamp(0.5rem, 1.5vh, 1rem) 0 clamp(0.5rem, 1.5vh, 1rem) 0;
+    position: relative;
+    filter: saturate(0.85) contrast(1.02);
+}
+.slide.image-hero .hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        rgba(154, 42, 42, 0.10) 0%,
+        rgba(154, 42, 42, 0) 40%,
+        rgba(26, 26, 26, 0.10) 100%);
+    pointer-events: none;
+}
+.slide.image-hero .folio {
+    grid-column: 1 / -1;
+    padding: 0 clamp(1.25rem, 5vw, 5rem) clamp(1rem, 3vh, 2rem);
+}
+.slide.image-hero.right .hero-image {
+    grid-column: 2 / 3;
+}
+.slide.image-hero.right main {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    padding-left: clamp(1.25rem, 5vw, 5rem);
+}
+
+/* Background: full-bleed image with strong overlay */
+.slide.image-bg {
+    color: var(--bg);
+}
+.slide.image-bg .bg-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    filter: saturate(0.9);
+}
+.slide.image-bg .bg-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(20, 14, 14, 0.55) 0%,
+        rgba(20, 14, 14, 0.65) 60%,
+        rgba(20, 14, 14, 0.78) 100%);
+    z-index: 1;
+}
+.slide.image-bg .masthead,
+.slide.image-bg .folio {
+    color: rgba(250, 249, 247, 0.7);
+    border-color: rgba(250, 249, 247, 0.2);
+}
+.slide.image-bg h1,
+.slide.image-bg h2,
+.slide.image-bg .pullquote blockquote {
+    color: var(--bg);
+}
+.slide.image-bg h1 em,
+.slide.image-bg h2 em,
+.slide.image-bg .kicker,
+.slide.image-bg .pullquote blockquote em {
+    color: #f5b8a8;
+}
+.slide.image-bg .lede,
+.slide.image-bg .body {
+    color: rgba(250, 249, 247, 0.88);
+}
+.slide.image-bg .body strong { color: var(--bg); }
+.slide.image-bg .pullquote {
+    border-left-color: #f5b8a8;
+}
+.slide.image-bg .pullquote cite {
+    color: rgba(250, 249, 247, 0.6);
+}
+.slide.image-bg ul.bullets li,
+.slide.image-bg ol.steps li,
+.slide.image-bg ol.steps li .title {
+    color: var(--bg);
+}
+.slide.image-bg ul.bullets li em,
+.slide.image-bg ol.steps li::before {
+    color: #f5b8a8;
+}
+.slide.image-bg .icon {
+    stroke: #f5b8a8;
+}
+.slide.image-bg .col-label {
+    color: #f5b8a8;
+    border-bottom-color: rgba(245, 184, 168, 0.3);
+}
+
+/* Mobile: image-hero collapses to single column */
+@media (max-width: 720px) {
+    .slide.image-hero {
+        grid-template-columns: 1fr;
+    }
+    .slide.image-hero .hero-image {
+        grid-column: 1 / -1;
+        min-height: 28vh;
+        max-height: 32vh;
+    }
+    .slide.image-hero.right main {
+        grid-column: 1 / -1;
+    }
+    .slide.image-hero.right .hero-image {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+    }
+}
+
+/* Number stat with icon */
+.stat-with-icon {
+    display: grid;
+    justify-items: center;
+    gap: clamp(0.5rem, 1.5vh, 1rem);
+}
+
 </style>
 </head>
 <body>
@@ -512,18 +718,51 @@ ol.steps li .desc {
 <div class="keyboard-hint">setas · espaço · toque</div>
 
 <!-- =========================================================
-     SLIDE 01 — Cover
-     Warm opening with drop-cap, editorial masthead.
+     ICON LIBRARY — reusable SVG symbols
+     Stroke 1.5, 24×24 viewbox, line-art crimson icons.
+     Use: <svg class="icon"><use href="#icon-NAME"/></svg>
      ========================================================= -->
-<section class="slide" aria-label="Capa">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+        <symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 3c0 4-4 5-4 9a4 4 0 0 0 8 0c0-2-1-3-1-5 0 2-1 3-3 3 1-3 4-4 4-7-2 0-4 1-4 0z"/></symbol>
+        <symbol id="icon-lotus" viewBox="0 0 24 24"><path d="M12 4c-1 3-1 6 0 9 1-3 1-6 0-9z"/><path d="M5 9c1 4 4 6 7 7-3-1-6-3-7-7z"/><path d="M19 9c-1 4-4 6-7 7 3-1 6-3 7-7z"/><path d="M12 13c-3 1-6 3-9 3 3 2 6 3 9 3s6-1 9-3c-3 0-6-2-9-3z"/></symbol>
+        <symbol id="icon-hands" viewBox="0 0 24 24"><path d="M9 11V6a1.5 1.5 0 0 1 3 0v4"/><path d="M12 10V5a1.5 1.5 0 0 1 3 0v6"/><path d="M15 9a1.5 1.5 0 0 1 3 0v6a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5v-3"/><path d="M6 12V9a1.5 1.5 0 0 1 3 0v2"/></symbol>
+        <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+        <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol>
+        <symbol id="icon-infinity" viewBox="0 0 24 24"><path d="M6 12a3 3 0 0 1 6 0 3 3 0 0 0 6 0 3 3 0 0 0-6 0 3 3 0 0 1-6 0 3 3 0 0 1 6 0z"/></symbol>
+        <symbol id="icon-candle" viewBox="0 0 24 24"><path d="M12 4c0 2-2 2-2 4a2 2 0 0 0 4 0c0-2-2-2-2-4z"/><rect x="9" y="10" width="6" height="10" rx="1"/></symbol>
+        <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.5 5.5l1.4 1.4M17.1 17.1l1.4 1.4M5.5 18.5l1.4-1.4M17.1 6.9l1.4-1.4"/></symbol>
+        <symbol id="icon-mountain" viewBox="0 0 24 24"><path d="M3 20l5-9 4 6 3-4 6 7z"/><circle cx="17" cy="7" r="2"/></symbol>
+        <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v17H6a2 2 0 0 1-2-2z"/><path d="M4 18a2 2 0 0 1 2-2h12"/></symbol>
+        <symbol id="icon-feather" viewBox="0 0 24 24"><path d="M20 4c0 8-7 14-13 14H3l11-11"/><path d="M8 13h8M11 16h6"/></symbol>
+        <symbol id="icon-spiral" viewBox="0 0 24 24"><path d="M12 12a3 3 0 0 1 3-3 5 5 0 0 1 5 5 7 7 0 0 1-7 7 9 9 0 0 1-9-9 11 11 0 0 1 11-11"/></symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+        <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M5 19c0-9 6-15 15-15 0 9-6 15-15 15z"/><path d="M5 19c5-5 10-10 14-14"/></symbol>
+        <symbol id="icon-bowl" viewBox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M5 7c2-2 5-2 7 0s5 2 7 0"/></symbol>
+        <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+        <symbol id="icon-spark" viewBox="0 0 24 24"><path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></symbol>
+        <symbol id="icon-key" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M17 12v4M21 12v3"/></symbol>
+        <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+        <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6z"/></symbol>
+    </defs>
+</svg>
+
+<!-- =========================================================
+     SLIDE 01 — Cover (image-hero)
+     ========================================================= -->
+<section class="slide image-hero" aria-label="Capa">
     <header class="masthead reveal">
         <span>Aula &middot; Ritual Amoroso <span class="dot">·</span> caderno de estudo</span>
         <span>em Português</span>
     </header>
+    <div class="hero-image reveal" style="background-image: url('assets/01-cover.jpg');" aria-hidden="true"></div>
     <main>
-        <span class="kicker reveal">um caderno para reler em calma</span>
+        <span class="kicker reveal">
+            <svg class="icon"><use href="#icon-flame"/></svg>
+            um caderno para reler em calma
+        </span>
         <h1 class="huge reveal">O ritual como <em>gesto</em> de presença</h1>
-        <p class="lede dropcap reveal">Notas e passagens da aula, reunidas para os que já estiveram presentes. Cinco passos, algumas imagens que ficaram, e o espaço para voltar àquilo que foi vivido.</p>
+        <p class="lede reveal">Notas e passagens das duas aulas, reunidas para os que já estiveram presentes. Cinco passos, algumas imagens que ficaram, e o espaço para voltar àquilo que foi vivido.</p>
     </main>
     <footer class="folio reveal">
         <span>Iniciação tântrica</span>
@@ -634,12 +873,12 @@ ol.steps li .desc {
     <main>
         <span class="kicker reveal">os cinco passos que a aula cobriu</span>
         <h2 class="reveal">Do <em>altar interior</em> ao encontro</h2>
-        <ol class="steps reveal">
-            <li><span class="title">Consagração</span><span class="desc">oferecer o ato e os seus frutos, com a oração das 21 invocações</span></li>
-            <li><span class="title">Intenção</span><span class="desc">concreta, partilhada ou complementar entre os amados</span></li>
-            <li><span class="title">Energia do Início</span><span class="desc">mãos dadas, música, reinvocar o primeiro momento</span></li>
-            <li><span class="title">Transfiguração</span><span class="desc">ver Shiva e Shakti, o arquétipo dentro e através do outro</span></li>
-            <li><span class="title">Miminhos &middot; Preliminares</span><span class="desc">ternura, toque consciente, presença sem pressa</span></li>
+        <ol class="steps iconed reveal">
+            <li><svg class="icon"><use href="#icon-candle"/></svg><div><span class="title">Consagração</span><span class="desc">oferecer o ato e os seus frutos, com a oração das 21 invocações</span></div></li>
+            <li><svg class="icon"><use href="#icon-compass"/></svg><div><span class="title">Intenção</span><span class="desc">concreta, partilhada ou complementar entre os amados</span></div></li>
+            <li><svg class="icon"><use href="#icon-spark"/></svg><div><span class="title">Energia do Início</span><span class="desc">mãos dadas, música, reinvocar o primeiro momento</span></div></li>
+            <li><svg class="icon"><use href="#icon-eye"/></svg><div><span class="title">Transfiguração</span><span class="desc">ver Shiva e Shakti, o arquétipo dentro e através do outro</span></div></li>
+            <li><svg class="icon"><use href="#icon-heart"/></svg><div><span class="title">Miminhos &middot; Preliminares</span><span class="desc">ternura, toque consciente, presença sem pressa</span></div></li>
         </ol>
     </main>
     <footer class="folio">
@@ -663,10 +902,10 @@ ol.steps li .desc {
             <span class="step-title">Consagração</span>
         </div>
         <p class="lede reveal">O ponto de partida. A <em>consagração</em> tem de ser positiva para ambos. Oferecemo-nos, incondicionalmente, preparando o altar interior.</p>
-        <ul class="bullets reveal">
-            <li>Recomenda-se fazer <em>sete consagrações curtas</em> &mdash; cerca de um minuto cada</li>
-            <li>Em mãos dadas, de preferência, durante todo o período</li>
-            <li>A direção só se estipula <em>depois</em> da consagração &mdash; na intenção</li>
+        <ul class="bullets iconed reveal">
+            <li><svg class="icon"><use href="#icon-clock"/></svg><span>Recomenda-se fazer <em>sete consagrações curtas</em>, cerca de um minuto cada</span></li>
+            <li><svg class="icon"><use href="#icon-hands"/></svg><span>Em mãos dadas, de preferência, durante todo o período</span></li>
+            <li><svg class="icon"><use href="#icon-arrow"/></svg><span>A direção só se estipula <em>depois</em> da consagração, na intenção</span></li>
         </ul>
     </main>
     <footer class="folio">
@@ -676,23 +915,26 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 08 — A oração (pull quote)
+     SLIDE 08 — A oração (image-bg)
      ========================================================= -->
-<section class="slide" aria-label="A oração">
-    <div class="ornament blot bl" aria-hidden="true"></div>
+<section class="slide image-bg" aria-label="A oração">
+    <div class="bg-image" style="background-image: url('assets/03-altar.jpg');" aria-hidden="true"></div>
     <header class="masthead reveal">
         <span>Capítulo II <span class="dot">·</span> Os passos</span>
         <span>A oração &middot; 21×</span>
     </header>
     <main style="align-content: center;">
-        <span class="kicker reveal" style="text-align: center; justify-self: center;">repete-se vinte e uma vezes, antes da consagração</span>
+        <span class="kicker reveal" style="text-align: center; justify-self: center;">
+            <svg class="icon"><use href="#icon-candle"/></svg>
+            repete-se vinte e uma vezes, antes da consagração
+        </span>
         <div class="pullquote reveal" style="justify-self: center;">
             <blockquote>
                 &ldquo;Deus Pai, eu vos <em>imploro</em>, tende misericórdia de mim, de acordo com a tua <em>imensa compaixão</em>.&rdquo;
             </blockquote>
             <cite>Fórmula cristã &middot; versão simples</cite>
         </div>
-        <p class="body reveal" style="justify-self: center; text-align: center;">Tu ou Vós, como preferires. Uma compaixão que, quando pedida, derrama a graça. Ressoa com a Deusa Tará, a Virgem em Fátima &mdash; a mesma graça vivífica.</p>
+        <p class="body reveal" style="justify-self: center; text-align: center;">Tu ou Vós, como preferires. Uma compaixão que, quando pedida, derrama a graça. Ressoa com a Deusa Tará, a Virgem em Fátima, a mesma graça vivífica.</p>
     </main>
     <footer class="folio">
         <span>Altar interior</span>
@@ -745,11 +987,11 @@ ol.steps li .desc {
             <span class="step-number">iii.</span>
             <span class="step-title">Energia do Início</span>
         </div>
-        <p class="lede reveal"><em>&ldquo;O aspirante tântrico está sempre no início.&rdquo;</em> &mdash; Parar, dar as mãos, e invocar a energia que se sentiu no primeiro encontro. Pode acompanhar-se com música sem letra, que traga entusiasmo e novidade.</p>
-        <ul class="bullets reveal">
-            <li>Cuidado com ficar <em>na mente</em> a passar memórias</li>
-            <li>Usar esses momentos apenas para <em>catapultar</em> para o estado</li>
-            <li>Ancorar no aqui e agora &mdash; este é o início, não há antes</li>
+        <p class="lede reveal"><em>&ldquo;O aspirante tântrico está sempre no início.&rdquo;</em> Parar, dar as mãos, e invocar a energia que se sentiu no primeiro encontro. Pode acompanhar-se com música sem letra, que traga entusiasmo e novidade.</p>
+        <ul class="bullets iconed reveal">
+            <li><svg class="icon"><use href="#icon-bell"/></svg><span>Cuidado com ficar <em>na mente</em> a passar memórias</span></li>
+            <li><svg class="icon"><use href="#icon-spark"/></svg><span>Usar esses momentos apenas para <em>catapultar</em> para o estado</span></li>
+            <li><svg class="icon"><use href="#icon-leaf"/></svg><span>Ancorar no aqui e agora, este é o início, não há antes</span></li>
         </ul>
     </main>
     <footer class="folio">
@@ -759,9 +1001,9 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 11 — Passo 4 · Transfiguração
+     SLIDE 11 — Passo 4 · Transfiguração (image-hero)
      ========================================================= -->
-<section class="slide" aria-label="Passo 4 — Transfiguração">
+<section class="slide image-hero right" aria-label="Passo 4 — Transfiguração">
     <header class="masthead reveal">
         <span>Capítulo II <span class="dot">·</span> Os passos</span>
         <span>Passo 4</span>
@@ -772,12 +1014,13 @@ ol.steps li .desc {
             <span class="step-title">Transfiguração</span>
         </div>
         <p class="lede reveal">Ver para além da forma. O homem vê <em>Shakti</em>, um poder cósmico; ela vê <em>Shiva</em>, a consciência que a abraça. Um canal para todo o universo se manifestar através de ambos.</p>
-        <ul class="bullets reveal">
-            <li>Somos feitos à imagem e semelhança de Deus &mdash; <em>a semente está lá</em></li>
-            <li>Transfigurar é <em>reconhecer</em>, não imaginar</li>
-            <li>Estabelece-se neste passo &mdash; mantém-se durante todo o ritual</li>
+        <ul class="bullets iconed reveal">
+            <li><svg class="icon"><use href="#icon-spark"/></svg><span>Somos feitos à imagem e semelhança de Deus, <em>a semente está lá</em></span></li>
+            <li><svg class="icon"><use href="#icon-eye"/></svg><span>Transfigurar é <em>reconhecer</em>, não imaginar</span></li>
+            <li><svg class="icon"><use href="#icon-infinity"/></svg><span>Estabelece-se neste passo, mantém-se durante todo o ritual</span></li>
         </ul>
     </main>
+    <div class="hero-image reveal" style="background-image: url('assets/05-transfig.jpg');" aria-hidden="true"></div>
     <footer class="folio">
         <span>Encontro</span>
         <span class="num">011 / 033</span>
@@ -821,12 +1064,12 @@ ol.steps li .desc {
             <span class="step-number">v.</span>
             <span class="step-title">Miminhos</span>
         </div>
-        <p class="lede reveal">Ao contrário do que muita pornografia sugere, é o <em>homem</em> que começa, com massagem e toque consciente. Refazer a magia do primeiro encontro &mdash; &ldquo;cuida de mim, estou aqui para ti&rdquo;.</p>
-        <ul class="bullets reveal">
-            <li>Proporção indicativa: <em>70% ele activo</em>, 30% ela</li>
-            <li>Nunca chegar ao ponto de não retorno &mdash; avisar a tempo</li>
-            <li>O feedback é constante &mdash; respiração, mão no coração, silêncio</li>
-            <li>Cada mulher é única &mdash; o que funcionou antes não funciona agora</li>
+        <p class="lede reveal">Ao contrário do que muita pornografia sugere, é o <em>homem</em> que começa, com massagem e toque consciente. Refazer a magia do primeiro encontro: &ldquo;cuida de mim, estou aqui para ti&rdquo;.</p>
+        <ul class="bullets iconed reveal">
+            <li><svg class="icon"><use href="#icon-heart"/></svg><span>Proporção indicativa: <em>70% ele activo</em>, 30% ela</span></li>
+            <li><svg class="icon"><use href="#icon-bell"/></svg><span>Nunca chegar ao ponto de não retorno, avisar a tempo</span></li>
+            <li><svg class="icon"><use href="#icon-feather"/></svg><span>O feedback é constante: respiração, mão no coração, silêncio</span></li>
+            <li><svg class="icon"><use href="#icon-lotus"/></svg><span>Cada mulher é única, o que funcionou antes não funciona agora</span></li>
         </ul>
     </main>
     <footer class="folio">
@@ -874,18 +1117,21 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 15 — A métrica dos 49 minutos (huge number slide)
+     SLIDE 15 — A métrica dos 49 minutos (image-bg)
      ========================================================= -->
-<section class="slide" aria-label="49 minutos">
-    <div class="ornament blot bl" aria-hidden="true"></div>
+<section class="slide image-bg" aria-label="49 minutos">
+    <div class="bg-image" style="background-image: url('assets/07-luz.jpg');" aria-hidden="true"></div>
     <header class="masthead reveal">
         <span>Capítulo III <span class="dot">·</span> Recomendações</span>
         <span>Métrica</span>
     </header>
     <main style="align-content: center; justify-items: center;">
-        <span class="kicker reveal">o tempo como referência</span>
+        <span class="kicker reveal">
+            <svg class="icon"><use href="#icon-clock"/></svg>
+            o tempo como referência
+        </span>
         <h1 class="huge reveal" style="font-size: clamp(5rem, 22vh, 14rem); max-width: none; text-align: center; font-style: italic;">49'</h1>
-        <p class="lede reveal" style="text-align: center; max-width: 46ch;">A <em>métrica</em> do ritual completo. Tempo suficiente para massajar o corpo, deixar a energia fluir, haver tempo para ela e para ele &mdash; <strong>sem a meta de chegar a algum sítio</strong>.</p>
+        <p class="lede reveal" style="text-align: center; max-width: 46ch;">A <em>métrica</em> do ritual completo. Tempo suficiente para massajar o corpo, deixar a energia fluir, haver tempo para ela e para ele, <strong>sem a meta de chegar a algum sítio</strong>.</p>
     </main>
     <footer class="folio">
         <span>Recomendações</span>
@@ -949,18 +1195,21 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     PARTE II — DIVISOR
+     PARTE II — DIVISOR (image-bg)
      ========================================================= -->
-<section class="slide" aria-label="Parte II — abertura">
-    <div class="ornament blot tr" aria-hidden="true"></div>
+<section class="slide image-bg" aria-label="Parte II — abertura">
+    <div class="bg-image" style="background-image: url('assets/06-cosmos.jpg');" aria-hidden="true"></div>
     <header class="masthead reveal">
         <span>Parte II <span class="dot">·</span> Aprofundamento</span>
         <span>2.ª aula</span>
     </header>
     <main style="align-content: center; justify-items: center; text-align: center;">
-        <span class="kicker reveal">parte II</span>
+        <span class="kicker reveal">
+            <svg class="icon"><use href="#icon-spiral"/></svg>
+            parte II
+        </span>
         <h1 class="huge reveal" style="text-align: center;">Voltar aos passos, em <em>oitavas</em> mais profundas</h1>
-        <p class="lede reveal" style="max-width: 48ch;">Recap dos cinco passos, aprofundamento da intenção e da transfiguração, e o que vem depois &mdash; prelúdio, lúdio, pós-lúdio, sublimação.</p>
+        <p class="lede reveal" style="max-width: 48ch;">Recap dos cinco passos, aprofundamento da intenção e da transfiguração, e o que vem depois: prelúdio, lúdio, pós-lúdio, sublimação.</p>
     </main>
     <footer class="folio">
         <span>2.ª aula &middot; Ritual Amoroso</span>
@@ -980,11 +1229,11 @@ ol.steps li .desc {
         <span class="kicker reveal">como saber se a intenção é a certa</span>
         <h2 class="reveal">A intenção tem de te <em>mover</em> &mdash; não basta enunciá-la</h2>
         <p class="lede reveal">Útil escrevê-la, sim. Mas se a formulação é só intelectual e não toca o coração, não serve. Mudamos a formulação até encontrar uma que ressoe como sagrada.</p>
-        <ul class="bullets reveal">
-            <li>Se não te move, <em>porquê</em> não te move &mdash; já é uma pergunta</li>
-            <li>Sem essa vibração, a intenção é só pensamento</li>
-            <li>Reformular até a frase fazer faísca</li>
-            <li>Quando bem feita, alinha com uma <em>intenção maior</em> &mdash; a Ítica</li>
+        <ul class="bullets iconed reveal">
+            <li><svg class="icon"><use href="#icon-key"/></svg><span>Se não te move, <em>porquê</em> não te move, já é uma pergunta</span></li>
+            <li><svg class="icon"><use href="#icon-feather"/></svg><span>Sem essa vibração, a intenção é só pensamento</span></li>
+            <li><svg class="icon"><use href="#icon-spark"/></svg><span>Reformular até a frase fazer faísca</span></li>
+            <li><svg class="icon"><use href="#icon-infinity"/></svg><span>Quando bem feita, alinha com uma <em>intenção maior</em>, a Ítica</span></li>
         </ul>
     </main>
     <footer class="folio">
@@ -1005,12 +1254,12 @@ ol.steps li .desc {
     <main>
         <span class="kicker reveal">o que sustenta a energia do início</span>
         <h2 class="reveal">As <em>cinco</em> qualidades do aspirante tântrico</h2>
-        <ol class="steps reveal">
-            <li><span class="title">Entusiasmo</span><span class="desc">a chama que faz começar</span></li>
-            <li><span class="title">Esperança</span><span class="desc">o futuro como abertura, não ansiedade</span></li>
-            <li><span class="title">Curiosidade</span><span class="desc">a criança interior que ainda quer descobrir</span></li>
-            <li><span class="title">Coragem</span><span class="desc">enfrentar o que aparece, sem fugir</span></li>
-            <li><span class="title">Perseverança</span><span class="desc">cavar o poço até encontrar água &mdash; sem isto, tudo cai</span></li>
+        <ol class="steps iconed reveal">
+            <li><svg class="icon"><use href="#icon-flame"/></svg><div><span class="title">Entusiasmo</span><span class="desc">a chama que faz começar</span></div></li>
+            <li><svg class="icon"><use href="#icon-sun"/></svg><div><span class="title">Esperança</span><span class="desc">o futuro como abertura, não ansiedade</span></div></li>
+            <li><svg class="icon"><use href="#icon-eye"/></svg><div><span class="title">Curiosidade</span><span class="desc">a criança interior que ainda quer descobrir</span></div></li>
+            <li><svg class="icon"><use href="#icon-mountain"/></svg><div><span class="title">Coragem</span><span class="desc">enfrentar o que aparece, sem fugir</span></div></li>
+            <li><svg class="icon"><use href="#icon-spiral"/></svg><div><span class="title">Perseverança</span><span class="desc">cavar o poço até encontrar água. Sem isto, tudo cai</span></div></li>
         </ol>
         <p class="body reveal" style="max-width: 60ch;">Sem perseverança, vêm os primeiros testes e o aspirante atira a toalha ao chão. <strong>É um factor iluminatório</strong> &mdash; reflecte-se no caminho, nos relacionamentos, nos projectos.</p>
     </main>
@@ -1050,22 +1299,25 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 22 — Transfiguração: cosmificação
+     SLIDE 22 — Cosmificação (image-hero)
      ========================================================= -->
-<section class="slide" aria-label="Cosmificação">
-    <div class="ornament blot bl" aria-hidden="true"></div>
+<section class="slide image-hero" aria-label="Cosmificação">
     <header class="masthead reveal">
         <span>Capítulo V <span class="dot">·</span> Transfiguração, em profundidade</span>
         <span>O essencial</span>
     </header>
+    <div class="hero-image reveal" style="background-image: url('assets/06-cosmos.jpg');" aria-hidden="true"></div>
     <main>
-        <span class="kicker reveal">o aspecto mais importante</span>
-        <h1 class="reveal">Não é o Zé e a Maria &mdash; é o <em>princípio cósmico</em> masculino e feminino</h1>
+        <span class="kicker reveal">
+            <svg class="icon"><use href="#icon-infinity"/></svg>
+            o aspecto mais importante
+        </span>
+        <h1 class="reveal">Não é o Zé e a Maria, é o <em>princípio cósmico</em> masculino e feminino</h1>
         <p class="lede reveal">A Sadhana tântrica usa a parte humana como gatilho, mas procura <em>transcendê-la</em>. Cosmificação, deificação. Relacionar-se com a alma do outro, que é mais próxima ao nível dos arquétipos do que da personalidade.</p>
-        <ul class="bullets reveal">
-            <li>Não para intensificar o ego &mdash; <em>para o dissolver</em></li>
-            <li>Não para apegar à pessoa &mdash; para libertar a alma</li>
-            <li>Toda a manifestação é um acto de amor entre <em>Shiva</em> e <em>Shakti</em></li>
+        <ul class="bullets iconed reveal">
+            <li><svg class="icon"><use href="#icon-spark"/></svg><span>Não para intensificar o ego, <em>para o dissolver</em></span></li>
+            <li><svg class="icon"><use href="#icon-feather"/></svg><span>Não para apegar à pessoa, para libertar a alma</span></li>
+            <li><svg class="icon"><use href="#icon-infinity"/></svg><span>Toda a manifestação é um acto de amor entre <em>Shiva</em> e <em>Shakti</em></span></li>
         </ul>
     </main>
     <footer class="folio">
@@ -1075,9 +1327,10 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 23 — Satchitananda
+     SLIDE 23 — Satchitananda (image-bg)
      ========================================================= -->
-<section class="slide" aria-label="Satchitananda">
+<section class="slide image-bg" aria-label="Satchitananda">
+    <div class="bg-image" style="background-image: url('assets/04-encontro.jpg');" aria-hidden="true"></div>
     <header class="masthead reveal">
         <span>Capítulo V <span class="dot">·</span> Transfiguração, em profundidade</span>
         <span>Passagem</span>
@@ -1089,7 +1342,7 @@ ol.steps li .desc {
             </blockquote>
             <cite>Satchitananda &middot; Sat &middot; Chit &middot; Ananda</cite>
         </div>
-        <p class="body reveal" style="text-align: center; max-width: 46ch;">Os amados compreendem isto: o homem traz o poder da consciência, a mulher é canal para a beatitude. À imagem e semelhança de Deus &mdash; de forma muito específica.</p>
+        <p class="body reveal" style="text-align: center; max-width: 46ch;">Os amados compreendem isto: o homem traz o poder da consciência, a mulher é canal para a beatitude. À imagem e semelhança de Deus, de forma muito específica.</p>
     </main>
     <footer class="folio">
         <span>Aprofundamento</span>
@@ -1109,12 +1362,12 @@ ol.steps li .desc {
     <main>
         <span class="kicker reveal">no início, fazer em três fases</span>
         <h2 class="reveal">Auto e <em>cu outro</em> &mdash; a transfiguração tem três tempos</h2>
-        <ol class="steps reveal">
-            <li><span class="title">Cada um a si mesmo</span><span class="desc">ele transfigura-se a ele, ela a ela &mdash; invocar o arquétipo dentro</span></li>
-            <li><span class="title">Trocar &mdash; um ao outro</span><span class="desc">ele vê Shakti nela; ela vê Shiva nele</span></li>
-            <li><span class="title">Em simultâneo</span><span class="desc">olhos nos olhos, ambos a transfigurar e a ser transfigurados</span></li>
+        <ol class="steps iconed reveal">
+            <li><svg class="icon"><use href="#icon-eye"/></svg><div><span class="title">Cada um a si mesmo</span><span class="desc">ele transfigura-se a ele, ela a ela. Invocar o arquétipo dentro</span></div></li>
+            <li><svg class="icon"><use href="#icon-arrow"/></svg><div><span class="title">Trocar, um ao outro</span><span class="desc">ele vê Shakti nela; ela vê Shiva nele</span></div></li>
+            <li><svg class="icon"><use href="#icon-infinity"/></svg><div><span class="title">Em simultâneo</span><span class="desc">olhos nos olhos, ambos a transfigurar e a ser transfigurados</span></div></li>
         </ol>
-        <p class="body reveal" style="max-width: 60ch;">Cinco a dez minutos no total, no mínimo. Há quem entre em <em>Samadhi</em> só com este passo &mdash; pode acontecer.</p>
+        <p class="body reveal" style="max-width: 60ch;">Cinco a dez minutos no total, no mínimo. Há quem entre em <em>Samadhi</em> só com este passo, pode acontecer.</p>
     </main>
     <footer class="folio">
         <span>Aprofundamento</span>
@@ -1157,13 +1410,13 @@ ol.steps li .desc {
     <main>
         <span class="kicker reveal">ou se vive no dia-a-dia, ou estamos tramados</span>
         <h2 class="reveal">A transfiguração e a energia do início <em>treinam-se</em> fora do ritual</h2>
-        <ul class="bullets reveal">
-            <li>O flerte começa <em>24, 48, 72 horas antes</em> &mdash; ou meses, como antigamente</li>
-            <li>É preciso <em>espaço</em> &mdash; tempo de separação para preparar</li>
-            <li>Para a intenção, sair do papel de amantes &mdash; encontrarem-se como <em>amigos</em>, irmãos espirituais</li>
-            <li>Os amantes mexem demasiada energia para falar a sério &mdash; aí, são amigos</li>
+        <ul class="bullets iconed reveal">
+            <li><svg class="icon"><use href="#icon-clock"/></svg><span>O flerte começa <em>24, 48, 72 horas antes</em>, ou meses, como antigamente</span></li>
+            <li><svg class="icon"><use href="#icon-leaf"/></svg><span>É preciso <em>espaço</em>, tempo de separação para preparar</span></li>
+            <li><svg class="icon"><use href="#icon-book"/></svg><span>Para a intenção, sair do papel de amantes, encontrarem-se como <em>amigos</em>, irmãos espirituais</span></li>
+            <li><svg class="icon"><use href="#icon-heart"/></svg><span>Os amantes mexem demasiada energia para falar a sério, aí, são amigos</span></li>
         </ul>
-        <p class="body reveal" style="max-width: 60ch;">Recomenda-se luz tênue &mdash; <em>vela, pôr-do-sol</em>. Carga luminosa que ajuda a ver as camadas subtis.</p>
+        <p class="body reveal" style="max-width: 60ch;"><svg class="icon"><use href="#icon-candle"/></svg> Recomenda-se luz tênue: <em>vela, pôr-do-sol</em>. Carga luminosa que ajuda a ver as camadas subtis.</p>
     </main>
     <footer class="folio">
         <span>No dia-a-dia</span>
@@ -1172,15 +1425,18 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 27 — Prelúdio vs Lúdio
+     SLIDE 27 — Prelúdio vs Lúdio (image-hero right)
      ========================================================= -->
-<section class="slide" aria-label="Prelúdio e Lúdio">
+<section class="slide image-hero right" aria-label="Prelúdio e Lúdio">
     <header class="masthead reveal">
         <span>Capítulo VII <span class="dot">·</span> Prelúdio &middot; Lúdio &middot; Pós-lúdio</span>
         <span>Polaridades</span>
     </header>
     <main>
-        <span class="kicker reveal">a inversão que poucos conhecem</span>
+        <span class="kicker reveal">
+            <svg class="icon"><use href="#icon-infinity"/></svg>
+            a inversão que poucos conhecem
+        </span>
         <h2 class="reveal">No <em>prelúdio</em> ele é mais activo. No <em>lúdio</em>, ela.</h2>
         <div class="two-col reveal">
             <div>
@@ -1192,8 +1448,9 @@ ol.steps li .desc {
                 <p class="body">Ele <em>estável</em> (não passivo), eixo vertical. Ela é a energia, o ritmo, o êxtase. O ritmo certo é dado por ela.</p>
             </div>
         </div>
-        <p class="body reveal" style="max-width: 60ch;">Acima de 70 km/h há acidentes &mdash; <em>não ultrapassamos os 70</em>. A 90, 100, perde-se a energia. Continência erótica amorosa.</p>
+        <p class="body reveal" style="max-width: 60ch;"><svg class="icon"><use href="#icon-bell"/></svg> Acima de 70 km/h há acidentes, <em>não ultrapassamos os 70</em>. A 90, 100, perde-se a energia. Continência erótica amorosa.</p>
     </main>
+    <div class="hero-image reveal" style="background-image: url('assets/08-preludio.jpg');" aria-hidden="true"></div>
     <footer class="folio">
         <span>Prelúdio &middot; Lúdio</span>
         <span class="num">027 / 033</span>
@@ -1201,9 +1458,10 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 28 — Continência erótica amorosa
+     SLIDE 28 — Continência (image-bg)
      ========================================================= -->
-<section class="slide" aria-label="Continência">
+<section class="slide image-bg" aria-label="Continência">
+    <div class="bg-image" style="background-image: url('assets/02-ritual.jpg');" aria-hidden="true"></div>
     <header class="masthead reveal">
         <span>Capítulo VII <span class="dot">·</span> Prelúdio &middot; Lúdio &middot; Pós-lúdio</span>
         <span>Continência</span>
@@ -1215,7 +1473,7 @@ ol.steps li .desc {
             </blockquote>
             <cite>Bíblia &middot; e quase todas as tradições antigas</cite>
         </div>
-        <p class="body reveal" style="text-align: center; max-width: 52ch;">Qualquer homem, no momento em que é iniciado em continência erótica amorosa, pode <em>nunca mais</em> perder semente. É o standard. Não é repressão &mdash; é descobrir um caminho que é o natural energético e fisiológico.</p>
+        <p class="body reveal" style="text-align: center; max-width: 52ch;">Qualquer homem, no momento em que é iniciado em continência erótica amorosa, pode <em>nunca mais</em> perder semente. É o standard. Não é repressão, é descobrir um caminho que é o natural energético e fisiológico.</p>
     </main>
     <footer class="folio">
         <span>Prelúdio &middot; Lúdio</span>
@@ -1238,23 +1496,23 @@ ol.steps li .desc {
         <div class="two-col reveal">
             <div>
                 <span class="col-label">Plantas diárias</span>
-                <ul class="bullets">
-                    <li><em>Ashwagandha</em>, maca, tribulus terrestris</li>
-                    <li>5 minutos debaixo da língua antes de engolir</li>
-                    <li>Cuidado a misturar &mdash; podem cancelar-se</li>
+                <ul class="bullets iconed">
+                    <li><svg class="icon"><use href="#icon-leaf"/></svg><span><em>Ashwagandha</em>, maca, tribulus terrestris</span></li>
+                    <li><svg class="icon"><use href="#icon-clock"/></svg><span>5 minutos debaixo da língua antes de engolir</span></li>
+                    <li><svg class="icon"><use href="#icon-bell"/></svg><span>Cuidado a misturar, podem cancelar-se</span></li>
                 </ul>
             </div>
             <div>
                 <span class="col-label">Antes &middot; durante</span>
-                <ul class="bullets">
-                    <li>Óleo de coco para massagem, calor</li>
-                    <li>Mel, gema de galinha do campo, tahini, canela</li>
-                    <li>Pão com queijo de cabra e mel</li>
-                    <li>Evitar gases, evitar barriga cheia</li>
+                <ul class="bullets iconed">
+                    <li><svg class="icon"><use href="#icon-flame"/></svg><span>Óleo de coco para massagem, calor</span></li>
+                    <li><svg class="icon"><use href="#icon-bowl"/></svg><span>Mel, gema de galinha do campo, tahini, canela</span></li>
+                    <li><svg class="icon"><use href="#icon-bowl"/></svg><span>Pão com queijo de cabra e mel</span></li>
+                    <li><svg class="icon"><use href="#icon-bell"/></svg><span>Evitar gases, evitar barriga cheia</span></li>
                 </ul>
             </div>
         </div>
-        <p class="body reveal" style="max-width: 60ch;"><strong>O maior afrodisíaco:</strong> a <em>imaginação</em>, a criatividade, o flerte benéfico. Tudo o resto é apoio.</p>
+        <p class="body reveal" style="max-width: 60ch;"><svg class="icon"><use href="#icon-spark"/></svg> <strong>O maior afrodisíaco:</strong> a <em>imaginação</em>, a criatividade, o flerte benéfico. Tudo o resto é apoio.</p>
     </main>
     <footer class="folio">
         <span>Prelúdio &middot; Lúdio</span>
@@ -1263,23 +1521,26 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 30 — Pós-lúdio
+     SLIDE 30 — Pós-lúdio (image-hero)
      ========================================================= -->
-<section class="slide" aria-label="Pós-lúdio">
+<section class="slide image-hero" aria-label="Pós-lúdio">
     <header class="masthead reveal">
         <span>Capítulo VIII <span class="dot">·</span> Pós-lúdio</span>
         <span>Fechar o ciclo</span>
     </header>
+    <div class="hero-image reveal" style="background-image: url('assets/09-conchinha.jpg');" aria-hidden="true"></div>
     <main>
-        <span class="kicker reveal">10 a 15 minutos &mdash; muito importantes para ela</span>
-        <h2 class="reveal">A conchinha &mdash; <em>cristalizar</em>, agradecer, enraizar</h2>
-        <ul class="bullets reveal">
-            <li>Saber <em>fechar o ciclo</em> &mdash; condensar as energias</li>
-            <li>Estar caladinho &mdash; abraçar, sentir os efeitos</li>
-            <li>Não adormecer, não astralizar &mdash; manter a consciência</li>
-            <li>Gratidão a Deus &mdash; devolver ao Criador o que foi vivido</li>
+        <span class="kicker reveal">
+            <svg class="icon"><use href="#icon-clock"/></svg>
+            10 a 15 minutos, muito importantes para ela
+        </span>
+        <h2 class="reveal">A conchinha, <em>cristalizar</em>, agradecer, enraizar</h2>
+        <ul class="bullets iconed reveal">
+            <li><svg class="icon"><use href="#icon-spiral"/></svg><span>Saber <em>fechar o ciclo</em>, condensar as energias</span></li>
+            <li><svg class="icon"><use href="#icon-feather"/></svg><span>Estar caladinho, abraçar, sentir os efeitos</span></li>
+            <li><svg class="icon"><use href="#icon-eye"/></svg><span>Não adormecer, não astralizar, manter a consciência</span></li>
+            <li><svg class="icon"><use href="#icon-hands"/></svg><span>Gratidão a Deus, devolver ao Criador o que foi vivido</span></li>
         </ul>
-        <p class="body reveal" style="max-width: 60ch;">Não é para reactivar nada &mdash; o lúdio já parou. <em>Chegámos ao objectivo. Sentimos o estado. Somos um.</em> Aqui cristaliza-se o amor antes do que vem a seguir.</p>
     </main>
     <footer class="folio">
         <span>Pós-lúdio</span>
@@ -1288,18 +1549,21 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 31 — A Avalanche (huge number)
+     SLIDE 31 — A Avalanche (image-bg)
      ========================================================= -->
-<section class="slide" aria-label="Avalanche">
-    <div class="ornament blot bl" aria-hidden="true"></div>
+<section class="slide image-bg" aria-label="Avalanche">
+    <div class="bg-image" style="background-image: url('assets/10-avalanche.jpg');" aria-hidden="true"></div>
     <header class="masthead reveal">
         <span>Capítulo IX <span class="dot">·</span> Avalanche &middot; Sublimação</span>
         <span>Distância</span>
     </header>
     <main style="align-content: center; justify-items: center;">
-        <span class="kicker reveal">o passo que muitos esquecem</span>
+        <span class="kicker reveal">
+            <svg class="icon"><use href="#icon-mountain"/></svg>
+            o passo que muitos esquecem
+        </span>
         <h1 class="huge reveal" style="font-size: clamp(4.5rem, 18vh, 11rem); max-width: none; text-align: center; font-style: italic;">33 km</h1>
-        <p class="lede reveal" style="text-align: center; max-width: 50ch;">A distância tradicional entre os amantes depois do ritual. Cada um para o seu canto &mdash; <em>a separação intensifica os processos espirituais</em>. Quanto mais sentes o outro nos planos subtis, menos os 33 km chegam.</p>
+        <p class="lede reveal" style="text-align: center; max-width: 50ch;">A distância tradicional entre os amantes depois do ritual. Cada um para o seu canto. <em>A separação intensifica os processos espirituais</em>. Quanto mais sentes o outro nos planos subtis, menos os 33 km chegam.</p>
         <p class="body reveal" style="text-align: center; max-width: 48ch;"><strong>Não dormir juntos.</strong> É difícil transfigurar ramelas, ressonar e mau hálito matinal. A sacralidade pede separação.</p>
     </main>
     <footer class="folio">
@@ -1309,24 +1573,28 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 32 — Sublimação: yoga depois
+     SLIDE 32 — Sublimação (image-hero right)
      ========================================================= -->
-<section class="slide" aria-label="Sublimação">
+<section class="slide image-hero right" aria-label="Sublimação">
     <header class="masthead reveal">
         <span>Capítulo IX <span class="dot">·</span> Avalanche &middot; Sublimação</span>
         <span>Yoga depois</span>
     </header>
     <main>
-        <span class="kicker reveal">o segredo dos místicos</span>
-        <h2 class="reveal">Fazer yoga <em>depois</em> de fazer amor &mdash; como ter 2 ou 3 anos a mais de prática</h2>
-        <ul class="bullets reveal">
-            <li><em>No mínimo</em>: o mesmo número de horas de yoga que de amor</li>
-            <li>Idealmente, <em>o dobro</em></li>
-            <li>Sem isto, a energia fica nas células inferiores e volta como ciúme, mau humor, apego</li>
-            <li>Com isto, sentes os chakras, a energia, a comunhão com os atributos de Deus</li>
+        <span class="kicker reveal">
+            <svg class="icon"><use href="#icon-key"/></svg>
+            o segredo dos místicos
+        </span>
+        <h2 class="reveal">Fazer yoga <em>depois</em> de fazer amor, como ter 2 ou 3 anos a mais de prática</h2>
+        <ul class="bullets iconed reveal">
+            <li><svg class="icon"><use href="#icon-clock"/></svg><span><em>No mínimo</em>: o mesmo número de horas de yoga que de amor</span></li>
+            <li><svg class="icon"><use href="#icon-spark"/></svg><span>Idealmente, <em>o dobro</em></span></li>
+            <li><svg class="icon"><use href="#icon-bell"/></svg><span>Sem isto, a energia fica nas células inferiores e volta como ciúme, mau humor, apego</span></li>
+            <li><svg class="icon"><use href="#icon-infinity"/></svg><span>Com isto, sentes os chakras, a energia, a comunhão com os atributos de Deus</span></li>
         </ul>
         <p class="body reveal" style="max-width: 60ch;">Pegar em toda a energia gerada e <em>devolvê-la ao propósito para o qual foi entregue</em>. É fazer amor com Deus, depois de fazer amor com o amado.</p>
     </main>
+    <div class="hero-image reveal" style="background-image: url('assets/11-yoga.jpg');" aria-hidden="true"></div>
     <footer class="folio">
         <span>Sublimação</span>
         <span class="num">032 / 033</span>
@@ -1334,19 +1602,21 @@ ol.steps li .desc {
 </section>
 
 <!-- =========================================================
-     SLIDE 33 — Fecho final
+     SLIDE 33 — Fecho final (image-bg)
      ========================================================= -->
-<section class="slide" aria-label="Fecho final">
-    <div class="ornament blot tr" aria-hidden="true"></div>
-    <div class="ornament blot bl" aria-hidden="true"></div>
+<section class="slide image-bg" aria-label="Fecho final">
+    <div class="bg-image" style="background-image: url('assets/12-final.jpg');" aria-hidden="true"></div>
     <header class="masthead reveal">
         <span>Fecho da Parte II <span class="dot">·</span> Caderno completo</span>
         <span>Caderno de estudo</span>
     </header>
     <main style="align-content: center; justify-items: center; text-align: center;">
-        <span class="kicker reveal">para levar contigo</span>
+        <span class="kicker reveal">
+            <svg class="icon"><use href="#icon-heart"/></svg>
+            para levar contigo
+        </span>
         <h1 class="reveal" style="text-align: center; max-width: 18ch;">Há muito sacrifício para chegar ao <em>sagrado</em></h1>
-        <p class="lede reveal" style="text-align: center; max-width: 48ch;">Muita coisa tem de ser deixada para trás. Olhar para o tempo do casal &mdash; e perguntar se estamos a aplicar as iniciações ou a viver a relação só ao nível do mar.</p>
+        <p class="lede reveal" style="text-align: center; max-width: 48ch;">Muita coisa tem de ser deixada para trás. Olhar para o tempo do casal e perguntar se estamos a aplicar as iniciações ou a viver a relação só ao nível do mar.</p>
         <div class="pullquote center reveal" style="margin-top: clamp(1rem, 3vh, 2rem); max-width: 36ch;">
             <blockquote style="font-size: clamp(1.1rem, 2.8vh, 1.75rem);">
                 &ldquo;Descubram o que é fazer amor <em>a sério</em>. Nem que seja numa fase da vossa vida.&rdquo;
