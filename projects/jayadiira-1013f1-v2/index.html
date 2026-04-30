@@ -451,7 +451,12 @@
      2 cards: ~50/50 + breathing. 3 cards: a row centered with empty space top+bottom.
      Cards / rows / list items NEVER stretch beyond their natural content. */
 
-  /* Display: grid containers — items natural height in their cell, rows distributed centered */
+  /* Display: grid containers — cards in the SAME ROW match height (tallest wins),
+     row tracks distributed centered in the grid container.
+     align-items: stretch makes siblings in a row equal-height (no jagged tops/bottoms).
+     align-content: center keeps the rows from stretching edge-to-edge — they sit centered
+     with empty space split top+bottom around them. Cards never grow beyond their tallest
+     row peer; the empty viewport space goes OUTSIDE the row, not INSIDE the cards. */
   .has-grid .content > .quote-grid,
   .has-grid .content > .addons-grid,
   .has-grid .content > .stat-grid,
@@ -466,7 +471,7 @@
   .has-grid .content > .bio-layout {
     flex: 1 1 auto !important;
     min-height: 0 !important;
-    align-items: start !important;
+    align-items: stretch !important;
     align-content: center !important;
   }
 
