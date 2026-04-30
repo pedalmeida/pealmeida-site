@@ -1872,10 +1872,47 @@
 
   /* =============== ADDON CARD ICONS (slides 8 + 9: avença + entregáveis) =============== */
   .addon-card .icon-emoji {
-    font-size: 28px;
+    font-size: 22px;
     line-height: 1;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     display: block;
+  }
+
+  /* =============== COMPACT CARDS (slides 7, 8, 9, 10, 12) =============== */
+  /* Drop the M1-M6 / A-F code labels: icons + names already carry the meaning. */
+  .addon-card .code { display: none !important; }
+  .addon-card {
+    padding: 14px 16px !important;
+    gap: 4px !important;
+  }
+  .addon-card .name {
+    font-size: clamp(13px, 1vw, 15px) !important;
+  }
+  .addon-card .desc {
+    font-size: clamp(11px, 0.85vw, 13px) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Scenarios + honest comparison cards (slides 10 + 12) — tighter padding + smaller bullets */
+  .scenarios-grid > .glass {
+    padding: 20px !important;
+    gap: 12px !important;
+  }
+  .scenarios-grid > .glass ul li {
+    font-size: clamp(12px, 0.95vw, 14px) !important;
+  }
+  .scenarios-grid > .glass h3 {
+    font-size: clamp(18px, 1.6vw, 24px) !important;
+  }
+
+  /* Pricing tier bullets: smaller + tighter so 6 items fit comfortably */
+  .price-card .features { gap: 6px !important; }
+  .price-card .features li {
+    font-size: clamp(11px, 0.85vw, 13px) !important;
+    line-height: 1.35 !important;
+  }
+  .price-card.recommended .features li {
+    font-size: clamp(12px, 0.9vw, 14px) !important;
   }
 </style>
 </head>
@@ -2375,21 +2412,13 @@
     <div class="content">
       <div class="eyebrow">🚀 Próximo passo</div>
       <h1 class="headline">Bora <span class="acc">conversar</span>.</h1>
-      <p class="lede" style="max-width: 50ch;">Se não for o momento certo, também está bem. Não muda nada entre nós. Quando quiseres, basta uma mensagem.</p>
+      <p class="lede" style="max-width: 56ch;">Bora falar sobre como levar a tua prática para o próximo nível.</p>
 
       <div class="cta-stack">
         <a class="cta-button primary" href="https://wa.me/351927504686?text=Ol%C3%A1%20Pedro%2C%20vi%20a%20proposta.%20Bora%20falar." target="_blank" rel="noopener">
           💬 WhatsApp · 927 504 686 →
         </a>
       </div>
-
-      <div class="guarantee-row">
-        <span class="chip">🛡️ 14 dias devolução total</span>
-        <span class="chip">🤝 30 dias de suporte incluídos</span>
-        <span class="chip">🔓 Sem fidelização</span>
-      </div>
-
-      <div class="contact-line">Sem prazo · sem pressão.</div>
     </div>
   </section>
 </div>
