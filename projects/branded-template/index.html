@@ -105,8 +105,21 @@
   .slide.has-grid { justify-content: flex-start; padding-top: max(12vh, 110px); padding-bottom: max(18vh, 180px); }
 
   @media (max-width: 900px) {
-    .slide { padding: 20vh 6vw 18vh; justify-content: flex-start; }
-    .slide.has-grid { padding-top: 22vh; }
+    /* Mobile: slides become scrollable cards instead of fixed-height presentations.
+       Content fills as needed; user scrolls vertically within each slide. */
+    .deck { height: auto; min-height: 100vh; }
+    .slide {
+      position: relative; inset: auto;
+      height: auto; min-height: 100vh;
+      padding: 12vh 6vw 16vh;
+      justify-content: flex-start;
+      overflow: visible;
+    }
+    .slide.has-grid { padding-top: 12vh; padding-bottom: 16vh; }
+    .slide.active { display: flex; }
+    /* Keep slide-by-slide nav on mobile too — show only active slide,
+       but allow that slide to scroll when content exceeds viewport. */
+    body { overflow-y: auto; -webkit-overflow-scrolling: touch; }
   }
 
   /* =============== STAGGER FADE-UP on slide enter =============== */
@@ -1466,7 +1479,7 @@
     color: var(--accent-deep);
     flex-shrink: 0;
   }
-  .bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+  .bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
   .bio-body { display: flex; flex-direction: column; gap: 14px; }
   .bio-tagline {
     font-family: var(--f);
@@ -1802,11 +1815,10 @@
     </div>
   </section>
 
-  <!-- ==================== 2 · STATEMENT (with photo overlay) ==================== -->
-  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="2" data-bg="dark">
-    <div class="photo-bg">
-      <img src="media/photos/earth-night.jpg" alt="" aria-hidden="true">
-    </div>
+  <!-- ==================== 2 · STATEMENT (no meme) ==================== -->
+  <section class="slide s-echo bg-light-quiet" data-slide="2" data-bg="light">
+    <div class="orb orb-cool" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
@@ -1814,27 +1826,27 @@
 
     <div class="content">
       <div class="eyebrow">🤷 Contexto</div>
-      <h2 class="headline" style="max-width: 22ch;">Statement principal com <span class="acc">parte em destaque</span>.</h2>
-      <p class="lede" style="max-width: 50ch;">Frase de suporte que aprofunda o ponto sem repetir o título.</p>
+      <h2 class="headline">Statement principal com <span class="acc">parte em destaque</span>.</h2>
+      <p class="lede" style="margin-top: 24px;">Frase de suporte que aprofunda o ponto sem repetir o título.</p>
     </div>
   </section>
 
-  <!-- ==================== 3 · MANIFESTO / QUOTE (with photo overlay) ==================== -->
-  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="3" data-bg="dark">
-    <div class="photo-bg">
-      <img src="media/photos/winding-road.jpg" alt="" aria-hidden="true">
-    </div>
+  <!-- ==================== 3 · MANIFESTO / QUOTE ==================== -->
+  <section class="slide s-echo bg-dark" data-slide="3" data-bg="dark">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
+    <div class="hairline-grid"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
     </div>
 
-    <div class="content">
+    <div class="quote">
       <div class="eyebrow">⚡ O que mudou</div>
-      <div class="photo-quote">
-        <span class="mark">"</span>
-        <p class="body">Citação ou statement central que <span class="acc">muda o frame</span> da conversa.</p>
-        <div class="attr">Atribuição · Fonte · Data</div>
+      <h2 class="quote-text">"Citação ou statement central que <span class="acc">muda o frame</span> da conversa."</h2>
+      <div class="attr">
+        <span class="attr-line"></span>
+        <span class="meta">Atribuição · Fonte · Data</span>
       </div>
     </div>
   </section>
@@ -1965,11 +1977,10 @@
     </div>
   </section>
 
-  <!-- ==================== 7 · PHASE INTRO (dark divider with photo + timeline) ==================== -->
-  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="7" data-bg="dark">
-    <div class="photo-bg">
-      <img src="media/photos/start-line.jpg" alt="" aria-hidden="true">
-    </div>
+  <!-- ==================== 7 · PHASE INTRO (dark divider with timeline) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="7" data-bg="dark">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -20vw; top: -25vw;"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
@@ -2107,11 +2118,12 @@
     </div>
   </section>
 
-  <!-- ==================== 11 · CLOSING (with photo overlay) ==================== -->
-  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="11" data-bg="dark">
-    <div class="photo-bg">
-      <img src="media/photos/teamwork-hands.jpg" alt="" aria-hidden="true">
-    </div>
+  <!-- ==================== 11 · CLOSING (open question) ==================== -->
+  <section class="slide s-echo bg-light" data-slide="11" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 50vw; height: 50vw; right: -15vw; bottom: -20vw;"></div>
+    <div class="orb orb-cool" style="width: 30vw; height: 30vw; left: -8vw; top: -10vw;"></div>
+    <div class="hairline-grid"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
@@ -2593,11 +2605,11 @@
     </div>
   </section>
 
-  <!-- ==================== 23 · CTA CLOSER (with photo) ==================== -->
-  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="23" data-bg="dark">
-    <div class="photo-bg">
-      <img src="media/photos/start-line.jpg" alt="" aria-hidden="true">
-    </div>
+  <!-- ==================== 23 · CTA CLOSER (WhatsApp + risk reversal) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="23" data-bg="dark">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -22vw; bottom: -28vw;"></div>
+    <div class="hairline-grid"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
