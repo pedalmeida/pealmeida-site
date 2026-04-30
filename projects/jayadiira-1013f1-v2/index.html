@@ -438,8 +438,10 @@
   .content > .eyebrow { margin-bottom: 0; }
   .content > .lede { margin-top: 0; }
   /* has-grid slides: minimum 20px between every stacked element (eyebrow / headline / lede / chips / grid).
-     The whitespace buffer below the brand comes from .slide.has-grid padding-top, not margin here. */
-  .has-grid .content { gap: 20px; }
+     The whitespace buffer below the brand comes from .slide.has-grid padding-top, not margin here.
+     Vertical centering distributes empty space top+bottom proportionally instead of leaving
+     content glued to the top with empty zone below. (Balance principle, see visual-system.md.) */
+  .has-grid .content { gap: 20px; justify-content: center; }
   /* When a content block is followed by a grid/cards block, force more breathing */
   .content > h1 + .phases-grid,
   .content > h2 + .phases-grid,
