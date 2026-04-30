@@ -1881,53 +1881,54 @@
   /* =============== COMPACT CARDS (slides 7, 8, 9, 10, 12) =============== */
   /* Drop the M1-M6 / A-F code labels: icons + names already carry the meaning. */
   .addon-card .code { display: none !important; }
-  /* Compact padding respects the 22px floor from visual-system.md. Cards must breathe. */
+  /* BALANCED — breathing room for legibility, not compressed to ceiling. */
   .addon-card {
-    padding: 22px 22px !important;
-    gap: 6px !important;
+    padding: 26px 24px !important;
+    gap: 10px !important;
   }
   .addon-card .name {
-    font-size: clamp(13px, 1vw, 15px) !important;
+    font-size: clamp(14px, 1.1vw, 16.5px) !important;
   }
   .addon-card .desc {
-    font-size: clamp(11px, 0.85vw, 13px) !important;
-    line-height: 1.4 !important;
+    font-size: clamp(12.5px, 0.95vw, 14.5px) !important;
+    line-height: 1.55 !important;
   }
 
-  /* Scenarios + honest comparison cards (slides 10 + 12) — tighter padding + smaller bullets */
+  /* Scenarios + honest comparison cards (slides) — balanced padding */
   .scenarios-grid > .glass {
-    padding: 20px !important;
-    gap: 12px !important;
+    padding: 26px 26px !important;
+    gap: 14px !important;
   }
   .scenarios-grid > .glass ul li {
-    font-size: clamp(12px, 0.95vw, 14px) !important;
+    font-size: clamp(13px, 1vw, 15px) !important;
+    line-height: 1.5 !important;
   }
   .scenarios-grid > .glass h3 {
-    font-size: clamp(18px, 1.6vw, 24px) !important;
+    font-size: clamp(19px, 1.7vw, 25px) !important;
   }
 
-  /* Pricing tier cards — compaction protocol applied (22px floor, no transform overflow) */
-  .pricing-grid { align-items: stretch !important; gap: 14px !important; }
-  .price-card { padding: 22px 22px !important; gap: 8px !important; }
-  .price-card.recommended { padding: 24px 22px !important; transform: none !important; }
-  .price-card .tier-icon { width: 26px !important; height: 26px !important; margin-bottom: 0 !important; }
-  .price-card .tier-icon svg { width: 14px !important; height: 14px !important; }
-  .price-card .tier-eyebrow { font-size: clamp(12.5px, 0.95vw, 15px) !important; }
-  .price-card .price { font-size: clamp(24px, 2.4vw, 34px) !important; line-height: 1 !important; }
-  .price-card.recommended .price { font-size: clamp(26px, 2.6vw, 38px) !important; }
+  /* Pricing tier cards — BALANCED, middle card slightly taller */
+  .pricing-grid { align-items: stretch !important; gap: 18px !important; }
+  .price-card { padding: 28px 26px !important; gap: 12px !important; }
+  .price-card.recommended { padding: 32px 28px !important; transform: none !important; }
+  .price-card .tier-icon { width: 32px !important; height: 32px !important; margin-bottom: 4px !important; }
+  .price-card .tier-icon svg { width: 18px !important; height: 18px !important; }
+  .price-card .tier-eyebrow { font-size: clamp(14px, 1.1vw, 17px) !important; }
+  .price-card .price { font-size: clamp(30px, 3.0vw, 42px) !important; line-height: 1 !important; }
+  .price-card.recommended .price { font-size: clamp(32px, 3.2vw, 46px) !important; }
   .price-card .price .unit { font-size: 0.32em !important; }
-  .price-card .features { gap: 4px !important; }
+  .price-card .features { gap: 8px !important; }
   .price-card .features li {
-    font-size: clamp(10px, 0.74vw, 12px) !important;
-    line-height: 1.32 !important;
-    padding-left: 18px !important;
+    font-size: clamp(12px, 0.9vw, 14px) !important;
+    line-height: 1.5 !important;
+    padding-left: 22px !important;
   }
   .price-card.recommended .features li {
-    font-size: clamp(10.5px, 0.78vw, 12.5px) !important;
+    font-size: clamp(12.5px, 0.95vw, 14.5px) !important;
   }
-  .price-card .features li::before { font-size: 14px !important; }
-  .price-card .chip { font-size: 9.5px !important; padding: 3px 8px !important; }
-  .price-card .badge { font-size: 9px !important; padding: 3px 8px !important; }
+  .price-card .features li::before { font-size: 16px !important; }
+  .price-card .chip { font-size: 11px !important; padding: 5px 10px !important; }
+  .price-card .badge { font-size: 10px !important; padding: 4px 10px !important; }
 
   /* =============== NOT-INCLUDED ROW (slide 8 Essencial scope footer) =============== */
   .not-included-row {
@@ -1954,24 +1955,24 @@
     opacity: 0.78;
   }
 
-  /* =============== COMPACT STAT FOCUS (slide 3) — respects 22px padding floor =============== */
-  .stat-grid > .glass:first-child { padding: 24px 26px !important; }
-  .stat-grid .big-num { font-size: clamp(38px, 4.2vw, 60px) !important; }
+  /* =============== STAT FOCUS (slide Diagnóstico) — BALANCED =============== */
+  .stat-grid > .glass:first-child { padding: 30px 32px !important; }
+  .stat-grid .big-num { font-size: clamp(48px, 5.0vw, 76px) !important; }
   .stat-grid .big-num .unit { font-size: 0.36em !important; }
-  .stat-grid .big-label { font-size: clamp(13px, 1.05vw, 16px) !important; line-height: 1.35 !important; }
-  .stat-grid .big-sub { font-size: clamp(10.5px, 0.8vw, 12px) !important; line-height: 1.4 !important; }
-  .stat-grid .stack > .glass { padding: 22px 24px !important; }
-  .stat-grid .stack .meta { font-size: 10.5px !important; }
-  .stat-grid .stack .h2 { font-size: clamp(15px, 1.3vw, 19px) !important; }
-  .stat-grid .stack .body { font-size: clamp(12px, 0.9vw, 13.5px) !important; line-height: 1.5 !important; }
+  .stat-grid .big-label { font-size: clamp(14px, 1.15vw, 18px) !important; line-height: 1.4 !important; }
+  .stat-grid .big-sub { font-size: clamp(11px, 0.85vw, 13px) !important; line-height: 1.5 !important; }
+  .stat-grid .stack > .glass { padding: 26px 28px !important; }
+  .stat-grid .stack .meta { font-size: 11px !important; }
+  .stat-grid .stack .h2 { font-size: clamp(17px, 1.5vw, 22px) !important; }
+  .stat-grid .stack .body { font-size: clamp(13px, 0.98vw, 15px) !important; line-height: 1.6 !important; }
 
-  /* Dimension breakdown inside hero stat card (slide 3) */
+  /* Dimension breakdown inside hero stat card */
   .dim-list {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    margin-top: 14px;
-    padding-top: 12px;
+    gap: 9px;
+    margin-top: 18px;
+    padding-top: 16px;
     border-top: 1px solid var(--hairline);
   }
   .dim {
@@ -1979,8 +1980,8 @@
     justify-content: space-between;
     align-items: baseline;
     gap: 14px;
-    font-size: clamp(11.5px, 0.88vw, 13.5px);
-    line-height: 1.3;
+    font-size: clamp(12.5px, 0.95vw, 14.5px);
+    line-height: 1.4;
   }
   .dim-name { color: var(--ink-soft); }
   .dim-score {
@@ -1993,30 +1994,30 @@
   .dim-mid .dim-score { color: var(--ink-quiet); }
   .dim-ok .dim-score { color: var(--ink); }
 
-  /* =============== COMPACT PHASES (slide 8 Cronograma) — applies compaction protocol =============== */
-  .phases-grid { gap: 12px !important; margin-top: 14px !important; }
-  .phase-card { padding: 22px 22px !important; gap: 6px !important; }
-  .phase-card .icon { width: 22px !important; height: 22px !important; margin-bottom: 6px !important; }
-  .phase-card .num { font-size: 10.5px !important; letter-spacing: 0.12em !important; }
-  .phase-card .when { font-size: 11px !important; }
-  .phase-card h3 { font-size: clamp(13px, 1vw, 15.5px) !important; line-height: 1.25 !important; margin-top: 4px !important; }
-  .phase-card p { font-size: clamp(11.5px, 0.85vw, 13px) !important; line-height: 1.45 !important; margin-top: 4px !important; }
+  /* =============== PHASES (Cronograma) — BALANCED =============== */
+  .phases-grid { gap: 16px !important; margin-top: 18px !important; }
+  .phase-card { padding: 26px 24px !important; gap: 8px !important; }
+  .phase-card .icon { width: 26px !important; height: 26px !important; margin-bottom: 8px !important; }
+  .phase-card .num { font-size: 11px !important; letter-spacing: 0.12em !important; }
+  .phase-card .when { font-size: 12px !important; }
+  .phase-card h3 { font-size: clamp(15px, 1.2vw, 18px) !important; line-height: 1.3 !important; margin-top: 6px !important; }
+  .phase-card p { font-size: clamp(12.5px, 0.92vw, 14px) !important; line-height: 1.55 !important; margin-top: 6px !important; }
 
-  /* =============== COMPACT PILLARS (slide 4) — title close to body, meta at bottom =============== */
+  /* =============== PILLARS (Estratégia) — BALANCED with title-body proximity =============== */
   .pillars > .pillar {
-    padding: 22px 22px !important;
+    padding: 28px 26px !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 0 !important;
   }
-  .pillars .icon-lg { width: 24px !important; height: 24px !important; margin-bottom: 10px !important; }
+  .pillars .icon-lg { width: 28px !important; height: 28px !important; margin-bottom: 12px !important; }
   .pillars .num { font-size: 11px !important; letter-spacing: 0.12em !important; margin-bottom: 6px !important; }
-  .pillars h3 { font-size: clamp(15px, 1.3vw, 19px) !important; line-height: 1.25 !important; margin-bottom: 6px !important; }
-  .pillars p { font-size: clamp(12px, 0.9vw, 13.5px) !important; line-height: 1.5 !important; margin-bottom: 12px !important; }
+  .pillars h3 { font-size: clamp(17px, 1.45vw, 21px) !important; line-height: 1.3 !important; margin-bottom: 8px !important; }
+  .pillars p { font-size: clamp(13px, 0.95vw, 15px) !important; line-height: 1.6 !important; margin-bottom: 14px !important; }
   .pillars .pillar .meta {
-    font-size: 10.5px !important;
+    font-size: 11px !important;
     margin-top: auto !important;
-    padding-top: 10px !important;
+    padding-top: 12px !important;
     border-top: 1px solid var(--hairline) !important;
   }
 
@@ -2472,7 +2473,7 @@
 
     <div class="content">
       <div class="eyebrow">01 · O que ouvi</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Três frases tuas que <span class="acc">definem</span> esta proposta.</h2>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Três frases tuas que <span class="acc">definem</span> esta proposta.</h2>
 
       <div class="quote-grid">
         <div class="quote-card glass">
@@ -2506,7 +2507,7 @@
 
     <div class="content">
       <div class="eyebrow">🎯 02 · Objetivo da proposta</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Hoje estás <span class="acc">aqui</span>. Queremos chegar <span class="acc">ali</span>.</h2>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Hoje estás <span class="acc">aqui</span>. Queremos chegar <span class="acc">ali</span>.</h2>
 
       <div class="goal-row">
         <div class="goal-card glass">
@@ -2541,8 +2542,8 @@
 
     <div class="content">
       <div class="eyebrow">📊 02B · O contexto</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Onde <span class="acc">estão</span> os pacientes que ainda não te conhecem.</h2>
-      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">Antes de falar do teu site, é útil enquadrar como é que as pessoas procuram um médico hoje. Não é teoria, são dados públicos recentes.</p>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Onde <span class="acc">estão</span> os pacientes que ainda não te conhecem.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">Antes de falar do teu site, é útil enquadrar como é que as pessoas procuram um médico hoje. Não é teoria, são dados públicos recentes.</p>
 
       <div class="context-stats">
         <div class="context-card glass">
@@ -2572,7 +2573,7 @@
 
     <div class="content">
       <div class="eyebrow">👋 Quem sou</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Pedro Almeida.</h2>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Pedro Almeida.</h2>
 
       <div class="bio-layout">
         <div class="bio-photo">
@@ -2605,8 +2606,8 @@
 
     <div class="content">
       <div class="eyebrow">🎯 Diagnóstico digital</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Onde a tua presença online está <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">Avaliei sete dimensões, das mais técnicas (velocidade, identificação no Google) às mais visíveis (ficha pública, reviews, contacto). Site tecnicamente sólido. Comercialmente invisível.</p>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Onde a tua presença online está <span class="acc">hoje</span>.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">Avaliei sete dimensões, das mais técnicas (velocidade, identificação no Google) às mais visíveis (ficha pública, reviews, contacto). Site tecnicamente sólido. Comercialmente invisível.</p>
 
       <div class="stat-grid">
         <div class="glass">
@@ -2658,8 +2659,8 @@
 
     <div class="content">
       <div class="eyebrow">🧭 Estratégia</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Três peças, <span class="acc">uma presença</span>.</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 70ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">75% pesquisa médico no Google. 46% das pesquisas locais têm intenção de marcação. As três peças capitalizam isso.</p>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Três peças, <span class="acc">uma presença</span>.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 70ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">75% pesquisa médico no Google. 46% das pesquisas locais têm intenção de marcação. As três peças capitalizam isso.</p>
 
       <div class="pillars">
         <div class="pillar glass">
@@ -2715,8 +2716,8 @@
 
     <div class="content">
       <div class="eyebrow">🗓️ Cronograma</div>
-      <h2 class="headline" style="font-size: clamp(22px, 2.6vw, 34px);">Quatro etapas, medidas em <span class="acc">progresso</span>.</h2>
-      <p class="lede" style="margin-top: 8px; max-width: 70ch; font-size: clamp(12px, 0.9vw, 14px); color: var(--ink-quiet);">7 a 10 dias úteis para o pack base. 1 a 2 horas por semana do teu lado.</p>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Quatro etapas, medidas em <span class="acc">progresso</span>.</h2>
+      <p class="lede" style="margin-top: 8px; max-width: 70ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-soft);">7 a 10 dias úteis para o pack base. 1 a 2 horas por semana do teu lado.</p>
 
       <div class="phases-grid">
         <div class="phase-card glass">
@@ -2762,8 +2763,8 @@
 
     <div class="content">
       <div class="eyebrow">💰 Investimento</div>
-      <h2 class="headline" style="font-size: clamp(22px, 2.6vw, 34px);">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 72ch; font-size: clamp(12px, 0.9vw, 14px); color: var(--ink-quiet); margin-top: 4px !important;">50% no início, 50% na entrega · 30 dias de suporte pós-lançamento incluídos em todos os pacotes.</p>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-soft); margin-top: 4px !important;">50% no início, 50% na entrega · 30 dias de suporte pós-lançamento incluídos em todos os pacotes.</p>
 
       <div class="pricing-grid">
         <div class="price-card glass">
@@ -2821,8 +2822,8 @@
 
     <div class="content">
       <div class="eyebrow">📦 Entregáveis · pack Base</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Cinco peças no pack <span class="acc">Essencial (€450)</span>.</h2>
-      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">O site, a identidade e a estrutura de conteúdo prontos a lançar. O que vem no Estúdio aparece em baixo, claramente marcado.</p>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Cinco peças no pack <span class="acc">Essencial (€450)</span>.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">O site, a identidade e a estrutura de conteúdo prontos a lançar. O que vem no Estúdio aparece em baixo, claramente marcado.</p>
 
       <div class="addons-grid">
         <div class="addon-card glass">
@@ -2873,7 +2874,7 @@
 
     <div class="content">
       <div class="eyebrow">📦 Entregáveis · pack Estúdio</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Tudo do Essencial, mais <span class="acc">quatro peças extra</span>.</h2>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Tudo do Essencial, mais <span class="acc">quatro peças extra</span>.</h2>
       <p class="lede" style="max-width: 72ch;">Inclui tudo o que vem no pack Essencial (site, identidade, casos clínicos, email de reativação, analytics). Adiciona estas quatro peças, focadas em conversão, autoridade e operação.</p>
 
       <div class="addons-grid">
@@ -2912,7 +2913,7 @@
 
     <div class="content">
       <div class="eyebrow">🔄 Avença mensal</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Avença <span class="acc">opcional · €50/mês</span> — recomendada.</h2>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Avença <span class="acc">opcional · €50/mês</span> — recomendada.</h2>
       <p class="lede" style="max-width: 72ch;">Manter um site vivo dá trabalho contínuo, mesmo depois de lançado. Esta avença é opcional, mas <strong>fortemente recomendada</strong> para preservar o investimento. Sem fidelização — cancela quando quiseres.</p>
 
       <div class="addons-grid">
@@ -2963,7 +2964,7 @@
     <div class="content">
       <div class="eyebrow">📈 Cenários · em €</div>
       <h2 class="headline" style="font-size: clamp(26px, 3.1vw, 44px);">💰 Quatro projeções, a <span class="acc">€85 por consulta</span>.</h2>
-      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">Conservador é o ganho certo. Liberal é o alvo dos 30-35 consultas/mês que articulaste. Cruzados com 6 e 12 meses, são quatro fotos honestas do que esperar.</p>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">Conservador é o ganho certo. Liberal é o alvo dos 30-35 consultas/mês que articulaste. Cruzados com 6 e 12 meses, são quatro fotos honestas do que esperar.</p>
 
       <div class="scenarios-table-wrap">
         <table class="scenarios-table">
@@ -3028,7 +3029,7 @@
     <div class="content">
       <div class="eyebrow">⏳ Horizonte do investimento</div>
       <h2 class="headline" style="font-size: clamp(26px, 3.1vw, 44px);">🪴 O teu site actual já tem <span class="acc">15 anos</span>.</h2>
-      <p class="lede" style="max-width: 70ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">O domínio drgabrielcampuzano.com está online desde 2011. Sites bem feitos amortizam-se em décadas, não em ciclos curtos.</p>
+      <p class="lede" style="max-width: 70ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">O domínio drgabrielcampuzano.com está online desde 2011. Sites bem feitos amortizam-se em décadas, não em ciclos curtos.</p>
 
       <div class="numbers-row horizon-row" style="--cols: 4;">
         <div class="number-cell glass">
