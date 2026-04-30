@@ -128,21 +128,9 @@
     .slide.bg-light, .slide.bg-light-quiet, .slide.bg-light-cool,
     .slide.bg-dark { background-size: 100% 100%; background-repeat: no-repeat; }
 
-    /* Echo lotus on mobile: anchor to viewport (not slide) so it stays visible
-       at the bottom-right corner while user scrolls within the slide. Without
-       this it'd be a tiny image stuck at the slide's natural bottom, cut in
-       half by content above it on tall slides. */
-    .echo-lotus {
-      position: fixed;
-      top: auto; left: auto;
-      right: -10vw; bottom: -8vh;
-      width: 80vw; height: auto;
-      max-height: 70vh;
-      object-fit: contain;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.5;
-    }
+    /* Echo lotus mobile override is in the dedicated img.echo-lotus media query
+       below (search for "img.echo-lotus" inside the second @media max-width: 900px).
+       That selector wins because the desktop rule uses img.echo-lotus !important. */
   }
 
   /* =============== STAGGER FADE-UP on slide enter =============== */
@@ -584,9 +572,24 @@
       #000 100%);
   }
   @media (max-width: 900px) {
+    /* Mobile: anchor lotus to viewport (fixed) so it stays visible at the
+       bottom-right corner while user scrolls within tall slides. The desktop
+       100vh height + absolute-to-slide positioning leaves lotus cut mid-scroll
+       on tall mobile slides. Fixed positioning keeps it as a quiet ambient
+       brand mark across the entire scroll. */
     img.echo-lotus {
-      width: 70vw !important;
+      position: fixed !important;
+      top: auto !important;
+      left: auto !important;
+      right: -8vw !important;
+      bottom: -6vh !important;
+      width: 75vw !important;
+      height: auto !important;
+      max-height: 65vh !important;
+      object-fit: contain !important;
+      object-position: center center !important;
       opacity: 0.22;
+      z-index: 0 !important;
     }
   }
 
