@@ -1923,6 +1923,50 @@
   .price-card .chip { font-size: 10.5px !important; padding: 4px 8px !important; }
   .price-card .badge { font-size: 9.5px !important; padding: 3px 8px !important; }
 
+  /* =============== NOT-INCLUDED ROW (slide 8 Essencial scope footer) =============== */
+  .not-included-row {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .not-included-row .ni-label {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .not-included-row .chip {
+    font-size: 11px !important;
+    padding: 4px 9px !important;
+    opacity: 0.78;
+  }
+
+  /* =============== COMPACT STAT FOCUS (slide 3) =============== */
+  .stat-grid > .glass:first-child { padding: 18px 22px !important; }
+  .stat-grid .big-num { font-size: clamp(38px, 4.2vw, 60px) !important; }
+  .stat-grid .big-num .unit { font-size: 0.36em !important; }
+  .stat-grid .big-label { font-size: clamp(13px, 1.05vw, 16px) !important; line-height: 1.35 !important; }
+  .stat-grid .big-sub { font-size: clamp(10.5px, 0.8vw, 12px) !important; line-height: 1.4 !important; }
+  .stat-grid .stack > .glass { padding: 14px 16px !important; }
+  .stat-grid .stack .meta { font-size: 10.5px !important; }
+  .stat-grid .stack .h2 { font-size: clamp(15px, 1.3vw, 19px) !important; }
+  .stat-grid .stack .body { font-size: clamp(11.5px, 0.9vw, 13px) !important; line-height: 1.4 !important; }
+
+  /* =============== COMPACT PILLARS (slide 4) =============== */
+  .pillars > .pillar { padding: 16px 18px !important; gap: 6px !important; }
+  .pillars .icon-lg { width: 24px !important; height: 24px !important; }
+  .pillars .num { font-size: 11px !important; letter-spacing: 0.12em !important; }
+  .pillars h3 { font-size: clamp(15px, 1.3vw, 19px) !important; line-height: 1.25 !important; }
+  .pillars p { font-size: clamp(11.5px, 0.88vw, 13px) !important; line-height: 1.45 !important; }
+  .pillars .pillar .meta { font-size: 10.5px !important; }
+
   /* =============== SCENARIOS MATRIX (slide 10, 2x2 grid) =============== */
   .matrix-grid {
     display: grid;
@@ -2069,8 +2113,8 @@
 
     <div class="content">
       <div class="eyebrow">🎯 Diagnóstico digital</div>
-      <h2 class="headline">Onde a tua presença online está <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 70ch;">Site tecnicamente sólido. Comercialmente invisível.</p>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Onde a tua presença online está <span class="acc">hoje</span>.</h2>
+      <p class="lede" style="max-width: 70ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">Site tecnicamente sólido. Comercialmente invisível.</p>
       <div class="row gap-12">
         <span class="chip">Fonte: PageSpeed + Ahrefs</span>
         <span class="chip"><span class="dot"></span>Auditoria · 04 · 2026</span>
@@ -2110,8 +2154,8 @@
 
     <div class="content">
       <div class="eyebrow">🧭 Estratégia</div>
-      <h2 class="headline">Três peças, <span class="acc">uma presença</span>.</h2>
-      <p class="lede" style="margin-top: 18px; max-width: 70ch;">75% pesquisa médico no Google. 46% das pesquisas locais têm intenção de marcação. As três peças capitalizam isso.</p>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Três peças, <span class="acc">uma presença</span>.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 70ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">75% pesquisa médico no Google. 46% das pesquisas locais têm intenção de marcação. As três peças capitalizam isso.</p>
 
       <div class="pillars">
         <div class="pillar glass">
@@ -2263,57 +2307,56 @@
     </div>
   </section>
 
-  <!-- ==================== 8 · AVENÇA MENSAL (Add-ons grid, 6 cards) ==================== -->
+  <!-- ==================== 8 · ENTREGÁVEIS PACK ESSENCIAL ==================== -->
   <section class="slide s-echo has-grid bg-light-quiet" data-slide="8" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-peach" style="width: 38vw; height: 38vw; right: -12vw; bottom: -15vw;"></div>
+    <div class="orb orb-cool" style="width: 38vw; height: 38vw; right: -10vw; top: -10vw;"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
     </div>
 
     <div class="content">
-      <div class="eyebrow">🔄 Avença mensal · €50/mês</div>
-      <h2 class="headline">Para teres <span class="acc">paz de espírito</span>.</h2>
-      <p class="lede" style="max-width: 60ch;">Cuidado contínuo, opcional. Sem fidelização.</p>
+      <div class="eyebrow">📦 Entregáveis · pack Base</div>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Cinco peças no pack <span class="acc">Essencial (€450)</span>.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">O site e a identidade visual, prontos a lançar. <strong>Sem extensões.</strong> O que vem no Estúdio aparece em baixo, claramente marcado.</p>
 
       <div class="addons-grid">
         <div class="addon-card glass">
-          <span class="icon-emoji">🛠️</span>
-          <div class="code">M1</div>
-          <div class="name">Manutenção</div>
-          <div class="desc">Atualizações de software, segurança e plugins. Tudo o que precisa de ser actualizado, é actualizado. Sem te incomodar. Sem partir nada.</div>
+          <span class="icon-emoji">🌐</span>
+          <div class="name">Site pessoal</div>
+          <div class="desc">Design contemporâneo, mobile-first, optimizado para Google local. Pensado para quem pesquisa "homeopata Lisboa".</div>
         </div>
         <div class="addon-card glass">
-          <span class="icon-emoji">📡</span>
-          <div class="code">M2</div>
-          <div class="name">Monitorização</div>
-          <div class="desc">Uptime + backups verificados. Se o site cair, eu sei antes de ti. Backups verificados todos os meses, prontos para restaurar.</div>
+          <span class="icon-emoji">🎨</span>
+          <div class="name">Identidade visual</div>
+          <div class="desc">Logo, palete, tipografia. Coerente com o tom filosófico da tua prática. Não-template.</div>
         </div>
         <div class="addon-card glass">
-          <span class="icon-emoji">📊</span>
-          <div class="code">M3</div>
-          <div class="name">Relatório mensal</div>
-          <div class="desc">Email de uma página por mês: visitas, queries que te encontraram, alertas resolvidos.</div>
-        </div>
-        <div class="addon-card glass">
-          <span class="icon-emoji">📍</span>
-          <div class="code">M4</div>
-          <div class="name">Google Business</div>
-          <div class="desc">Resposta a reviews novas (com tua aprovação), atualizações, fotos novas mensais.</div>
-        </div>
-        <div class="addon-card glass">
-          <span class="icon-emoji">✍️</span>
-          <div class="code">M5</div>
-          <div class="name">Blog</div>
-          <div class="desc">1 artigo por mês. 30 minutos de chamada onde falas livremente. Eu transformo em artigo, validas, publico com SEO.</div>
+          <span class="icon-emoji">📷</span>
+          <div class="name">Sessão foto e vídeo</div>
+          <div class="desc">10-15 fotografias editadas no consultório + vídeo curto de 1-2 minutos para o site. Autêntico, não stock.</div>
         </div>
         <div class="addon-card glass">
           <span class="icon-emoji">✉️</span>
-          <div class="code">M6</div>
-          <div class="name">Reativação</div>
-          <div class="desc">Email à base trimestral. Uma vez por trimestre, mando mensagem aos teus pacientes antigos. Para a base não te esquecer.</div>
+          <div class="name">Email de reativação</div>
+          <div class="desc">Uma campanha à tua base de pacientes antigos a anunciar o site novo. Para a base não esquecer que existes.</div>
         </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📊</span>
+          <div class="name">Analytics simples</div>
+          <div class="desc">Visitas e queries no painel do site. Sabes quem te encontrou e por que palavras.</div>
+        </div>
+      </div>
+
+      <div class="not-included-row">
+        <span class="ni-label">Não incluído · adicionado no Estúdio:</span>
+        <span class="chip">📝 Blog (6 artigos)</span>
+        <span class="chip">📍 Google Business</span>
+        <span class="chip">💬 WhatsApp Business</span>
+        <span class="chip">🔍 Setup técnico SEO</span>
+        <span class="chip">📋 Casos clínicos & FAQ</span>
+        <span class="chip">🛡️ Suporte 30 dias</span>
       </div>
     </div>
   </section>
@@ -2373,8 +2416,63 @@
     </div>
   </section>
 
-  <!-- ==================== 10 · CENÁRIOS (Custom 2-card) ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="10" data-bg="light">
+  <!-- ==================== 10 · AVENÇA MENSAL (Add-ons grid, 6 cards) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="10" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-peach" style="width: 38vw; height: 38vw; right: -12vw; bottom: -15vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">🔄 Avença mensal · €50/mês</div>
+      <h2 class="headline">Para teres <span class="acc">paz de espírito</span>.</h2>
+      <p class="lede" style="max-width: 60ch;">Cuidado contínuo, opcional. Sem fidelização.</p>
+
+      <div class="addons-grid">
+        <div class="addon-card glass">
+          <span class="icon-emoji">🛠️</span>
+          <div class="code">M1</div>
+          <div class="name">Manutenção</div>
+          <div class="desc">Atualizações de software, segurança e plugins. Tudo o que precisa de ser actualizado, é actualizado. Sem te incomodar. Sem partir nada.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📡</span>
+          <div class="code">M2</div>
+          <div class="name">Monitorização</div>
+          <div class="desc">Uptime + backups verificados. Se o site cair, eu sei antes de ti. Backups verificados todos os meses, prontos para restaurar.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📊</span>
+          <div class="code">M3</div>
+          <div class="name">Relatório mensal</div>
+          <div class="desc">Email de uma página por mês: visitas, queries que te encontraram, alertas resolvidos.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📍</span>
+          <div class="code">M4</div>
+          <div class="name">Google Business</div>
+          <div class="desc">Resposta a reviews novas (com tua aprovação), atualizações, fotos novas mensais.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">✍️</span>
+          <div class="code">M5</div>
+          <div class="name">Blog</div>
+          <div class="desc">1 artigo por mês. 30 minutos de chamada onde falas livremente. Eu transformo em artigo, validas, publico com SEO.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">✉️</span>
+          <div class="code">M6</div>
+          <div class="name">Reativação</div>
+          <div class="desc">Email à base trimestral. Uma vez por trimestre, mando mensagem aos teus pacientes antigos. Para a base não te esquecer.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 11 · CENÁRIOS (Custom 2-card) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="11" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; bottom: -15vw;"></div>
     <div class="orb orb-sage"  style="width: 28vw; height: 28vw; left: -6vw; top: -10vw;"></div>
@@ -2462,8 +2560,8 @@
     </div>
   </section>
 
-  <!-- ==================== 11 · HORIZONTE (By the Numbers) ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="11" data-bg="light">
+  <!-- ==================== 12 · HORIZONTE (By the Numbers) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="12" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
 
@@ -2501,8 +2599,8 @@
     </div>
   </section>
 
-  <!-- ==================== 12 · FAQ ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="12" data-bg="light">
+  <!-- ==================== 13 · FAQ ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="13" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-sage" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
 
@@ -2542,8 +2640,8 @@
     </div>
   </section>
 
-  <!-- ==================== 13 · CTA CLOSER (dark, WhatsApp only) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="13" data-bg="dark">
+  <!-- ==================== 14 · CTA CLOSER (dark, WhatsApp only) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="14" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -22vw; bottom: -28vw;"></div>
     <div class="hairline-grid"></div>
@@ -2571,7 +2669,7 @@
 
 <!-- =============== FOOTER NAV (always visible, attached to bottom) =============== -->
 <div class="footer">
-  <span id="counter">1 / 13</span>
+  <span id="counter">1 / 14</span>
   <div class="progress" id="progress"></div>
   <span class="nav-hint">← → para navegar</span>
 </div>
