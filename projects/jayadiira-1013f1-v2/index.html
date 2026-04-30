@@ -106,7 +106,11 @@
      not centered. This prevents "vacuum at top + crammed at bottom". */
   /* Protected bands: brand sits in chrome-top (4vh from top); content must start ≥12vh from top
      so there's a clear whitespace buffer below the brand. Same logic at the bottom for the footer. */
-  .slide.has-grid { justify-content: flex-start; padding-top: max(12vh, 110px); padding-bottom: max(18vh, 180px); }
+  /* Center content vertically within the safe area (BALANCE PRINCIPLE).
+     Eyebrow + h2 + lede + cards + footnote all centered as a group, with empty
+     space split top/bottom proportionally. Heavy slides still respect the
+     padding-top floor (12vh below brand) and padding-bottom (18vh above footer). */
+  .slide.has-grid { justify-content: center; padding-top: max(12vh, 110px); padding-bottom: max(18vh, 180px); }
 
   @media (max-width: 900px) {
     /* Mobile: slides become scrollable cards instead of fixed-height presentations.
