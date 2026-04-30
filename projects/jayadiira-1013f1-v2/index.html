@@ -492,6 +492,47 @@
     align-items: center !important;
   }
 
+  /* Body block — wraps a [grid/row] + its source/caption into a single visual unit.
+     The wrapper takes flex:1 (claims body space and centers itself), and the grid + caption
+     stay glued together inside it. Use this whenever a module has a footnote/source that
+     visually belongs to the cards above (Fontes:, Δ deltas, side-notes that explain the data).
+     Without this wrapper, the caption becomes a separate flex sibling and floats to the bottom
+     of .content, far from the cards it describes. */
+  .has-grid .content > .body-block {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+  /* When a grid/row is INSIDE a body-block, it gives up its own flex:1 (the wrapper has it)
+     and shrinks to its natural height. Caption sits 14px below. */
+  .body-block > .quote-grid,
+  .body-block > .addons-grid,
+  .body-block > .stat-grid,
+  .body-block > .scenarios-grid,
+  .body-block > .matrix-grid,
+  .body-block > .pillars,
+  .body-block > .phases-grid,
+  .body-block > .pricing-grid,
+  .body-block > .numbers-row,
+  .body-block > .horizon-row,
+  .body-block > .context-stats,
+  .body-block > .bio-layout,
+  .body-block > .goal-row {
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+  }
+  .body-block > .block-caption {
+    margin: 0 !important;
+    font-size: clamp(10.5px, 0.78vw, 12px) !important;
+    color: var(--ink-quiet) !important;
+    font-style: italic !important;
+    line-height: 1.4 !important;
+    max-width: 95ch !important;
+  }
+
   /* Drop forced 100% height on table — natural rows centered via wrapper */
   .has-grid .content > .scenarios-table-wrap > .scenarios-table { height: auto !important; }
   /* When a content block is followed by a grid/cards block, force more breathing */
@@ -2563,21 +2604,23 @@
       <div class="eyebrow">🎯 02 · Objetivo da proposta</div>
       <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Hoje estás <span class="acc">aqui</span>. Queremos chegar <span class="acc">ali</span>.</h2>
 
-      <div class="goal-row">
-        <div class="goal-card glass">
-          <span class="goal-label">Hoje</span>
-          <div class="goal-value">20<span class="goal-unit">/mês</span></div>
-          <div class="goal-sub">≈ €1.700 / mês</div>
+      <div class="body-block">
+        <div class="goal-row">
+          <div class="goal-card glass">
+            <span class="goal-label">Hoje</span>
+            <div class="goal-value">20<span class="goal-unit">/mês</span></div>
+            <div class="goal-sub">≈ €1.700 / mês</div>
+          </div>
+          <div class="goal-arrow-marker">→</div>
+          <div class="goal-card goal-card--accent glass">
+            <span class="goal-label">Alvo</span>
+            <div class="goal-value">30-35<span class="goal-unit">/mês</span></div>
+            <div class="goal-sub">≈ €2.500 / mês</div>
+          </div>
         </div>
-        <div class="goal-arrow-marker">→</div>
-        <div class="goal-card goal-card--accent glass">
-          <span class="goal-label">Alvo</span>
-          <div class="goal-value">30-35<span class="goal-unit">/mês</span></div>
-          <div class="goal-sub">≈ €2.500 / mês</div>
-        </div>
-      </div>
 
-      <p class="goal-incremental">+10 a 15 consultas / mês · +€800 de receita mensal incremental</p>
+        <p class="goal-incremental">+10 a 15 consultas / mês · +€800 de receita mensal incremental</p>
+      </div>
 
       <div class="purpose-band">
         <p>Tudo o que se segue nesta proposta serve <strong>este objetivo</strong>. Cada decisão, cada peça, cada euro investido tem que se justificar contra estes números. Nada mais.</p>
@@ -2599,20 +2642,22 @@
       <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Onde <span class="acc">estão</span> os pacientes que ainda não te conhecem.</h2>
       <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">Antes de falar do teu site, é útil enquadrar como é que as pessoas procuram um médico hoje. Não é teoria, são dados públicos recentes.</p>
 
-      <div class="context-stats">
-        <div class="context-card glass">
-          <div class="context-big">75<span class="unit">%</span></div>
-          <div class="context-label">das pessoas <strong>procuram um médico no Google</strong> antes de marcar. E <strong>75% lê reviews</strong> antes de decidir.</div>
-          <div class="context-source">Invoca · Birdeye 2025</div>
+      <div class="body-block">
+        <div class="context-stats">
+          <div class="context-card glass">
+            <div class="context-big">75<span class="unit">%</span></div>
+            <div class="context-label">das pessoas <strong>procuram um médico no Google</strong> antes de marcar. E <strong>75% lê reviews</strong> antes de decidir.</div>
+            <div class="context-source">Invoca · Birdeye 2025</div>
+          </div>
+          <div class="context-card glass">
+            <div class="context-big">46<span class="unit">%</span></div>
+            <div class="context-label">das pesquisas no Google têm <strong>intenção local</strong> ("homeopata Lisboa", "perto de mim"). É aqui que o <strong>Local SEO</strong> decide se apareces ou não.</div>
+            <div class="context-source">Semrush · Google Search Statistics 2025</div>
+          </div>
         </div>
-        <div class="context-card glass">
-          <div class="context-big">46<span class="unit">%</span></div>
-          <div class="context-label">das pesquisas no Google têm <strong>intenção local</strong> ("homeopata Lisboa", "perto de mim"). É aqui que o <strong>Local SEO</strong> decide se apareces ou não.</div>
-          <div class="context-source">Semrush · Google Search Statistics 2025</div>
-        </div>
-      </div>
 
-      <p style="margin-top: 8px; font-size: clamp(10.5px, 0.78vw, 12px); color: var(--ink-quiet); font-style: italic; line-height: 1.4; max-width: 95ch;">Fontes: Invoca Healthcare Marketing Report, Birdeye State of GBP 2025, Semrush Google Search Statistics 2025. Verificáveis online.</p>
+        <p class="block-caption">Fontes: Invoca Healthcare Marketing Report, Birdeye State of GBP 2025, Semrush Google Search Statistics 2025. Verificáveis online.</p>
+      </div>
     </div>
   </section>
 
