@@ -128,13 +128,20 @@
     .slide.bg-light, .slide.bg-light-quiet, .slide.bg-light-cool,
     .slide.bg-dark { background-size: 100% 100%; background-repeat: no-repeat; }
 
-    /* Echo lotus is positioned absolute to a fixed bottom corner; on tall mobile
-       slides it'd float mid-scroll. Stretch it to fade across the full slide. */
+    /* Echo lotus on mobile: anchor to viewport (not slide) so it stays visible
+       at the bottom-right corner while user scrolls within the slide. Without
+       this it'd be a tiny image stuck at the slide's natural bottom, cut in
+       half by content above it on tall slides. */
     .echo-lotus {
-      top: auto; bottom: 0;
-      width: 90vw; height: auto;
-      max-height: 60vh;
+      position: fixed;
+      top: auto; left: auto;
+      right: -10vw; bottom: -8vh;
+      width: 80vw; height: auto;
+      max-height: 70vh;
       object-fit: contain;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
     }
   }
 
