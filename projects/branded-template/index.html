@@ -2639,11 +2639,11 @@
     </div>
   </section>
 
-  <!-- ==================== 24 · QUOTE WITH PHOTO OVERLAY ==================== -->
-  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="24" data-bg="dark">
-    <div class="photo-bg">
-      <img src="media/photos/winding-road.jpg" alt="" aria-hidden="true">
-    </div>
+  <!-- ==================== 24 · QUOTE / PRINCIPLE (dark) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="24" data-bg="dark">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 70vw; height: 70vw; left: -22vw; bottom: -28vw;"></div>
+    <div class="hairline-grid"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
@@ -2654,16 +2654,17 @@
       <div class="photo-quote">
         <span class="mark">"</span>
         <p class="body">O caminho não é uma linha recta. <span class="acc">É a rota certa.</span></p>
-        <div class="attr">Princípio · pedro-deck-builder</div>
+        <div class="attr" style="color: var(--d-ink-quiet);">Princípio · pedro-deck-builder</div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 25 · PARTNERSHIP / "BORA JUNTOS" ==================== -->
-  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="25" data-bg="dark">
-    <div class="photo-bg">
-      <img src="media/photos/teamwork-hands.jpg" alt="" aria-hidden="true">
-    </div>
+  <!-- ==================== 25 · PARTNERSHIP / "BORA JUNTOS" (dark) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="25" data-bg="dark">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 60vw; height: 60vw; right: -18vw; top: -20vw;"></div>
+    <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
+    <div class="hairline-grid"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
@@ -2728,6 +2729,26 @@
     if (x > w * 0.7)      { current = Math.min(current + 1, total - 1); show(current); }
     else if (x < w * 0.3) { current = Math.max(current - 1, 0); show(current); }
   });
+
+  // =============== TOUCH SWIPE (mobile) ===============
+  let touchStartX = 0, touchStartY = 0, touchTime = 0;
+  document.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchTime = Date.now();
+  }, { passive: true });
+  document.addEventListener('touchend', e => {
+    if (e.changedTouches.length !== 1) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    const dt = Date.now() - touchTime;
+    // Horizontal swipe wins only when clearly horizontal, fast enough, and large enough.
+    // Lets vertical scroll work normally for in-slide content.
+    if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.4 || dt > 800) return;
+    if (dx < 0)      { current = Math.min(current + 1, total - 1); show(current); }
+    else             { current = Math.max(current - 1, 0); show(current); }
+  }, { passive: true });
 
   show(0);
 
