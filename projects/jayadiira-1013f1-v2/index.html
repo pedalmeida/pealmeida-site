@@ -1906,14 +1906,22 @@
   }
 
   /* Pricing tier bullets: smaller + tighter so 6 items fit comfortably */
-  .price-card .features { gap: 6px !important; }
+  .price-card { padding: 16px 18px !important; gap: 8px !important; }
+  .price-card .tier-icon { width: 28px !important; height: 28px !important; margin-bottom: 0 !important; }
+  .price-card .tier-icon svg { width: 16px !important; height: 16px !important; }
+  .price-card .tier-eyebrow { font-size: clamp(13px, 1vw, 16px) !important; }
+  .price-card .price { font-size: clamp(28px, 3.0vw, 42px) !important; }
+  .price-card .price .unit { font-size: 0.32em !important; }
+  .price-card .features { gap: 5px !important; }
   .price-card .features li {
-    font-size: clamp(11px, 0.85vw, 13px) !important;
+    font-size: clamp(11px, 0.8vw, 13px) !important;
     line-height: 1.35 !important;
   }
   .price-card.recommended .features li {
-    font-size: clamp(12px, 0.9vw, 14px) !important;
+    font-size: clamp(11px, 0.82vw, 13px) !important;
   }
+  .price-card .chip { font-size: 10.5px !important; padding: 4px 8px !important; }
+  .price-card .badge { font-size: 9.5px !important; padding: 3px 8px !important; }
 
   /* =============== SCENARIOS MATRIX (slide 10, 2x2 grid) =============== */
   .matrix-grid {
@@ -2206,8 +2214,8 @@
 
     <div class="content">
       <div class="eyebrow">💰 Investimento</div>
-      <h2 class="headline">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 60ch;">50% início · 50% entrega · IVA não incluído.</p>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
+      <p class="lede" style="max-width: 60ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">50% início · 50% entrega · IVA não incluído.</p>
 
       <div class="pricing-grid">
         <div class="price-card glass">
@@ -2321,8 +2329,8 @@
 
     <div class="content">
       <div class="eyebrow">📦 Entregáveis · pack Estúdio</div>
-      <h2 class="headline" style="font-size: clamp(28px, 3.4vw, 50px);">Seis peças no pack <span class="acc">Estúdio (€800)</span>.</h2>
-      <p class="lede" style="max-width: 70ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">O Essencial entrega site, identidade, fotos e analytics. O Estúdio acrescenta Google Business + WhatsApp Business + casos clínicos.</p>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Seis peças no pack <span class="acc">Estúdio (€800)</span>.</h2>
+      <p class="lede" style="max-width: 72ch;">O <strong>Essencial</strong> entrega site, identidade, sessão foto e analytics (peças A, B, C, E). O <strong>Estúdio</strong> acrescenta casos clínicos + WhatsApp Business + Google Business (peças D, F).</p>
 
       <div class="addons-grid">
         <div class="addon-card glass">
