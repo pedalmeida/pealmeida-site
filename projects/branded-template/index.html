@@ -576,23 +576,25 @@
       #000 100%);
   }
   @media (max-width: 900px) {
-    /* Mobile: anchor lotus to viewport (fixed) so it stays visible at the
-       bottom-right corner while user scrolls within tall slides. The desktop
-       100vh height + absolute-to-slide positioning leaves lotus cut mid-scroll
-       on tall mobile slides. Fixed positioning keeps it as a quiet ambient
-       brand mark across the entire scroll. */
+    /* Mobile: stretch lotus to full viewport height (100dvh), fixed-positioned,
+       so it reads as a floor-to-ceiling ambient brand mark instead of a cropped
+       corner image. The previous height:auto + max-height:65vh + object-fit:contain
+       was creating a visible top edge where the image bbox ended against the
+       slide bg. Cover + full-viewport height eliminates the cut entirely; the
+       left-fade horizontal mask from the base rule still applies, so the lotus
+       fades out to the left and the right edge stays anchored. */
     img.echo-lotus {
       position: fixed !important;
-      top: auto !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      right: 0 !important;
       left: auto !important;
-      right: -8vw !important;
-      bottom: -6vh !important;
-      width: 75vw !important;
-      height: auto !important;
-      max-height: 65vh !important;
-      object-fit: contain !important;
-      object-position: center center !important;
-      opacity: 0.6;
+      width: 80vw !important;
+      height: 100dvh !important;
+      max-height: none !important;
+      object-fit: cover !important;
+      object-position: 70% center !important;
+      opacity: 0.4;
       z-index: 0 !important;
     }
   }
