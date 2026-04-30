@@ -453,7 +453,7 @@
   .content > h2 + .phase1-timeline { margin-top: 24px; }
 
   /* =============== COVER =============== */
-  .s-cover .meta-row { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .s-cover .meta-row { margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap; }
   /* On desktop, headline + lede stay in left half so the video composition has the right side to itself */
   @media (min-width: 901px) {
     .s-cover > .content { max-width: 56%; }
@@ -1906,29 +1906,28 @@
     font-size: clamp(18px, 1.6vw, 24px) !important;
   }
 
-  /* Pricing tier cards — more breathing, middle card visually elevated */
-  .pricing-grid { align-items: stretch !important; }
-  .price-card { padding: 26px 24px !important; gap: 12px !important; }
-  .price-card.recommended { padding: 32px 26px !important; transform: translateY(-8px); }
-  .price-card .tier-icon { width: 32px !important; height: 32px !important; margin-bottom: 2px !important; }
-  .price-card .tier-icon svg { width: 18px !important; height: 18px !important; }
-  .price-card .tier-eyebrow { font-size: clamp(14px, 1.1vw, 17px) !important; }
-  .price-card .price { font-size: clamp(30px, 3.2vw, 44px) !important; }
-  .price-card.recommended .price { font-size: clamp(34px, 3.6vw, 50px) !important; }
+  /* Pricing tier cards — compaction protocol applied (22px floor, no transform overflow) */
+  .pricing-grid { align-items: stretch !important; gap: 14px !important; }
+  .price-card { padding: 22px 22px !important; gap: 8px !important; }
+  .price-card.recommended { padding: 24px 22px !important; transform: none !important; }
+  .price-card .tier-icon { width: 26px !important; height: 26px !important; margin-bottom: 0 !important; }
+  .price-card .tier-icon svg { width: 14px !important; height: 14px !important; }
+  .price-card .tier-eyebrow { font-size: clamp(12.5px, 0.95vw, 15px) !important; }
+  .price-card .price { font-size: clamp(24px, 2.4vw, 34px) !important; line-height: 1 !important; }
+  .price-card.recommended .price { font-size: clamp(26px, 2.6vw, 38px) !important; }
   .price-card .price .unit { font-size: 0.32em !important; }
-  .price-card .features { gap: 7px !important; }
+  .price-card .features { gap: 4px !important; }
   .price-card .features li {
-    font-size: clamp(11.5px, 0.85vw, 13.5px) !important;
-    line-height: 1.4 !important;
+    font-size: clamp(10px, 0.74vw, 12px) !important;
+    line-height: 1.32 !important;
+    padding-left: 18px !important;
   }
   .price-card.recommended .features li {
-    font-size: clamp(12px, 0.9vw, 14.5px) !important;
+    font-size: clamp(10.5px, 0.78vw, 12.5px) !important;
   }
-  .price-card .chip { font-size: 11px !important; padding: 5px 10px !important; }
-  .price-card .badge { font-size: 10px !important; padding: 4px 10px !important; }
-  @media (max-width: 900px) {
-    .price-card.recommended { transform: none; }
-  }
+  .price-card .features li::before { font-size: 14px !important; }
+  .price-card .chip { font-size: 9.5px !important; padding: 3px 8px !important; }
+  .price-card .badge { font-size: 9px !important; padding: 3px 8px !important; }
 
   /* =============== NOT-INCLUDED ROW (slide 8 Essencial scope footer) =============== */
   .not-included-row {
@@ -1993,6 +1992,15 @@
   .dim-bad .dim-score { color: var(--accent); }
   .dim-mid .dim-score { color: var(--ink-quiet); }
   .dim-ok .dim-score { color: var(--ink); }
+
+  /* =============== COMPACT PHASES (slide 8 Cronograma) — applies compaction protocol =============== */
+  .phases-grid { gap: 12px !important; margin-top: 14px !important; }
+  .phase-card { padding: 22px 22px !important; gap: 6px !important; }
+  .phase-card .icon { width: 22px !important; height: 22px !important; margin-bottom: 6px !important; }
+  .phase-card .num { font-size: 10.5px !important; letter-spacing: 0.12em !important; }
+  .phase-card .when { font-size: 11px !important; }
+  .phase-card h3 { font-size: clamp(13px, 1vw, 15.5px) !important; line-height: 1.25 !important; margin-top: 4px !important; }
+  .phase-card p { font-size: clamp(11.5px, 0.85vw, 13px) !important; line-height: 1.45 !important; margin-top: 4px !important; }
 
   /* =============== COMPACT PILLARS (slide 4) — title close to body, meta at bottom =============== */
   .pillars > .pillar {
@@ -2652,8 +2660,8 @@
 
     <div class="content">
       <div class="eyebrow">🗓️ Cronograma</div>
-      <h2 class="headline">Quatro etapas, medidas em <span class="acc">progresso</span>.</h2>
-      <p class="lede" style="margin-top: 18px; max-width: 70ch;">7 a 10 dias úteis para o pack base. 1 a 2 horas por semana do teu lado.</p>
+      <h2 class="headline" style="font-size: clamp(22px, 2.6vw, 34px);">Quatro etapas, medidas em <span class="acc">progresso</span>.</h2>
+      <p class="lede" style="margin-top: 8px; max-width: 70ch; font-size: clamp(12px, 0.9vw, 14px); color: var(--ink-quiet);">7 a 10 dias úteis para o pack base. 1 a 2 horas por semana do teu lado.</p>
 
       <div class="phases-grid">
         <div class="phase-card glass">
@@ -2699,8 +2707,8 @@
 
     <div class="content">
       <div class="eyebrow">💰 Investimento</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">50% no início, 50% na entrega. Cada pacote inclui 30 dias de suporte pós-lançamento para ajustes e correções.</p>
+      <h2 class="headline" style="font-size: clamp(22px, 2.6vw, 34px);">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(12px, 0.9vw, 14px); color: var(--ink-quiet); margin-top: 4px !important;">50% no início, 50% na entrega · 30 dias de suporte pós-lançamento incluídos em todos os pacotes.</p>
 
       <div class="pricing-grid">
         <div class="price-card glass">
