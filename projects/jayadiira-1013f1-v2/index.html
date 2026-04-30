@@ -1839,6 +1839,20 @@
       animation-duration: 0.01ms !important;
     }
   }
+
+  /* =============== SCENARIOS GRID (slide 6, custom 2-col) =============== */
+  .scenarios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+  @media (max-width: 900px) {
+    .scenarios-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1923,8 +1937,8 @@
           </div>
           <div class="glass" style="padding: 20px;">
             <div class="meta">Caminho de conversão</div>
-            <div class="h2" style="margin-top: 6px;"><span class="acc">Sem WhatsApp</span></div>
-            <div class="body" style="margin-top: 6px;">Sem tel:, sem mailto:. Quem chega não tem como contactar-te.</div>
+            <div class="h2" style="margin-top: 6px;"><span class="acc">Sem clique direto</span></div>
+            <div class="body" style="margin-top: 6px;">Telefone visível, mas sem link clicável. Sem WhatsApp Business com respostas automáticas, horários, boas-vindas. Cada contacto pede esforço extra.</div>
           </div>
         </div>
       </div>
@@ -2033,7 +2047,7 @@
       <h2 class="headline">Conservador, e <span class="acc">liberal</span>.</h2>
       <p class="lede" style="margin-top: 18px; max-width: 70ch;">Duas projeções honestas. A primeira é o ganho certo. A segunda é o alvo dos 30-35 que articulaste.</p>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px;">
+      <div class="scenarios-grid">
         <div class="glass" style="padding: 28px; display: flex; flex-direction: column; gap: 16px;">
           <span class="chip" style="align-self: flex-start;"><span class="dot"></span>6 meses</span>
           <h3 style="font-family: var(--f); font-weight: 600; font-size: clamp(20px, 1.8vw, 28px); letter-spacing: -0.015em; line-height: 1.2;">O ganho certo, <span class="acc">mínimo</span>.</h3>
