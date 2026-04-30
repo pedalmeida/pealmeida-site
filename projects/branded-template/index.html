@@ -80,7 +80,11 @@
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition: background-color 280ms ease;
   }
+  /* Page bg follows current slide so mobile scroll/overscroll never reveals
+     the wrong base color around dark slides. */
+  body[data-current-bg="dark"] { background: var(--d-bg); }
 
   .deck { height: 100vh; width: 100vw; position: relative; }
 
@@ -588,7 +592,7 @@
       max-height: 65vh !important;
       object-fit: contain !important;
       object-position: center center !important;
-      opacity: 0.22;
+      opacity: 0.6;
       z-index: 0 !important;
     }
   }
