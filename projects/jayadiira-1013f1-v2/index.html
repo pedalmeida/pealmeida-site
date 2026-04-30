@@ -2326,6 +2326,29 @@
     background: rgba(226,84,42,0.16);
     color: var(--accent);
   }
+  /* Payback row — separate emphasis, slightly smaller than total but still prominent */
+  .scenarios-table .row-payback td,
+  .scenarios-table .row-payback th {
+    font-size: clamp(13px, 1.05vw, 16px);
+    font-weight: 700;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    letter-spacing: -0.01em;
+    border-top: 1px solid var(--hairline-strong);
+  }
+  .scenarios-table .row-payback .row-label {
+    font-size: 10.5px !important;
+    color: var(--ink) !important;
+    font-weight: 700 !important;
+  }
+  .scenarios-table .row-payback td.cons {
+    background: rgba(184,212,208,0.20);
+    color: #2F5A55;
+  }
+  .scenarios-table .row-payback td.lib {
+    background: rgba(226,84,42,0.10);
+    color: var(--accent);
+  }
   @media (max-width: 900px) {
     .scenarios-table th, .scenarios-table td { padding: 10px 8px; font-size: 11.5px !important; }
     .scenarios-table .row-label { font-size: 9px !important; }
@@ -2930,23 +2953,28 @@
             <tr>
               <th class="row-label">Consultas novas / mês</th>
               <td class="cons">+1 a 2</td>
-              <td class="cons">+2</td>
+              <td class="cons">+3</td>
               <td class="lib">+4 a 6</td>
               <td class="lib">+8 a 12</td>
             </tr>
             <tr>
               <th class="row-label">€ marginal / mês</th>
               <td class="acc-text cons">+€85-170</td>
-              <td class="acc-text cons">+€170</td>
+              <td class="acc-text cons">+€255</td>
               <td class="acc-text lib">+€340-510</td>
               <td class="acc-text lib">+€680-1.020</td>
             </tr>
             <tr class="row-total">
               <th class="row-label">Acumulado no período</th>
               <td class="cons">~€500-1.000</td>
-              <td class="cons">~€1.500-2.000</td>
+              <td class="cons">~€2.500-3.500</td>
               <td class="lib">~€1.400-2.500</td>
               <td class="lib">~€5.000-10.000</td>
+            </tr>
+            <tr class="row-payback">
+              <th class="row-label">Payback do pack Estúdio (€800)</th>
+              <td class="cons" colspan="2">~8 meses (após ramp completo)</td>
+              <td class="lib" colspan="2">~4 meses (após ramp completo)</td>
             </tr>
           </tbody>
         </table>
