@@ -1914,6 +1914,91 @@
   .price-card.recommended .features li {
     font-size: clamp(12px, 0.9vw, 14px) !important;
   }
+
+  /* =============== SCENARIOS MATRIX (slide 10, 2x2 grid) =============== */
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 8px;
+  }
+  @media (max-width: 900px) {
+    .matrix-grid { grid-template-columns: 1fr; gap: 10px; }
+  }
+  .matrix-card {
+    padding: 18px 20px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .matrix-card.liberal {
+    border: 1.5px solid var(--accent);
+    box-shadow: 0 0 0 1px rgba(226,84,42,0.15), 0 12px 32px rgba(226,84,42,0.10);
+  }
+  .matrix-tag {
+    align-self: flex-start;
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+  .matrix-tag.conservador {
+    background: rgba(20,16,12,0.06);
+    color: var(--ink-soft);
+    border: 1px solid var(--hairline);
+  }
+  .matrix-tag.liberal {
+    background: rgba(226,84,42,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(226,84,42,0.32);
+  }
+  .matrix-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .matrix-metric .m-label {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+  }
+  .matrix-metric .m-value {
+    font-family: var(--f);
+    font-weight: 700;
+    font-size: clamp(15px, 1.25vw, 19px);
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .matrix-metric .m-value.accent { color: var(--accent); }
+  .matrix-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: 4px;
+    padding-top: 10px;
+    border-top: 1px solid var(--hairline);
+  }
+  .matrix-total .m-label {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+  }
+  .matrix-total .m-value-big {
+    font-family: var(--f);
+    font-weight: 800;
+    font-size: clamp(17px, 1.5vw, 22px);
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
 </style>
 </head>
 <body>
@@ -2290,32 +2375,81 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">📈 Cenários · 12 meses</div>
-      <h2 class="headline">Conservador, e <span class="acc">liberal</span>.</h2>
-      <p class="lede" style="margin-top: 18px; max-width: 70ch;">Duas projeções honestas. A primeira é o ganho certo. A segunda é o alvo dos 30-35 que articulaste.</p>
+      <div class="eyebrow">📈 Cenários · em €</div>
+      <h2 class="headline">Quatro projeções, a <span class="acc">€185 por consulta</span>.</h2>
+      <p class="lede" style="max-width: 72ch;">Conservador é o ganho certo. Liberal é o alvo dos 30-35 consultas/mês que articulaste. Cruzados com 6 e 12 meses, são quatro fotos honestas do que esperar.</p>
 
-      <div class="scenarios-grid">
-        <div class="glass" style="padding: 28px; display: flex; flex-direction: column; gap: 16px;">
-          <span class="chip" style="align-self: flex-start;"><span class="dot"></span>6 meses</span>
-          <h3 style="font-family: var(--f); font-weight: 600; font-size: clamp(20px, 1.8vw, 28px); letter-spacing: -0.015em; line-height: 1.2;">O ganho certo, <span class="acc">mínimo</span>.</h3>
-          <p style="font-size: clamp(14px, 1.05vw, 16px); color: var(--ink-soft); line-height: 1.55;">GBP setup + WhatsApp clicável + schema corrigido. Resultado mensurável em 90 dias, estável aos 6 meses.</p>
-          <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: auto; padding-top: 8px; border-top: 1px solid var(--line);">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;"><span style="font-family: var(--m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-quiet);">Contactos digitais</span><span style="font-weight: 600; color: var(--accent);">+15-25%</span></div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;"><span style="font-family: var(--m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-quiet);">Consultas novas/mês</span><span style="font-weight: 600; color: var(--accent);">+1 a 2</span></div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;"><span style="font-family: var(--m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-quiet);">Payback</span><span style="font-weight: 600; color: var(--accent);">~6 meses</span></div>
+      <div class="matrix-grid">
+        <!-- Conservador @ 6 meses -->
+        <div class="matrix-card glass">
+          <div class="matrix-tag conservador">Conservador · 6 meses</div>
+          <div class="matrix-metric">
+            <span class="m-label">Consultas novas / mês</span>
+            <span class="m-value">+1 a 2</span>
+          </div>
+          <div class="matrix-metric">
+            <span class="m-label">€ marginal / mês</span>
+            <span class="m-value accent">+€185 a 370</span>
+          </div>
+          <div class="matrix-total">
+            <span class="m-label">Acumulado em 6m</span>
+            <span class="m-value-big">~€1.100 a 2.200</span>
           </div>
         </div>
-        <div class="glass" style="padding: 28px; display: flex; flex-direction: column; gap: 16px;">
-          <span class="chip" style="align-self: flex-start;"><span class="dot"></span>12 meses</span>
-          <h3 style="font-family: var(--f); font-weight: 600; font-size: clamp(20px, 1.8vw, 28px); letter-spacing: -0.015em; line-height: 1.2;">O alvo dos 30-35, <span class="acc">atingido</span>.</h3>
-          <p style="font-size: clamp(14px, 1.05vw, 16px); color: var(--ink-soft); line-height: 1.55;">Long-tail SEO maduro, blog ativo a alimentar autoridade, reviews acumuladas no GBP a converter. Atinges os 30-35 que articulaste.</p>
-          <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: auto; padding-top: 8px; border-top: 1px solid var(--line);">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;"><span style="font-family: var(--m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-quiet);">Leads online</span><span style="font-weight: 600; color: var(--accent);">+50%</span></div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;"><span style="font-family: var(--m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-quiet);">Consultas novas/mês</span><span style="font-weight: 600; color: var(--accent);">+8 a 12</span></div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;"><span style="font-family: var(--m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-quiet);">Payback</span><span style="font-weight: 600; color: var(--accent);">&lt; 2 meses</span></div>
+
+        <!-- Conservador @ 12 meses -->
+        <div class="matrix-card glass">
+          <div class="matrix-tag conservador">Conservador · 12 meses</div>
+          <div class="matrix-metric">
+            <span class="m-label">Consultas novas / mês</span>
+            <span class="m-value">+2</span>
+          </div>
+          <div class="matrix-metric">
+            <span class="m-label">€ marginal / mês</span>
+            <span class="m-value accent">+€370</span>
+          </div>
+          <div class="matrix-total">
+            <span class="m-label">Acumulado em 12m</span>
+            <span class="m-value-big">~€3.300 a 4.400</span>
+          </div>
+        </div>
+
+        <!-- Liberal @ 6 meses -->
+        <div class="matrix-card glass liberal">
+          <div class="matrix-tag liberal">Liberal · 6 meses</div>
+          <div class="matrix-metric">
+            <span class="m-label">Consultas novas / mês</span>
+            <span class="m-value">+4 a 6</span>
+          </div>
+          <div class="matrix-metric">
+            <span class="m-label">€ marginal / mês</span>
+            <span class="m-value accent">+€740 a 1.110</span>
+          </div>
+          <div class="matrix-total">
+            <span class="m-label">Acumulado em 6m</span>
+            <span class="m-value-big">~€3.000 a 5.500</span>
+          </div>
+        </div>
+
+        <!-- Liberal @ 12 meses -->
+        <div class="matrix-card glass liberal">
+          <div class="matrix-tag liberal">Liberal · 12 meses</div>
+          <div class="matrix-metric">
+            <span class="m-label">Consultas novas / mês</span>
+            <span class="m-value">+8 a 12</span>
+          </div>
+          <div class="matrix-metric">
+            <span class="m-label">€ marginal / mês</span>
+            <span class="m-value accent">+€1.480 a 2.220</span>
+          </div>
+          <div class="matrix-total">
+            <span class="m-label">Acumulado em 12m</span>
+            <span class="m-value-big">~€11.000 a 22.000</span>
           </div>
         </div>
       </div>
+
+      <p style="margin-top: 18px; max-width: 70ch; font-size: clamp(12px, 0.85vw, 13px); color: var(--ink-quiet); font-style: italic; line-height: 1.5;">Modelo simples: consultas marginais novas × €185 acumuladas no período, com ramp típico de SEO local. Os números são honestos, não vendidos.</p>
     </div>
   </section>
 
