@@ -106,11 +106,10 @@
      not centered. This prevents "vacuum at top + crammed at bottom". */
   /* Protected bands: brand sits in chrome-top (4vh from top); content must start ≥12vh from top
      so there's a clear whitespace buffer below the brand. Same logic at the bottom for the footer. */
-  /* Center content vertically within the safe area (BALANCE PRINCIPLE).
-     Eyebrow + h2 + lede + cards + footnote all centered as a group, with empty
-     space split top/bottom proportionally. Heavy slides still respect the
-     padding-top floor (12vh below brand) and padding-bottom (18vh above footer). */
-  .slide.has-grid { justify-content: center; padding-top: max(12vh, 110px); padding-bottom: max(18vh, 180px); }
+  /* Header (eyebrow + h2 + lede) anchored at top, body grid expands to fill remaining space.
+     The body distributes its available height across cards via flex/grid stretch.
+     2 cards = each gets 50% height. 3 cards = 33%. The slide adapts to whatever's inside. */
+  .slide.has-grid { justify-content: flex-start; padding-top: max(12vh, 110px); padding-bottom: max(18vh, 180px); }
 
   @media (max-width: 900px) {
     /* Mobile: slides become scrollable cards instead of fixed-height presentations.
@@ -442,10 +441,32 @@
   .content > .eyebrow { margin-bottom: 0; }
   .content > .lede { margin-top: 0; }
   /* has-grid slides: minimum 20px between every stacked element (eyebrow / headline / lede / chips / grid).
-     The whitespace buffer below the brand comes from .slide.has-grid padding-top, not margin here.
-     Vertical centering distributes empty space top+bottom proportionally instead of leaving
-     content glued to the top with empty zone below. (Balance principle, see visual-system.md.) */
-  .has-grid .content { gap: 20px; justify-content: center; }
+     .content fills the slide's vertical space (flex: 1) so body grids inside can stretch.
+     Header elements (eyebrow, h2, lede, chips) keep natural height; the body grid claims the rest. */
+  .has-grid .content { gap: 20px; flex: 1 1 auto; min-height: 0; }
+
+  /* Body grids/tables inside .content stretch to fill remaining vertical space.
+     Cards inside (display:grid with align-items:stretch by default) auto-distribute the height. */
+  .has-grid .content > .quote-grid,
+  .has-grid .content > .addons-grid,
+  .has-grid .content > .stat-grid,
+  .has-grid .content > .scenarios-grid,
+  .has-grid .content > .matrix-grid,
+  .has-grid .content > .scenarios-table-wrap,
+  .has-grid .content > .pillars,
+  .has-grid .content > .phases-grid,
+  .has-grid .content > .pricing-grid,
+  .has-grid .content > .numbers-row,
+  .has-grid .content > .horizon-row,
+  .has-grid .content > .context-stats,
+  .has-grid .content > .goal-row,
+  .has-grid .content > .faq-list,
+  .has-grid .content > .bio-layout {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  /* Tables fill their wrapper, rows distribute their height naturally */
+  .has-grid .content > .scenarios-table-wrap > .scenarios-table { height: 100%; }
   /* When a content block is followed by a grid/cards block, force more breathing */
   .content > h1 + .phases-grid,
   .content > h2 + .phases-grid,
