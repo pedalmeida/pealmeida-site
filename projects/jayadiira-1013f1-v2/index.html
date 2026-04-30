@@ -2008,7 +2008,7 @@
 
   /* =============== SCENARIOS TABLE (slide 11, 4-col compact table) =============== */
   .scenarios-table-wrap {
-    margin-top: 10px;
+    margin-top: 14px;
     overflow-x: auto;
     border-radius: var(--r-sm);
     background: rgba(255,253,247,0.55);
@@ -2016,7 +2016,7 @@
     box-shadow: 0 18px 48px -16px rgba(20,16,12,0.12), 0 6px 18px -6px rgba(20,16,12,0.08);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    padding: 10px 14px;
+    padding: 14px 18px 10px;
   }
   .scenarios-table {
     width: 100%;
@@ -2024,7 +2024,7 @@
     font-family: var(--f);
   }
   .scenarios-table th, .scenarios-table td {
-    padding: 12px 14px;
+    padding: 16px 16px;
     text-align: center;
     border-bottom: 1px solid var(--hairline);
   }
@@ -2032,28 +2032,34 @@
   .scenarios-table tr:last-child th { border-bottom: none; }
   .scenarios-table thead th {
     font-family: var(--fm);
-    font-size: 10.5px;
-    letter-spacing: 0.14em;
+    font-size: 11px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     font-weight: 700;
-    border-bottom: 1px solid var(--hairline-strong);
   }
-  .scenarios-table .scenarios-th-top th { padding-bottom: 6px; padding-top: 8px; border-bottom: none; }
+  .scenarios-table .scenarios-th-top th {
+    padding: 10px 14px 6px;
+    border-bottom: none;
+  }
   .scenarios-table .scenarios-th-bot th {
-    padding-top: 0;
+    padding: 0 14px 12px;
     color: var(--ink-quiet);
     font-size: 10px;
-    letter-spacing: 0.10em;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    border-bottom: 1px solid var(--hairline-strong);
   }
+  /* Conservador: sage tint (cool, calm, "ganho certo") */
   .scenarios-table .grp-conservador {
-    color: var(--ink-soft);
-    background: rgba(20,16,12,0.04);
-    border-radius: 8px;
+    color: #4A7873;
+    background: rgba(184,212,208,0.28);
+    border-radius: 10px;
   }
+  /* Liberal: persimmon (the upside scenario) */
   .scenarios-table .grp-liberal {
     color: var(--accent);
-    background: rgba(226,84,42,0.10);
-    border-radius: 8px;
+    background: rgba(226,84,42,0.12);
+    border-radius: 10px;
   }
   .scenarios-table tbody .row-label {
     font-family: var(--fm);
@@ -2065,30 +2071,52 @@
     text-align: left;
     border-right: 1px solid var(--hairline);
     white-space: nowrap;
+    padding-left: 4px;
   }
   .scenarios-table tbody td {
-    font-weight: 700;
+    font-weight: 600;
     font-size: clamp(13px, 1.05vw, 16px);
-    color: var(--ink);
+    color: var(--ink-soft);
     white-space: nowrap;
     letter-spacing: -0.01em;
   }
-  .scenarios-table tbody td.acc-text { color: var(--accent); }
-  .scenarios-table tbody td.lib { background: rgba(226,84,42,0.05); }
+  /* Soft column tints all the way down so groups stay visually distinct */
+  .scenarios-table tbody td.cons { background: rgba(184,212,208,0.10); color: #2F5A55; }
+  .scenarios-table tbody td.acc-text.cons { color: #3A6B66; font-weight: 700; }
+  .scenarios-table tbody td.lib { background: rgba(226,84,42,0.06); color: var(--ink); }
+  .scenarios-table tbody td.acc-text.lib { color: var(--accent); font-weight: 700; }
+  /* Hero row: Acumulado no período — visually anchored as the answer */
+  .scenarios-table .row-total {
+    background: rgba(20,16,12,0.025);
+  }
   .scenarios-table .row-total td,
   .scenarios-table .row-total th {
-    font-size: clamp(14px, 1.15vw, 18px);
+    font-size: clamp(16px, 1.4vw, 22px);
     font-weight: 800;
-    padding-top: 14px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    letter-spacing: -0.02em;
+    border-top: 2px solid var(--hairline-strong);
+  }
+  .scenarios-table .row-total .row-label {
+    font-size: 11px !important;
+    color: var(--ink) !important;
+    font-weight: 700 !important;
+  }
+  .scenarios-table .row-total td.cons {
+    background: rgba(184,212,208,0.32);
+    color: #2F5A55;
   }
   .scenarios-table .row-total td.lib {
-    background: rgba(226,84,42,0.10);
+    background: rgba(226,84,42,0.16);
     color: var(--accent);
   }
   @media (max-width: 900px) {
-    .scenarios-table th, .scenarios-table td { padding: 8px 6px; font-size: 11.5px !important; }
+    .scenarios-table th, .scenarios-table td { padding: 10px 8px; font-size: 11.5px !important; }
     .scenarios-table .row-label { font-size: 9px !important; }
     .scenarios-table .scenarios-th-bot th { font-size: 9px !important; }
+    .scenarios-table .row-total td,
+    .scenarios-table .row-total th { font-size: 13.5px !important; padding: 12px 8px !important; }
   }
   .matrix-card {
     padding: 18px 20px !important;
@@ -2228,10 +2256,6 @@
       <div class="eyebrow">🎯 Diagnóstico digital</div>
       <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Onde a tua presença online está <span class="acc">hoje</span>.</h2>
       <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">Avaliei sete dimensões, das mais técnicas (velocidade, identificação no Google) às mais visíveis (ficha pública, reviews, contacto). Site tecnicamente sólido. Comercialmente invisível.</p>
-      <div class="row gap-12">
-        <span class="chip">Fonte: PageSpeed + Ahrefs</span>
-        <span class="chip"><span class="dot"></span>Auditoria · 04 · 2026</span>
-      </div>
 
       <div class="stat-grid">
         <div class="glass">
@@ -2262,6 +2286,7 @@
           </div>
         </div>
       </div>
+      <p style="margin-top: 12px; font-size: clamp(10.5px, 0.78vw, 12px); color: var(--ink-quiet); font-style: italic; line-height: 1.4;">Auditoria de Abril 2026 · ferramentas: PageSpeed Insights + Ahrefs.</p>
     </div>
   </section>
 
@@ -2623,22 +2648,22 @@
           <tbody>
             <tr>
               <th class="row-label">Consultas novas / mês</th>
-              <td>+1 a 2</td>
-              <td>+2</td>
+              <td class="cons">+1 a 2</td>
+              <td class="cons">+2</td>
               <td class="lib">+4 a 6</td>
               <td class="lib">+8 a 12</td>
             </tr>
             <tr>
               <th class="row-label">€ marginal / mês</th>
-              <td class="acc-text">+€85-170</td>
-              <td class="acc-text">+€170</td>
+              <td class="acc-text cons">+€85-170</td>
+              <td class="acc-text cons">+€170</td>
               <td class="acc-text lib">+€340-510</td>
               <td class="acc-text lib">+€680-1.020</td>
             </tr>
             <tr class="row-total">
               <th class="row-label">Acumulado no período</th>
-              <td>~€500-1.000</td>
-              <td>~€1.500-2.000</td>
+              <td class="cons">~€500-1.000</td>
+              <td class="cons">~€1.500-2.000</td>
               <td class="lib">~€1.400-2.500</td>
               <td class="lib">~€5.000-10.000</td>
             </tr>
@@ -2705,7 +2730,10 @@
 
       <div class="scenarios-grid">
         <div class="glass" style="padding: 28px; display: flex; flex-direction: column; gap: 14px;">
-          <span class="chip" style="align-self: flex-start;"><span class="dot"></span>Wix · Squarespace · Lovable</span>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="font-size: 28px; line-height: 1;">🛠️</span>
+            <span class="chip"><span class="dot"></span>Wix · Squarespace · Lovable</span>
+          </div>
           <h3 style="font-family: var(--f); font-weight: 600; font-size: clamp(20px, 1.8vw, 28px); letter-spacing: -0.015em; line-height: 1.2;">Fazes <span class="acc">tu</span>.</h3>
           <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
             <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">✅</span><span>É mesmo possível. Não invento.</span></li>
@@ -2715,7 +2743,10 @@
           </ul>
         </div>
         <div class="glass" style="padding: 28px; display: flex; flex-direction: column; gap: 14px; border: 1.5px solid var(--accent); box-shadow: 0 0 0 1px rgba(226,84,42,0.15), 0 18px 50px rgba(226,84,42,0.12);">
-          <span class="chip" style="align-self: flex-start;"><span class="dot"></span>Comigo</span>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="font-size: 28px; line-height: 1;">🤝</span>
+            <span class="chip"><span class="dot"></span>Comigo</span>
+          </div>
           <h3 style="font-family: var(--f); font-weight: 600; font-size: clamp(20px, 1.8vw, 28px); letter-spacing: -0.015em; line-height: 1.2;">Faço <span class="acc">eu</span>.</h3>
           <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
             <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">⚡</span><span>7 a 10 dias úteis. 1 a 2 horas por semana do teu lado.</span></li>
