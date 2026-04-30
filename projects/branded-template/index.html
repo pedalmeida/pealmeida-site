@@ -1072,8 +1072,8 @@
   /* =============== 12 · PRICING TIERS (3-up) =============== */
   .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr 1.18fr 1fr;
+    gap: 18px;
     margin-top: 8px;
     align-items: stretch;
   }
@@ -1081,16 +1081,33 @@
   .price-card {
     display: flex; flex-direction: column;
     padding: clamp(20px, 2.4vh, 28px) clamp(20px, 2.2vw, 28px) !important;
-    gap: 14px;
+    gap: 12px;
     position: relative;
   }
-  .price-card .tier-eyebrow {
-    font-family: var(--fm);
-    font-size: clamp(11px, 0.85vw, 13px);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-quiet);
+  .price-card .tier-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: rgba(226,84,42,0.12);
+    border: 1px solid rgba(226,84,42,0.28);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent);
+    margin-bottom: 2px;
   }
+  .price-card .tier-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .price-card.recommended .tier-icon {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .price-card.recommended .tier-icon svg { stroke: white; }
+  .price-card .tier-eyebrow {
+    font-family: var(--f);
+    font-weight: 700;
+    font-size: clamp(16px, 1.3vw, 20px);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .price-card.recommended .tier-eyebrow { color: var(--accent); }
   .price-card .price {
     font-family: var(--f);
     font-weight: 800;
@@ -1115,18 +1132,23 @@
   .price-card .features li {
     font-size: clamp(12px, 0.9vw, 14px);
     color: var(--ink-soft);
-    padding-left: 20px;
+    padding-left: 22px;
     position: relative;
-    line-height: 1.35;
+    line-height: 1.4;
   }
   .price-card .features li::before {
-    content: "";
-    position: absolute; left: 0; top: 0.5em;
-    width: 12px; height: 12px;
-    border-left: 2px solid var(--accent);
-    border-bottom: 2px solid var(--accent);
-    transform: rotate(-45deg);
+    content: "›";
+    position: absolute; left: 4px; top: 50%;
+    transform: translateY(-55%);
+    font-family: var(--f);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--accent);
+    line-height: 1;
   }
+  .price-card.recommended { padding: clamp(24px, 2.8vh, 32px) clamp(22px, 2.4vw, 30px) !important; }
+  .price-card.recommended .price { font-size: clamp(42px, 4.8vw, 66px); }
+  .price-card.recommended .features li { font-size: clamp(13px, 0.95vw, 15px); }
   .price-card.recommended {
     border: 1.5px solid var(--accent);
     box-shadow: 0 0 0 1px rgba(226,84,42,0.15), 0 18px 50px rgba(226,84,42,0.12);
@@ -1444,7 +1466,7 @@
     color: var(--accent-deep);
     flex-shrink: 0;
   }
-  .bio-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
   .bio-body { display: flex; flex-direction: column; gap: 14px; }
   .bio-tagline {
     font-family: var(--f);
@@ -1780,10 +1802,11 @@
     </div>
   </section>
 
-  <!-- ==================== 2 · STATEMENT (no meme) ==================== -->
-  <section class="slide s-echo bg-light-quiet" data-slide="2" data-bg="light">
-    <div class="orb orb-cool" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+  <!-- ==================== 2 · STATEMENT (with photo overlay) ==================== -->
+  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="2" data-bg="dark">
+    <div class="photo-bg">
+      <img src="media/photos/earth-night.jpg" alt="" aria-hidden="true">
+    </div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
@@ -1791,27 +1814,27 @@
 
     <div class="content">
       <div class="eyebrow">🤷 Contexto</div>
-      <h2 class="headline">Statement principal com <span class="acc">parte em destaque</span>.</h2>
-      <p class="lede" style="margin-top: 24px;">Frase de suporte que aprofunda o ponto sem repetir o título.</p>
+      <h2 class="headline" style="max-width: 22ch;">Statement principal com <span class="acc">parte em destaque</span>.</h2>
+      <p class="lede" style="max-width: 50ch;">Frase de suporte que aprofunda o ponto sem repetir o título.</p>
     </div>
   </section>
 
-  <!-- ==================== 3 · MANIFESTO / QUOTE ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="3" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
-    <div class="hairline-grid"></div>
+  <!-- ==================== 3 · MANIFESTO / QUOTE (with photo overlay) ==================== -->
+  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="3" data-bg="dark">
+    <div class="photo-bg">
+      <img src="media/photos/winding-road.jpg" alt="" aria-hidden="true">
+    </div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
     </div>
 
-    <div class="quote">
+    <div class="content">
       <div class="eyebrow">⚡ O que mudou</div>
-      <h2 class="quote-text">"Citação ou statement central que <span class="acc">muda o frame</span> da conversa."</h2>
-      <div class="attr">
-        <span class="attr-line"></span>
-        <span class="meta">Atribuição · Fonte · Data</span>
+      <div class="photo-quote">
+        <span class="mark">"</span>
+        <p class="body">Citação ou statement central que <span class="acc">muda o frame</span> da conversa.</p>
+        <div class="attr">Atribuição · Fonte · Data</div>
       </div>
     </div>
   </section>
@@ -1942,10 +1965,11 @@
     </div>
   </section>
 
-  <!-- ==================== 7 · PHASE INTRO (dark divider with timeline) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="7" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -20vw; top: -25vw;"></div>
+  <!-- ==================== 7 · PHASE INTRO (dark divider with photo + timeline) ==================== -->
+  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="7" data-bg="dark">
+    <div class="photo-bg">
+      <img src="media/photos/start-line.jpg" alt="" aria-hidden="true">
+    </div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
@@ -2083,12 +2107,11 @@
     </div>
   </section>
 
-  <!-- ==================== 11 · CLOSING (open question) ==================== -->
-  <section class="slide s-echo bg-light" data-slide="11" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 50vw; height: 50vw; right: -15vw; bottom: -20vw;"></div>
-    <div class="orb orb-cool" style="width: 30vw; height: 30vw; left: -8vw; top: -10vw;"></div>
-    <div class="hairline-grid"></div>
+  <!-- ==================== 11 · CLOSING (with photo overlay) ==================== -->
+  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="11" data-bg="dark">
+    <div class="photo-bg">
+      <img src="media/photos/teamwork-hands.jpg" alt="" aria-hidden="true">
+    </div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
@@ -2122,6 +2145,7 @@
 
       <div class="pricing-grid">
         <div class="price-card glass">
+          <div class="tier-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
           <div class="tier-eyebrow">Site Simples</div>
           <div class="price">€600<span class="unit">projeto</span></div>
           <ul class="features">
@@ -2135,6 +2159,7 @@
         </div>
         <div class="price-card glass recommended">
           <span class="badge">Recomendado</span>
+          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg></div>
           <div class="tier-eyebrow">+ Blog</div>
           <div class="price">€700<span class="unit">projeto</span></div>
           <ul class="features">
@@ -2146,6 +2171,7 @@
           <span class="chip"><span class="dot"></span>Melhor relação valor</span>
         </div>
         <div class="price-card glass">
+          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg></div>
           <div class="tier-eyebrow">+ Blog AI</div>
           <div class="price">€800<span class="unit">projeto</span></div>
           <ul class="features">
@@ -2567,11 +2593,11 @@
     </div>
   </section>
 
-  <!-- ==================== 23 · CTA CLOSER (WhatsApp + risk reversal) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="23" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -22vw; bottom: -28vw;"></div>
-    <div class="hairline-grid"></div>
+  <!-- ==================== 23 · CTA CLOSER (with photo) ==================== -->
+  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="23" data-bg="dark">
+    <div class="photo-bg">
+      <img src="media/photos/start-line.jpg" alt="" aria-hidden="true">
+    </div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
