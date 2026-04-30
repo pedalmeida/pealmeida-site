@@ -1881,9 +1881,10 @@
   /* =============== COMPACT CARDS (slides 7, 8, 9, 10, 12) =============== */
   /* Drop the M1-M6 / A-F code labels: icons + names already carry the meaning. */
   .addon-card .code { display: none !important; }
+  /* Compact padding respects the 22px floor from visual-system.md. Cards must breathe. */
   .addon-card {
-    padding: 14px 16px !important;
-    gap: 4px !important;
+    padding: 22px 22px !important;
+    gap: 6px !important;
   }
   .addon-card .name {
     font-size: clamp(13px, 1vw, 15px) !important;
@@ -1948,34 +1949,146 @@
     opacity: 0.78;
   }
 
-  /* =============== COMPACT STAT FOCUS (slide 3) =============== */
-  .stat-grid > .glass:first-child { padding: 18px 22px !important; }
+  /* =============== COMPACT STAT FOCUS (slide 3) — respects 22px padding floor =============== */
+  .stat-grid > .glass:first-child { padding: 24px 26px !important; }
   .stat-grid .big-num { font-size: clamp(38px, 4.2vw, 60px) !important; }
   .stat-grid .big-num .unit { font-size: 0.36em !important; }
   .stat-grid .big-label { font-size: clamp(13px, 1.05vw, 16px) !important; line-height: 1.35 !important; }
   .stat-grid .big-sub { font-size: clamp(10.5px, 0.8vw, 12px) !important; line-height: 1.4 !important; }
-  .stat-grid .stack > .glass { padding: 14px 16px !important; }
+  .stat-grid .stack > .glass { padding: 22px 24px !important; }
   .stat-grid .stack .meta { font-size: 10.5px !important; }
   .stat-grid .stack .h2 { font-size: clamp(15px, 1.3vw, 19px) !important; }
-  .stat-grid .stack .body { font-size: clamp(11.5px, 0.9vw, 13px) !important; line-height: 1.4 !important; }
+  .stat-grid .stack .body { font-size: clamp(12px, 0.9vw, 13.5px) !important; line-height: 1.5 !important; }
 
-  /* =============== COMPACT PILLARS (slide 4) =============== */
-  .pillars > .pillar { padding: 16px 18px !important; gap: 6px !important; }
-  .pillars .icon-lg { width: 24px !important; height: 24px !important; }
-  .pillars .num { font-size: 11px !important; letter-spacing: 0.12em !important; }
-  .pillars h3 { font-size: clamp(15px, 1.3vw, 19px) !important; line-height: 1.25 !important; }
-  .pillars p { font-size: clamp(11.5px, 0.88vw, 13px) !important; line-height: 1.45 !important; }
-  .pillars .pillar .meta { font-size: 10.5px !important; }
-
-  /* =============== SCENARIOS MATRIX (slide 10, 2x2 grid) =============== */
-  .matrix-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  /* Dimension breakdown inside hero stat card (slide 3) */
+  .dim-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--hairline);
+  }
+  .dim {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     gap: 14px;
-    margin-top: 8px;
+    font-size: clamp(11.5px, 0.88vw, 13.5px);
+    line-height: 1.3;
+  }
+  .dim-name { color: var(--ink-soft); }
+  .dim-score {
+    font-family: var(--fm);
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .dim-bad .dim-score { color: var(--accent); }
+  .dim-mid .dim-score { color: var(--ink-quiet); }
+  .dim-ok .dim-score { color: var(--ink); }
+
+  /* =============== COMPACT PILLARS (slide 4) — title close to body, meta at bottom =============== */
+  .pillars > .pillar {
+    padding: 22px 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  .pillars .icon-lg { width: 24px !important; height: 24px !important; margin-bottom: 10px !important; }
+  .pillars .num { font-size: 11px !important; letter-spacing: 0.12em !important; margin-bottom: 6px !important; }
+  .pillars h3 { font-size: clamp(15px, 1.3vw, 19px) !important; line-height: 1.25 !important; margin-bottom: 6px !important; }
+  .pillars p { font-size: clamp(12px, 0.9vw, 13.5px) !important; line-height: 1.5 !important; margin-bottom: 12px !important; }
+  .pillars .pillar .meta {
+    font-size: 10.5px !important;
+    margin-top: auto !important;
+    padding-top: 10px !important;
+    border-top: 1px solid var(--hairline) !important;
+  }
+
+  /* =============== SCENARIOS TABLE (slide 11, 4-col compact table) =============== */
+  .scenarios-table-wrap {
+    margin-top: 10px;
+    overflow-x: auto;
+    border-radius: var(--r-sm);
+    background: rgba(255,253,247,0.55);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 18px 48px -16px rgba(20,16,12,0.12), 0 6px 18px -6px rgba(20,16,12,0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 10px 14px;
+  }
+  .scenarios-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--f);
+  }
+  .scenarios-table th, .scenarios-table td {
+    padding: 12px 14px;
+    text-align: center;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .scenarios-table tr:last-child td,
+  .scenarios-table tr:last-child th { border-bottom: none; }
+  .scenarios-table thead th {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 1px solid var(--hairline-strong);
+  }
+  .scenarios-table .scenarios-th-top th { padding-bottom: 6px; padding-top: 8px; border-bottom: none; }
+  .scenarios-table .scenarios-th-bot th {
+    padding-top: 0;
+    color: var(--ink-quiet);
+    font-size: 10px;
+    letter-spacing: 0.10em;
+  }
+  .scenarios-table .grp-conservador {
+    color: var(--ink-soft);
+    background: rgba(20,16,12,0.04);
+    border-radius: 8px;
+  }
+  .scenarios-table .grp-liberal {
+    color: var(--accent);
+    background: rgba(226,84,42,0.10);
+    border-radius: 8px;
+  }
+  .scenarios-table tbody .row-label {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    font-weight: 600;
+    text-align: left;
+    border-right: 1px solid var(--hairline);
+    white-space: nowrap;
+  }
+  .scenarios-table tbody td {
+    font-weight: 700;
+    font-size: clamp(13px, 1.05vw, 16px);
+    color: var(--ink);
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+  .scenarios-table tbody td.acc-text { color: var(--accent); }
+  .scenarios-table tbody td.lib { background: rgba(226,84,42,0.05); }
+  .scenarios-table .row-total td,
+  .scenarios-table .row-total th {
+    font-size: clamp(14px, 1.15vw, 18px);
+    font-weight: 800;
+    padding-top: 14px;
+  }
+  .scenarios-table .row-total td.lib {
+    background: rgba(226,84,42,0.10);
+    color: var(--accent);
   }
   @media (max-width: 900px) {
-    .matrix-grid { grid-template-columns: 1fr; gap: 10px; }
+    .scenarios-table th, .scenarios-table td { padding: 8px 6px; font-size: 11.5px !important; }
+    .scenarios-table .row-label { font-size: 9px !important; }
+    .scenarios-table .scenarios-th-bot th { font-size: 9px !important; }
   }
   .matrix-card {
     padding: 18px 20px !important;
@@ -2114,29 +2227,38 @@
     <div class="content">
       <div class="eyebrow">🎯 Diagnóstico digital</div>
       <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Onde a tua presença online está <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 70ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">Site tecnicamente sólido. Comercialmente invisível.</p>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">Avaliei sete dimensões, das mais técnicas (velocidade, identificação no Google) às mais visíveis (ficha pública, reviews, contacto). Site tecnicamente sólido. Comercialmente invisível.</p>
       <div class="row gap-12">
         <span class="chip">Fonte: PageSpeed + Ahrefs</span>
         <span class="chip"><span class="dot"></span>Auditoria · 04 · 2026</span>
       </div>
 
       <div class="stat-grid">
-        <div class="glass" style="padding: 28px;">
-          <div class="meta" style="margin-bottom: 14px;">Score composto · 7 dimensões</div>
+        <div class="glass">
+          <div class="meta" style="margin-bottom: 8px;">Score composto · 7 dimensões</div>
           <div class="big-num">33<span class="unit">/100</span></div>
-          <div class="big-label">A foto certa antes de qualquer decisão.</div>
-          <div class="big-sub">Performance mobile 99 · GBP 0 · Schema 0 · Reviews 0 · Analytics 0 · DR 8 · Backlinks 63</div>
-        </div>
-        <div class="stack" style="gap: 12px;">
-          <div class="glass" style="padding: 20px;">
-            <div class="meta">Google Business Profile</div>
-            <div class="h2" style="margin-top: 6px;"><span class="acc">Não existe</span></div>
-            <div class="body" style="margin-top: 6px;">~70% das pesquisas locais não te vêem.</div>
+          <div class="big-label" style="margin-top: 4px;"><strong>Site tecnicamente sólido. Comercialmente invisível.</strong></div>
+
+          <div class="dim-list">
+            <div class="dim dim-ok"><span class="dim-name">Velocidade no telemóvel</span><span class="dim-score">99 / 100 ✓</span></div>
+            <div class="dim dim-bad"><span class="dim-name">Ficha Google Business</span><span class="dim-score">não existe ✗</span></div>
+            <div class="dim dim-bad"><span class="dim-name">Reconhecimento técnico no Google</span><span class="dim-score">não existe ✗</span></div>
+            <div class="dim dim-bad"><span class="dim-name">Reviews públicas</span><span class="dim-score">0 ✗</span></div>
+            <div class="dim dim-bad"><span class="dim-name">Tracking de visitantes</span><span class="dim-score">não existe ✗</span></div>
+            <div class="dim dim-mid"><span class="dim-name">Autoridade do domínio</span><span class="dim-score">8 / 100</span></div>
+            <div class="dim dim-ok"><span class="dim-name">Sites a referenciar-te</span><span class="dim-score">63 ✓</span></div>
           </div>
-          <div class="glass" style="padding: 20px;">
+        </div>
+        <div class="stack" style="gap: 14px;">
+          <div class="glass">
+            <div class="meta">Ficha Google Business</div>
+            <div class="h2" style="margin-top: 4px;"><span class="acc">Não existe</span></div>
+            <div class="body" style="margin-top: 6px;">A "morada digital" do Google: nome, fotos do consultório, horários, telefone, reviews. ~70% das pesquisas locais começam aqui. Quem pesquisa "homeopata Lisboa" não te encontra.</div>
+          </div>
+          <div class="glass">
             <div class="meta">Caminho de conversão</div>
-            <div class="h2" style="margin-top: 6px;"><span class="acc">Sem clique direto</span></div>
-            <div class="body" style="margin-top: 6px;">Telefone visível, mas sem link clicável. Sem WhatsApp Business com respostas automáticas, horários, boas-vindas. Cada contacto pede esforço extra.</div>
+            <div class="h2" style="margin-top: 4px;"><span class="acc">Sem clique direto</span></div>
+            <div class="body" style="margin-top: 6px;">Telefone visível, mas sem link clicável no telemóvel. Sem WhatsApp Business com respostas automáticas e horários. Cada paciente tem que copiar números à mão. Fricção mata marcações.</div>
           </div>
         </div>
       </div>
@@ -2160,24 +2282,24 @@
       <div class="pillars">
         <div class="pillar glass">
           <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          <div class="num">01 · SEO</div>
+          <div class="num">01 · SEO local</div>
           <h3>Encontrado quando importam.</h3>
-          <p>Estrutura semântica, schema.org Physician, meta data à medida, conteúdo expandido. Quando alguém pesquisa "homeopata Lisboa", apareces.</p>
-          <div class="meta" style="margin-top: 14px;">3-6 meses · long-tail</div>
+          <p>O Google recebe instruções claras sobre quem és, o que fazes e onde. Quando alguém pesquisa "homeopata Lisboa", apareces nos resultados.</p>
+          <div class="meta">Resultados em 3 a 6 meses</div>
         </div>
         <div class="pillar glass">
           <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           <div class="num">02 · Google Business</div>
           <h3>A tua ficha oficial.</h3>
-          <p>Reviews públicas, mapa, telefone, fotos, horários. Hoje não existe. É o ganho mais rápido. Efeito em 90 dias.</p>
-          <div class="meta" style="margin-top: 14px;">90 dias · +1 a +3 consultas/mês</div>
+          <p>Morada, fotos do consultório, horários, telefone, reviews dos pacientes. Hoje não existe. É o ganho mais visível e mais rápido.</p>
+          <div class="meta">Efeito em 90 dias · +1 a +3 consultas/mês</div>
         </div>
         <div class="pillar glass">
           <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           <div class="num">03 · WhatsApp Business</div>
           <h3>Menos atrito. Mais marcações.</h3>
-          <p>Botão sempre visível, respostas automáticas, horários, mensagem de boas-vindas. O paciente clica, escreve-te, marca.</p>
-          <div class="meta" style="margin-top: 14px;">Imediato · +20-40% contacto</div>
+          <p>Botão clicável em todas as páginas. Respostas automáticas com horários e boas-vindas. O paciente clica, escreve, marca. Sem copiar números à mão.</p>
+          <div class="meta">Efeito imediato · +20-40% de contactos</div>
         </div>
       </div>
     </div>
@@ -2259,7 +2381,7 @@
     <div class="content">
       <div class="eyebrow">💰 Investimento</div>
       <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 60ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">50% início · 50% entrega · IVA não incluído.</p>
+      <p class="lede" style="max-width: 60ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">50% início · 50% entrega.</p>
 
       <div class="pricing-grid">
         <div class="price-card glass">
@@ -2285,10 +2407,8 @@
             <li><span class="ico">📝</span><span>Blog com até 6 artigos re-escritos a partir dos teus ensaios</span></li>
             <li><span class="ico">📍</span><span>Google Business a sério: ficha, fotos, horários, reviews</span></li>
             <li><span class="ico">💬</span><span>WhatsApp Business clicável: respostas automáticas, horários, boas-vindas</span></li>
-            <li><span class="ico">🔍</span><span>Setup técnico para o Google reconhecer a tua especialidade</span></li>
-            <li><span class="ico">🛡️</span><span>14 dias de devolução · 30 dias de suporte</span></li>
           </ul>
-          <span class="chip"><span class="dot"></span>€50 desconto · pack completo</span>
+          <span class="chip"><span class="dot"></span>Pack completo</span>
         </div>
         <div class="price-card glass">
           <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/></svg></div>
@@ -2354,9 +2474,7 @@
         <span class="chip">📝 Blog (6 artigos)</span>
         <span class="chip">📍 Google Business</span>
         <span class="chip">💬 WhatsApp Business</span>
-        <span class="chip">🔍 Setup técnico SEO</span>
         <span class="chip">📋 Casos clínicos & FAQ</span>
-        <span class="chip">🛡️ Suporte 30 dias</span>
       </div>
     </div>
   </section>
@@ -2486,77 +2604,49 @@
       <h2 class="headline" style="font-size: clamp(26px, 3.1vw, 44px);">💰 Quatro projeções, a <span class="acc">€85 por consulta</span>.</h2>
       <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">Conservador é o ganho certo. Liberal é o alvo dos 30-35 consultas/mês que articulaste. Cruzados com 6 e 12 meses, são quatro fotos honestas do que esperar.</p>
 
-      <div class="matrix-grid">
-        <!-- Conservador @ 6 meses -->
-        <div class="matrix-card glass">
-          <div class="matrix-tag conservador">Conservador · 6 meses</div>
-          <div class="matrix-metric">
-            <span class="m-label">Consultas novas / mês</span>
-            <span class="m-value">+1 a 2</span>
-          </div>
-          <div class="matrix-metric">
-            <span class="m-label">€ marginal / mês</span>
-            <span class="m-value accent">+€85 a 170</span>
-          </div>
-          <div class="matrix-total">
-            <span class="m-label">Acumulado em 6m</span>
-            <span class="m-value-big">~€500 a 1.000</span>
-          </div>
-        </div>
-
-        <!-- Conservador @ 12 meses -->
-        <div class="matrix-card glass">
-          <div class="matrix-tag conservador">Conservador · 12 meses</div>
-          <div class="matrix-metric">
-            <span class="m-label">Consultas novas / mês</span>
-            <span class="m-value">+2</span>
-          </div>
-          <div class="matrix-metric">
-            <span class="m-label">€ marginal / mês</span>
-            <span class="m-value accent">+€170</span>
-          </div>
-          <div class="matrix-total">
-            <span class="m-label">Acumulado em 12m</span>
-            <span class="m-value-big">~€1.500 a 2.000</span>
-          </div>
-        </div>
-
-        <!-- Liberal @ 6 meses -->
-        <div class="matrix-card glass liberal">
-          <div class="matrix-tag liberal">Liberal · 6 meses</div>
-          <div class="matrix-metric">
-            <span class="m-label">Consultas novas / mês</span>
-            <span class="m-value">+4 a 6</span>
-          </div>
-          <div class="matrix-metric">
-            <span class="m-label">€ marginal / mês</span>
-            <span class="m-value accent">+€340 a 510</span>
-          </div>
-          <div class="matrix-total">
-            <span class="m-label">Acumulado em 6m</span>
-            <span class="m-value-big">~€1.400 a 2.500</span>
-          </div>
-        </div>
-
-        <!-- Liberal @ 12 meses -->
-        <div class="matrix-card glass liberal">
-          <div class="matrix-tag liberal">Liberal · 12 meses</div>
-          <div class="matrix-metric">
-            <span class="m-label">Consultas novas / mês</span>
-            <span class="m-value">+8 a 12</span>
-          </div>
-          <div class="matrix-metric">
-            <span class="m-label">€ marginal / mês</span>
-            <span class="m-value accent">+€680 a 1.020</span>
-          </div>
-          <div class="matrix-total">
-            <span class="m-label">Acumulado em 12m</span>
-            <span class="m-value-big">~€5.000 a 10.000</span>
-          </div>
-        </div>
+      <div class="scenarios-table-wrap">
+        <table class="scenarios-table">
+          <thead>
+            <tr class="scenarios-th-top">
+              <th></th>
+              <th class="grp-conservador" colspan="2">Conservador</th>
+              <th class="grp-liberal" colspan="2">Liberal</th>
+            </tr>
+            <tr class="scenarios-th-bot">
+              <th></th>
+              <th>6 meses</th>
+              <th>12 meses</th>
+              <th>6 meses</th>
+              <th>12 meses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="row-label">Consultas novas / mês</th>
+              <td>+1 a 2</td>
+              <td>+2</td>
+              <td class="lib">+4 a 6</td>
+              <td class="lib">+8 a 12</td>
+            </tr>
+            <tr>
+              <th class="row-label">€ marginal / mês</th>
+              <td class="acc-text">+€85-170</td>
+              <td class="acc-text">+€170</td>
+              <td class="acc-text lib">+€340-510</td>
+              <td class="acc-text lib">+€680-1.020</td>
+            </tr>
+            <tr class="row-total">
+              <th class="row-label">Acumulado no período</th>
+              <td>~€500-1.000</td>
+              <td>~€1.500-2.000</td>
+              <td class="lib">~€1.400-2.500</td>
+              <td class="lib">~€5.000-10.000</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <p style="margin-top: 18px; max-width: 70ch; font-size: clamp(12px, 0.85vw, 13px); color: var(--ink-quiet); font-style: italic; line-height: 1.5;">Modelo simples: consultas marginais novas × €85 acumuladas no período, com ramp típico de SEO local. Os números são honestos, não vendidos.</p>
+      <p style="margin-top: 14px; max-width: 70ch; font-size: clamp(11px, 0.82vw, 12.5px); color: var(--ink-quiet); font-style: italic; line-height: 1.5;">Modelo: consultas marginais × €85 acumuladas no período, com ramp típico de SEO local. Números honestos, não vendidos.</p>
     </div>
   </section>
 
