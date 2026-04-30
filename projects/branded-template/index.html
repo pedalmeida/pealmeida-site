@@ -594,8 +594,16 @@
       max-height: none !important;
       object-fit: cover !important;
       object-position: 70% center !important;
-      opacity: 0.4;
+      opacity: 0;
       z-index: 0 !important;
+      animation: echoLotusIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes echoLotusIn {
+      from { opacity: 0; transform: translateX(24px) scale(1.04); }
+      to   { opacity: 0.22; transform: translateX(0) scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      img.echo-lotus { animation: none; opacity: 0.22; }
     }
   }
 
