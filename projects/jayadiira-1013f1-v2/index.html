@@ -1906,23 +1906,29 @@
     font-size: clamp(18px, 1.6vw, 24px) !important;
   }
 
-  /* Pricing tier bullets: smaller + tighter so 6 items fit comfortably */
-  .price-card { padding: 16px 18px !important; gap: 8px !important; }
-  .price-card .tier-icon { width: 28px !important; height: 28px !important; margin-bottom: 0 !important; }
-  .price-card .tier-icon svg { width: 16px !important; height: 16px !important; }
-  .price-card .tier-eyebrow { font-size: clamp(13px, 1vw, 16px) !important; }
-  .price-card .price { font-size: clamp(28px, 3.0vw, 42px) !important; }
+  /* Pricing tier cards — more breathing, middle card visually elevated */
+  .pricing-grid { align-items: stretch !important; }
+  .price-card { padding: 26px 24px !important; gap: 12px !important; }
+  .price-card.recommended { padding: 32px 26px !important; transform: translateY(-8px); }
+  .price-card .tier-icon { width: 32px !important; height: 32px !important; margin-bottom: 2px !important; }
+  .price-card .tier-icon svg { width: 18px !important; height: 18px !important; }
+  .price-card .tier-eyebrow { font-size: clamp(14px, 1.1vw, 17px) !important; }
+  .price-card .price { font-size: clamp(30px, 3.2vw, 44px) !important; }
+  .price-card.recommended .price { font-size: clamp(34px, 3.6vw, 50px) !important; }
   .price-card .price .unit { font-size: 0.32em !important; }
-  .price-card .features { gap: 5px !important; }
+  .price-card .features { gap: 7px !important; }
   .price-card .features li {
-    font-size: clamp(11px, 0.8vw, 13px) !important;
-    line-height: 1.35 !important;
+    font-size: clamp(11.5px, 0.85vw, 13.5px) !important;
+    line-height: 1.4 !important;
   }
   .price-card.recommended .features li {
-    font-size: clamp(11px, 0.82vw, 13px) !important;
+    font-size: clamp(12px, 0.9vw, 14.5px) !important;
   }
-  .price-card .chip { font-size: 10.5px !important; padding: 4px 8px !important; }
-  .price-card .badge { font-size: 9.5px !important; padding: 3px 8px !important; }
+  .price-card .chip { font-size: 11px !important; padding: 5px 10px !important; }
+  .price-card .badge { font-size: 10px !important; padding: 4px 10px !important; }
+  @media (max-width: 900px) {
+    .price-card.recommended { transform: none; }
+  }
 
   /* =============== NOT-INCLUDED ROW (slide 8 Essencial scope footer) =============== */
   .not-included-row {
@@ -2004,6 +2010,36 @@
     margin-top: auto !important;
     padding-top: 10px !important;
     border-top: 1px solid var(--hairline) !important;
+  }
+
+  /* =============== HORIZON CELLS (slide 12, taller + icon + detail) =============== */
+  .horizon-row {
+    margin-top: 14px !important;
+    gap: 16px !important;
+  }
+  .horizon-row .number-cell {
+    padding: 24px 22px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .horizon-row .cell-icon {
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .horizon-row .num { font-size: clamp(28px, 2.8vw, 40px) !important; }
+  .horizon-row .num .unit { font-size: 0.5em !important; }
+  .horizon-row .label { font-size: clamp(12px, 1vw, 14px) !important; font-weight: 700 !important; }
+  .horizon-row .sub {
+    font-size: clamp(11px, 0.85vw, 13px) !important;
+    line-height: 1.5 !important;
+    color: var(--ink-quiet) !important;
+    margin-top: auto;
+  }
+  @media (max-width: 900px) {
+    .horizon-row { grid-template-columns: 1fr 1fr !important; }
   }
 
   /* =============== SCENARIOS TABLE (slide 11, 4-col compact table) =============== */
@@ -2275,18 +2311,24 @@
         </div>
         <div class="stack" style="gap: 14px;">
           <div class="glass">
-            <div class="meta">Ficha Google Business</div>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+              <span style="font-size: 22px; line-height: 1;">📍</span>
+              <div class="meta">Ficha Google Business</div>
+            </div>
             <div class="h2" style="margin-top: 4px;"><span class="acc">Não existe</span></div>
             <div class="body" style="margin-top: 6px;">A "morada digital" do Google: nome, fotos do consultório, horários, telefone, reviews. ~70% das pesquisas locais começam aqui. Quem pesquisa "homeopata Lisboa" não te encontra.</div>
           </div>
           <div class="glass">
-            <div class="meta">Caminho de conversão</div>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+              <span style="font-size: 22px; line-height: 1;">💬</span>
+              <div class="meta">Caminho de conversão</div>
+            </div>
             <div class="h2" style="margin-top: 4px;"><span class="acc">Sem clique direto</span></div>
             <div class="body" style="margin-top: 6px;">Telefone visível, mas sem link clicável no telemóvel. Sem WhatsApp Business com respostas automáticas e horários. Cada paciente tem que copiar números à mão. Fricção mata marcações.</div>
           </div>
         </div>
       </div>
-      <p style="margin-top: 12px; font-size: clamp(10.5px, 0.78vw, 12px); color: var(--ink-quiet); font-style: italic; line-height: 1.4;">Auditoria de Abril 2026 · ferramentas: PageSpeed Insights + Ahrefs.</p>
+      <p style="margin-top: 6px; font-size: clamp(10.5px, 0.78vw, 12px); color: var(--ink-quiet); font-style: italic; line-height: 1.4;">Auditoria de Abril 2026 · ferramentas: PageSpeed Insights + Ahrefs.</p>
     </div>
   </section>
 
@@ -2317,21 +2359,38 @@
           <div class="num">02 · Google Business</div>
           <h3>A tua ficha oficial.</h3>
           <p>Morada, fotos do consultório, horários, telefone, reviews dos pacientes. Hoje não existe. É o ganho mais visível e mais rápido.</p>
-          <div class="meta">Efeito em 90 dias · +1 a +3 consultas/mês</div>
+          <div class="meta">Efeito a 1-3 meses · +1 a +3 consultas/mês</div>
         </div>
         <div class="pillar glass">
           <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           <div class="num">03 · WhatsApp Business</div>
           <h3>Menos atrito. Mais marcações.</h3>
           <p>Botão clicável em todas as páginas. Respostas automáticas com horários e boas-vindas. O paciente clica, escreve, marca. Sem copiar números à mão.</p>
-          <div class="meta">Efeito imediato · +20-40% de contactos</div>
+          <div class="meta">Efeito imediato · menos fricção, +20-40% de contactos</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 5 · CRONOGRAMA (Phases Overview) ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="5" data-bg="light">
+  <!-- ==================== 5 · CHAPTER BREAK (Phase Intro, dark, no timeline) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="5" data-bg="dark">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -20vw; top: -25vw;"></div>
+    <div class="hairline-grid"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <span class="timeline-pill"><span class="pulse"></span>Capítulo Dois · A proposta</span>
+      <h1 class="headline">Como vamos <span class="acc">fazer acontecer</span>.</h1>
+      <p class="lede" style="margin-top: 18px; max-width: 60ch;">A partir daqui: três caminhos, uma avença opcional, seis entregáveis, e respostas honestas às perguntas que aparecem sempre.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 6 · CRONOGRAMA (Phases Overview) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="6" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 35vw; height: 35vw; right: -10vw; top: -8vw;"></div>
 
@@ -2349,48 +2408,31 @@
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           <div class="num">Etapa 1</div>
           <div class="when">Dia 1-2</div>
-          <h3>Briefing & brand</h3>
+          <h3>Recolher requisitos e materiais</h3>
           <p>Chamada inicial, recolha de fotos, materiais, voz. Definir tom e direção visual.</p>
         </div>
         <div class="phase-card glass">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
           <div class="num">Etapa 2</div>
           <div class="when">Dia 3-6</div>
-          <h3>Build</h3>
+          <h3>Construção de artefactos</h3>
           <p>Construção da landing, identidade visual, página sobre, FAQ, casos clínicos.</p>
         </div>
         <div class="phase-card glass">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           <div class="num">Etapa 3</div>
           <div class="when">Dia 7-8</div>
-          <h3>Sistema</h3>
+          <h3>Configuração de sistemas</h3>
           <p>Setup do Google Business Profile, WhatsApp Business, integração de analytics no painel.</p>
         </div>
         <div class="phase-card glass">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
           <div class="num">Etapa 4</div>
           <div class="when">Dia 9-10</div>
-          <h3>Lançamento</h3>
-          <p>Tu validas, eu corrijo, lançamos. 14 dias de devolução + 30 dias de suporte incluídos.</p>
+          <h3>Lançamento & entrega final</h3>
+          <p>Tu validas, eu corrijo, lançamos. Entrega documentada e 30 dias de suporte pós-lançamento incluídos.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ==================== 6 · CHAPTER BREAK (Phase Intro, dark, no timeline) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="6" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -20vw; top: -25vw;"></div>
-    <div class="hairline-grid"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <span class="timeline-pill"><span class="pulse"></span>Capítulo Dois · A proposta</span>
-      <h1 class="headline">Como vamos <span class="acc">fazer acontecer</span>.</h1>
-      <p class="lede" style="margin-top: 18px; max-width: 60ch;">A partir daqui: três caminhos, uma avença opcional, seis entregáveis, e respostas honestas às perguntas que aparecem sempre.</p>
     </div>
   </section>
 
@@ -2406,7 +2448,7 @@
     <div class="content">
       <div class="eyebrow">💰 Investimento</div>
       <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 60ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">50% início · 50% entrega.</p>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">50% no início, 50% na entrega. Cada pacote inclui 30 dias de suporte pós-lançamento para ajustes e correções.</p>
 
       <div class="pricing-grid">
         <div class="price-card glass">
@@ -2416,7 +2458,7 @@
           <ul class="features with-icons">
             <li><span class="ico">🌐</span><span>Site pessoal contemporâneo e moderno</span></li>
             <li><span class="ico">🎨</span><span>Identidade visual: logo, palete, tipografia</span></li>
-            <li><span class="ico">📷</span><span>Sessão fotográfica e vídeo no consultório</span></li>
+            <li><span class="ico">📋</span><span>Casos clínicos & FAQ validados por ti</span></li>
             <li><span class="ico">✉️</span><span>Email de reativação aos pacientes antigos</span></li>
             <li><span class="ico">📊</span><span>Analytics simples no painel do site</span></li>
           </ul>
@@ -2429,6 +2471,7 @@
           <div class="price">€800<span class="unit">projeto</span></div>
           <ul class="features with-icons">
             <li><span class="ico">✅</span><span>Tudo do plano Essencial</span></li>
+            <li><span class="ico">📷</span><span>Sessão foto e vídeo no consultório</span></li>
             <li><span class="ico">📝</span><span>Blog com até 6 artigos re-escritos a partir dos teus ensaios</span></li>
             <li><span class="ico">📍</span><span>Google Business a sério: ficha, fotos, horários, reviews</span></li>
             <li><span class="ico">💬</span><span>WhatsApp Business clicável: respostas automáticas, horários, boas-vindas</span></li>
@@ -2464,7 +2507,7 @@
     <div class="content">
       <div class="eyebrow">📦 Entregáveis · pack Base</div>
       <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Cinco peças no pack <span class="acc">Essencial (€450)</span>.</h2>
-      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">O site e a identidade visual, prontos a lançar. <strong>Sem extensões.</strong> O que vem no Estúdio aparece em baixo, claramente marcado.</p>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">O site, a identidade e a estrutura de conteúdo prontos a lançar. O que vem no Estúdio aparece em baixo, claramente marcado.</p>
 
       <div class="addons-grid">
         <div class="addon-card glass">
@@ -2478,9 +2521,9 @@
           <div class="desc">Logo, palete, tipografia. Coerente com o tom filosófico da tua prática. Não-template.</div>
         </div>
         <div class="addon-card glass">
-          <span class="icon-emoji">📷</span>
-          <div class="name">Sessão foto e vídeo</div>
-          <div class="desc">10-15 fotografias editadas no consultório + vídeo curto de 1-2 minutos para o site. Autêntico, não stock.</div>
+          <span class="icon-emoji">📋</span>
+          <div class="name">Casos clínicos & FAQ</div>
+          <div class="desc">2 a 3 casos anonimizados, validados por ti. FAQ com respostas claras às perguntas comuns. Para construir confiança antes da primeira consulta.</div>
         </div>
         <div class="addon-card glass">
           <span class="icon-emoji">✉️</span>
@@ -2496,10 +2539,10 @@
 
       <div class="not-included-row">
         <span class="ni-label">Não incluído · adicionado no Estúdio:</span>
+        <span class="chip">📷 Sessão foto e vídeo</span>
         <span class="chip">📝 Blog (6 artigos)</span>
         <span class="chip">📍 Google Business</span>
         <span class="chip">💬 WhatsApp Business</span>
-        <span class="chip">📋 Casos clínicos & FAQ</span>
       </div>
     </div>
   </section>
@@ -2515,45 +2558,29 @@
 
     <div class="content">
       <div class="eyebrow">📦 Entregáveis · pack Estúdio</div>
-      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Seis peças no pack <span class="acc">Estúdio (€800)</span>.</h2>
-      <p class="lede" style="max-width: 72ch;">O <strong>Essencial</strong> entrega site, identidade, sessão foto e analytics (peças A, B, C, E). O <strong>Estúdio</strong> acrescenta casos clínicos + WhatsApp Business + Google Business (peças D, F).</p>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Tudo do Essencial, mais <span class="acc">quatro peças extra</span>.</h2>
+      <p class="lede" style="max-width: 72ch;">Inclui tudo o que vem no pack Essencial (site, identidade, casos clínicos, email de reativação, analytics). Adiciona estas quatro peças, focadas em conversão, autoridade e operação.</p>
 
       <div class="addons-grid">
         <div class="addon-card glass">
-          <span class="icon-emoji">🌐</span>
-          <div class="code">A</div>
-          <div class="name">Site pessoal</div>
-          <div class="desc">Design contemporâneo, mobile-first, optimizado para Google local. Pensado para quem pesquisa "homeopata Lisboa".</div>
-        </div>
-        <div class="addon-card glass">
-          <span class="icon-emoji">🎨</span>
-          <div class="code">B</div>
-          <div class="name">Identidade visual</div>
-          <div class="desc">Logo, palete, tipografia. Coerente com o tom filosófico da tua prática. Não-template.</div>
-        </div>
-        <div class="addon-card glass">
-          <span class="icon-emoji">👤</span>
-          <div class="code">C</div>
-          <div class="name">Página "Sobre"</div>
-          <div class="desc">40+ anos em MX, Colombia, India, Romania, PT. Tom que preserva a voz dos teus ensaios.</div>
-        </div>
-        <div class="addon-card glass">
-          <span class="icon-emoji">📋</span>
-          <div class="code">D</div>
-          <div class="name">Casos clínicos & FAQ</div>
-          <div class="desc">2-3 casos anonimizados, validados por ti. FAQ com respostas claras às perguntas comuns.</div>
-        </div>
-        <div class="addon-card glass">
-          <span class="icon-emoji">📷</span>
-          <div class="code">E</div>
-          <div class="name">Sessão foto e vídeo</div>
-          <div class="desc">10-15 fotografias editadas no consultório + vídeo curto de 1-2 minutos para o site. Autêntico, não stock.</div>
+          <span class="icon-emoji">📍</span>
+          <div class="name">Google Business Profile</div>
+          <div class="desc">Setup da tua ficha oficial: morada, fotos do consultório, horários, telefone, reviews. ~70% das pesquisas locais começam aqui.</div>
         </div>
         <div class="addon-card glass">
           <span class="icon-emoji">💬</span>
-          <div class="code">F</div>
-          <div class="name">WhatsApp + Analytics</div>
-          <div class="desc">Botão WhatsApp Business clicável em todas as páginas, Google Business setup, analytics simples no painel. Tudo em português.</div>
+          <div class="name">WhatsApp Business</div>
+          <div class="desc">Botão clicável em todas as páginas, respostas automáticas com horários e mensagem de boas-vindas. Cada paciente fica a um toque.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📝</span>
+          <div class="name">Blog (até 6 artigos)</div>
+          <div class="desc">Artigos re-escritos a partir dos teus ensaios. Voz tua, optimizados para SEO. Constroem autoridade ao longo do tempo.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📷</span>
+          <div class="name">Sessão de foto e vídeo</div>
+          <div class="desc">10 a 15 fotografias editadas no consultório + vídeo curto de 1-2 minutos para o site. Autêntico, não stock.</div>
         </div>
       </div>
     </div>
@@ -2569,46 +2596,40 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">🔄 Avença mensal · €50/mês</div>
-      <h2 class="headline">Para teres <span class="acc">paz de espírito</span>.</h2>
-      <p class="lede" style="max-width: 60ch;">Cuidado contínuo, opcional. Sem fidelização.</p>
+      <div class="eyebrow">🔄 Avença mensal</div>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Avença <span class="acc">opcional · €50/mês</span> — recomendada.</h2>
+      <p class="lede" style="max-width: 72ch;">Manter um site vivo dá trabalho contínuo, mesmo depois de lançado. Esta avença é opcional, mas <strong>fortemente recomendada</strong> para preservar o investimento. Sem fidelização — cancela quando quiseres.</p>
 
       <div class="addons-grid">
         <div class="addon-card glass">
           <span class="icon-emoji">🛠️</span>
-          <div class="code">M1</div>
-          <div class="name">Manutenção</div>
-          <div class="desc">Atualizações de software, segurança e plugins. Tudo o que precisa de ser actualizado, é actualizado. Sem te incomodar. Sem partir nada.</div>
+          <div class="name">Site sempre actualizado e seguro</div>
+          <div class="desc">Atualizações de software, segurança e plugins. Tudo é actualizado sem te incomodar e sem partir nada. Sem isto, o site fica vulnerável e desactualizado.</div>
         </div>
         <div class="addon-card glass">
           <span class="icon-emoji">📡</span>
-          <div class="code">M2</div>
-          <div class="name">Monitorização</div>
-          <div class="desc">Uptime + backups verificados. Se o site cair, eu sei antes de ti. Backups verificados todos os meses, prontos para restaurar.</div>
+          <div class="name">Site sempre online (alertas precoces)</div>
+          <div class="desc">Uptime + backups verificados todos os meses. Se cair, eu sei antes de ti. Se algo correr mal, há cópia recente para restaurar.</div>
         </div>
         <div class="addon-card glass">
           <span class="icon-emoji">📊</span>
-          <div class="code">M3</div>
-          <div class="name">Relatório mensal</div>
-          <div class="desc">Email de uma página por mês: visitas, queries que te encontraram, alertas resolvidos.</div>
+          <div class="name">Visibilidade mensal do que converte</div>
+          <div class="desc">Email de uma página por mês: visitas, queries que te encontraram, alertas resolvidos. Para saberes se o investimento está a render.</div>
         </div>
         <div class="addon-card glass">
           <span class="icon-emoji">📍</span>
-          <div class="code">M4</div>
-          <div class="name">Google Business</div>
-          <div class="desc">Resposta a reviews novas (com tua aprovação), atualizações, fotos novas mensais.</div>
+          <div class="name">Ficha Google sempre fresca</div>
+          <div class="desc">Resposta a reviews novas (com tua aprovação), atualizações, fotos novas mensais. Uma ficha activa converte mais.</div>
         </div>
         <div class="addon-card glass">
           <span class="icon-emoji">✍️</span>
-          <div class="code">M5</div>
-          <div class="name">Blog</div>
-          <div class="desc">1 artigo por mês. 30 minutos de chamada onde falas livremente. Eu transformo em artigo, validas, publico com SEO.</div>
+          <div class="name">Conteúdo regular para autoridade</div>
+          <div class="desc">1 artigo por mês a partir dos teus ensaios. 30 min de chamada onde falas livremente. Eu transformo em artigo, validas, publico. Constrói autoridade.</div>
         </div>
         <div class="addon-card glass">
           <span class="icon-emoji">✉️</span>
-          <div class="code">M6</div>
-          <div class="name">Reativação</div>
-          <div class="desc">Email à base trimestral. Uma vez por trimestre, mando mensagem aos teus pacientes antigos. Para a base não te esquecer.</div>
+          <div class="name">Pacientes antigos voltam</div>
+          <div class="desc">Email à base trimestral. Uma vez por trimestre, mensagem aos teus pacientes antigos. Reduz custo de aquisição e mantém a relação.</div>
         </div>
       </div>
     </div>
@@ -2689,26 +2710,30 @@
       <h2 class="headline" style="font-size: clamp(26px, 3.1vw, 44px);">🪴 O teu site actual já tem <span class="acc">15 anos</span>.</h2>
       <p class="lede" style="max-width: 70ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">O domínio drgabrielcampuzano.com está online desde 2011. Sites bem feitos amortizam-se em décadas, não em ciclos curtos.</p>
 
-      <div class="numbers-row" style="--cols: 4;">
+      <div class="numbers-row horizon-row" style="--cols: 4;">
         <div class="number-cell glass">
+          <span class="cell-icon">⏳</span>
           <div class="num">15<span class="unit">anos</span></div>
           <div class="label">Lifespan actual</div>
-          <div class="sub">2011 → 2026</div>
+          <div class="sub">drgabrielcampuzano.com online desde 2011. Quase 15 anos sem renovação visual ou técnica.</div>
         </div>
         <div class="number-cell glass">
+          <span class="cell-icon">🪴</span>
           <div class="num">8-10<span class="unit">anos</span></div>
           <div class="label">Lifespan esperado</div>
-          <div class="sub">Stack moderna, mobile-first</div>
+          <div class="sub">Stack moderna, mobile-first, mantida via avença. Não é descartável — vai durar enquanto a tua prática durar.</div>
         </div>
         <div class="number-cell glass">
+          <span class="cell-icon">🪙</span>
           <div class="num">~€8<span class="unit">/mês</span></div>
           <div class="label">Custo amortizado</div>
-          <div class="sub">€800 ÷ 8 anos</div>
+          <div class="sub">€800 dividido por 8 anos. Menos do que um café por semana, distribuído ao longo da vida útil do site.</div>
         </div>
         <div class="number-cell glass">
+          <span class="cell-icon">📈</span>
           <div class="num">10x-100x</div>
           <div class="label">ROI projectado</div>
-          <div class="sub">75% pesquisa médico no Google antes de marcar</div>
+          <div class="sub">75% das pessoas pesquisa médico no Google antes de marcar. Algumas consultas adicionais por ano pagam o investimento muitas vezes.</div>
         </div>
       </div>
     </div>
@@ -2757,7 +2782,7 @@
         </div>
       </div>
 
-      <p style="margin-top: 24px; max-width: 70ch; font-size: clamp(14px,1.1vw,17px); color: var(--ink-quiet); font-style: italic; line-height: 1.55;">É uma decisão pessoal. Tem custo dos dois lados. Esta proposta, e o template que vês à frente, são em si a referência para decidires com olhos abertos.</p>
+      <p style="margin-top: 14px; max-width: 70ch; font-size: clamp(13px,1vw,15px); color: var(--ink-quiet); font-style: italic; line-height: 1.55;">É uma decisão pessoal. Tem custo dos dois lados. Esta proposta, e o template que vês à frente, são em si a referência para decidires com olhos abertos.</p>
     </div>
   </section>
 
