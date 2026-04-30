@@ -1609,6 +1609,82 @@
     padding-left: 22px;
   }
 
+  /* =============== 24 · QUOTE WITH PHOTO OVERLAY =============== */
+  .photo-bg {
+    position: absolute; inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .photo-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55) saturate(1.05);
+  }
+  .photo-bg::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 70%, rgba(0,0,0,0.85) 100%),
+      linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 100%);
+  }
+  .slide.photo-slide .chrome-top { z-index: 5; }
+  .slide.photo-slide .chrome-top .brand { color: white; }
+  .slide.photo-slide .brand-mark { box-shadow: 0 0 12px rgba(226,84,42,0.8); }
+  .slide.photo-slide .content { z-index: 4; }
+  .slide.photo-slide .eyebrow { color: var(--accent-glow); }
+  .slide.photo-slide .headline,
+  .slide.photo-slide .display,
+  .slide.photo-slide .quote-text { color: white; }
+  .slide.photo-slide .lede,
+  .slide.photo-slide .body { color: rgba(255,255,255,0.85); }
+  .photo-quote {
+    max-width: 28ch;
+    margin-top: 0;
+  }
+  .photo-quote .mark {
+    font-family: var(--f);
+    font-size: clamp(48px, 5vw, 80px);
+    line-height: 0.5;
+    color: var(--accent-glow);
+    font-weight: 800;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .photo-quote .body {
+    font-family: var(--f);
+    font-size: clamp(24px, 2.6vw, 42px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: white;
+    text-wrap: balance;
+  }
+  .photo-quote .body .acc { color: var(--accent-glow); }
+  .photo-quote .attr {
+    margin-top: 18px;
+    font-family: var(--fm);
+    font-size: clamp(11px, 0.95vw, 14px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* =============== 25 · PARTNERSHIP / TEAMWORK =============== */
+  .partnership-content {
+    max-width: 36ch;
+    margin-top: 0;
+  }
+  .partnership-cta {
+    margin-top: 24px;
+    display: flex; flex-wrap: wrap; gap: 12px;
+  }
+  .partnership-cta .chip {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(12px);
+  }
+
   /* =============== 22 · ADD-ONS GRID =============== */
   .addons-grid {
     display: grid;
@@ -2522,6 +2598,50 @@
       </div>
 
       <div class="contact-line">1 cliente novo por semana · Próxima vaga: à confirmar</div>
+    </div>
+  </section>
+
+  <!-- ==================== 24 · QUOTE WITH PHOTO OVERLAY ==================== -->
+  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="24" data-bg="dark">
+    <div class="photo-bg">
+      <img src="media/photos/winding-road.jpg" alt="" aria-hidden="true">
+    </div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">⚡ O que muda</div>
+      <div class="photo-quote">
+        <span class="mark">"</span>
+        <p class="body">O caminho não é uma linha recta. <span class="acc">É a rota certa.</span></p>
+        <div class="attr">Princípio · pedro-deck-builder</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 25 · PARTNERSHIP / "BORA JUNTOS" ==================== -->
+  <section class="slide s-echo has-grid photo-slide bg-dark" data-slide="25" data-bg="dark">
+    <div class="photo-bg">
+      <img src="media/photos/teamwork-hands.jpg" alt="" aria-hidden="true">
+    </div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">🤝 Parceria</div>
+      <div class="partnership-content">
+        <h1 class="display">Bora <span class="acc">fazer acontecer</span>.</h1>
+        <p class="lede" style="max-width: 40ch; margin-top: 4px;">Não sou contractor. Sou parceiro do teu negócio. O teu crescimento é o meu KPI. Construímos juntos o que está à tua altura.</p>
+        <div class="partnership-cta">
+          <span class="chip">Resultados teus, não relatórios meus</span>
+          <span class="chip">Pele no jogo</span>
+          <span class="chip">Um compromisso, dois lados</span>
+        </div>
+      </div>
     </div>
   </section>
 
