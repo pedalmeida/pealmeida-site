@@ -1609,26 +1609,29 @@
   .bio-layout {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 32px;
+    gap: 36px;
     align-items: start;
     margin-top: 8px;
   }
   @media (max-width: 900px) { .bio-layout { grid-template-columns: 1fr; } }
+  /* Portrait card: rectangular with rounded corners, taller than wide.
+     Anchored at top of bio (align-self: start) so the description on the right
+     starts at the same line. Old circular mask retired 2026-04-30. */
   .bio-photo {
-    width: clamp(110px, 12vw, 160px);
-    height: clamp(110px, 12vw, 160px);
-    border-radius: 50%;
+    width: clamp(170px, 18vw, 240px);
+    aspect-ratio: 4 / 5;
+    border-radius: 22px;
     overflow: hidden;
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 0 6px rgba(226,84,42,0.08);
     background: var(--accent-peach);
+    box-shadow: 0 14px 32px rgba(31,33,38,0.12), 0 2px 6px rgba(31,33,38,0.06);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--f); font-weight: 800;
-    font-size: clamp(44px, 5vw, 64px);
+    font-size: clamp(54px, 6vw, 80px);
     color: var(--accent-deep);
     flex-shrink: 0;
+    align-self: start;
   }
-  .bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+  .bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
   .bio-body { display: flex; flex-direction: column; gap: 14px; }
   .bio-tagline {
     font-family: var(--f);
@@ -1671,15 +1674,22 @@
     max-width: 100%; max-height: 100%;
     object-fit: contain;
     filter: grayscale(1);
-    opacity: 0.55;
+    opacity: 0.65;
     transition: opacity 200ms, filter 200ms;
   }
   .logo-cell:hover img { filter: grayscale(0); opacity: 1; }
   .logos-row {
-    display: flex; flex-wrap: wrap; gap: 14px;
-    margin-top: 12px;
+    display: flex; flex-wrap: wrap; gap: 18px;
+    margin-top: 14px;
+    align-items: center;
   }
-  .logos-row .logo-cell { height: 56px; min-width: 120px; flex: 0 0 auto; }
+  .logos-row .logo-cell {
+    height: 64px;
+    min-width: 130px;
+    flex: 0 0 auto;
+    padding: 12px 18px;
+  }
+  .logos-row .logo-cell img { max-height: 36px; }
 
   /* =============== 19 · CASE STUDY (single) =============== */
   .case-layout {
@@ -2587,7 +2597,6 @@
           <p class="quote-takeaway">→ 30-35 é o alvo concreto. Tudo na proposta é avaliado contra ele.</p>
         </div>
       </div>
-      <p style="margin-top: 12px; font-size: clamp(11px, 0.85vw, 13px); color: var(--ink-quiet); font-style: italic; line-height: 1.5;">Dr. Gabriel Campuzano · onboarding · Abril 2026</p>
     </div>
   </section>
 
@@ -2673,6 +2682,7 @@
     <div class="content">
       <div class="eyebrow">👋 Quem sou</div>
       <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Pedro Almeida.</h2>
+      <p class="lede" style="max-width: 72ch;">Quem é a pessoa por trás desta proposta. Background, empresas, e porque é que esta combinação de produto + presença online é o que me move.</p>
 
       <div class="bio-layout">
         <div class="bio-photo">
@@ -2683,10 +2693,10 @@
           <p class="bio-text">Comecei como UX designer e consultor de estratégia na Deloitte. Passei pelas equipas de produto na Fidelidade, na Critical TechWorks (BMW), e mais recentemente na Sword Health, focado em experiências digitais com IA.</p>
           <p class="bio-text">Trabalho agora de forma independente. Esta proposta junta as duas peças que sempre me obcecaram: produto bem feito, e a presença online certa para quem precisa de te encontrar.</p>
           <div class="logos-row">
-            <div class="logo-cell">Deloitte</div>
-            <div class="logo-cell">Fidelidade</div>
-            <div class="logo-cell">BMW · CTW</div>
-            <div class="logo-cell">Sword Health</div>
+            <div class="logo-cell"><img src="media/logos/deloitte.svg" alt="Deloitte"></div>
+            <div class="logo-cell"><img src="media/logos/fidelidade.svg" alt="Fidelidade"></div>
+            <div class="logo-cell"><img src="media/logos/ctw.svg" alt="Critical TechWorks"></div>
+            <div class="logo-cell"><img src="media/logos/sword-health.svg" alt="Sword Health"></div>
           </div>
         </div>
       </div>
