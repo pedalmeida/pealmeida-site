@@ -2012,6 +2012,177 @@
     border-top: 1px solid var(--hairline) !important;
   }
 
+  /* =============== O QUE OUVI - 3 quote cards (slide 2) =============== */
+  .quote-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-top: 16px;
+  }
+  @media (max-width: 900px) { .quote-grid { grid-template-columns: 1fr; gap: 14px; } }
+  .quote-card {
+    padding: 26px 24px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .quote-icon {
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .quote-card .quote-text-body {
+    font-family: var(--f);
+    font-style: italic;
+    font-size: clamp(15px, 1.15vw, 18px);
+    line-height: 1.4;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .quote-card .quote-takeaway {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--hairline);
+    font-family: var(--fm);
+    font-size: clamp(11.5px, 0.88vw, 13.5px);
+    color: var(--accent);
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  /* =============== OBJETIVO DA PROPOSTA (slide 3) =============== */
+  .goal-row {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .goal-card {
+    padding: 24px 32px !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+  }
+  .goal-card--accent {
+    background: linear-gradient(135deg, rgba(226,84,42,0.95), rgba(169,58,24,0.95)) !important;
+    border-color: var(--accent) !important;
+    color: white !important;
+  }
+  .goal-label {
+    font-family: var(--fm);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    font-weight: 700;
+  }
+  .goal-card--accent .goal-label { color: rgba(255,255,255,0.85); }
+  .goal-value {
+    font-family: var(--f);
+    font-weight: 800;
+    font-size: clamp(40px, 4.4vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .goal-card--accent .goal-value { color: white; }
+  .goal-unit {
+    font-size: 0.32em;
+    font-weight: 600;
+    color: var(--ink-quiet);
+    margin-left: 4px;
+    letter-spacing: 0;
+  }
+  .goal-card--accent .goal-unit { color: rgba(255,255,255,0.7); }
+  .goal-sub {
+    font-family: var(--fm);
+    font-size: clamp(12px, 0.9vw, 14px);
+    color: var(--ink-quiet);
+    font-weight: 600;
+  }
+  .goal-card--accent .goal-sub { color: rgba(255,255,255,0.85); }
+  .goal-arrow-marker {
+    font-size: clamp(28px, 2.8vw, 40px);
+    color: var(--accent);
+    align-self: center;
+    font-weight: 700;
+  }
+  .goal-incremental {
+    text-align: center;
+    margin-top: 12px;
+    font-family: var(--fm);
+    font-size: clamp(13px, 1vw, 15px);
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .purpose-band {
+    margin-top: 18px;
+    padding: 18px 22px;
+    border-left: 3px solid var(--accent);
+    background: rgba(226,84,42,0.06);
+    border-radius: 8px;
+  }
+  .purpose-band p {
+    font-family: var(--f);
+    font-style: italic;
+    font-size: clamp(13px, 1vw, 16px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 95ch;
+  }
+  .purpose-band strong { color: var(--accent); font-weight: 700; font-style: normal; }
+
+  /* =============== O CONTEXTO - 2 stat cards (slide 4) =============== */
+  .context-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 14px;
+  }
+  @media (max-width: 900px) { .context-stats { grid-template-columns: 1fr; gap: 14px; } }
+  .context-card {
+    padding: 26px 24px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .context-big {
+    font-family: var(--f);
+    font-weight: 800;
+    font-size: clamp(56px, 6vw, 96px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--accent);
+  }
+  .context-big .unit {
+    font-size: 0.4em;
+    color: var(--accent-deep);
+    font-weight: 700;
+    margin-left: 2px;
+  }
+  .context-label {
+    font-family: var(--f);
+    font-size: clamp(13px, 1.05vw, 16px);
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .context-label strong { color: var(--ink); font-weight: 700; }
+  .context-source {
+    margin-top: auto;
+    padding-top: 8px;
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    font-weight: 600;
+  }
+
   /* =============== HORIZON CELLS (slide 12, taller + icon + detail) =============== */
   .horizon-row {
     margin-top: 14px !important;
@@ -2258,28 +2429,109 @@
     </div>
   </section>
 
-  <!-- ==================== 2 · MANIFESTO / QUOTE ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="2" data-bg="dark">
+  <!-- ==================== 2 · O QUE OUVI (3 quotes) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="2" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
-    <div class="hairline-grid"></div>
+    <div class="orb orb-warm" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
+    <div class="orb orb-cool" style="width: 28vw; height: 28vw; left: -8vw; bottom: -10vw;"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
     </div>
 
-    <div class="quote">
-      <div class="eyebrow">Princípio fundador</div>
-      <h2 class="quote-text">"Não vejo a minha actividade como negócio. É uma forma de <span class="acc">estar com o mundo</span>."</h2>
-      <div class="attr">
-        <span class="attr-line"></span>
-        <span class="meta">Dr. Gabriel Campuzano · Onboarding · Abril 2026</span>
+    <div class="content">
+      <div class="eyebrow">01 · O que ouvi</div>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Três frases tuas que <span class="acc">definem</span> esta proposta.</h2>
+
+      <div class="quote-grid">
+        <div class="quote-card glass">
+          <span class="quote-icon">🪷</span>
+          <p class="quote-text-body">"Não vejo a minha actividade como negócio. É uma forma de estar com o mundo."</p>
+          <p class="quote-takeaway">→ Nada aqui é plano de marketing. É dignidade.</p>
+        </div>
+        <div class="quote-card glass">
+          <span class="quote-icon">⏳</span>
+          <p class="quote-text-body">"Não tenho capacidade agora."</p>
+          <p class="quote-takeaway">→ O objetivo não é trazer volume em demasia.</p>
+        </div>
+        <div class="quote-card glass">
+          <span class="quote-icon">🎯</span>
+          <p class="quote-text-body">"Se ficar com 30-35 consultas no mês já ficava satisfeito."</p>
+          <p class="quote-takeaway">→ Esse é o número. Tudo está calibrado para ele.</p>
+        </div>
+      </div>
+      <p style="margin-top: 12px; font-size: clamp(11px, 0.85vw, 13px); color: var(--ink-quiet); font-style: italic; line-height: 1.5;">Dr. Gabriel Campuzano · onboarding · Abril 2026</p>
+    </div>
+  </section>
+
+  <!-- ==================== 3 · OBJETIVO DA PROPOSTA ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="3" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-peach" style="width: 38vw; height: 38vw; right: -12vw; bottom: -15vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">🎯 02 · Objetivo da proposta</div>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Hoje estás <span class="acc">aqui</span>. Queremos chegar <span class="acc">ali</span>.</h2>
+
+      <div class="goal-row">
+        <div class="goal-card glass">
+          <span class="goal-label">Hoje</span>
+          <div class="goal-value">20<span class="goal-unit">/mês</span></div>
+          <div class="goal-sub">≈ €1.700 / mês</div>
+        </div>
+        <div class="goal-arrow-marker">→</div>
+        <div class="goal-card goal-card--accent glass">
+          <span class="goal-label">Alvo</span>
+          <div class="goal-value">30-35<span class="goal-unit">/mês</span></div>
+          <div class="goal-sub">≈ €2.500 / mês</div>
+        </div>
+      </div>
+
+      <p class="goal-incremental">+10 a 15 consultas / mês · +€800 de receita mensal incremental</p>
+
+      <div class="purpose-band">
+        <p>Tudo o que se segue nesta proposta serve <strong>este objetivo</strong>. Cada decisão, cada peça, cada euro investido tem que se justificar contra estes números. Nada mais.</p>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 3 · DIAGNÓSTICO (Stat Focus) ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="3" data-bg="light">
+  <!-- ==================== 4 · O CONTEXTO (75% / 46%) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="4" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-sage" style="width: 35vw; height: 35vw; left: -10vw; top: -8vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📊 02B · O contexto</div>
+      <h2 class="headline" style="font-size: clamp(26px, 3.0vw, 40px);">Onde <span class="acc">estão</span> os pacientes que ainda não te conhecem.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(13px, 1vw, 16px); color: var(--ink-quiet);">Antes de falar do teu site, é útil enquadrar como é que as pessoas procuram um médico hoje. Não é teoria, são dados públicos recentes.</p>
+
+      <div class="context-stats">
+        <div class="context-card glass">
+          <div class="context-big">75<span class="unit">%</span></div>
+          <div class="context-label">das pessoas <strong>procuram um médico no Google</strong> antes de marcar. E <strong>75% lê reviews</strong> antes de decidir.</div>
+          <div class="context-source">Invoca · Birdeye 2025</div>
+        </div>
+        <div class="context-card glass">
+          <div class="context-big">46<span class="unit">%</span></div>
+          <div class="context-label">das pesquisas no Google têm <strong>intenção local</strong> ("homeopata Lisboa", "perto de mim"). É aqui que o <strong>Local SEO</strong> decide se apareces ou não.</div>
+          <div class="context-source">Semrush · Google Search Statistics 2025</div>
+        </div>
+      </div>
+
+      <p style="margin-top: 8px; font-size: clamp(10.5px, 0.78vw, 12px); color: var(--ink-quiet); font-style: italic; line-height: 1.4; max-width: 95ch;">Fontes: Invoca Healthcare Marketing Report, Birdeye State of GBP 2025, Semrush Google Search Statistics 2025. Verificáveis online.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 5 · DIAGNÓSTICO (Stat Focus) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="5" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 45vw; height: 45vw; right: -12vw; top: -15vw;"></div>
     <div class="orb orb-sage"  style="width: 30vw; height: 30vw; left: -8vw; bottom: -12vw;"></div>
@@ -2332,8 +2584,8 @@
     </div>
   </section>
 
-  <!-- ==================== 4 · ESTRATÉGIA (Pillars) ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="4" data-bg="light">
+  <!-- ==================== 6 · ESTRATÉGIA (Pillars) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="6" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 40vw; height: 40vw; left: -10vw; top: -10vw;"></div>
 
@@ -2372,8 +2624,8 @@
     </div>
   </section>
 
-  <!-- ==================== 5 · CHAPTER BREAK (Phase Intro, dark, no timeline) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="5" data-bg="dark">
+  <!-- ==================== 7 · CHAPTER BREAK (Phase Intro, dark, no timeline) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="7" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -20vw; top: -25vw;"></div>
     <div class="hairline-grid"></div>
@@ -2389,8 +2641,8 @@
     </div>
   </section>
 
-  <!-- ==================== 6 · CRONOGRAMA (Phases Overview) ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="6" data-bg="light">
+  <!-- ==================== 8 · CRONOGRAMA (Phases Overview) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="8" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 35vw; height: 35vw; right: -10vw; top: -8vw;"></div>
 
@@ -2436,8 +2688,8 @@
     </div>
   </section>
 
-  <!-- ==================== 7 · PRICING (3-up) ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="7" data-bg="light">
+  <!-- ==================== 9 · PRICING (3-up) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="9" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 40vw; height: 40vw; right: -12vw; top: -12vw;"></div>
 
@@ -2495,8 +2747,8 @@
     </div>
   </section>
 
-  <!-- ==================== 8 · ENTREGÁVEIS PACK ESSENCIAL ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="8" data-bg="light">
+  <!-- ==================== 10 · ENTREGÁVEIS PACK ESSENCIAL ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="10" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 38vw; height: 38vw; right: -10vw; top: -10vw;"></div>
 
@@ -2547,8 +2799,8 @@
     </div>
   </section>
 
-  <!-- ==================== 9 · ENTREGÁVEIS (Add-ons grid variant, no price chip) ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="9" data-bg="light">
+  <!-- ==================== 11 · ENTREGÁVEIS (Add-ons grid variant, no price chip) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="11" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; top: -10vw;"></div>
 
@@ -2586,8 +2838,8 @@
     </div>
   </section>
 
-  <!-- ==================== 10 · AVENÇA MENSAL (Add-ons grid, 6 cards) ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="10" data-bg="light">
+  <!-- ==================== 12 · AVENÇA MENSAL (Add-ons grid, 6 cards) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="12" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 38vw; height: 38vw; right: -12vw; bottom: -15vw;"></div>
 
@@ -2635,8 +2887,8 @@
     </div>
   </section>
 
-  <!-- ==================== 11 · CENÁRIOS (Custom 2-card) ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="11" data-bg="light">
+  <!-- ==================== 13 · CENÁRIOS (Custom 2-card) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="13" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; bottom: -15vw;"></div>
     <div class="orb orb-sage"  style="width: 28vw; height: 28vw; left: -6vw; top: -10vw;"></div>
@@ -2696,8 +2948,8 @@
     </div>
   </section>
 
-  <!-- ==================== 12 · HORIZONTE (By the Numbers) ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="12" data-bg="light">
+  <!-- ==================== 14 · HORIZONTE (By the Numbers) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="14" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
 
@@ -2739,8 +2991,8 @@
     </div>
   </section>
 
-  <!-- ==================== 13 · FAQ ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="13" data-bg="light">
+  <!-- ==================== 15 · FAQ ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="15" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-sage" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
 
@@ -2786,8 +3038,8 @@
     </div>
   </section>
 
-  <!-- ==================== 14 · CTA CLOSER (dark, WhatsApp only) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="14" data-bg="dark">
+  <!-- ==================== 16 · CTA CLOSER (dark, WhatsApp only) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="16" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -22vw; bottom: -28vw;"></div>
     <div class="hairline-grid"></div>
@@ -2815,7 +3067,7 @@
 
 <!-- =============== FOOTER NAV (always visible, attached to bottom) =============== -->
 <div class="footer">
-  <span id="counter">1 / 14</span>
+  <span id="counter">1 / 16</span>
   <div class="progress" id="progress"></div>
   <span class="nav-hint">← → para navegar</span>
 </div>
