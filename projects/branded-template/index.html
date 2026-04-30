@@ -120,6 +120,22 @@
     /* Keep slide-by-slide nav on mobile too — show only active slide,
        but allow that slide to scroll when content exceeds viewport. */
     body { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+
+    /* Stretch slide backgrounds to cover the full scrollable height.
+       Radial gradients are defined in px for desktop; on mobile they'd end
+       at the original viewport and reveal the base bg below. background-size
+       cover + no-repeat keeps the visual continuous as the slide grows tall. */
+    .slide.bg-light, .slide.bg-light-quiet, .slide.bg-light-cool,
+    .slide.bg-dark { background-size: 100% 100%; background-repeat: no-repeat; }
+
+    /* Echo lotus is positioned absolute to a fixed bottom corner; on tall mobile
+       slides it'd float mid-scroll. Stretch it to fade across the full slide. */
+    .echo-lotus {
+      top: auto; bottom: 0;
+      width: 90vw; height: auto;
+      max-height: 60vh;
+      object-fit: contain;
+    }
   }
 
   /* =============== STAGGER FADE-UP on slide enter =============== */
