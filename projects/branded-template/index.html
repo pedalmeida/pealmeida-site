@@ -475,12 +475,14 @@
     max-height: 100vh;
     object-fit: cover !important;
     object-position: 70% center !important;
-    opacity: 0.75;
+    opacity: 0;
     z-index: 2 !important;
     pointer-events: none;
     display: block !important;
     transform-origin: 80% 95%;
-    animation: lotusSway 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    animation:
+      heroLotusIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+      lotusSway 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1.1s infinite;
     will-change: transform, filter;
     transition: filter 0.9s ease;
     filter: brightness(1) saturate(1);
@@ -498,6 +500,10 @@
   /* Organic sway: pivot at the stem (bottom-right), so petals breathe like in a breeze.
      Y-axis only (no X) so the lotus never pulls away from the right edge.
      Multi-keyframe asymmetric path keeps it from feeling mechanical. */
+  @keyframes heroLotusIn {
+    from { opacity: 0; }
+    to   { opacity: 0.75; }
+  }
   @keyframes lotusSway {
     0%   { transform: translate3d(0, 0, 0)    rotate(0deg)    skewX(0deg); }
     20%  { transform: translate3d(0, -3px, 0) rotate(-0.35deg) skewX(0.12deg); }
