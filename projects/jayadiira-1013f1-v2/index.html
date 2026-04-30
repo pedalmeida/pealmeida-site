@@ -1673,23 +1673,30 @@
   .logo-cell img {
     max-width: 100%; max-height: 100%;
     object-fit: contain;
-    filter: grayscale(1);
-    opacity: 0.65;
-    transition: opacity 200ms, filter 200ms;
+    transition: transform 200ms;
   }
-  .logo-cell:hover img { filter: grayscale(0); opacity: 1; }
+  .logo-cell:hover img { transform: scale(1.04); }
+  /* Logo card row (used in About slide): solid white rounded-rectangle cards
+     with the brand image inside, full color. White background lets coloured
+     SVGs/PNGs sit on a clean canvas regardless of slide bg-* tone. */
   .logos-row {
-    display: flex; flex-wrap: wrap; gap: 18px;
-    margin-top: 14px;
-    align-items: center;
+    display: flex; flex-wrap: wrap; gap: 14px;
+    margin-top: 16px;
+    align-items: stretch;
   }
   .logos-row .logo-cell {
-    height: 64px;
-    min-width: 130px;
+    height: 72px;
+    width: 130px;
     flex: 0 0 auto;
-    padding: 12px 18px;
+    padding: 14px 18px;
+    background: #fff !important;
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(31,33,38,0.06);
+    backdrop-filter: none;
+    display: flex; align-items: center; justify-content: center;
   }
-  .logos-row .logo-cell img { max-height: 36px; }
+  .logos-row .logo-cell img { max-height: 40px; max-width: 100%; }
 
   /* =============== 19 · CASE STUDY (single) =============== */
   .case-layout {
@@ -2693,10 +2700,10 @@
           <p class="bio-text">Comecei como UX designer e consultor de estratégia na Deloitte. Passei pelas equipas de produto na Fidelidade, na Critical TechWorks (BMW), e mais recentemente na Sword Health, focado em experiências digitais com IA.</p>
           <p class="bio-text">Hoje aplico essa experiência a clientes mais próximos, como tu. A proposta que se segue é o que faria se fosses um produto que estou a lançar: tirar atrito, resolver o que dói, e construir algo que dura.</p>
           <div class="logos-row">
-            <div class="logo-cell"><img src="media/logos/deloitte.svg" alt="Deloitte"></div>
-            <div class="logo-cell"><img src="media/logos/fidelidade.svg" alt="Fidelidade"></div>
-            <div class="logo-cell"><img src="media/logos/ctw.svg" alt="Critical TechWorks"></div>
-            <div class="logo-cell"><img src="media/logos/sword-health.svg" alt="Sword Health"></div>
+            <div class="logo-cell"><img src="media/logos/deloitte.png" alt="Deloitte"></div>
+            <div class="logo-cell"><img src="media/logos/fidelidade.jpg" alt="Fidelidade"></div>
+            <div class="logo-cell"><img src="media/logos/ctw.png" alt="Critical TechWorks"></div>
+            <div class="logo-cell"><img src="media/logos/sword-health.png" alt="Sword Health"></div>
           </div>
         </div>
       </div>
