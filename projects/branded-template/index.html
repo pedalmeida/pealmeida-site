@@ -2765,6 +2765,10 @@
     counter.textContent = `${idx + 1} / ${total}`;
     progress.querySelectorAll('span').forEach((s, i) => s.classList.toggle('done', i <= idx));
     document.body.dataset.currentBg = slides[idx].dataset.bg || 'light';
+    // Reset scroll to top of the new slide. On mobile, slides are scrollable
+    // (height: auto + overflow visible) and the user may have scrolled within
+    // the previous slide; without this jump, the new slide opens mid-scroll.
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }
 
   document.addEventListener('keydown', e => {
