@@ -445,28 +445,50 @@
      Header elements (eyebrow, h2, lede, chips) keep natural height; the body grid claims the rest. */
   .has-grid .content { gap: 20px; flex: 1 1 auto; min-height: 0; }
 
-  /* Body grids/tables inside .content stretch to fill remaining vertical space.
-     Cards inside (display:grid with align-items:stretch by default) auto-distribute the height. */
+  /* BODY GRID — claim available space, distribute equitably, don't stretch artificially.
+     Pattern: header (eyebrow + h2 + lede) anchored top, body claims remaining space,
+     content INSIDE the body sits at natural height and is centered as a group.
+     2 cards: ~50/50 + breathing. 3 cards: a row centered with empty space top+bottom.
+     Cards / rows / list items NEVER stretch beyond their natural content. */
+
+  /* Display: grid containers — items natural height in their cell, rows distributed centered */
   .has-grid .content > .quote-grid,
   .has-grid .content > .addons-grid,
   .has-grid .content > .stat-grid,
   .has-grid .content > .scenarios-grid,
   .has-grid .content > .matrix-grid,
-  .has-grid .content > .scenarios-table-wrap,
   .has-grid .content > .pillars,
   .has-grid .content > .phases-grid,
   .has-grid .content > .pricing-grid,
   .has-grid .content > .numbers-row,
   .has-grid .content > .horizon-row,
   .has-grid .content > .context-stats,
-  .has-grid .content > .goal-row,
-  .has-grid .content > .faq-list,
   .has-grid .content > .bio-layout {
-    flex: 1 1 auto;
-    min-height: 0;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    align-items: start !important;
+    align-content: center !important;
   }
-  /* Tables fill their wrapper, rows distribute their height naturally */
-  .has-grid .content > .scenarios-table-wrap > .scenarios-table { height: 100%; }
+
+  /* Display: flex column containers — center natural-height content stack vertically */
+  .has-grid .content > .scenarios-table-wrap,
+  .has-grid .content > .faq-list {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  /* Display: flex row containers — center vertically, natural item heights */
+  .has-grid .content > .goal-row {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    align-items: center !important;
+  }
+
+  /* Drop forced 100% height on table — natural rows centered via wrapper */
+  .has-grid .content > .scenarios-table-wrap > .scenarios-table { height: auto !important; }
   /* When a content block is followed by a grid/cards block, force more breathing */
   .content > h1 + .phases-grid,
   .content > h2 + .phases-grid,
