@@ -1681,24 +1681,25 @@
      SVGs/PNGs sit on a clean canvas regardless of slide bg-* tone. */
   .logos-row {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(5, minmax(0, 150px));
+    gap: 10px;
     margin-top: 18px;
+    justify-content: start;
   }
-  @media (max-width: 900px) { .logos-row { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 900px) { .logos-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .logos-row .logo-cell {
-    height: 72px;
+    height: 58px;
     width: auto;
     flex: 0 0 auto;
-    padding: 12px 14px;
+    padding: 10px 12px;
     background: #fff !important;
     border: 1px solid var(--hairline);
-    border-radius: 14px;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(31,33,38,0.06);
     backdrop-filter: none;
     display: flex; align-items: center; justify-content: center;
   }
-  .logos-row .logo-cell img { max-height: 40px; max-width: 100%; }
+  .logos-row .logo-cell img { max-height: 28px; max-width: 100%; object-fit: contain; }
 
   /* =============== 19 · CASE STUDY (single) =============== */
   .case-layout {
