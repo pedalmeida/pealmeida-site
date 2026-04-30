@@ -1840,7 +1840,7 @@
     }
   }
 
-  /* =============== SCENARIOS GRID (slide 6, custom 2-col) =============== */
+  /* =============== SCENARIOS GRID (slide 10, custom 2-col) =============== */
   .scenarios-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1852,6 +1852,30 @@
       grid-template-columns: 1fr;
       gap: 16px;
     }
+  }
+
+  /* =============== FEATURES WITH ICONS (pricing tier bullets) =============== */
+  .price-card .features.with-icons li {
+    padding-left: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .price-card .features.with-icons li::before { display: none; }
+  .price-card .features.with-icons .ico {
+    flex-shrink: 0;
+    width: 22px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  /* =============== ADDON CARD ICONS (slides 8 + 9: avença + entregáveis) =============== */
+  .addon-card .icon-emoji {
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 8px;
+    display: block;
   }
 </style>
 </head>
@@ -2032,8 +2056,195 @@
     </div>
   </section>
 
-  <!-- ==================== 6 · CENÁRIOS (Custom 2-card) ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="6" data-bg="light">
+  <!-- ==================== 6 · CHAPTER BREAK (Phase Intro, dark, no timeline) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="6" data-bg="dark">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -20vw; top: -25vw;"></div>
+    <div class="hairline-grid"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <span class="timeline-pill"><span class="pulse"></span>Capítulo Dois · A proposta</span>
+      <h1 class="headline">Como vamos <span class="acc">fazer acontecer</span>.</h1>
+      <p class="lede" style="margin-top: 18px; max-width: 60ch;">A partir daqui: três caminhos, uma avença opcional, seis entregáveis, e respostas honestas às perguntas que aparecem sempre.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 7 · PRICING (3-up) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="7" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 40vw; height: 40vw; right: -12vw; top: -12vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">💰 Investimento</div>
+      <h2 class="headline">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
+      <p class="lede" style="max-width: 60ch;">50% início · 50% entrega · IVA não incluído.</p>
+
+      <div class="pricing-grid">
+        <div class="price-card glass">
+          <div class="tier-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="tier-eyebrow">Essencial</div>
+          <div class="price">€450<span class="unit">projeto</span></div>
+          <ul class="features with-icons">
+            <li><span class="ico">🌐</span><span>Site pessoal contemporâneo e moderno</span></li>
+            <li><span class="ico">🎨</span><span>Identidade visual: logo, palete, tipografia</span></li>
+            <li><span class="ico">📷</span><span>Sessão fotográfica e vídeo no consultório</span></li>
+            <li><span class="ico">✉️</span><span>Email de reativação aos pacientes antigos</span></li>
+            <li><span class="ico">📊</span><span>Analytics simples no painel do site</span></li>
+          </ul>
+          <span class="chip">Site base · 7-10 dias úteis</span>
+        </div>
+        <div class="price-card glass recommended">
+          <span class="badge">Recomendado</span>
+          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
+          <div class="tier-eyebrow">Estúdio</div>
+          <div class="price">€800<span class="unit">projeto</span></div>
+          <ul class="features with-icons">
+            <li><span class="ico">✅</span><span>Tudo do plano Essencial</span></li>
+            <li><span class="ico">📝</span><span>Blog com até 6 artigos re-escritos a partir dos teus ensaios</span></li>
+            <li><span class="ico">📍</span><span>Google Business a sério: ficha, fotos, horários, reviews</span></li>
+            <li><span class="ico">💬</span><span>WhatsApp Business clicável: respostas automáticas, horários, boas-vindas</span></li>
+            <li><span class="ico">🔍</span><span>Setup técnico para o Google reconhecer a tua especialidade</span></li>
+            <li><span class="ico">🛡️</span><span>14 dias de devolução · 30 dias de suporte</span></li>
+          </ul>
+          <span class="chip"><span class="dot"></span>€50 desconto · pack completo</span>
+        </div>
+        <div class="price-card glass">
+          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/></svg></div>
+          <div class="tier-eyebrow">Atelier</div>
+          <div class="price">Custom<span class="unit">sob orçamento</span></div>
+          <ul class="features with-icons">
+            <li><span class="ico">🗓️</span><span>Marcações online integradas no site</span></li>
+            <li><span class="ico">📋</span><span>Painel para veres a tua agenda numa vista só</span></li>
+            <li><span class="ico">🎯</span><span>Reativação por tipo de paciente (segmentada)</span></li>
+            <li><span class="ico">🎓</span><span>Plataforma para workshops e formações</span></li>
+            <li><span class="ico">🃏</span><span>Cartões físicos e extensões da marca</span></li>
+          </ul>
+          <span class="chip">Para quando fizer sentido ir mais fundo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8 · AVENÇA MENSAL (Add-ons grid, 6 cards) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="8" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-peach" style="width: 38vw; height: 38vw; right: -12vw; bottom: -15vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">🔄 Avença mensal · €50/mês</div>
+      <h2 class="headline">Para teres <span class="acc">paz de espírito</span>.</h2>
+      <p class="lede" style="max-width: 60ch;">Cuidado contínuo, opcional. Sem fidelização.</p>
+
+      <div class="addons-grid">
+        <div class="addon-card glass">
+          <span class="icon-emoji">🛠️</span>
+          <div class="code">M1</div>
+          <div class="name">Manutenção</div>
+          <div class="desc">Atualizações de software, segurança e plugins. Tudo o que precisa de ser actualizado, é actualizado. Sem te incomodar. Sem partir nada.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📡</span>
+          <div class="code">M2</div>
+          <div class="name">Monitorização</div>
+          <div class="desc">Uptime + backups verificados. Se o site cair, eu sei antes de ti. Backups verificados todos os meses, prontos para restaurar.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📊</span>
+          <div class="code">M3</div>
+          <div class="name">Relatório mensal</div>
+          <div class="desc">Email de uma página por mês: visitas, queries que te encontraram, alertas resolvidos.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📍</span>
+          <div class="code">M4</div>
+          <div class="name">Google Business</div>
+          <div class="desc">Resposta a reviews novas (com tua aprovação), atualizações, fotos novas mensais.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">✍️</span>
+          <div class="code">M5</div>
+          <div class="name">Blog</div>
+          <div class="desc">1 artigo por mês. 30 minutos de chamada onde falas livremente. Eu transformo em artigo, validas, publico com SEO.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">✉️</span>
+          <div class="code">M6</div>
+          <div class="name">Reativação</div>
+          <div class="desc">Email à base trimestral. Uma vez por trimestre, mando mensagem aos teus pacientes antigos. Para a base não te esquecer.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9 · ENTREGÁVEIS (Add-ons grid variant, no price chip) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="9" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; top: -10vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📦 Entregáveis</div>
+      <h2 class="headline">Seis peças, <span class="acc">uma presença</span>.</h2>
+      <p class="lede" style="max-width: 60ch;">Tudo in-house. Sem subcontratação.</p>
+
+      <div class="addons-grid">
+        <div class="addon-card glass">
+          <span class="icon-emoji">🌐</span>
+          <div class="code">A</div>
+          <div class="name">Site pessoal</div>
+          <div class="desc">Design contemporâneo, mobile-first, optimizado para Google local. Pensado para quem pesquisa "homeopata Lisboa".</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">🎨</span>
+          <div class="code">B</div>
+          <div class="name">Identidade visual</div>
+          <div class="desc">Logo, palete, tipografia. Coerente com o tom filosófico da tua prática. Não-template.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">👤</span>
+          <div class="code">C</div>
+          <div class="name">Página "Sobre"</div>
+          <div class="desc">40+ anos em MX, Colombia, India, Romania, PT. Tom que preserva a voz dos teus ensaios.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📋</span>
+          <div class="code">D</div>
+          <div class="name">Casos clínicos & FAQ</div>
+          <div class="desc">2-3 casos anonimizados, validados por ti. FAQ com respostas claras às perguntas comuns.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📷</span>
+          <div class="code">E</div>
+          <div class="name">Sessão foto e vídeo</div>
+          <div class="desc">10-15 fotografias editadas no consultório + vídeo curto de 1-2 minutos para o site. Autêntico, não stock.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">💬</span>
+          <div class="code">F</div>
+          <div class="name">WhatsApp + Analytics</div>
+          <div class="desc">Botão WhatsApp Business clicável em todas as páginas, Google Business setup, analytics simples no painel. Tudo em português.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10 · CENÁRIOS (Custom 2-card) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="10" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; bottom: -15vw;"></div>
     <div class="orb orb-sage"  style="width: 28vw; height: 28vw; left: -6vw; top: -10vw;"></div>
@@ -2072,8 +2283,8 @@
     </div>
   </section>
 
-  <!-- ==================== 7 · HORIZONTE (By the Numbers) ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="7" data-bg="light">
+  <!-- ==================== 11 · HORIZONTE (By the Numbers) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="11" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
 
@@ -2106,182 +2317,6 @@
           <div class="num">10x-100x</div>
           <div class="label">ROI projectado</div>
           <div class="sub">75% pesquisa médico no Google antes de marcar</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 8 · CHAPTER BREAK (Phase Intro, dark, no timeline) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="8" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -20vw; top: -25vw;"></div>
-    <div class="hairline-grid"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <span class="timeline-pill"><span class="pulse"></span>Capítulo Dois · A proposta</span>
-      <h1 class="headline">Como vamos <span class="acc">fazer acontecer</span>.</h1>
-      <p class="lede" style="margin-top: 18px; max-width: 60ch;">A partir daqui: três caminhos, uma avença opcional, seis entregáveis, e respostas honestas às perguntas que aparecem sempre.</p>
-    </div>
-  </section>
-
-  <!-- ==================== 9 · PRICING (3-up) ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="9" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 40vw; height: 40vw; right: -12vw; top: -12vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">💰 Investimento</div>
-      <h2 class="headline">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 60ch;">50% início · 50% entrega · IVA não incluído.</p>
-
-      <div class="pricing-grid">
-        <div class="price-card glass">
-          <div class="tier-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <div class="tier-eyebrow">Essencial</div>
-          <div class="price">€450<span class="unit">projeto</span></div>
-          <ul class="features">
-            <li>Landing page contemporânea</li>
-            <li>Identidade visual completa</li>
-            <li>Sessão fotográfica + vídeo</li>
-            <li>Email de reativação</li>
-            <li>Analytics no painel WordPress</li>
-            <li>SEO local optimizado</li>
-          </ul>
-          <span class="chip">Site base · 7-10 dias úteis</span>
-        </div>
-        <div class="price-card glass recommended">
-          <span class="badge">Recomendado</span>
-          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
-          <div class="tier-eyebrow">Estúdio</div>
-          <div class="price">€800<span class="unit">projeto</span></div>
-          <ul class="features">
-            <li>Tudo do plano Essencial</li>
-            <li>Blog: re-escrita de 10 artigos</li>
-            <li>Google Business Profile setup</li>
-            <li>WhatsApp Business + integração</li>
-            <li>Schema Physician + LocalBusiness</li>
-            <li>14 dias devolução · 30 dias suporte</li>
-          </ul>
-          <span class="chip"><span class="dot"></span>€50 desconto · pack completo</span>
-        </div>
-        <div class="price-card glass">
-          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/></svg></div>
-          <div class="tier-eyebrow">Atelier</div>
-          <div class="price">Custom<span class="unit">sob orçamento</span></div>
-          <ul class="features">
-            <li>Booking integrado</li>
-            <li>Dashboard de agendamentos</li>
-            <li>Reativação segmentada</li>
-            <li>Plataforma de workshops</li>
-            <li>Cartões físicos + brand extension</li>
-          </ul>
-          <span class="chip">Para quando fizer sentido ir mais fundo</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 10 · AVENÇA MENSAL (Add-ons grid, 6 cards) ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="10" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-peach" style="width: 38vw; height: 38vw; right: -12vw; bottom: -15vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">🔄 Avença mensal · €50/mês</div>
-      <h2 class="headline">Para teres <span class="acc">paz de espírito</span>.</h2>
-      <p class="lede" style="max-width: 60ch;">Cuidado contínuo, opcional. Sem fidelização.</p>
-
-      <div class="addons-grid">
-        <div class="addon-card glass">
-          <div class="code">M1</div>
-          <div class="name">Manutenção</div>
-          <div class="desc">Atualizações WP, plugins, PHP. Tudo o que precisa de ser actualizado, é actualizado. Sem te incomodar. Sem partir nada.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">M2</div>
-          <div class="name">Monitorização</div>
-          <div class="desc">Uptime + backups verificados. Se o site cair, eu sei antes de ti. Backups verificados todos os meses, prontos para restaurar.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">M3</div>
-          <div class="name">Relatório mensal</div>
-          <div class="desc">Email de uma página por mês: visitas, queries que te encontraram, alertas resolvidos.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">M4</div>
-          <div class="name">Google Business</div>
-          <div class="desc">Resposta a reviews novas (com tua aprovação), atualizações, fotos novas mensais.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">M5</div>
-          <div class="name">Blog</div>
-          <div class="desc">1 artigo por mês. 30 minutos de chamada onde falas livremente. Eu transformo em artigo, validas, publico com SEO.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">M6</div>
-          <div class="name">Reativação</div>
-          <div class="desc">Email à base trimestral. Uma vez por trimestre, mando mensagem aos teus pacientes antigos. Para a base não te esquecer.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 11 · ENTREGÁVEIS (Add-ons grid variant, no price chip) ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="11" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">📦 Entregáveis</div>
-      <h2 class="headline">Seis peças, <span class="acc">uma presença</span>.</h2>
-      <p class="lede" style="max-width: 60ch;">Tudo in-house. Sem subcontratação.</p>
-
-      <div class="addons-grid">
-        <div class="addon-card glass">
-          <div class="code">A</div>
-          <div class="name">Landing page</div>
-          <div class="desc">Design contemporâneo, mobile-first, SEO local. Otimizada para "homeopata Lisboa" e queries long-tail.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">B</div>
-          <div class="name">Identidade visual</div>
-          <div class="desc">Logo, palete, tipografia. Coerente com o tom filosófico da tua prática. Não-template.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">C</div>
-          <div class="name">Página "Sobre"</div>
-          <div class="desc">40+ anos em MX, Colombia, India, Romania, PT. Tom que preserva a voz dos teus ensaios.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">D</div>
-          <div class="name">Casos clínicos & FAQ</div>
-          <div class="desc">2-3 casos anonimizados, validados por ti. FAQ com respostas claras às perguntas comuns.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">E</div>
-          <div class="name">Sessão foto + vídeo</div>
-          <div class="desc">10-15 fotografias editadas + vídeo de 1-2 minutos para o hero. Autêntico, não stock.</div>
-        </div>
-        <div class="addon-card glass">
-          <div class="code">F</div>
-          <div class="name">WhatsApp + Analytics</div>
-          <div class="desc">Botão WhatsApp persistente, GBP setup, analytics no painel. Tudo em português, sem ferramentas novas.</div>
         </div>
       </div>
     </div>
