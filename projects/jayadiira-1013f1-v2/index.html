@@ -3193,8 +3193,9 @@
   <style>
     .value-stack.vs-compact { gap: 6px; margin-top: 2px; }
     .value-stack.vs-compact .stack-item { padding: 9px 16px; }
-    .value-stack.vs-compact .stack-item .label { font-size: clamp(13px, 0.95vw, 15px); font-weight: 500; }
+    .value-stack.vs-compact .stack-item .label { font-size: clamp(13px, 0.95vw, 15px); font-weight: 500; display: inline-flex; align-items: center; gap: 12px; }
     .value-stack.vs-compact .stack-item .value { font-size: clamp(12px, 0.9vw, 14px); }
+    .value-stack.vs-compact .stack-icon { font-size: 1.15em; line-height: 1; width: 1.4em; text-align: center; flex-shrink: 0; }
     .value-stack.vs-compact .stack-total { margin-top: 6px; padding: 6px 16px; }
     .value-stack.vs-compact .stack-total .value { font-size: clamp(18px, 1.5vw, 24px); }
     .value-stack.vs-compact .stack-price { margin-top: 4px; padding: 14px 20px; }
@@ -3210,40 +3211,40 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">💡 Valor individual de cada entrega no mercado</div>
+      <div class="eyebrow">💡 Valor individual de cada entrega no mercado 📊</div>
       <h2 class="headline" style="font-size: clamp(24px, 2.7vw, 38px);">Referências de mercado, <span class="acc">peça a peça</span>.</h2>
 
       <div class="value-stack vs-compact">
         <div class="stack-item">
-          <span class="label">Site WordPress profissional (agência)</span>
+          <span class="label"><span class="stack-icon">🌐</span>Site WordPress profissional (agência)</span>
           <span class="value">€1.500</span>
         </div>
         <div class="stack-item">
-          <span class="label">Identidade visual + casos clínicos + FAQ</span>
-          <span class="value">€600</span>
-        </div>
-        <div class="stack-item">
-          <span class="label">Email de reativação + setup analytics</span>
+          <span class="label"><span class="stack-icon">🎨</span>Identidade visual + casos clínicos + FAQ</span>
           <span class="value">€200</span>
         </div>
         <div class="stack-item">
-          <span class="label">Google Business Profile + WhatsApp Business</span>
+          <span class="label"><span class="stack-icon">📊</span>Email de reativação + setup analytics</span>
+          <span class="value">€100</span>
+        </div>
+        <div class="stack-item">
+          <span class="label"><span class="stack-icon">📍</span>Google Business Profile + WhatsApp Business</span>
           <span class="value">€250</span>
         </div>
         <div class="stack-item">
-          <span class="label">Blog: 6 artigos SEO em PT-PT (copywriter)</span>
-          <span class="value">€450</span>
+          <span class="label"><span class="stack-icon">📝</span>Blog: 6 artigos SEO em PT-PT (copywriter)</span>
+          <span class="value">€250</span>
         </div>
         <div class="stack-item">
-          <span class="label">Sessão fotografia + vídeo curto</span>
-          <span class="value">€400</span>
+          <span class="label"><span class="stack-icon">📷</span>Sessão fotografia + vídeo curto</span>
+          <span class="value">€250</span>
         </div>
         <div class="stack-total">
-          <span class="label">Total às peças, no mercado</span>
-          <span class="value">€3.400</span>
+          <span class="label">Σ Total às peças, no mercado</span>
+          <span class="value">€2.550</span>
         </div>
         <div class="stack-price">
-          <span class="label">Pack Estúdio, chave-na-mão</span>
+          <span class="label">✦ Pack Estúdio, chave-na-mão</span>
           <span class="price">€800</span>
         </div>
       </div>
