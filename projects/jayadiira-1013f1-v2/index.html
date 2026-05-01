@@ -3189,21 +3189,31 @@
     </div>
   </section>
 
-  <!-- ==================== 16 · MERCADO (Value Stack proof) ==================== -->
+  <!-- ==================== 16 · MERCADO (Value Stack proof, compact) ==================== -->
+  <style>
+    .value-stack.vs-compact { gap: 6px; margin-top: 2px; }
+    .value-stack.vs-compact .stack-item { padding: 9px 16px; }
+    .value-stack.vs-compact .stack-item .label { font-size: clamp(13px, 0.95vw, 15px); font-weight: 500; }
+    .value-stack.vs-compact .stack-item .value { font-size: clamp(12px, 0.9vw, 14px); }
+    .value-stack.vs-compact .stack-total { margin-top: 6px; padding: 6px 16px; }
+    .value-stack.vs-compact .stack-total .value { font-size: clamp(18px, 1.5vw, 24px); }
+    .value-stack.vs-compact .stack-price { margin-top: 4px; padding: 14px 20px; }
+    .value-stack.vs-compact .stack-price .price { font-size: clamp(28px, 3vw, 44px); }
+    .market-foot { font-size: clamp(11px, 0.82vw, 12.5px); color: var(--ink-quiet); opacity: 0.78; max-width: 92ch; line-height: 1.45; }
+  </style>
   <section class="slide s-echo has-grid bg-light-quiet" data-slide="16" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-peach" style="width: 42vw; height: 42vw; left: -12vw; bottom: -15vw;"></div>
+    <div class="orb orb-peach" style="width: 38vw; height: 38vw; left: -12vw; bottom: -15vw;"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
     </div>
 
     <div class="content">
-      <div class="eyebrow">💡 Pequena nota de mercado</div>
-      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Para perceberes <span class="acc">o que €800 representa</span>.</h2>
-      <p class="lede" style="max-width: 70ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">A preços de mercado em Portugal, comprar estas peças à parte sai assim. Não é para inflacionar, é para teres a ordem de grandeza.</p>
+      <div class="eyebrow">💡 Valor individual de cada entrega no mercado</div>
+      <h2 class="headline" style="font-size: clamp(24px, 2.7vw, 38px);">Referências de mercado, <span class="acc">peça a peça</span>.</h2>
 
-      <div class="value-stack">
+      <div class="value-stack vs-compact">
         <div class="stack-item">
           <span class="label">Site WordPress profissional (agência)</span>
           <span class="value">€1.500</span>
@@ -3225,12 +3235,12 @@
           <span class="value">€450</span>
         </div>
         <div class="stack-item">
-          <span class="label">Sessão fotografia corporativa + vídeo curto</span>
-          <span class="value">€1.500</span>
+          <span class="label">Sessão fotografia + vídeo curto</span>
+          <span class="value">€400</span>
         </div>
         <div class="stack-total">
           <span class="label">Total às peças, no mercado</span>
-          <span class="value">€4.500</span>
+          <span class="value">€3.400</span>
         </div>
         <div class="stack-price">
           <span class="label">Pack Estúdio, chave-na-mão</span>
@@ -3238,7 +3248,7 @@
         </div>
       </div>
 
-      <p class="lede" style="font-size: clamp(11px, 0.85vw, 13px); color: var(--ink-quiet); opacity: 0.78; max-width: 86ch; line-height: 1.5;">Fontes (ranges médios em Portugal, 2026): Plak.pt, Webarty.pt, Visual Mind, Fixando, Maria Escreve. <strong>Para gerir expectativas:</strong> isto é um pack premium feito por uma só pessoa, com tema WordPress de qualidade e workflow apertado. Não substitui uma agência com equipa de 5. Para uma clínica que está a começar online, é mais do que suficiente.</p>
+      <p class="market-foot">Fontes (ranges médios PT 2026): Plak.pt, Webarty.pt, Visual Mind, Fixando, Maria Escreve. <strong>Para gerir expectativas:</strong> pack feito por uma só pessoa, não substitui agência com equipa de 5. Para uma clínica a começar online, é mais do que suficiente.</p>
     </div>
   </section>
 
