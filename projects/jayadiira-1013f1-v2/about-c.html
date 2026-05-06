@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Deck Title — Pedro Almeida</title>
+<title>Jayadhiira · Proposta · Abril 2026 · Pedro Almeida</title>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   /* =========================================================
-     PEDRO DECK BUILDER — Liquid Glass + Workshop
+     PEDRO DECK BUILDER : Liquid Glass + Workshop
      Bone + Persimmon · Manrope · frosted translucent cards
      ========================================================= */
 
@@ -25,7 +25,7 @@
     --ink-quiet: rgba(20,16,12,0.58);
     --ink-faint: rgba(20,16,12,0.30);
 
-    /* Accent — persimmon */
+    /* Accent : persimmon */
     --accent: #E2542A;
     --accent-deep: #A93A18;
     --accent-soft: #F5A07A;
@@ -106,6 +106,9 @@
      not centered. This prevents "vacuum at top + crammed at bottom". */
   /* Protected bands: brand sits in chrome-top (4vh from top); content must start ≥12vh from top
      so there's a clear whitespace buffer below the brand. Same logic at the bottom for the footer. */
+  /* Header (eyebrow + h2 + lede) anchored at top, body grid expands to fill remaining space.
+     The body distributes its available height across cards via flex/grid stretch.
+     2 cards = each gets 50% height. 3 cards = 33%. The slide adapts to whatever's inside. */
   .slide.has-grid { justify-content: flex-start; padding-top: max(12vh, 110px); padding-bottom: max(18vh, 180px); }
 
   @media (max-width: 900px) {
@@ -121,7 +124,7 @@
     }
     .slide.has-grid { padding-top: 12vh; padding-bottom: 16vh; }
     .slide.active { display: flex; }
-    /* Keep slide-by-slide nav on mobile too — show only active slide,
+    /* Keep slide-by-slide nav on mobile too : show only active slide,
        but allow that slide to scroll when content exceeds viewport. */
     body { overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
@@ -201,7 +204,7 @@
     color: var(--d-ink);
   }
 
-  /* Subtle grain — atmospheric texture */
+  /* Subtle grain : atmospheric texture */
   .slide::before {
     content: '';
     position: absolute; inset: 0;
@@ -438,8 +441,100 @@
   .content > .eyebrow { margin-bottom: 0; }
   .content > .lede { margin-top: 0; }
   /* has-grid slides: minimum 20px between every stacked element (eyebrow / headline / lede / chips / grid).
-     The whitespace buffer below the brand comes from .slide.has-grid padding-top, not margin here. */
-  .has-grid .content { gap: 20px; }
+     .content fills the slide's vertical space (flex: 1) so body grids inside can stretch.
+     Header elements (eyebrow, h2, lede, chips) keep natural height; the body grid claims the rest. */
+  .has-grid .content { gap: 20px; flex: 1 1 auto; min-height: 0; }
+
+  /* BODY GRID — claim available space, distribute equitably, don't stretch artificially.
+     Pattern: header (eyebrow + h2 + lede) anchored top, body claims remaining space,
+     content INSIDE the body sits at natural height and is centered as a group.
+     2 cards: ~50/50 + breathing. 3 cards: a row centered with empty space top+bottom.
+     Cards / rows / list items NEVER stretch beyond their natural content. */
+
+  /* Display: grid containers — cards in the SAME ROW match height (tallest wins),
+     row tracks distributed centered in the grid container.
+     align-items: stretch makes siblings in a row equal-height (no jagged tops/bottoms).
+     align-content: center keeps the rows from stretching edge-to-edge — they sit centered
+     with empty space split top+bottom around them. Cards never grow beyond their tallest
+     row peer; the empty viewport space goes OUTSIDE the row, not INSIDE the cards. */
+  .has-grid .content > .quote-grid,
+  .has-grid .content > .addons-grid,
+  .has-grid .content > .stat-grid,
+  .has-grid .content > .scenarios-grid,
+  .has-grid .content > .matrix-grid,
+  .has-grid .content > .pillars,
+  .has-grid .content > .phases-grid,
+  .has-grid .content > .pricing-grid,
+  .has-grid .content > .numbers-row,
+  .has-grid .content > .horizon-row,
+  .has-grid .content > .context-stats,
+  .has-grid .content > .bio-layout {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    align-items: stretch !important;
+    align-content: center !important;
+  }
+
+  /* Display: flex column containers — center natural-height content stack vertically */
+  .has-grid .content > .scenarios-table-wrap,
+  .has-grid .content > .faq-list {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  /* Display: flex row containers — center vertically, natural item heights */
+  .has-grid .content > .goal-row {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    align-items: center !important;
+  }
+
+  /* Body block — wraps a [grid/row] + its source/caption into a single visual unit.
+     The wrapper takes flex:1 (claims body space and centers itself), and the grid + caption
+     stay glued together inside it. Use this whenever a module has a footnote/source that
+     visually belongs to the cards above (Fontes:, Δ deltas, side-notes that explain the data).
+     Without this wrapper, the caption becomes a separate flex sibling and floats to the bottom
+     of .content, far from the cards it describes. */
+  .has-grid .content > .body-block {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+  /* When a grid/row is INSIDE a body-block, it gives up its own flex:1 (the wrapper has it)
+     and shrinks to its natural height. Caption sits 14px below. */
+  .body-block > .quote-grid,
+  .body-block > .addons-grid,
+  .body-block > .stat-grid,
+  .body-block > .scenarios-grid,
+  .body-block > .matrix-grid,
+  .body-block > .pillars,
+  .body-block > .phases-grid,
+  .body-block > .pricing-grid,
+  .body-block > .numbers-row,
+  .body-block > .horizon-row,
+  .body-block > .context-stats,
+  .body-block > .bio-layout,
+  .body-block > .goal-row {
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+  }
+  .body-block > .block-caption {
+    margin: 0 !important;
+    font-size: clamp(10.5px, 0.78vw, 12px) !important;
+    color: var(--ink-quiet) !important;
+    font-style: italic !important;
+    line-height: 1.4 !important;
+    max-width: 95ch !important;
+  }
+
+  /* Drop forced 100% height on table — natural rows centered via wrapper */
+  .has-grid .content > .scenarios-table-wrap > .scenarios-table { height: auto !important; }
   /* When a content block is followed by a grid/cards block, force more breathing */
   .content > h1 + .phases-grid,
   .content > h2 + .phases-grid,
@@ -453,13 +548,13 @@
   .content > h2 + .phase1-timeline { margin-top: 24px; }
 
   /* =============== COVER =============== */
-  .s-cover .meta-row { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .s-cover .meta-row { margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap; }
   /* On desktop, headline + lede stay in left half so the video composition has the right side to itself */
   @media (min-width: 901px) {
     .s-cover > .content { max-width: 56%; }
   }
 
-  /* Hero lotus — orange lotus cropped to the right edge of the cover.
+  /* Hero lotus : orange lotus cropped to the right edge of the cover.
      Anchored absolutely to right side, masked into the canvas on the left. */
   .s-cover { overflow: hidden !important; position: relative !important; }
   img.hero-lotus {
@@ -515,7 +610,7 @@
   /* Hover hot-zone: an invisible overlay only over the lotus's visible region (right side).
      Pointer-events live on this layer, not on the image. Hover here triggers the brighten on
      hero-lotus through the parent .s-cover.  Animation duration is NOT transitioned (browsers
-     can't interpolate it — it would snap and feel like a jump). Brightness/saturation only. */
+     can't interpolate it : it would snap and feel like a jump). Brightness/saturation only. */
   .lotus-hotzone {
     position: absolute;
     top: 0;
@@ -975,7 +1070,7 @@
   }
   .bg-dark .meme-caption { color: var(--d-ink-quiet); }
 
-  /* =============== CLOSING — prompt list =============== */
+  /* =============== CLOSING : prompt list =============== */
   .prompts {
     margin-top: 32px;
     display: flex; flex-direction: column; gap: 14px;
@@ -1046,7 +1141,7 @@
 
   /* =============== MICRO-ANIMATIONS =============== */
 
-  /* Orb drift — slow, ambient. Each orb gets a different keyframe path */
+  /* Orb drift : slow, ambient. Each orb gets a different keyframe path */
   .orb { animation: orb-drift-a 28s ease-in-out infinite alternate; will-change: transform; }
   .orb-cool  { animation-name: orb-drift-b; animation-duration: 32s; }
   .orb-sage  { animation-name: orb-drift-c; animation-duration: 26s; }
@@ -1082,7 +1177,7 @@
     50%      { box-shadow: 0 0 18px var(--accent-glow), 0 0 28px rgba(255,176,137,0.5); opacity: 1; }
   }
 
-  /* Hover lift — extends to all interactive cards */
+  /* Hover lift : extends to all interactive cards */
   .glass, .pillar, .phase-card, .pipeline-step, .phase1-step {
     transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
                 box-shadow 0.28s ease,
@@ -1105,10 +1200,10 @@
   .chip { transition: transform 0.2s ease; }
   .chip:hover { transform: translateY(-1px); }
 
-  /* Progress bar segments — softer transition (replaces the basic 0.2s) */
+  /* Progress bar segments : softer transition (replaces the basic 0.2s) */
   .progress span { transition: background 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
 
-  /* Custom cursor halo — soft persimmon glow that follows the mouse */
+  /* Custom cursor halo : soft persimmon glow that follows the mouse */
   .cursor-halo {
     position: fixed;
     top: 0; left: 0;
@@ -1514,26 +1609,29 @@
   .bio-layout {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 32px;
+    gap: 36px;
     align-items: start;
     margin-top: 8px;
   }
   @media (max-width: 900px) { .bio-layout { grid-template-columns: 1fr; } }
+  /* Portrait card: rectangular with rounded corners, taller than wide.
+     Anchored at top of bio (align-self: start) so the description on the right
+     starts at the same line. Old circular mask retired 2026-04-30. */
   .bio-photo {
-    width: clamp(110px, 12vw, 160px);
-    height: clamp(110px, 12vw, 160px);
-    border-radius: 50%;
+    width: clamp(170px, 18vw, 240px);
+    aspect-ratio: 4 / 5;
+    border-radius: 22px;
     overflow: hidden;
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 0 6px rgba(226,84,42,0.08);
     background: var(--accent-peach);
+    box-shadow: 0 14px 32px rgba(31,33,38,0.12), 0 2px 6px rgba(31,33,38,0.06);
     display: flex; align-items: center; justify-content: center;
     font-family: var(--f); font-weight: 800;
-    font-size: clamp(44px, 5vw, 64px);
+    font-size: clamp(54px, 6vw, 80px);
     color: var(--accent-deep);
     flex-shrink: 0;
+    align-self: start;
   }
-  .bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+  .bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
   .bio-body { display: flex; flex-direction: column; gap: 14px; }
   .bio-tagline {
     font-family: var(--f);
@@ -1575,16 +1673,30 @@
   .logo-cell img {
     max-width: 100%; max-height: 100%;
     object-fit: contain;
-    filter: grayscale(1);
-    opacity: 0.55;
-    transition: opacity 200ms, filter 200ms;
+    transition: transform 200ms;
   }
-  .logo-cell:hover img { filter: grayscale(0); opacity: 1; }
+  .logo-cell:hover img { transform: scale(1.04); }
+  /* Logo card row (used in About slide): solid white rounded-rectangle cards
+     with the brand image inside, full color. White background lets coloured
+     SVGs/PNGs sit on a clean canvas regardless of slide bg-* tone. */
   .logos-row {
     display: flex; flex-wrap: wrap; gap: 14px;
-    margin-top: 12px;
+    margin-top: 16px;
+    align-items: stretch;
   }
-  .logos-row .logo-cell { height: 56px; min-width: 120px; flex: 0 0 auto; }
+  .logos-row .logo-cell {
+    height: 72px;
+    width: 130px;
+    flex: 0 0 auto;
+    padding: 14px 18px;
+    background: #fff !important;
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(31,33,38,0.06);
+    backdrop-filter: none;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logos-row .logo-cell img { max-height: 40px; max-width: 100%; }
 
   /* =============== 19 · CASE STUDY (single) =============== */
   .case-layout {
@@ -1821,7 +1933,7 @@
     margin-top: 6px;
   }
 
-  /* Reduced motion — respect macOS / Windows accessibility preferences */
+  /* Reduced motion : respect macOS / Windows accessibility preferences */
   @media (prefers-reduced-motion: reduce) {
     .slide.active .content > *,
     .slide.active .quote > *,
@@ -1838,6 +1950,598 @@
       transition-duration: 0.01ms !important;
       animation-duration: 0.01ms !important;
     }
+  }
+
+  /* =============== SCENARIOS GRID (slide 10, custom 2-col) =============== */
+  .scenarios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+  @media (max-width: 900px) {
+    .scenarios-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  /* =============== FEATURES WITH ICONS (pricing tier bullets) =============== */
+  .price-card .features.with-icons li {
+    padding-left: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .price-card .features.with-icons li::before { display: none; }
+  .price-card .features.with-icons .ico {
+    flex-shrink: 0;
+    width: 22px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  /* =============== ADDON CARD ICONS (slides 8 + 9: avença + entregáveis) =============== */
+  .addon-card .icon-emoji {
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  /* =============== COMPACT CARDS (slides 7, 8, 9, 10, 12) =============== */
+  /* Drop the M1-M6 / A-F code labels: icons + names already carry the meaning. */
+  .addon-card .code { display: none !important; }
+  /* BALANCED — breathing room for legibility, not compressed to ceiling. */
+  .addon-card {
+    padding: 26px 24px !important;
+    gap: 10px !important;
+  }
+  .addon-card .name {
+    font-size: clamp(14px, 1.1vw, 16.5px) !important;
+  }
+  .addon-card .desc {
+    font-size: clamp(12.5px, 0.95vw, 14.5px) !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Scenarios + honest comparison cards (slides) — balanced padding */
+  .scenarios-grid > .glass {
+    padding: 26px 26px !important;
+    gap: 14px !important;
+  }
+  .scenarios-grid > .glass ul li {
+    font-size: clamp(13px, 1vw, 15px) !important;
+    line-height: 1.5 !important;
+  }
+  .scenarios-grid > .glass h3 {
+    font-size: clamp(19px, 1.7vw, 25px) !important;
+  }
+
+  /* Pricing tier cards — BALANCED, middle card slightly taller */
+  .pricing-grid { align-items: stretch !important; gap: 18px !important; }
+  .price-card { padding: 28px 26px !important; gap: 12px !important; }
+  .price-card.recommended { padding: 32px 28px !important; transform: none !important; }
+  .price-card .tier-icon { width: 32px !important; height: 32px !important; margin-bottom: 4px !important; }
+  .price-card .tier-icon svg { width: 18px !important; height: 18px !important; }
+  .price-card .tier-eyebrow { font-size: clamp(14px, 1.1vw, 17px) !important; }
+  .price-card .price { font-size: clamp(30px, 3.0vw, 42px) !important; line-height: 1 !important; }
+  .price-card.recommended .price { font-size: clamp(32px, 3.2vw, 46px) !important; }
+  .price-card .price .unit { font-size: 0.32em !important; }
+  .price-card .features { gap: 8px !important; }
+  .price-card .features li {
+    font-size: clamp(12px, 0.9vw, 14px) !important;
+    line-height: 1.5 !important;
+    padding-left: 22px !important;
+  }
+  .price-card.recommended .features li {
+    font-size: clamp(12.5px, 0.95vw, 14.5px) !important;
+  }
+  .price-card .features li::before { font-size: 16px !important; }
+  .price-card .chip { font-size: 11px !important; padding: 5px 10px !important; }
+  .price-card .badge { font-size: 10px !important; padding: 4px 10px !important; }
+
+  /* =============== NOT-INCLUDED ROW (slide 8 Essencial scope footer) =============== */
+  .not-included-row {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .not-included-row .ni-label {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .not-included-row .chip {
+    font-size: 11px !important;
+    padding: 4px 9px !important;
+    opacity: 0.78;
+  }
+
+  /* =============== STAT FOCUS (slide Diagnóstico) — BALANCED =============== */
+  .stat-grid > .glass:first-child { padding: 30px 32px !important; }
+  .stat-grid .big-num { font-size: clamp(48px, 5.0vw, 76px) !important; }
+  .stat-grid .big-num .unit { font-size: 0.36em !important; }
+  .stat-grid .big-label { font-size: clamp(14px, 1.15vw, 18px) !important; line-height: 1.4 !important; }
+  .stat-grid .big-sub { font-size: clamp(11px, 0.85vw, 13px) !important; line-height: 1.5 !important; }
+  .stat-grid .stack > .glass { padding: 26px 28px !important; }
+  .stat-grid .stack .meta { font-size: 11px !important; }
+  .stat-grid .stack .h2 { font-size: clamp(17px, 1.5vw, 22px) !important; }
+  .stat-grid .stack .body { font-size: clamp(13px, 0.98vw, 15px) !important; line-height: 1.6 !important; }
+
+  /* Dimension breakdown inside hero stat card */
+  .dim-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+  }
+  .dim {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    font-size: clamp(12.5px, 0.95vw, 14.5px);
+    line-height: 1.4;
+  }
+  .dim-name { color: var(--ink-soft); }
+  .dim-score {
+    font-family: var(--fm);
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .dim-bad .dim-score { color: var(--accent); }
+  .dim-mid .dim-score { color: var(--ink-quiet); }
+  .dim-ok .dim-score { color: var(--ink); }
+
+  /* =============== PHASES (Cronograma) — BALANCED =============== */
+  .phases-grid { gap: 16px !important; margin-top: 18px !important; }
+  .phase-card { padding: 26px 24px !important; gap: 8px !important; }
+  .phase-card .icon { width: 26px !important; height: 26px !important; margin-bottom: 8px !important; }
+  .phase-card .num { font-size: 11px !important; letter-spacing: 0.12em !important; }
+  .phase-card .when { font-size: 12px !important; }
+  .phase-card h3 { font-size: clamp(15px, 1.2vw, 18px) !important; line-height: 1.3 !important; margin-top: 6px !important; }
+  .phase-card p { font-size: clamp(12.5px, 0.92vw, 14px) !important; line-height: 1.55 !important; margin-top: 6px !important; }
+
+  /* =============== PILLARS (Estratégia) — BALANCED with title-body proximity =============== */
+  .pillars > .pillar {
+    padding: 28px 26px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  .pillars .icon-lg { width: 28px !important; height: 28px !important; margin-bottom: 12px !important; }
+  .pillars .num { font-size: 11px !important; letter-spacing: 0.12em !important; margin-bottom: 6px !important; }
+  .pillars h3 { font-size: clamp(17px, 1.45vw, 21px) !important; line-height: 1.3 !important; margin-bottom: 8px !important; }
+  .pillars p { font-size: clamp(13px, 0.95vw, 15px) !important; line-height: 1.6 !important; margin-bottom: 14px !important; }
+  .pillars .pillar .meta {
+    font-size: 11px !important;
+    margin-top: auto !important;
+    padding-top: 12px !important;
+    border-top: 1px solid var(--hairline) !important;
+  }
+
+  /* =============== O QUE OUVI - 3 quote cards (slide 2) =============== */
+  .quote-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-top: 16px;
+  }
+  @media (max-width: 900px) { .quote-grid { grid-template-columns: 1fr; gap: 14px; } }
+  .quote-card {
+    padding: 26px 24px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .quote-icon {
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .quote-card .quote-text-body {
+    font-family: var(--f);
+    font-style: italic;
+    font-size: clamp(15px, 1.15vw, 18px);
+    line-height: 1.4;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .quote-card .quote-takeaway {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--hairline);
+    font-family: var(--fm);
+    font-size: clamp(11.5px, 0.88vw, 13.5px);
+    color: var(--accent);
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  /* =============== OBJETIVO DA PROPOSTA (slide 3) =============== */
+  .goal-row {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .goal-card {
+    padding: 24px 32px !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+  }
+  .goal-card--accent {
+    background: linear-gradient(135deg, rgba(226,84,42,0.95), rgba(169,58,24,0.95)) !important;
+    border-color: var(--accent) !important;
+    color: white !important;
+  }
+  .goal-label {
+    font-family: var(--fm);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    font-weight: 700;
+  }
+  .goal-card--accent .goal-label { color: rgba(255,255,255,0.85); }
+  .goal-value {
+    font-family: var(--f);
+    font-weight: 800;
+    font-size: clamp(40px, 4.4vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .goal-card--accent .goal-value { color: white; }
+  .goal-unit {
+    font-size: 0.32em;
+    font-weight: 600;
+    color: var(--ink-quiet);
+    margin-left: 4px;
+    letter-spacing: 0;
+  }
+  .goal-card--accent .goal-unit { color: rgba(255,255,255,0.7); }
+  .goal-sub {
+    font-family: var(--fm);
+    font-size: clamp(12px, 0.9vw, 14px);
+    color: var(--ink-quiet);
+    font-weight: 600;
+  }
+  .goal-card--accent .goal-sub { color: rgba(255,255,255,0.85); }
+  .goal-arrow-marker {
+    font-size: clamp(28px, 2.8vw, 40px);
+    color: var(--accent);
+    align-self: center;
+    font-weight: 700;
+  }
+  .goal-incremental {
+    text-align: center;
+    margin-top: 12px;
+    font-family: var(--fm);
+    font-size: clamp(13px, 1vw, 15px);
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .purpose-band {
+    margin-top: 18px;
+    padding: 18px 22px;
+    border-left: 3px solid var(--accent);
+    background: rgba(226,84,42,0.06);
+    border-radius: 8px;
+  }
+  .purpose-band p {
+    font-family: var(--f);
+    font-style: italic;
+    font-size: clamp(13px, 1vw, 16px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 95ch;
+  }
+  .purpose-band strong { color: var(--accent); font-weight: 700; font-style: normal; }
+
+  /* =============== O CONTEXTO - 2 stat cards (slide 4) =============== */
+  .context-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 14px;
+  }
+  @media (max-width: 900px) { .context-stats { grid-template-columns: 1fr; gap: 14px; } }
+  .context-card {
+    padding: 26px 24px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .context-big {
+    font-family: var(--f);
+    font-weight: 800;
+    font-size: clamp(56px, 6vw, 96px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--accent);
+  }
+  .context-big .unit {
+    font-size: 0.4em;
+    color: var(--accent-deep);
+    font-weight: 700;
+    margin-left: 2px;
+  }
+  .context-label {
+    font-family: var(--f);
+    font-size: clamp(13px, 1.05vw, 16px);
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .context-label strong { color: var(--ink); font-weight: 700; }
+  .context-source {
+    margin-top: auto;
+    padding-top: 8px;
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    font-weight: 600;
+  }
+
+  /* =============== HORIZON CELLS (slide 12, taller + icon + detail) =============== */
+  .horizon-row {
+    margin-top: 14px !important;
+    gap: 16px !important;
+  }
+  .horizon-row .number-cell {
+    padding: 24px 22px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .horizon-row .cell-icon {
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .horizon-row .num { font-size: clamp(28px, 2.8vw, 40px) !important; }
+  .horizon-row .num .unit { font-size: 0.5em !important; }
+  .horizon-row .label { font-size: clamp(12px, 1vw, 14px) !important; font-weight: 700 !important; }
+  .horizon-row .sub {
+    font-size: clamp(11px, 0.85vw, 13px) !important;
+    line-height: 1.5 !important;
+    color: var(--ink-quiet) !important;
+    margin-top: auto;
+  }
+  @media (max-width: 900px) {
+    .horizon-row { grid-template-columns: 1fr 1fr !important; }
+  }
+
+  /* =============== SCENARIOS TABLE (slide 11, 4-col compact table) =============== */
+  .scenarios-table-wrap {
+    margin-top: 14px;
+    overflow-x: auto;
+    border-radius: var(--r-sm);
+    background: rgba(255,253,247,0.55);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 18px 48px -16px rgba(20,16,12,0.12), 0 6px 18px -6px rgba(20,16,12,0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 14px 18px 10px;
+  }
+  .scenarios-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--f);
+  }
+  .scenarios-table th, .scenarios-table td {
+    padding: 16px 16px;
+    text-align: center;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .scenarios-table tr:last-child td,
+  .scenarios-table tr:last-child th { border-bottom: none; }
+  .scenarios-table thead th {
+    font-family: var(--fm);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .scenarios-table .scenarios-th-top th {
+    padding: 10px 14px 6px;
+    border-bottom: none;
+  }
+  .scenarios-table .scenarios-th-bot th {
+    padding: 0 14px 12px;
+    color: var(--ink-quiet);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    border-bottom: 1px solid var(--hairline-strong);
+  }
+  /* Conservador: sage tint (cool, calm, "ganho certo") */
+  .scenarios-table .grp-conservador {
+    color: #4A7873;
+    background: rgba(184,212,208,0.28);
+    border-radius: 10px;
+  }
+  /* Liberal: persimmon (the upside scenario) */
+  .scenarios-table .grp-liberal {
+    color: var(--accent);
+    background: rgba(226,84,42,0.12);
+    border-radius: 10px;
+  }
+  .scenarios-table tbody .row-label {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+    font-weight: 600;
+    text-align: left;
+    border-right: 1px solid var(--hairline);
+    white-space: nowrap;
+    padding-left: 4px;
+  }
+  .scenarios-table tbody td {
+    font-weight: 600;
+    font-size: clamp(13px, 1.05vw, 16px);
+    color: var(--ink-soft);
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+  /* Soft column tints all the way down so groups stay visually distinct */
+  .scenarios-table tbody td.cons { background: rgba(184,212,208,0.10); color: #2F5A55; }
+  .scenarios-table tbody td.acc-text.cons { color: #3A6B66; font-weight: 700; }
+  .scenarios-table tbody td.lib { background: rgba(226,84,42,0.06); color: var(--ink); }
+  .scenarios-table tbody td.acc-text.lib { color: var(--accent); font-weight: 700; }
+  /* Hero row: Acumulado no período — visually anchored as the answer */
+  .scenarios-table .row-total {
+    background: rgba(20,16,12,0.025);
+  }
+  .scenarios-table .row-total td,
+  .scenarios-table .row-total th {
+    font-size: clamp(16px, 1.4vw, 22px);
+    font-weight: 800;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    letter-spacing: -0.02em;
+    border-top: 2px solid var(--hairline-strong);
+  }
+  .scenarios-table .row-total .row-label {
+    font-size: 11px !important;
+    color: var(--ink) !important;
+    font-weight: 700 !important;
+  }
+  .scenarios-table .row-total td.cons {
+    background: rgba(184,212,208,0.32);
+    color: #2F5A55;
+  }
+  .scenarios-table .row-total td.lib {
+    background: rgba(226,84,42,0.16);
+    color: var(--accent);
+  }
+  /* Payback row — separate emphasis, slightly smaller than total but still prominent */
+  .scenarios-table .row-payback td,
+  .scenarios-table .row-payback th {
+    font-size: clamp(13px, 1.05vw, 16px);
+    font-weight: 700;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    letter-spacing: -0.01em;
+    border-top: 1px solid var(--hairline-strong);
+  }
+  .scenarios-table .row-payback .row-label {
+    font-size: 10.5px !important;
+    color: var(--ink) !important;
+    font-weight: 700 !important;
+  }
+  .scenarios-table .row-payback td.cons {
+    background: rgba(184,212,208,0.20);
+    color: #2F5A55;
+  }
+  .scenarios-table .row-payback td.lib {
+    background: rgba(226,84,42,0.10);
+    color: var(--accent);
+  }
+  @media (max-width: 900px) {
+    .scenarios-table th, .scenarios-table td { padding: 10px 8px; font-size: 11.5px !important; }
+    .scenarios-table .row-label { font-size: 9px !important; }
+    .scenarios-table .scenarios-th-bot th { font-size: 9px !important; }
+    .scenarios-table .row-total td,
+    .scenarios-table .row-total th { font-size: 13.5px !important; padding: 12px 8px !important; }
+  }
+  .matrix-card {
+    padding: 18px 20px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .matrix-card.liberal {
+    border: 1.5px solid var(--accent);
+    box-shadow: 0 0 0 1px rgba(226,84,42,0.15), 0 12px 32px rgba(226,84,42,0.10);
+  }
+  .matrix-tag {
+    align-self: flex-start;
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+  .matrix-tag.conservador {
+    background: rgba(20,16,12,0.06);
+    color: var(--ink-soft);
+    border: 1px solid var(--hairline);
+  }
+  .matrix-tag.liberal {
+    background: rgba(226,84,42,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(226,84,42,0.32);
+  }
+  .matrix-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .matrix-metric .m-label {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+  }
+  .matrix-metric .m-value {
+    font-family: var(--f);
+    font-weight: 700;
+    font-size: clamp(15px, 1.25vw, 19px);
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .matrix-metric .m-value.accent { color: var(--accent); }
+  .matrix-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: 4px;
+    padding-top: 10px;
+    border-top: 1px solid var(--hairline);
+  }
+  .matrix-total .m-label {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+  }
+  .matrix-total .m-value-big {
+    font-family: var(--f);
+    font-weight: 800;
+    font-size: clamp(17px, 1.5vw, 22px);
+    color: var(--accent);
+    letter-spacing: -0.02em;
   }
 </style>
 </head>
@@ -1859,54 +2563,155 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">Para [audiência] · [contexto]</div>
-      <h1 class="display">Frase principal <span class="acc">com destaque</span> a meio.</h1>
-      <p class="lede" style="margin-top: 28px; max-width: 70ch;">Uma a duas frases curtas que ancoram o leitor antes de avançar. Voz Pedro: direta, sem em-dashes.</p>
+      <div class="eyebrow">Proposta · 04 · 2026</div>
+      <h1 class="display">Upgrade da tua <span class="acc">presença digital</span> 🚀</h1>
+      <p class="lede" style="margin-top: 28px; max-width: 70ch;">Três peças simples, site, Google e WhatsApp, que amplificam o que já funciona contigo. Sem ads. Sem hype. Apenas o que é preciso para os pacientes certos te encontrarem.</p>
       <div class="meta-row">
-        <span class="chip"><span class="dot"></span>Versão 1</span>
-        <span class="chip">Sessão informal</span>
+        <span class="chip"><span class="dot"></span>Para Dr. Gabriel Campuzano · Jayadhiira</span>
+        <span class="chip">v2 · Abril 2026</span>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 2 · STATEMENT (no meme) ==================== -->
-  <section class="slide s-echo bg-light-quiet" data-slide="2" data-bg="light">
-    <div class="orb orb-cool" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
+  <!-- ==================== 2 · O QUE OUVI (3 quotes) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="2" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
+    <div class="orb orb-cool" style="width: 28vw; height: 28vw; left: -8vw; bottom: -10vw;"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
     </div>
 
     <div class="content">
-      <div class="eyebrow">🤷 Contexto</div>
-      <h2 class="headline">Statement principal com <span class="acc">parte em destaque</span>.</h2>
-      <p class="lede" style="margin-top: 24px;">Frase de suporte que aprofunda o ponto sem repetir o título.</p>
+      <div class="eyebrow">01 · O que ouvi</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Três frases tuas que <span class="acc">definem</span> esta proposta.</h2>
+
+      <div class="quote-grid">
+        <div class="quote-card glass">
+          <span class="quote-icon">🪷</span>
+          <p class="quote-text-body">"Não vejo a minha actividade como negócio. É uma forma de estar com o mundo."</p>
+          <p class="quote-takeaway">→ A presença digital tem de respeitar a tua prática, não ditá-la.</p>
+        </div>
+        <div class="quote-card glass">
+          <span class="quote-icon">⏳</span>
+          <p class="quote-text-body">"Não tenho capacidade para mais clientes agora."</p>
+          <p class="quote-takeaway">→ Crescer dentro da capacidade real, não além dela.</p>
+        </div>
+        <div class="quote-card glass">
+          <span class="quote-icon">🎯</span>
+          <p class="quote-text-body">"Se ficar com 30-35 consultas no mês já ficava satisfeito."</p>
+          <p class="quote-takeaway">→ 30-35 é o alvo concreto. Tudo na proposta é avaliado contra ele.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ==================== 3 · MANIFESTO / QUOTE ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="3" data-bg="dark">
+  <!-- ==================== 3 · OBJETIVO DA PROPOSTA ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="3" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
-    <div class="hairline-grid"></div>
+    <div class="orb orb-peach" style="width: 38vw; height: 38vw; right: -12vw; bottom: -15vw;"></div>
 
     <div class="chrome-top">
       <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
     </div>
 
-    <div class="quote">
-      <div class="eyebrow">⚡ O que mudou</div>
-      <h2 class="quote-text">"Citação ou statement central que <span class="acc">muda o frame</span> da conversa."</h2>
-      <div class="attr">
-        <span class="attr-line"></span>
-        <span class="meta">Atribuição · Fonte · Data</span>
+    <div class="content">
+      <div class="eyebrow">🎯 02 · Objetivo da proposta</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Hoje estás <span class="acc">aqui</span>. Queremos chegar <span class="acc">ali</span>.</h2>
+
+      <div class="body-block">
+        <div class="goal-row">
+          <div class="goal-card glass">
+            <span class="goal-label">Hoje</span>
+            <div class="goal-value">20<span class="goal-unit">/mês</span></div>
+            <div class="goal-sub">≈ €1.700 / mês</div>
+          </div>
+          <div class="goal-arrow-marker">→</div>
+          <div class="goal-card goal-card--accent glass">
+            <span class="goal-label">Alvo</span>
+            <div class="goal-value">30-35<span class="goal-unit">/mês</span></div>
+            <div class="goal-sub">≈ €2.500 / mês</div>
+          </div>
+        </div>
+
+        <p class="goal-incremental">+10 a 15 consultas / mês · +€800 de receita mensal incremental</p>
+      </div>
+
+      <div class="purpose-band">
+        <p>Tudo o que se segue nesta proposta serve <strong>este objetivo</strong>. Cada decisão, cada peça, cada euro investido tem que se justificar contra estes números. Nada mais.</p>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 4 · STAT FOCUS ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="4" data-bg="light">
+  <!-- ==================== 4 · O CONTEXTO (75% / 46%) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="4" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-sage" style="width: 35vw; height: 35vw; left: -10vw; top: -8vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📊 02B · O contexto</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Onde <span class="acc">estão</span> os pacientes que ainda não te conhecem.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">Antes de falar do teu site, é útil enquadrar como é que as pessoas procuram um médico hoje. Não é teoria, são dados públicos recentes.</p>
+
+      <div class="body-block">
+        <div class="context-stats">
+          <div class="context-card glass">
+            <div class="context-big">75<span class="unit">%</span></div>
+            <div class="context-label">das pessoas <strong>procuram um médico no Google</strong> antes de marcar. E <strong>75% lê reviews</strong> antes de decidir.</div>
+            <div class="context-source">Invoca · Birdeye 2025</div>
+          </div>
+          <div class="context-card glass">
+            <div class="context-big">46<span class="unit">%</span></div>
+            <div class="context-label">das pesquisas no Google têm <strong>intenção local</strong> ("homeopata Lisboa", "perto de mim"). É aqui que o <strong>Local SEO</strong> decide se apareces ou não.</div>
+            <div class="context-source">Semrush · Google Search Statistics 2025</div>
+          </div>
+        </div>
+
+        <p class="block-caption">Fontes: Invoca Healthcare Marketing Report, Birdeye State of GBP 2025, Semrush Google Search Statistics 2025. Verificáveis online.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5 · QUEM SOU EU (About) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="5" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-peach" style="width: 38vw; height: 38vw; right: -12vw; top: -12vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">👋 Sobre mim · C</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Como é que isto chegou até aqui.</h2>
+      <p class="lede" style="max-width: 72ch;">Sou psicólogo de formação e Product Manager de profissão. Construo produto digital há 8 anos. Esta proposta existe porque essas duas peças, juntas, são o que falta a quem trabalha sozinho.</p>
+
+      <div class="bio-layout">
+        <div class="bio-photo">
+          <img src="media/pedro.jpg" alt="Pedro Almeida" onerror="this.style.display='none'; this.parentElement.innerHTML='P';">
+        </div>
+        <div class="bio-body">
+          <p class="bio-tagline">Psicologia para ouvir. Produto para entregar.</p>
+          <p class="bio-text">Passei pela Deloitte (consultoria estratégica), Fidelidade (+300% receita, equipa 15+), Critical TechWorks/BMW (navegação em 20+ mercados) e Sword Health (saúde digital, IA aplicada). Sempre em produto digital. Sempre com o utilizador como ponto de partida.</p>
+          <p class="bio-text">A psicologia ensinou-me que cada decisão de produto é uma decisão sobre comportamento humano. O produto ensinou-me que entregar é a única coisa que conta. A tua prática merece os dois.</p>
+          <div class="logos-row">
+            <div class="logo-cell"><img src="media/logos/deloitte.png" alt="Deloitte"></div>
+            <div class="logo-cell"><img src="media/logos/fidelidade.jpg" alt="Fidelidade"></div>
+            <div class="logo-cell"><img src="media/logos/ctw.png" alt="Critical TechWorks"></div>
+            <div class="logo-cell"><img src="media/logos/sword-health.png" alt="Sword Health"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6 · DIAGNÓSTICO (Stat Focus) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="6" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 45vw; height: 45vw; right: -12vw; top: -15vw;"></div>
     <div class="orb orb-sage"  style="width: 30vw; height: 30vw; left: -8vw; bottom: -12vw;"></div>
@@ -1916,39 +2721,51 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">🎯 Diagnóstico</div>
-      <h2 class="headline">Onde estás <span class="acc">hoje</span>.</h2>
-      <p class="lede" style="max-width: 70ch;">Descrição curta do diagnóstico: o que estamos a medir, em que dimensões, e porque é que esta foto importa antes de qualquer decisão.</p>
-      <div class="row gap-12">
-        <span class="chip">Fonte · referência</span>
-        <span class="chip"><span class="dot"></span>Última atualização · Mês 2026</span>
-      </div>
+      <div class="eyebrow">🎯 Diagnóstico digital</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Onde a tua presença online está <span class="acc">hoje</span>.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">Avaliei sete dimensões, das mais técnicas (velocidade, identificação no Google) às mais visíveis (ficha pública, reviews, contacto). Site tecnicamente sólido. Comercialmente invisível.</p>
 
       <div class="stat-grid">
-        <div class="glass" style="padding: 28px;">
-          <div class="meta" style="margin-bottom: 14px;">Score composto · 10 dimensões</div>
+        <div class="glass">
+          <div class="meta" style="margin-bottom: 8px;">Score composto · 7 dimensões</div>
           <div class="big-num">33<span class="unit">/100</span></div>
-          <div class="big-label">Frase que traduz o número numa observação concreta.</div>
-          <div class="big-sub">Detalhe técnico · Detalhe técnico · Detalhe técnico</div>
-        </div>
-        <div class="stack" style="gap: 12px;">
-          <div class="glass" style="padding: 20px;">
-            <div class="meta">Dimensão A</div>
-            <div class="h2" style="margin-top: 6px;"><span class="acc">Não existe</span></div>
-            <div class="body" style="margin-top: 6px;">Implicação concreta para o leitor.</div>
+          <div class="big-label" style="margin-top: 4px;"><strong>Site tecnicamente sólido. Comercialmente invisível.</strong></div>
+
+          <div class="dim-list">
+            <div class="dim dim-ok"><span class="dim-name">Velocidade no telemóvel</span><span class="dim-score">99 / 100 ✓</span></div>
+            <div class="dim dim-bad"><span class="dim-name">Ficha Google Business</span><span class="dim-score">não existe ✗</span></div>
+            <div class="dim dim-bad"><span class="dim-name">Reconhecimento técnico no Google</span><span class="dim-score">não existe ✗</span></div>
+            <div class="dim dim-bad"><span class="dim-name">Reviews públicas</span><span class="dim-score">0 ✗</span></div>
+            <div class="dim dim-bad"><span class="dim-name">Tracking de visitantes</span><span class="dim-score">não existe ✗</span></div>
+            <div class="dim dim-mid"><span class="dim-name">Autoridade do domínio</span><span class="dim-score">8 / 100</span></div>
+            <div class="dim dim-ok"><span class="dim-name">Sites a referenciar-te</span><span class="dim-score">63 ✓</span></div>
           </div>
-          <div class="glass" style="padding: 20px;">
-            <div class="meta">Dimensão B</div>
-            <div class="h2" style="margin-top: 6px;"><span class="acc">Quebrado</span></div>
-            <div class="body" style="margin-top: 6px;">Outra implicação concreta.</div>
+        </div>
+        <div class="stack" style="gap: 14px;">
+          <div class="glass">
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+              <span style="font-size: 22px; line-height: 1;">📍</span>
+              <div class="meta">Ficha Google Business</div>
+            </div>
+            <div class="h2" style="margin-top: 4px;"><span class="acc">Não existe</span></div>
+            <div class="body" style="margin-top: 6px;">A "morada digital" do Google: nome, fotos do consultório, horários, telefone, reviews. ~70% das pesquisas locais começam aqui. Quem pesquisa "homeopata Lisboa" não te encontra.</div>
+          </div>
+          <div class="glass">
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+              <span style="font-size: 22px; line-height: 1;">💬</span>
+              <div class="meta">Caminho de conversão</div>
+            </div>
+            <div class="h2" style="margin-top: 4px;"><span class="acc">Sem clique direto</span></div>
+            <div class="body" style="margin-top: 6px;">Telefone visível, mas sem link clicável no telemóvel. Sem WhatsApp Business com respostas automáticas e horários. Cada paciente tem que copiar números à mão. Fricção mata marcações.</div>
           </div>
         </div>
       </div>
+      <p style="margin-top: 6px; font-size: clamp(10.5px, 0.78vw, 12px); color: var(--ink-quiet); font-style: italic; line-height: 1.4;">Auditoria de Abril 2026 · ferramentas: PageSpeed Insights + Ahrefs.</p>
     </div>
   </section>
 
-  <!-- ==================== 5 · PILLARS GRID ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="5" data-bg="light">
+  <!-- ==================== 7 · ESTRATÉGIA (Pillars) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="7" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 40vw; height: 40vw; left: -10vw; top: -10vw;"></div>
 
@@ -1957,35 +2774,55 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">🏛️ Princípios</div>
-      <h2 class="headline">Três pilares que <span class="acc">orientam</span> o trabalho.</h2>
-      <p class="lede" style="margin-top: 18px; max-width: 70ch;">Descrição curta dos princípios: o que estes três pilares têm em comum, em que decisões nos guiam, e o que ficaria de fora se algum deles falhasse.</p>
+      <div class="eyebrow">🧭 Estratégia</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Três peças, <span class="acc">uma presença</span>.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 70ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">75% pesquisa médico no Google. 46% das pesquisas locais têm intenção de marcação. As três peças capitalizam isso.</p>
 
       <div class="pillars">
         <div class="pillar glass">
-          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          <div class="num">01 · Pilar</div>
-          <h3>Nome curto do pilar</h3>
-          <p>Explicação de 2-3 linhas. Concreta. Sem floreios.</p>
+          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <div class="num">01 · SEO local</div>
+          <h3>Encontrado quando importam.</h3>
+          <p>O Google recebe instruções claras sobre quem és, o que fazes e onde. Quando alguém pesquisa "homeopata Lisboa", apareces nos resultados.</p>
+          <div class="meta">Resultados em 3 a 6 meses</div>
         </div>
         <div class="pillar glass">
-          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
-          <div class="num">02 · Pilar</div>
-          <h3>Nome curto do pilar</h3>
-          <p>Explicação de 2-3 linhas.</p>
+          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="num">02 · Google Business</div>
+          <h3>A tua ficha oficial.</h3>
+          <p>Morada, fotos do consultório, horários, telefone, reviews dos pacientes. Hoje não existe. É o ganho mais visível e mais rápido.</p>
+          <div class="meta">Efeito a 1-3 meses · +1 a +3 consultas/mês</div>
         </div>
         <div class="pillar glass">
-          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
-          <div class="num">03 · Pilar</div>
-          <h3>Nome curto do pilar</h3>
-          <p>Explicação de 2-3 linhas.</p>
+          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <div class="num">03 · WhatsApp Business</div>
+          <h3>Menos atrito. Mais marcações.</h3>
+          <p>Botão clicável em todas as páginas. Respostas automáticas com horários e boas-vindas. O paciente clica, escreve, marca. Sem copiar números à mão.</p>
+          <div class="meta">Efeito imediato · menos fricção, +20-40% de contactos</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 6 · PHASES OVERVIEW (4 cards) ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="6" data-bg="light">
+  <!-- ==================== 8 · CHAPTER BREAK (Phase Intro, dark, no timeline) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="8" data-bg="dark">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -20vw; top: -25vw;"></div>
+    <div class="hairline-grid"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <span class="timeline-pill"><span class="pulse"></span>Capítulo Dois · A proposta</span>
+      <h1 class="headline">Como vamos <span class="acc">fazer acontecer</span>.</h1>
+      <p class="lede" style="margin-top: 18px; max-width: 60ch;">A partir daqui: três caminhos, uma avença opcional, seis entregáveis, e respostas honestas às perguntas que aparecem sempre.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 9 · CRONOGRAMA (Phases Overview) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="9" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 35vw; height: 35vw; right: -10vw; top: -8vw;"></div>
 
@@ -1994,209 +2831,45 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">🗺️ Visão geral</div>
-      <h2 class="headline">A estratégia em <span class="acc">4 fases</span>.</h2>
-      <p class="lede" style="margin-top: 18px; max-width: 70ch;">Descrição curta do plano: a lógica que liga as fases, o que entra em cada uma, e como sabemos quando passar à seguinte.</p>
+      <div class="eyebrow">🗓️ Cronograma</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Quatro etapas, medidas em <span class="acc">progresso</span>.</h2>
+      <p class="lede" style="margin-top: 8px; max-width: 70ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-soft);">7 a 10 dias úteis para o pack base. 1 a 2 horas por semana do teu lado.</p>
 
       <div class="phases-grid">
         <div class="phase-card glass">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
-          <div class="num">Fase 1</div>
-          <div class="when">Abr → Jul 2026</div>
-          <h3>Título da fase</h3>
-          <p>Descrição curta que dá substância ao card.</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <div class="num">Etapa 1</div>
+          <div class="when">Dia 1-2</div>
+          <h3>Recolher requisitos e materiais</h3>
+          <p>Chamada inicial, recolha de fotos, materiais, voz. Definir tom e direção visual.</p>
         </div>
         <div class="phase-card glass">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          <div class="num">Fase 2</div>
-          <div class="when">Ago → Dez 2026</div>
-          <h3>Título da fase</h3>
-          <p>Descrição curta.</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <div class="num">Etapa 2</div>
+          <div class="when">Dia 3-6</div>
+          <h3>Construção de artefactos</h3>
+          <p>Construção da landing, identidade visual, página sobre, FAQ, casos clínicos.</p>
         </div>
         <div class="phase-card glass">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
-          <div class="num">Fase 3</div>
-          <div class="when">Q1 2027</div>
-          <h3>Título da fase</h3>
-          <p>Descrição curta.</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <div class="num">Etapa 3</div>
+          <div class="when">Dia 7-8</div>
+          <h3>Configuração de sistemas</h3>
+          <p>Setup do Google Business Profile, WhatsApp Business, integração de analytics no painel.</p>
         </div>
         <div class="phase-card glass">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
-          <div class="num">Fase 4</div>
-          <div class="when">Q2 2027</div>
-          <h3>Título da fase</h3>
-          <p>Descrição curta.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 7 · PHASE INTRO (dark divider with timeline) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="7" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -20vw; top: -25vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <span class="timeline-pill"><span class="pulse"></span>Abril → Julho 2026 · ~4 meses</span>
-      <h1 class="headline">🌱 Título da fase com <span class="acc">destaque</span>.</h1>
-      <p class="lede" style="margin-top: 18px; max-width: 70ch;">Descrição curta desta fase: o objetivo único do trimestre, os movimentos principais, e o que muda no fim.</p>
-
-      <div class="phase1-timeline">
-        <div class="phase1-step">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <div class="phase1-when">Abril → Maio</div>
-          <div class="phase1-what">Movimento 1</div>
-          <div class="phase1-detail">Detalhe que justifica este movimento. <em>Estou aqui agora.</em></div>
-        </div>
-        <div class="phase1-step">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <div class="phase1-when">Maio → Julho</div>
-          <div class="phase1-what">Movimento 2</div>
-          <div class="phase1-detail">Detalhe deste movimento e como se encadeia com o anterior.</div>
-        </div>
-        <div class="phase1-step">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-          <div class="phase1-when">~Julho</div>
-          <div class="phase1-what">Movimento 3</div>
-          <div class="phase1-detail">Detalhe que mostra escala ou inflexão.</div>
+          <div class="num">Etapa 4</div>
+          <div class="when">Dia 9-10</div>
+          <h3>Lançamento & entrega final</h3>
+          <p>Tu validas, eu corrijo, lançamos. Entrega documentada e 30 dias de suporte pós-lançamento incluídos.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 8 · MECHANIC STEP (numbered) ==================== -->
-  <section class="slide s-echo bg-light-quiet" data-slide="8" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -8vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="mech">
-        <div class="mech-num">01</div>
-        <div class="mech-body">
-          <div class="mech-label">🧮 Nome da mecânica</div>
-          <h2 class="h2">Headline da mecânica com <span class="acc">parte em destaque</span>.</h2>
-          <p class="lede" style="margin-top: 18px;">Explicação. Porque funciona. Detalhe específico.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 9 · PIPELINE / FLOW ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="9" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-sage" style="width: 30vw; height: 30vw; right: -8vw; bottom: -12vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">⚙️ Pipeline</div>
-      <h2 class="h2">A pipeline produtizada que <span class="acc">faz a diferença</span>.</h2>
-      <p class="lede" style="margin-top: 18px; max-width: 70ch;">Descrição curta da pipeline: o que entra, o que sai, e os steps em que é feito o trabalho real (em oposição aos steps de transição).</p>
-
-      <div class="pipeline">
-        <div class="pipeline-step glass">
-          <div class="pipeline-emoji">🔍</div>
-          <div class="pipeline-title">Step 1</div>
-          <div class="pipeline-detail">Uma linha curta a explicar este step.</div>
-        </div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-step glass">
-          <div class="pipeline-emoji">📝</div>
-          <div class="pipeline-title">Step 2</div>
-          <div class="pipeline-detail">Uma linha curta.</div>
-        </div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-step glass">
-          <div class="pipeline-emoji">📞</div>
-          <div class="pipeline-title">Step 3</div>
-          <div class="pipeline-detail">Uma linha curta.</div>
-        </div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-step glass">
-          <div class="pipeline-emoji">🏗️</div>
-          <div class="pipeline-title">Step 4</div>
-          <div class="pipeline-detail">Uma linha curta.</div>
-        </div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-step glass">
-          <div class="pipeline-emoji">🏆</div>
-          <div class="pipeline-title">Step 5</div>
-          <div class="pipeline-detail">Uma linha curta que fecha o loop.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 10 · SPLIT WITH MEME (gif in glass card) ==================== -->
-  <section class="slide s-echo split-meme bg-light-cool" data-slide="10" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-cool" style="width: 40vw; height: 40vw; right: -12vw; top: -15vw;"></div>
-    <div class="orb orb-peach" style="width: 28vw; height: 28vw; left: -6vw; bottom: -10vw;"></div>
-
-    <div class="text-side content">
-      <div class="eyebrow">🧲 O switch</div>
-      <h2 class="headline">O ponto onde <span class="acc">tudo muda</span>.</h2>
-      <p class="lede" style="margin-top: 18px;">Frase de suporte. Voz Pedro: direta, concreta.</p>
-      <ul style="margin-top: 24px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;">
-        <li style="position:relative; padding-left: 24px; font-size: clamp(13px,1.1vw,16px); color: var(--ink-soft);">
-          <span style="position:absolute; left:0; top: 9px; width: 12px; height: 2px; background: var(--accent);"></span>
-          Bullet 1
-        </li>
-        <li style="position:relative; padding-left: 24px; font-size: clamp(13px,1.1vw,16px); color: var(--ink-soft);">
-          <span style="position:absolute; left:0; top: 9px; width: 12px; height: 2px; background: var(--accent);"></span>
-          Bullet 2
-        </li>
-        <li style="position:relative; padding-left: 24px; font-size: clamp(13px,1.1vw,16px); color: var(--ink-soft);">
-          <span style="position:absolute; left:0; top: 9px; width: 12px; height: 2px; background: var(--accent);"></span>
-          Bullet 3
-        </li>
-      </ul>
-    </div>
-
-    <div class="meme-side">
-      <div class="meme-glass">
-        <img src="memes/example.gif" alt="Meme alt text" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div style="display:none; align-items:center; justify-content:center; width:100%; height:40vh; font-size:120px;">🤔</div>
-      </div>
-      <span class="meme-caption">Caption irónico que aterra o ponto.</span>
-    </div>
-  </section>
-
-  <!-- ==================== 11 · CLOSING (open question) ==================== -->
-  <section class="slide s-echo bg-light" data-slide="11" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 50vw; height: 50vw; right: -15vw; bottom: -20vw;"></div>
-    <div class="orb orb-cool" style="width: 30vw; height: 30vw; left: -8vw; top: -10vw;"></div>
-    <div class="hairline-grid"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">🔍 Sobre ti</div>
-      <h2 class="headline">Desconstrói isto. <span class="acc">Onde estás a ver falhas?</span></h2>
-      <div class="prompts">
-        <span>Pergunta aberta 1?</span>
-        <span>Pergunta aberta 2?</span>
-        <span>Pergunta aberta 3?</span>
-        <span>O que falta? O que está a mais?</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 12 · PRICING TIERS (3-up) ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="12" data-bg="light">
+  <!-- ==================== 10 · PRICING (3-up) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="10" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 40vw; height: 40vw; right: -12vw; top: -12vw;"></div>
 
@@ -2205,407 +2878,148 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">💰 Pricing</div>
-      <h2 class="headline">Três caminhos. <span class="acc">O mesmo nível.</span></h2>
-      <p class="lede" style="max-width: 60ch;">Escolhe o que faz sentido para o teu negócio agora. Podes sempre subir mais tarde.</p>
+      <div class="eyebrow">💰 Investimento</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Escolhe o que faz sentido <span class="acc">hoje</span>.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-soft); margin-top: 4px !important;">50% no início, 50% na entrega · 30 dias de suporte pós-lançamento incluídos em todos os pacotes.</p>
 
       <div class="pricing-grid">
         <div class="price-card glass">
           <div class="tier-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <div class="tier-eyebrow">Site Simples</div>
-          <div class="price">€600<span class="unit">projeto</span></div>
-          <ul class="features">
-            <li>Até 5 páginas WordPress</li>
-            <li>Mobile + desktop responsivo</li>
-            <li>Otimizado para Google local</li>
-            <li>Formulário de contacto</li>
-            <li>Entrega em 2 semanas</li>
+          <div class="tier-eyebrow">Essencial</div>
+          <div class="price">€450<span class="unit">projeto</span></div>
+          <ul class="features with-icons">
+            <li><span class="ico">🌐</span><span>Site pessoal contemporâneo e moderno</span></li>
+            <li><span class="ico">🎨</span><span>Identidade visual: logo, palete, tipografia</span></li>
+            <li><span class="ico">📋</span><span>Casos clínicos & FAQ validados por ti</span></li>
+            <li><span class="ico">✉️</span><span>Email de reativação aos pacientes antigos</span></li>
+            <li><span class="ico">📊</span><span>Analytics simples no painel do site</span></li>
           </ul>
-          <span class="chip">Ideal para começar</span>
+          <span class="chip">Site base · 7-10 dias úteis</span>
         </div>
         <div class="price-card glass recommended">
           <span class="badge">Recomendado</span>
-          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg></div>
-          <div class="tier-eyebrow">+ Blog</div>
-          <div class="price">€700<span class="unit">projeto</span></div>
-          <ul class="features">
-            <li>Tudo do plano Simples</li>
-            <li>Blog + 3 artigos iniciais</li>
-            <li>SEO setup completo</li>
-            <li>Plano editorial 3 meses</li>
+          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
+          <div class="tier-eyebrow">Estúdio</div>
+          <div class="price">€800<span class="unit">projeto</span></div>
+          <ul class="features with-icons">
+            <li><span class="ico">✅</span><span>Tudo do plano Essencial</span></li>
+            <li><span class="ico">📷</span><span>Sessão foto e vídeo no consultório</span></li>
+            <li><span class="ico">📝</span><span>Blog com até 6 artigos re-escritos a partir dos teus ensaios</span></li>
+            <li><span class="ico">📍</span><span>Google Business a sério: ficha, fotos, horários, reviews</span></li>
+            <li><span class="ico">💬</span><span>WhatsApp Business clicável: respostas automáticas, horários, boas-vindas</span></li>
           </ul>
-          <span class="chip"><span class="dot"></span>Melhor relação valor</span>
+          <span class="chip"><span class="dot"></span>Pack completo</span>
         </div>
         <div class="price-card glass">
-          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg></div>
-          <div class="tier-eyebrow">+ Blog AI</div>
-          <div class="price">€800<span class="unit">projeto</span></div>
-          <ul class="features">
-            <li>Tudo do plano + Blog</li>
-            <li>Pipeline AI para conteúdo</li>
-            <li>4 artigos/mês automáticos</li>
-            <li>Revisão humana antes de publicar</li>
-            <li>Sem custos recorrentes</li>
+          <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/></svg></div>
+          <div class="tier-eyebrow">Atelier</div>
+          <div class="price">Custom<span class="unit">sob orçamento</span></div>
+          <ul class="features with-icons">
+            <li><span class="ico">🗓️</span><span>Marcações online integradas no site</span></li>
+            <li><span class="ico">📋</span><span>Painel para veres a tua agenda numa vista só</span></li>
+            <li><span class="ico">🎯</span><span>Reativação por tipo de paciente (segmentada)</span></li>
+            <li><span class="ico">🎓</span><span>Plataforma para workshops e formações</span></li>
+            <li><span class="ico">🃏</span><span>Cartões físicos e extensões da marca</span></li>
           </ul>
-          <span class="chip">Para escalar conteúdo</span>
+          <span class="chip">Para quando fizer sentido ir mais fundo</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 13 · VALUE STACK (Hormozi) ==================== -->
+  <!-- ==================== 11 · ENTREGÁVEIS PACK ESSENCIAL ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="11" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-cool" style="width: 38vw; height: 38vw; right: -10vw; top: -10vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📦 Entregáveis · pack Base</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Cinco peças no pack <span class="acc">Essencial (€450)</span>.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">O site, a identidade e a estrutura de conteúdo prontos a lançar. O que vem no Estúdio aparece em baixo, claramente marcado.</p>
+
+      <div class="addons-grid">
+        <div class="addon-card glass">
+          <span class="icon-emoji">🌐</span>
+          <div class="name">Site pessoal</div>
+          <div class="desc">Design contemporâneo, mobile-first, optimizado para Google local. Pensado para quem pesquisa "homeopata Lisboa".</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">🎨</span>
+          <div class="name">Identidade visual</div>
+          <div class="desc">Logo, palete, tipografia. Coerente com o tom filosófico da tua prática. Não-template.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📋</span>
+          <div class="name">Casos clínicos & FAQ</div>
+          <div class="desc">2 a 3 casos anonimizados, validados por ti. FAQ com respostas claras às perguntas comuns. Para construir confiança antes da primeira consulta.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">✉️</span>
+          <div class="name">Email de reativação</div>
+          <div class="desc">Uma campanha à tua base de pacientes antigos a anunciar o site novo. Para a base não esquecer que existes.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📊</span>
+          <div class="name">Analytics simples</div>
+          <div class="desc">Visitas e queries no painel do site. Sabes quem te encontrou e por que palavras.</div>
+        </div>
+      </div>
+
+      <div class="not-included-row">
+        <span class="ni-label">Não incluído · adicionado no Estúdio:</span>
+        <span class="chip">📷 Sessão foto e vídeo</span>
+        <span class="chip">📝 Blog (6 artigos)</span>
+        <span class="chip">📍 Google Business</span>
+        <span class="chip">💬 WhatsApp Business</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 12 · ENTREGÁVEIS (Add-ons grid variant, no price chip) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="12" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; top: -10vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📦 Entregáveis · pack Estúdio</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Tudo do Essencial, mais <span class="acc">quatro peças extra</span>.</h2>
+      <p class="lede" style="max-width: 72ch;">Inclui tudo o que vem no pack Essencial (site, identidade, casos clínicos, email de reativação, analytics). Adiciona estas quatro peças, focadas em conversão, autoridade e operação.</p>
+
+      <div class="addons-grid">
+        <div class="addon-card glass">
+          <span class="icon-emoji">📍</span>
+          <div class="name">Google Business Profile</div>
+          <div class="desc">Setup da tua ficha oficial: morada, fotos do consultório, horários, telefone, reviews. ~70% das pesquisas locais começam aqui.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">💬</span>
+          <div class="name">WhatsApp Business</div>
+          <div class="desc">Botão clicável em todas as páginas, respostas automáticas com horários e mensagem de boas-vindas. Cada paciente fica a um toque.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📝</span>
+          <div class="name">Blog (até 6 artigos)</div>
+          <div class="desc">Artigos re-escritos a partir dos teus ensaios. Voz tua, optimizados para SEO. Constroem autoridade ao longo do tempo.</div>
+        </div>
+        <div class="addon-card glass">
+          <span class="icon-emoji">📷</span>
+          <div class="name">Sessão de foto e vídeo</div>
+          <div class="desc">10 a 15 fotografias editadas no consultório + vídeo curto de 1-2 minutos para o site. Autêntico, não stock.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 13 · AVENÇA MENSAL (Add-ons grid, 6 cards) ==================== -->
   <section class="slide s-echo has-grid bg-light-quiet" data-slide="13" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-peach" style="width: 45vw; height: 45vw; left: -12vw; bottom: -15vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">📦 O que recebes</div>
-      <h2 class="headline">O que está incluído. <span class="acc">E quanto vale.</span></h2>
-
-      <div class="value-stack">
-        <div class="stack-item">
-          <span class="label">Site WordPress otimizado e responsivo</span>
-          <span class="value">valor: €1.500</span>
-        </div>
-        <div class="stack-item">
-          <span class="label">Estrutura SEO local + Google Maps</span>
-          <span class="value">valor: €600</span>
-        </div>
-        <div class="stack-item">
-          <span class="label">Copywriting de 5 páginas (PT-PT)</span>
-          <span class="value">valor: €800</span>
-        </div>
-        <div class="stack-item">
-          <span class="label">Setup de analytics + Search Console</span>
-          <span class="value">valor: €300</span>
-        </div>
-        <div class="stack-bonus">
-          <span class="label">Phase 0 protótipo em 24h, mesmo que não fechemos</span>
-          <span class="value">valor: €400</span>
-        </div>
-        <div class="stack-bonus">
-          <span class="label">3 meses de suporte por WhatsApp</span>
-          <span class="value">valor: €450</span>
-        </div>
-        <div class="stack-total">
-          <span class="label">Valor total de mercado</span>
-          <span class="value">€4.050</span>
-        </div>
-        <div class="stack-price">
-          <span class="label">Hoje, chave-na-mão</span>
-          <span class="price">€700</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 14a · TESTIMONIAL HERO ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="14" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 60vw; height: 60vw; right: -18vw; top: -20vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">⭐ O que dizem</div>
-      <h2 class="headline">A prova vem dos <span class="acc">resultados deles</span>.</h2>
-
-      <div class="testimonial-hero">
-        <div class="quote-mark">“</div>
-        <div class="quote-body">Em 90 dias passámos de 2 contactos por mês para 18. O Pedro entendeu o nosso negócio antes de me mostrar uma única ideia.</div>
-        <div class="testimonial-attr">
-          <div class="avatar">J</div>
-          <div class="who">
-            <div class="name">João Silva</div>
-            <div class="role">Sócio · Auto-Reparações Silva</div>
-          </div>
-          <span class="result">+800% leads / 90 dias</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 14b · TESTIMONIAL GRID ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="15" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-cool" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">⭐ Mais opiniões</div>
-      <h2 class="headline">Não acreditas? <span class="acc">Eles também não acreditavam.</span></h2>
-
-      <div class="testimonial-grid">
-        <div class="testimonial-card glass">
-          <div class="stars">★★★★★</div>
-          <div class="quote-body">"Ficou pronto em 12 dias. O preço da concorrência era 3x mais e o resultado pior."</div>
-          <div class="testimonial-attr">
-            <div class="avatar">M</div>
-            <div class="who">
-              <div class="name">Marta Costa</div>
-              <div class="role">Serralharia · Loures</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card glass">
-          <div class="stars">★★★★★</div>
-          <div class="quote-body">"Sem fidelização, sem rodeios. Paguei metade só depois de ver o protótipo."</div>
-          <div class="testimonial-attr">
-            <div class="avatar">R</div>
-            <div class="who">
-              <div class="name">Rui Mendes</div>
-              <div class="role">Canalizações Mendes</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card glass">
-          <div class="stars">★★★★★</div>
-          <div class="quote-body">"Triplicámos os pedidos de orçamento em 2 meses. A SEO local foi o que mais surpreendeu."</div>
-          <div class="testimonial-attr">
-            <div class="avatar">A</div>
-            <div class="who">
-              <div class="name">Ana Ferreira</div>
-              <div class="role">Estética Bela · Cascais</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 16 · COMPARISON TABLE / DATA ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="16" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-sage" style="width: 40vw; height: 40vw; left: -10vw; bottom: -15vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">📊 Comparativo</div>
-      <h2 class="headline">Porquê eu, e <span class="acc">não os outros</span>.</h2>
-
-      <div class="compare-table" style="--cols: 3;">
-        <div class="compare-row compare-head">
-          <span class="compare-label">&nbsp;</span>
-          <span class="compare-cell">DIY (Wix)</span>
-          <span class="compare-cell">Agência</span>
-          <span class="compare-cell us">Pedro</span>
-        </div>
-        <div class="compare-row">
-          <span class="compare-label">Tempo até live</span>
-          <span class="compare-cell">~2 meses</span>
-          <span class="compare-cell">2-3 meses</span>
-          <span class="compare-cell yes">2 semanas</span>
-        </div>
-        <div class="compare-row">
-          <span class="compare-label">Investimento total</span>
-          <span class="compare-cell">€600 + horas tuas</span>
-          <span class="compare-cell">€2.500-€5.000</span>
-          <span class="compare-cell yes">€600-€800</span>
-        </div>
-        <div class="compare-row">
-          <span class="compare-label">SEO local incluído</span>
-          <span class="compare-cell no">✗</span>
-          <span class="compare-cell">Extra</span>
-          <span class="compare-cell yes">✓</span>
-        </div>
-        <div class="compare-row">
-          <span class="compare-label">Fidelização</span>
-          <span class="compare-cell">Plano mensal</span>
-          <span class="compare-cell">Contrato 12m</span>
-          <span class="compare-cell yes">Zero</span>
-        </div>
-        <div class="compare-row">
-          <span class="compare-label">Conversão típica</span>
-          <span class="compare-cell"><div class="bar"><div class="bar-fill" style="width: 18%;"></div></div></span>
-          <span class="compare-cell"><div class="bar"><div class="bar-fill" style="width: 55%;"></div></div></span>
-          <span class="compare-cell"><div class="bar"><div class="bar-fill" style="width: 92%;"></div></div></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 17 · QUEM SOU EU / ABOUT ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="17" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-peach" style="width: 35vw; height: 35vw; right: -10vw; top: -12vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">👋 Quem sou</div>
-      <h2 class="headline">Pedro Almeida.</h2>
-
-      <div class="bio-layout">
-        <div class="bio-photo">
-          <img src="media/pedro.jpg" alt="Pedro Almeida" onerror="this.style.display='none'; this.parentElement.innerHTML='P';">
-        </div>
-        <div class="bio-body">
-          <p class="bio-tagline">Construo websites que se pagam em 6 meses para SMBs em Portugal.</p>
-          <p class="bio-text">10+ anos em Product Management e UX. Liderei equipas de produto em SaaS B2B, design de plataformas educativas e ferramentas AI. Sei o que faz um site converter, e o que o faz parecer "mais um site".</p>
-          <p class="bio-text">Trabalho hoje com SMBs em Portugal porque a maioria está a perder clientes por falta de presença online estruturada. O custo do site é pago no primeiro cliente que entra pelo Google.</p>
-          <div class="logos-row">
-            <div class="logo-cell">Cliente A</div>
-            <div class="logo-cell">Cliente B</div>
-            <div class="logo-cell">Cliente C</div>
-            <div class="logo-cell">Cliente D</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 18 · LOGO WALL ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="18" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-cool" style="width: 30vw; height: 30vw; left: -8vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">🤝 Confiaram em mim</div>
-      <h2 class="headline">Trabalhei com <span class="acc">estes negócios</span>.</h2>
-      <p class="lede" style="max-width: 60ch;">SMBs portugueses que decidiram resolver presença online a sério. Resultados em 60-90 dias.</p>
-
-      <div class="logo-wall">
-        <div class="logo-cell">Cliente 1</div>
-        <div class="logo-cell">Cliente 2</div>
-        <div class="logo-cell">Cliente 3</div>
-        <div class="logo-cell">Cliente 4</div>
-        <div class="logo-cell">Cliente 5</div>
-        <div class="logo-cell">Cliente 6</div>
-        <div class="logo-cell">Cliente 7</div>
-        <div class="logo-cell">Cliente 8</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 19 · CASE STUDY (single) ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="19" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 40vw; height: 40vw; right: -12vw; bottom: -18vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">📈 Caso real</div>
-      <h2 class="headline">De 2 leads/mês para <span class="acc">18 em 90 dias</span>.</h2>
-
-      <div class="case-layout">
-        <div class="case-body">
-          <p><strong>Problema.</strong> Auto-Reparações Silva tinha 12 anos de experiência e zero presença online. Dependiam 100% de boca-a-boca. Quem pesquisava "mecânico Loures" no Google encontrava sempre os concorrentes primeiro.</p>
-          <p><strong>Solução.</strong> Site WordPress otimizado para SEO local em Loures + Odivelas, Google Business Profile a sério, formulário de orçamento por foto via WhatsApp.</p>
-          <p><strong>Resultado.</strong> Live em 14 dias. Pago em 6 semanas pelos primeiros leads. Hoje rejeitam orçamentos por agenda cheia.</p>
-        </div>
-        <div class="case-stats">
-          <div class="case-stat glass">
-            <div class="num">+800%</div>
-            <div class="label">Leads / mês</div>
-          </div>
-          <div class="case-stat glass">
-            <div class="num">14 dias</div>
-            <div class="label">Live em produção</div>
-          </div>
-          <div class="case-stat glass">
-            <div class="num">€700</div>
-            <div class="label">Investimento</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 20 · BY THE NUMBERS ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="20" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-sage" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">📐 Pelos números</div>
-      <h2 class="headline">A prova está nos <span class="acc">dados</span>.</h2>
-
-      <div class="numbers-row" style="--cols: 4;">
-        <div class="number-cell glass">
-          <div class="num">12</div>
-          <div class="label">Sites entregues</div>
-          <div class="sub">2024 - 2026</div>
-        </div>
-        <div class="number-cell glass">
-          <div class="num">100%</div>
-          <div class="label">No prazo</div>
-          <div class="sub">Sem exceções</div>
-        </div>
-        <div class="number-cell glass">
-          <div class="num">4.9★</div>
-          <div class="label">Média de clientes</div>
-          <div class="sub">Avaliação pós-entrega</div>
-        </div>
-        <div class="number-cell glass">
-          <div class="num">€0</div>
-          <div class="label">Churn em 6 meses</div>
-          <div class="sub">Retainer opcional</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 21 · FAQ / OBJECTION HANDLING ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="21" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-cool" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">❓ Antes que perguntes</div>
-      <h2 class="headline">Dúvidas que <span class="acc">aparecem sempre</span>.</h2>
-
-      <div class="faq-list">
-        <div class="faq-row">
-          <div class="q">Porque não Wix ou Squarespace?</div>
-          <div class="a">Porque o custo verdadeiro não é o template, são as horas que tu vais perder a configurar e os meses até apareceres no Google. WordPress otimizado por mim, em 14 dias, com SEO local feito.</div>
-        </div>
-        <div class="faq-row">
-          <div class="q">Tenho que ter conhecimentos técnicos?</div>
-          <div class="a">Zero. Eu trato de tudo. Tu mandas as fotos, eu envio o protótipo em 24h. Atualizar o site depois é tão simples como editar um Google Doc.</div>
-        </div>
-        <div class="faq-row">
-          <div class="q">E se não gostar do resultado?</div>
-          <div class="a">Pagas só 50% para arrancar. O Phase 0 (protótipo) é em 24h. Se não fizer sentido, não avançamos e ficas com o protótipo. O risco é meu.</div>
-        </div>
-        <div class="faq-row">
-          <div class="q">Quanto tempo demora a aparecer no Google?</div>
-          <div class="a">Indexação em 1-3 semanas. Resultados de SEO local típicos em 60-90 dias. Não é magia, é trabalho consistente.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 22 · ADD-ONS GRID (à la carte) ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="22" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 38vw; height: 38vw; right: -12vw; bottom: -15vw;"></div>
 
@@ -2614,53 +3028,203 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">➕ Extras à medida</div>
-      <h2 class="headline">Add-ons quando <span class="acc">precisares</span>.</h2>
-      <p class="lede" style="max-width: 60ch;">Não pago à frente, escolhes só o que faz sentido para o teu negócio.</p>
+      <div class="eyebrow">🔄 Avença mensal</div>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Avença <span class="acc">opcional · €50/mês</span> — recomendada.</h2>
+      <p class="lede" style="max-width: 72ch;">Manter um site vivo dá trabalho contínuo, mesmo depois de lançado. Esta avença é opcional, mas <strong>fortemente recomendada</strong> para preservar o investimento. Sem fidelização — cancela quando quiseres.</p>
 
       <div class="addons-grid">
         <div class="addon-card glass">
-          <div class="code">A1</div>
-          <div class="name">Loja online (até 30 produtos)</div>
-          <div class="desc">WooCommerce + MB Way + Multibanco. Setup completo.</div>
-          <span class="price-chip">+€300</span>
+          <span class="icon-emoji">🛠️</span>
+          <div class="name">Site sempre actualizado e seguro</div>
+          <div class="desc">Atualizações de software, segurança e plugins. Tudo é actualizado sem te incomodar e sem partir nada. Sem isto, o site fica vulnerável e desactualizado.</div>
         </div>
         <div class="addon-card glass">
-          <div class="code">A2</div>
-          <div class="name">Reservas online</div>
-          <div class="desc">Calendário integrado, lembretes automáticos por SMS/email.</div>
-          <span class="price-chip">+€150</span>
+          <span class="icon-emoji">📡</span>
+          <div class="name">Site sempre online (alertas precoces)</div>
+          <div class="desc">Uptime + backups verificados todos os meses. Se cair, eu sei antes de ti. Se algo correr mal, há cópia recente para restaurar.</div>
         </div>
         <div class="addon-card glass">
-          <div class="code">A3</div>
-          <div class="name">Multilingue (PT + EN)</div>
-          <div class="desc">Site traduzido + SEO em ambas as línguas.</div>
-          <span class="price-chip">+€200</span>
+          <span class="icon-emoji">📊</span>
+          <div class="name">Visibilidade mensal do que converte</div>
+          <div class="desc">Email de uma página por mês: visitas, queries que te encontraram, alertas resolvidos. Para saberes se o investimento está a render.</div>
         </div>
         <div class="addon-card glass">
-          <div class="code">A4</div>
-          <div class="name">Fotografia profissional</div>
-          <div class="desc">Sessão no local, 30 fotos editadas para o site.</div>
-          <span class="price-chip">+€250</span>
+          <span class="icon-emoji">📍</span>
+          <div class="name">Ficha Google sempre fresca</div>
+          <div class="desc">Resposta a reviews novas (com tua aprovação), atualizações, fotos novas mensais. Uma ficha activa converte mais.</div>
         </div>
         <div class="addon-card glass">
-          <div class="code">A5</div>
-          <div class="name">Chatbot WhatsApp</div>
-          <div class="desc">Respostas automáticas a perguntas frequentes, 24/7.</div>
-          <span class="price-chip">+€180</span>
+          <span class="icon-emoji">✍️</span>
+          <div class="name">Conteúdo regular para autoridade</div>
+          <div class="desc">1 artigo por mês a partir dos teus ensaios. 30 min de chamada onde falas livremente. Eu transformo em artigo, validas, publico. Constrói autoridade.</div>
         </div>
         <div class="addon-card glass">
-          <div class="code">A6</div>
-          <div class="name">Retainer mensal</div>
-          <div class="desc">Updates, SEO contínuo, suporte. 4h/mês mínimo.</div>
-          <span class="price-chip">€50/h</span>
+          <span class="icon-emoji">✉️</span>
+          <div class="name">Pacientes antigos voltam</div>
+          <div class="desc">Email à base trimestral. Uma vez por trimestre, mensagem aos teus pacientes antigos. Reduz custo de aquisição e mantém a relação.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 23 · CTA CLOSER (WhatsApp + risk reversal) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="23" data-bg="dark">
+  <!-- ==================== 14 · CENÁRIOS (Custom 2-card) ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="14" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; bottom: -15vw;"></div>
+    <div class="orb orb-sage"  style="width: 28vw; height: 28vw; left: -6vw; top: -10vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📈 Cenários · em €</div>
+      <h2 class="headline" style="font-size: clamp(26px, 3.1vw, 44px);">💰 Quatro projeções, a <span class="acc">€85 por consulta</span>.</h2>
+      <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">Conservador é o ganho certo. Liberal é o alvo dos 30-35 consultas/mês que articulaste. Cruzados com 6 e 12 meses, são quatro fotos honestas do que esperar.</p>
+
+      <div class="scenarios-table-wrap">
+        <table class="scenarios-table">
+          <thead>
+            <tr class="scenarios-th-top">
+              <th></th>
+              <th class="grp-conservador" colspan="2">Conservador</th>
+              <th class="grp-liberal" colspan="2">Liberal</th>
+            </tr>
+            <tr class="scenarios-th-bot">
+              <th></th>
+              <th>6 meses</th>
+              <th>12 meses</th>
+              <th>6 meses</th>
+              <th>12 meses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="row-label">Consultas novas / mês</th>
+              <td class="cons">+1 a 2</td>
+              <td class="cons">+3</td>
+              <td class="lib">+4 a 6</td>
+              <td class="lib">+8 a 12</td>
+            </tr>
+            <tr>
+              <th class="row-label">€ marginal / mês</th>
+              <td class="acc-text cons">+€85-170</td>
+              <td class="acc-text cons">+€255</td>
+              <td class="acc-text lib">+€340-510</td>
+              <td class="acc-text lib">+€680-1.020</td>
+            </tr>
+            <tr class="row-total">
+              <th class="row-label">Acumulado no período</th>
+              <td class="cons">~€500-1.000</td>
+              <td class="cons">~€2.500-3.500</td>
+              <td class="lib">~€1.400-2.500</td>
+              <td class="lib">~€5.000-10.000</td>
+            </tr>
+            <tr class="row-payback">
+              <th class="row-label">Payback do pack Estúdio (€800)</th>
+              <td class="cons" colspan="2">~8 meses (após ramp completo)</td>
+              <td class="lib" colspan="2">~4 meses (após ramp completo)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top: 14px; max-width: 70ch; font-size: clamp(11px, 0.82vw, 12.5px); color: var(--ink-quiet); font-style: italic; line-height: 1.5;">Modelo: consultas marginais × €85 acumuladas no período, com ramp típico de SEO local. Números honestos, não vendidos.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 15 · HORIZONTE (By the Numbers) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="15" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">⏳ Horizonte do investimento</div>
+      <h2 class="headline" style="font-size: clamp(26px, 3.1vw, 44px);">🪴 O teu site actual já tem <span class="acc">15 anos</span>.</h2>
+      <p class="lede" style="max-width: 70ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">O domínio drgabrielcampuzano.com está online desde 2011. Sites bem feitos amortizam-se em décadas, não em ciclos curtos.</p>
+
+      <div class="numbers-row horizon-row" style="--cols: 4;">
+        <div class="number-cell glass">
+          <span class="cell-icon">⏳</span>
+          <div class="num">15<span class="unit">anos</span></div>
+          <div class="label">Lifespan actual</div>
+          <div class="sub">drgabrielcampuzano.com online desde 2011. Quase 15 anos sem renovação visual ou técnica.</div>
+        </div>
+        <div class="number-cell glass">
+          <span class="cell-icon">🪴</span>
+          <div class="num">8-10<span class="unit">anos</span></div>
+          <div class="label">Lifespan esperado</div>
+          <div class="sub">Stack moderna, mobile-first, mantida via avença. Não é descartável — vai durar enquanto a tua prática durar.</div>
+        </div>
+        <div class="number-cell glass">
+          <span class="cell-icon">🪙</span>
+          <div class="num">~€8<span class="unit">/mês</span></div>
+          <div class="label">Custo amortizado</div>
+          <div class="sub">€800 dividido por 8 anos. Menos do que um café por semana, distribuído ao longo da vida útil do site.</div>
+        </div>
+        <div class="number-cell glass">
+          <span class="cell-icon">📈</span>
+          <div class="num">10x-100x</div>
+          <div class="label">ROI projectado</div>
+          <div class="sub">75% das pessoas pesquisa médico no Google antes de marcar. Algumas consultas adicionais por ano pagam o investimento muitas vezes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 16 · FAQ ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="16" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-sage" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">❓ A pergunta honesta</div>
+      <h2 class="headline">"E se fizesse num <span class="acc">site builder</span>?"</h2>
+      <p class="lede" style="max-width: 70ch;">Podes. A pergunta real é o que ganhas e o que perdes em cada caminho. Sem voltas:</p>
+
+      <div class="scenarios-grid">
+        <div class="glass" style="padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="font-size: 28px; line-height: 1;">🛠️</span>
+            <span class="chip"><span class="dot"></span>Wix · Squarespace · Lovable</span>
+          </div>
+          <h3 style="font-family: var(--f); font-weight: 600; font-size: clamp(20px, 1.8vw, 28px); letter-spacing: -0.015em; line-height: 1.2;">Fazes <span class="acc">tu</span>.</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">✅</span><span>É mesmo possível. Não invento.</span></li>
+            <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">⏳</span><span>30 a 50 horas tuas: copy, fotos, mobile, SEO, debug.</span></li>
+            <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">⚠️</span><span>Resultado genérico. Look de template, igual a milhares.</span></li>
+            <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">⚠️</span><span>Copy raso. SEO técnico ao acaso. Google nota.</span></li>
+          </ul>
+        </div>
+        <div class="glass" style="padding: 28px; display: flex; flex-direction: column; gap: 14px; border: 1.5px solid var(--accent); box-shadow: 0 0 0 1px rgba(226,84,42,0.15), 0 18px 50px rgba(226,84,42,0.12);">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="font-size: 28px; line-height: 1;">🤝</span>
+            <span class="chip"><span class="dot"></span>Comigo</span>
+          </div>
+          <h3 style="font-family: var(--f); font-weight: 600; font-size: clamp(20px, 1.8vw, 28px); letter-spacing: -0.015em; line-height: 1.2;">Faço <span class="acc">eu</span>.</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">⚡</span><span>7 a 10 dias úteis. 1 a 2 horas por semana do teu lado.</span></li>
+            <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">✨</span><span>Visualmente diferenciado. Modernidade que se sente ao primeiro segundo.</span></li>
+            <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">📝</span><span>Copy escrito a partir dos teus ensaios. Voz tua, não genérica.</span></li>
+            <li style="display: flex; gap: 10px; font-size: clamp(13px,1.05vw,15px); color: var(--ink-soft); line-height: 1.5;"><span style="flex-shrink:0;">🔍</span><span>SEO técnico feito a sério. Os resultados no Google falam por si.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top: 14px; max-width: 70ch; font-size: clamp(13px,1vw,15px); color: var(--ink-quiet); font-style: italic; line-height: 1.55;">É uma decisão pessoal. Tem custo dos dois lados. Esta proposta, e o template que vês à frente, são em si a referência para decidires com olhos abertos.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 17 · CTA CLOSER (dark, WhatsApp only) ==================== -->
+  <section class="slide s-echo has-grid bg-dark" data-slide="17" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 70vw; height: 70vw; right: -22vw; bottom: -28vw;"></div>
     <div class="hairline-grid"></div>
@@ -2671,73 +3235,16 @@
 
     <div class="content">
       <div class="eyebrow">🚀 Próximo passo</div>
-      <h1 class="headline">Bora marcar a <span class="acc">Call 2?</span></h1>
-      <p class="lede" style="max-width: 50ch;">15 minutos. Mostro-te o protótipo, fechamos âmbito, recebes orçamento em 30 minutos.</p>
+      <h1 class="headline">Bora <span class="acc">conversar</span>.</h1>
+      <p class="lede" style="max-width: 56ch;">Bora falar sobre como levar a tua prática para o próximo nível.</p>
 
       <div class="cta-stack">
-        <a class="cta-button primary" href="https://cal.com/pedro-almeida/15min" target="_blank" rel="noopener">
-          🗓️ Marcar 15 min · cal.com
-        </a>
-        <a class="cta-button tertiary" href="mailto:pedro.almeida.ux@gmail.com">
-          ✉️ pedro.almeida.ux@gmail.com
+        <a class="cta-button primary" href="https://wa.me/351927504686?text=Ol%C3%A1%20Pedro%2C%20vi%20a%20proposta.%20Bora%20falar." target="_blank" rel="noopener">
+          💬 WhatsApp · 927 504 686 →
         </a>
       </div>
-
-      <div class="guarantee-row">
-        <span class="chip">🛡️ Pago só 50% para começar</span>
-        <span class="chip">🎁 Phase 0 grátis em 24h</span>
-        <span class="chip">🔓 Sem fidelização</span>
-      </div>
-
-      <div class="contact-line">1 cliente novo por semana · Próxima vaga: à confirmar</div>
     </div>
   </section>
-
-  <!-- ==================== 24 · QUOTE / PRINCIPLE (dark) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="24" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 70vw; height: 70vw; left: -22vw; bottom: -28vw;"></div>
-    <div class="hairline-grid"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">⚡ O que muda</div>
-      <div class="photo-quote">
-        <span class="mark">"</span>
-        <p class="body">O caminho não é uma linha recta. <span class="acc">É a rota certa.</span></p>
-        <div class="attr" style="color: var(--d-ink-quiet);">Princípio · pedro-deck-builder</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 25 · PARTNERSHIP / "BORA JUNTOS" (dark) ==================== -->
-  <section class="slide s-echo has-grid bg-dark" data-slide="25" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 60vw; height: 60vw; right: -18vw; top: -20vw;"></div>
-    <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
-    <div class="hairline-grid"></div>
-
-    <div class="chrome-top">
-      <div class="brand"><span class="brand-mark"></span> Pedro Almeida</div>
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">🤝 Parceria</div>
-      <div class="partnership-content">
-        <h1 class="display">Bora <span class="acc">fazer acontecer</span>.</h1>
-        <p class="lede" style="max-width: 40ch; margin-top: 4px;">Não sou contractor. Sou parceiro do teu negócio. O teu crescimento é o meu KPI. Construímos juntos o que está à tua altura.</p>
-        <div class="partnership-cta">
-          <span class="chip">Resultados teus, não relatórios meus</span>
-          <span class="chip">Pele no jogo</span>
-          <span class="chip">Um compromisso, dois lados</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </div>
 
 <!-- =============== CURSOR HALO (soft glow follower) =============== -->
@@ -2745,7 +3252,7 @@
 
 <!-- =============== FOOTER NAV (always visible, attached to bottom) =============== -->
 <div class="footer">
-  <span id="counter">1 / 11</span>
+  <span id="counter">1 / 17</span>
   <div class="progress" id="progress"></div>
   <span class="nav-hint">← → para navegar</span>
 </div>
@@ -2808,7 +3315,7 @@
     else             { current = Math.max(current - 1, 0); show(current); }
   }, { passive: true });
 
-  show(0);
+  show(4);
 
   // =============== CURSOR HALO (lerp follower) ===============
   // Skip on touch devices and when reduced motion is preferred.
@@ -2843,7 +3350,7 @@
     animate();
   }
 
-  // =============== HERO VIDEO — PING-PONG LOOP ===============
+  // =============== HERO VIDEO : PING-PONG LOOP ===============
   // Plays forward, then reverses, then plays forward again. Seamless ambient bg for the cover.
   // Skipped on prefers-reduced-motion via CSS (display: none).
   const hero = document.getElementById('hero-video');
