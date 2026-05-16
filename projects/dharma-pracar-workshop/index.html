@@ -2688,7 +2688,7 @@
   }
 
   /* Slide 2 — closing pledge line (inspirational close) */
-  .slide[data-slide="2"] .closing-pledge {
+  .slide[data-slide="3"] .closing-pledge {
     font-family: var(--f);
     font-size: clamp(18px, 1.45vw, 24px);
     line-height: 1.45;
@@ -2701,7 +2701,7 @@
   }
 
   /* Slide 3 — 3 rules in one row instead of 2x2 */
-  .slide[data-slide="3"] .rules-grid {
+  .slide[data-slide="4"] .rules-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -2754,109 +2754,109 @@
   }
 
   /* Scoped font sizing — journey slides 4–9 (1 stage per slide, wide card) */
-  .slide[data-slide="5"] .stage-card h3,
   .slide[data-slide="6"] .stage-card h3,
   .slide[data-slide="7"] .stage-card h3,
   .slide[data-slide="8"] .stage-card h3,
   .slide[data-slide="9"] .stage-card h3,
-  .slide[data-slide="10"] .stage-card h3 {
+  .slide[data-slide="10"] .stage-card h3,
+  .slide[data-slide="11"] .stage-card h3 {
     font-size: clamp(24px, 2vw, 34px);
     margin: 0 0 8px;
   }
-  .slide[data-slide="5"] .stage-card > p,
   .slide[data-slide="6"] .stage-card > p,
   .slide[data-slide="7"] .stage-card > p,
   .slide[data-slide="8"] .stage-card > p,
   .slide[data-slide="9"] .stage-card > p,
-  .slide[data-slide="10"] .stage-card > p {
+  .slide[data-slide="10"] .stage-card > p,
+  .slide[data-slide="11"] .stage-card > p {
     font-size: clamp(15px, 1.2vw, 19px);
     line-height: 1.45;
   }
-  .slide[data-slide="5"] .stage-card .ps-block,
   .slide[data-slide="6"] .stage-card .ps-block,
   .slide[data-slide="7"] .stage-card .ps-block,
   .slide[data-slide="8"] .stage-card .ps-block,
   .slide[data-slide="9"] .stage-card .ps-block,
-  .slide[data-slide="10"] .stage-card .ps-block {
+  .slide[data-slide="10"] .stage-card .ps-block,
+  .slide[data-slide="11"] .stage-card .ps-block {
     font-size: clamp(13px, 1vw, 16px);
     line-height: 1.5;
     padding: 14px 16px;
   }
-  .slide[data-slide="5"] .stage-card .ps-label,
   .slide[data-slide="6"] .stage-card .ps-label,
   .slide[data-slide="7"] .stage-card .ps-label,
   .slide[data-slide="8"] .stage-card .ps-label,
   .slide[data-slide="9"] .stage-card .ps-label,
-  .slide[data-slide="10"] .stage-card .ps-label {
+  .slide[data-slide="10"] .stage-card .ps-label,
+  .slide[data-slide="11"] .stage-card .ps-label {
     font-size: 11px;
     margin-bottom: 5px;
   }
-  .slide[data-slide="5"] .ps-block ul,
   .slide[data-slide="6"] .ps-block ul,
   .slide[data-slide="7"] .ps-block ul,
   .slide[data-slide="8"] .ps-block ul,
   .slide[data-slide="9"] .ps-block ul,
-  .slide[data-slide="10"] .ps-block ul {
+  .slide[data-slide="10"] .ps-block ul,
+  .slide[data-slide="11"] .ps-block ul {
     gap: 6px !important;
   }
 
   /* Brainwriting step cards (post-split, now slide 10) */
-  .slide[data-slide="11"] .step h3 {
+  .slide[data-slide="12"] .step h3 {
     font-size: clamp(20px, 1.7vw, 28px);
   }
-  .slide[data-slide="11"] .step p {
+  .slide[data-slide="12"] .step p {
     font-size: clamp(15px, 1.3vw, 21px);
     line-height: 1.55;
   }
 
   /* Journey slides — 1 stage card per slide, Pain + Solution side by side */
-  .slide[data-slide="5"] .stages-grid,
   .slide[data-slide="6"] .stages-grid,
   .slide[data-slide="7"] .stages-grid,
   .slide[data-slide="8"] .stages-grid,
   .slide[data-slide="9"] .stages-grid,
-  .slide[data-slide="10"] .stages-grid {
+  .slide[data-slide="10"] .stages-grid,
+  .slide[data-slide="11"] .stages-grid {
     grid-template-columns: 1fr;
     max-width: 1180px;
     margin-left: auto;
     margin-right: auto;
   }
-  .slide[data-slide="5"] .stage-card,
   .slide[data-slide="6"] .stage-card,
   .slide[data-slide="7"] .stage-card,
   .slide[data-slide="8"] .stage-card,
   .slide[data-slide="9"] .stage-card,
-  .slide[data-slide="10"] .stage-card {
+  .slide[data-slide="10"] .stage-card,
+  .slide[data-slide="11"] .stage-card {
     justify-content: flex-start;
     padding: 28px 32px 28px;
   }
   /* Pain + Solution blocks render in a 2-column grid inside the wide card */
-  .slide[data-slide="5"] .stage-card .ps-grid,
   .slide[data-slide="6"] .stage-card .ps-grid,
   .slide[data-slide="7"] .stage-card .ps-grid,
   .slide[data-slide="8"] .stage-card .ps-grid,
   .slide[data-slide="9"] .stage-card .ps-grid,
-  .slide[data-slide="10"] .stage-card .ps-grid {
+  .slide[data-slide="10"] .stage-card .ps-grid,
+  .slide[data-slide="11"] .stage-card .ps-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 14px;
   }
-  .slide[data-slide="5"] .stage-card .ps-grid .ps-block,
   .slide[data-slide="6"] .stage-card .ps-grid .ps-block,
   .slide[data-slide="7"] .stage-card .ps-grid .ps-block,
   .slide[data-slide="8"] .stage-card .ps-grid .ps-block,
   .slide[data-slide="9"] .stage-card .ps-grid .ps-block,
-  .slide[data-slide="10"] .stage-card .ps-grid .ps-block {
+  .slide[data-slide="10"] .stage-card .ps-grid .ps-block,
+  .slide[data-slide="11"] .stage-card .ps-grid .ps-block {
     margin-top: 0;
   }
   /* Bullet lists inside Pain / Solution blocks */
-  .slide[data-slide="5"] .ps-block ul,
   .slide[data-slide="6"] .ps-block ul,
   .slide[data-slide="7"] .ps-block ul,
   .slide[data-slide="8"] .ps-block ul,
   .slide[data-slide="9"] .ps-block ul,
-  .slide[data-slide="10"] .ps-block ul {
+  .slide[data-slide="10"] .ps-block ul,
+  .slide[data-slide="11"] .ps-block ul {
     list-style: none;
     margin: 6px 0 0;
     padding: 0;
@@ -2864,21 +2864,21 @@
     flex-direction: column;
     gap: 6px;
   }
-  .slide[data-slide="5"] .ps-block ul li,
   .slide[data-slide="6"] .ps-block ul li,
   .slide[data-slide="7"] .ps-block ul li,
   .slide[data-slide="8"] .ps-block ul li,
   .slide[data-slide="9"] .ps-block ul li,
-  .slide[data-slide="10"] .ps-block ul li {
+  .slide[data-slide="10"] .ps-block ul li,
+  .slide[data-slide="11"] .ps-block ul li {
     position: relative;
     padding-left: 14px;
   }
-  .slide[data-slide="5"] .ps-block ul li::before,
   .slide[data-slide="6"] .ps-block ul li::before,
   .slide[data-slide="7"] .ps-block ul li::before,
   .slide[data-slide="8"] .ps-block ul li::before,
   .slide[data-slide="9"] .ps-block ul li::before,
-  .slide[data-slide="10"] .ps-block ul li::before {
+  .slide[data-slide="10"] .ps-block ul li::before,
+  .slide[data-slide="11"] .ps-block ul li::before {
     content: "·";
     position: absolute;
     left: 4px;
@@ -2973,8 +2973,28 @@
     </div>
   </section>
 
-  <!-- ==================== 2 · WHY WE'RE HERE (statement) ==================== -->
+  <!-- ==================== 2 · BRIDGE (yesterday → today) ==================== -->
   <section class="slide s-echo bg-light-quiet" data-slide="2" data-bg="light">
+    <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; top: -10vw;"></div>
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+
+    <div class="chrome-top">
+
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">🌉 Bridge from yesterday</div>
+      <h2 class="headline">Yesterday: <span class="acc">ourselves</span>. Today: <span class="acc">them</span>.</h2>
+      <p class="lede" style="margin-top: 24px; max-width: 78ch;">Yesterday we looked inward. What each of us is doing, where we can improve as a team. Today we turn the lens outward, to the margi journey, to the people we are here to serve, to where we lose them.</p>
+      <div class="meta-row" style="margin-top: 18px;">
+        <span class="chip">🪞 Yesterday · us, internally</span>
+        <span class="chip">🪷 Today · the margi, externally</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3 · WHY WE'RE HERE (statement) ==================== -->
+  <section class="slide s-echo bg-light-quiet" data-slide="3" data-bg="light">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
 
@@ -2996,7 +3016,7 @@
   </section>
 
   <!-- ==================== 3 · GROUND RULES (4 cards, 2x2) ==================== -->
-  <section class="slide s-echo has-grid bg-light bg-rules" data-slide="3" data-bg="light">
+  <section class="slide s-echo has-grid bg-light bg-rules" data-slide="4" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; top: -10vw;"></div>
     <div class="orb orb-sage"  style="width: 28vw; height: 28vw; left: -8vw; bottom: -10vw;"></div>
@@ -3029,7 +3049,7 @@
   </section>
 
   <!-- ==================== 4 · JOURNEY OVERVIEW (6 stages) ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="4" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="5" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 36vw; height: 36vw; right: -10vw; top: -10vw;"></div>
 
@@ -3078,7 +3098,7 @@
   </section>
 
   <!-- ==================== 5 · STAGE 1 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="5" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="6" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
 
@@ -3120,7 +3140,7 @@
   </section>
 
   <!-- ==================== 5 · STAGE 2 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="6" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="7" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
 
@@ -3163,7 +3183,7 @@
   </section>
 
   <!-- ==================== 6 · STAGE 3 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="7" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="8" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
 
@@ -3205,7 +3225,7 @@
   </section>
 
   <!-- ==================== 7 · STAGE 4 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="8" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="9" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
 
@@ -3249,7 +3269,7 @@
   </section>
 
   <!-- ==================== 8 · STAGE 5 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="9" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="10" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
 
@@ -3291,7 +3311,7 @@
   </section>
 
   <!-- ==================== 9 · STAGE 6 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="10" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="11" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
 
@@ -3335,7 +3355,7 @@
   </section>
 
   <!-- ==================== 5 · PAIN POINTS BRAINWRITING ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="11" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="12" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; top: -10vw;"></div>
 
@@ -3369,7 +3389,7 @@
   </section>
 
   <!-- ==================== 6 · PRESENT ALOUD ==================== -->
-  <section class="slide s-echo bg-light-cool" data-slide="12" data-bg="light">
+  <section class="slide s-echo bg-light-cool" data-slide="13" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -8vw;"></div>
 
@@ -3390,7 +3410,7 @@
   </section>
 
   <!-- ==================== 7 · CLUSTER + VOTE ==================== -->
-  <section class="slide s-echo has-grid bg-light bg-cluster" data-slide="13" data-bg="light">
+  <section class="slide s-echo has-grid bg-light bg-cluster" data-slide="14" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; top: -8vw;"></div>
 
@@ -3424,7 +3444,7 @@
   </section>
 
   <!-- ==================== 7 · BREAK (dark, manifesto) ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="14" data-bg="dark">
+  <section class="slide s-echo bg-dark" data-slide="15" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
     <div class="hairline-grid"></div>
@@ -3444,7 +3464,7 @@
   </section>
 
   <!-- ==================== 8 · IDEATE SOLUTIONS ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="15" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="16" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-sage" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
 
@@ -3478,7 +3498,7 @@
   </section>
 
   <!-- ==================== 9 · VOTE + TOP 3 ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="16" data-bg="light">
+  <section class="slide s-echo has-grid bg-light" data-slide="17" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 40vw; height: 40vw; left: -10vw; top: -10vw;"></div>
     <div class="orb orb-peach" style="width: 30vw; height: 30vw; right: -8vw; bottom: -10vw;"></div>
@@ -3525,7 +3545,7 @@
   </section>
 
   <!-- ==================== 10 · CLOSE (dark, manifesto) ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="17" data-bg="dark">
+  <section class="slide s-echo bg-dark" data-slide="18" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; right: -15vw; top: -20vw;"></div>
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
@@ -3551,7 +3571,7 @@
 
 <!-- =============== FOOTER NAV (always visible, attached to bottom) =============== -->
 <div class="footer">
-  <span id="counter">1 / 17</span>
+  <span id="counter">1 / 18</span>
   <div class="progress" id="progress"></div>
   <span class="nav-hint">← → para navegar</span>
 </div>
