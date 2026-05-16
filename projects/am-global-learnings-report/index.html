@@ -2528,12 +2528,37 @@
     max-width: 95ch !important;
   }
 
-  /* =============== PROJECT INVENTORY GRIDS (slides 7, 8, 9) =============== */
-  .slide[data-slide="7"] .content > .projects-grid,
-  .slide[data-slide="8"] .content > .projects-grid,
-  .slide[data-slide="9"] .content > .projects-grid {
+  /* =============== PROJECT INVENTORY GRIDS (slides 10, 11, 12) =============== */
+  .slide[data-slide="10"] .content > .projects-grid,
+  .slide[data-slide="11"] .content > .projects-grid,
+  .slide[data-slide="12"] .content > .projects-grid {
     flex: 1 1 auto !important;
     align-items: stretch !important;
+  }
+
+  /* =============== WHAT WE COPY GRID (slide 14, 4-col for 7 tiles) =============== */
+  .slide[data-slide="14"] .content > .projects-grid {
+    flex: 1 1 auto !important;
+    align-items: stretch !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px !important;
+  }
+  @media (max-width: 1100px) {
+    .slide[data-slide="14"] .content > .projects-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  }
+  @media (max-width: 700px) {
+    .slide[data-slide="14"] .content > .projects-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (max-width: 480px) {
+    .slide[data-slide="14"] .content > .projects-grid { grid-template-columns: 1fr !important; }
+  }
+  .slide[data-slide="14"] .project-tile { padding: 18px 20px !important; }
+  .slide[data-slide="14"] .project-tile .ptile-name {
+    font-size: clamp(13px, 1.05vw, 16px) !important;
+  }
+  .slide[data-slide="14"] .project-tile .ptile-desc {
+    font-size: clamp(11.5px, 0.85vw, 13px) !important;
+    line-height: 1.4 !important;
   }
   .projects-grid {
     display: grid;
@@ -3181,27 +3206,44 @@
 
     <div class="content">
       <div class="eyebrow">✅ What we copy first</div>
-      <h2 class="headline">Three moves. <span class="acc">Cheap. Immediate.</span></h2>
-      <p class="lede" style="margin-top: 18px; max-width: 70ch;">From the eight interventions BMTR has published, three map directly onto AK's current stage. Small enough to start this quarter, structural enough to compound. They feed into Maetreya's funnel from the local end.</p>
+      <h2 class="headline">Seven moves. <span class="acc">Cheap. Immediate.</span></h2>
+      <p class="lede" style="max-width: 70ch;">Initiatives small enough to start this quarter, structural enough to compound. Each one plugs into Maetreya's funnel from the local end.</p>
 
-      <div class="pillars">
-        <div class="pillar glass">
-          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <div class="num">01 · Mentorship</div>
-          <h3>The first 90 days, designed</h3>
-          <p>A public list of 3 to 5 senior PT margis available to answer. Opt-in, not assigned. Before we initiate newcomers in volume.</p>
+      <div class="projects-grid">
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🤝</div>
+          <div class="ptile-name">01 · Mentor list</div>
+          <div class="ptile-desc">Public opt-in list of 3-5 senior PT margis available to answer newcomer questions. Before we initiate in volume.</div>
         </div>
-        <div class="pillar glass">
-          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          <div class="num">02 · Entry course</div>
-          <h3>"What is yoga" in Portuguese</h3>
-          <p>Introductory course based on the Eight Limbs. Adult language. Positions AM inside the yogic tradition, against the "is AM a sect?" confusion.</p>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🧘</div>
+          <div class="ptile-name">02 · PT meditation marathon</div>
+          <div class="ptile-desc">14 days, free, problem-named ("para a ansiedade"). Self-paced uses existing Dada videos with PT subtitles; cohort version run live by one senior margi. Russia model: 10,000+ completed.</div>
         </div>
-        <div class="pillar glass">
-          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <div class="num">03 · Hub</div>
-          <h3>One Portuguese page that exists</h3>
-          <p>It does not need to be beautiful. It needs to exist. What AM is, who teaches, contacts, how to start. Today a Portuguese-speaking seeker finds nothing structured.</p>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🎯</div>
+          <div class="ptile-name">03 · €100 Google Ads test</div>
+          <div class="ptile-desc">One ICP ("anxiety, 30s women, Lisbon-Porto-Setúbal"), one landing page, 2 weeks. Produces the first real PT CPL data the global funnel does not have.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">📰</div>
+          <div class="ptile-name">04 · AM News PT</div>
+          <div class="ptile-desc">Weekly local channel sharing AK activity. Mirrors Dada Vireshvari's Siberia model: posts inspired margis, brought resources, built two houses in a year.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🗂️</div>
+          <div class="ptile-name">05 · AK on Kommo (PT)</div>
+          <div class="ptile-desc">Plug AK into the same CRM Dada's team is starting (Kommo). First non-English instance. Earns AK a seat at the CRM design table; gives us the contact infrastructure we lack.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">📚</div>
+          <div class="ptile-name">06 · "What is yoga" course (PT)</div>
+          <div class="ptile-desc">Eight Limbs of Patanjali, applied to AM, in adult language. Positions AM inside the yogic tradition against the "is AM a sect?" confusion.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🌐</div>
+          <div class="ptile-name">07 · One PT page that exists</div>
+          <div class="ptile-desc">Does not need to be beautiful. Needs to exist. What AM is, who teaches, contacts, how to start. Today a PT-speaking seeker finds nothing structured.</div>
         </div>
       </div>
     </div>
