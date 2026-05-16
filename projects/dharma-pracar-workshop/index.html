@@ -2687,6 +2687,11 @@
     color: #0F695A;
   }
 
+  /* Slide 3 — 3 rules in one row instead of 2x2 */
+  .slide[data-slide="3"] .rules-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   /* Scoped font sizing — journey slides 4–9 (1 stage per slide, wide card) */
   .slide[data-slide="4"] .stage-card h3,
   .slide[data-slide="5"] .stage-card h3,
@@ -2939,7 +2944,7 @@
 
     <div class="content">
       <div class="eyebrow">🌿 Ground rules</div>
-      <h2 class="headline">Four rules to keep the <span class="acc">room open</span>.</h2>
+      <h2 class="headline">Three rules to keep the <span class="acc">room open</span>.</h2>
       <div class="rules-grid">
         <div class="rule glass">
           <div class="num">01</div>
@@ -2953,13 +2958,8 @@
         </div>
         <div class="rule glass">
           <div class="num">03</div>
-          <h3>✏️ The map is a draft.</h3>
-          <p>We refine it together, in the room. You are the editors.</p>
-        </div>
-        <div class="rule glass">
-          <div class="num">04</div>
-          <h3>🪞 Diagnose the system.</h3>
-          <p>Not people. We are looking at flows and gaps, not blame.</p>
+          <h3>🧘 Beginner's mindset.</h3>
+          <p>Do not judge ideas, yours or anyone else's. Hold them lightly. Curiosity first, filtering later.</p>
         </div>
       </div>
     </div>
