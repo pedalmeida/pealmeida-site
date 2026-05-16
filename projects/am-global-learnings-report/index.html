@@ -2571,6 +2571,104 @@
     color: var(--ink-soft);
   }
 
+  /* =============== STAGES GRID (slide 5 — emotional states) =============== */
+  .stages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 12px;
+  }
+  @media (max-width: 900px) { .stages-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .stages-grid { grid-template-columns: 1fr; } }
+  .has-grid .content > .stages-grid {
+    flex: 1 1 auto !important;
+    align-items: stretch !important;
+  }
+  .stage-card {
+    display: flex; flex-direction: column; justify-content: flex-start;
+    padding: 26px 24px;
+    overflow: visible !important;
+  }
+  .stage-card .num {
+    font-family: var(--f);
+    font-weight: 800;
+    font-size: clamp(34px, 3.4vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .stage-card h3 {
+    font-family: var(--f);
+    font-weight: 700;
+    font-size: clamp(15px, 1.25vw, 19px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .stage-card p {
+    font-family: var(--f);
+    font-size: clamp(12px, 0.95vw, 14px);
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* =============== PAIN→PLAY CARDS (slide 13) =============== */
+  .has-grid .content > .pain-play-grid {
+    flex: 1 1 auto !important;
+    align-items: stretch !important;
+  }
+  .pain-play-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+  }
+  @media (max-width: 900px) { .pain-play-grid { grid-template-columns: 1fr; } }
+  .pp-card {
+    display: flex; flex-direction: column;
+    padding: 28px 26px;
+    overflow: visible !important;
+  }
+  .pp-pain, .pp-play {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .pp-label {
+    font-family: var(--fm);
+    font-size: clamp(10px, 0.82vw, 12px);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-quiet);
+  }
+  .pp-pain .pp-label { color: var(--ink-quiet); }
+  .pp-play .pp-label { color: var(--accent); }
+  .pp-title {
+    font-family: var(--f);
+    font-weight: 700;
+    font-size: clamp(16px, 1.35vw, 21px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .pp-desc {
+    font-family: var(--f);
+    font-size: clamp(12px, 0.95vw, 14px);
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .pp-arrow {
+    text-align: center;
+    margin: 16px 0;
+    color: var(--accent);
+    font-size: 22px;
+    line-height: 1;
+    opacity: 0.6;
+  }
+
   /* =========== END SESSION ADDITIONS =========== */
 </style>
 </head>
@@ -2617,8 +2715,81 @@
     </div>
   </section>
 
-  <!-- ==================== 3 · STAT FOCUS — Strong inside, fragile outside ==================== -->
+  <!-- ==================== NEW · THE LEAK IN NUMBERS (from briefing) ==================== -->
   <section class="slide s-echo has-grid bg-light" data-slide="3" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> AK · AM Global Learnings</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📉 The leak, in numbers</div>
+      <h2 class="headline">Less than 1 in 5 <span class="acc">finishes the journey</span>.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Dada's own data on the yearly course. This is the conversion problem the workshop is trying to fix.</p>
+
+      <div class="pillars">
+        <div class="pillar glass">
+          <div class="num">Stage in</div>
+          <h3>20-30</h3>
+          <p>People who start the yearly course. Already a self-selected, warm audience.</p>
+        </div>
+        <div class="pillar glass">
+          <div class="num">Stage finish</div>
+          <h3>~20</h3>
+          <p>People who actually complete it. Drop-off mostly silent, no exit interview.</p>
+        </div>
+        <div class="pillar glass">
+          <div class="num">Stage initiate</div>
+          <h3>2-5</h3>
+          <p>People who take initiation. Less than 20% of starters. The leak is here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW · 60% ARRIVE SCARED (from briefing) ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="4" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-peach" style="width: 36vw; height: 36vw; left: -12vw; top: -8vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> AK · AM Global Learnings</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">😶‍🌫️ The entry door</div>
+      <h2 class="headline">60% arrive <span class="acc">scared</span>. Not curious.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 74ch;">From the 300-person survey, on the emotional state that brings people to a spiritual practice. Our messaging is built for the 20% who arrive seeking meaning. It misses the rest.</p>
+
+      <div class="stages-grid">
+        <div class="stage-card glass">
+          <div class="num">60%</div>
+          <h3>😰 Anxiety & fear</h3>
+          <p>Fear of the future, of being unfulfilled, of being alone. The dominant entry emotion by a wide margin.</p>
+        </div>
+        <div class="stage-card glass">
+          <div class="num">20%</div>
+          <h3>🔎 Search & curiosity</h3>
+          <p>Spiritual seekers. Questions about meaning. Wanting a teacher. What our messaging is currently built for.</p>
+        </div>
+        <div class="stage-card glass">
+          <div class="num">11%</div>
+          <h3>😤 Frustration & anger</h3>
+          <p>Irritation, aggression, tension. Often the entry point for men in mid-life.</p>
+        </div>
+        <div class="stage-card glass">
+          <div class="num">9%</div>
+          <h3>😞 Apathy & sadness</h3>
+          <p>Fatigue, loneliness, powerlessness. Often arrive looking for "their people" more than a teaching.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3 · STAT FOCUS — Strong inside, fragile outside ==================== -->
+  <section class="slide s-echo has-grid bg-light" data-slide="5" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 45vw; height: 45vw; right: -12vw; top: -15vw;"></div>
     <div class="orb orb-sage"  style="width: 30vw; height: 30vw; left: -8vw; bottom: -12vw;"></div>
@@ -2660,7 +2831,7 @@
   </section>
 
   <!-- ==================== 4 · PILLARS — Three signals ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="4" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="6" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 40vw; height: 40vw; left: -10vw; top: -10vw;"></div>
 
@@ -2697,7 +2868,7 @@
   </section>
 
   <!-- ==================== 5 · STAT FOCUS — Buddhism is the competitor ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="5" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="7" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 35vw; height: 35vw; right: -10vw; top: -8vw;"></div>
 
@@ -2737,8 +2908,28 @@
     </div>
   </section>
 
+  <!-- ==================== NEW · TWO LEAKS (dark, from briefing) ==================== -->
+  <section class="slide s-echo bg-dark" data-slide="8" data-bg="dark">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 50vw; height: 50vw; right: -15vw; top: -15vw;"></div>
+    <div class="hairline-grid"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> AK · AM Global Learnings</div>
+    </div>
+
+    <div class="quote">
+      <div class="eyebrow">💧 The two leaks</div>
+      <h2 class="quote-text">Cold ads to "everyone 18-65" <span class="acc">do not convert</span>. <br>People who show up <span class="acc">do not come back</span>.</h2>
+      <div class="attr">
+        <span class="attr-line"></span>
+        <span class="meta">Dada Maetreya, 2026-05-14. Targeting failure on the front end. Follow-up failure on the back end. Both fixable.</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== 6 · PHASES — Maetreya's 3-stage funnel ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="6" data-bg="light">
+  <section class="slide s-echo has-grid bg-light" data-slide="9" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; right: -10vw; top: -8vw;"></div>
 
@@ -2785,7 +2976,7 @@
   </section>
 
   <!-- ==================== 7 · PROJECT INVENTORY — Acquisition layer ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="7" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="10" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -8vw; top: -10vw;"></div>
 
@@ -2834,7 +3025,7 @@
   </section>
 
   <!-- ==================== 8 · PROJECT INVENTORY — Learning & community layer ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="8" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="11" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; right: -10vw; top: -8vw;"></div>
 
@@ -2883,7 +3074,7 @@
   </section>
 
   <!-- ==================== 9 · PROJECT INVENTORY — Infrastructure layer ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="9" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="12" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 35vw; height: 35vw; right: -10vw; bottom: -10vw;"></div>
 
@@ -2921,8 +3112,66 @@
     </div>
   </section>
 
-  <!-- ==================== 8 · PILLARS — What we copy ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="10" data-bg="light">
+  <!-- ==================== 13 · PAINS → PLAYS (Portugal-specific) ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="13" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 36vw; height: 36vw; right: -10vw; bottom: -12vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> AK · AM Global Learnings</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">🩹 Three pains → three plays</div>
+      <h2 class="headline">Where we lose people, <span class="acc">and what to do about it.</span></h2>
+      <p class="lede" style="max-width: 72ch;">Three structural leaks in the AK journey, each paired with a play already validated in another country. Portugal-specific framing the room can react to today.</p>
+
+      <div class="pain-play-grid">
+        <div class="pp-card glass">
+          <div class="pp-pain">
+            <span class="pp-label">Pain 01</span>
+            <div class="pp-title">🚪 Show up, do not return</div>
+            <div class="pp-desc">First-experience leak. People attend kiirtan or a retreat once and vanish. No follow-up, no next step.</div>
+          </div>
+          <div class="pp-arrow">↓</div>
+          <div class="pp-play">
+            <span class="pp-label">Play 01</span>
+            <div class="pp-title">🧘 Meditation marathon</div>
+            <div class="pp-desc">14 days, free, problem-named entry. Self-paced (cheap) or cohort with facilitator (high conversion). Russia version: 10,000+ completed.</div>
+          </div>
+        </div>
+        <div class="pp-card glass">
+          <div class="pp-pain">
+            <span class="pp-label">Pain 02</span>
+            <div class="pp-title">📢 Generic ads, never show</div>
+            <div class="pp-desc">"Everyone 18-65" with abstract spiritual copy. The right ICP never sees us. The people who do see us are not the people we need.</div>
+          </div>
+          <div class="pp-arrow">↓</div>
+          <div class="pp-play">
+            <span class="pp-label">Play 02</span>
+            <div class="pp-title">🎯 ICP-first ads</div>
+            <div class="pp-desc">Pick one persona, one pain ("anxiety in 30s women PT"), test one ad. Dada's Germany model: 100+ per retreat.</div>
+          </div>
+        </div>
+        <div class="pp-card glass">
+          <div class="pp-pain">
+            <span class="pp-label">Pain 03</span>
+            <div class="pp-title">🌫️ Initiated, then fades</div>
+            <div class="pp-desc">Even initiated margis fall off. Life clash, no peer cohort, no mentor, no service role. The post-initiation experience is empty.</div>
+          </div>
+          <div class="pp-arrow">↓</div>
+          <div class="pp-play">
+            <span class="pp-label">Play 03</span>
+            <div class="pp-title">🌱 First 90 days, designed</div>
+            <div class="pp-desc">Assigned mentor + peer cohort + small defined service tasks from week 1. Designed before scaling outreach, not patched after.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 14 · PILLARS — What we copy ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="14" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -8vw; top: -10vw;"></div>
 
@@ -2959,7 +3208,7 @@
   </section>
 
   <!-- ==================== 9 · CLOSING — Collaboration formats ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="11" data-bg="dark">
+  <section class="slide s-echo bg-dark" data-slide="15" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
     <div class="hairline-grid"></div>
@@ -2984,7 +3233,7 @@
   </section>
 
   <!-- ==================== 10 · CLOSING — Credit and next step ==================== -->
-  <section class="slide s-echo bg-light" data-slide="12" data-bg="light">
+  <section class="slide s-echo bg-light" data-slide="16" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 50vw; height: 50vw; right: -15vw; bottom: -20vw;"></div>
     <div class="orb orb-cool" style="width: 30vw; height: 30vw; left: -8vw; top: -10vw;"></div>
