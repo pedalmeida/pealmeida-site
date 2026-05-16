@@ -2687,50 +2687,74 @@
     color: #0F695A;
   }
 
-  /* Scoped font bumps — journey slides 4+5 and brainwriting slide 6 */
+  /* Scoped font sizing — journey slides 4, 5, 6 (2 stages each, dense content) */
+  .slide[data-slide="4"] .stage-card,
+  .slide[data-slide="5"] .stage-card,
+  .slide[data-slide="6"] .stage-card {
+    padding: 24px 22px 24px;
+    gap: 10px;
+  }
   .slide[data-slide="4"] .stage-card h3,
-  .slide[data-slide="5"] .stage-card h3 {
-    font-size: clamp(20px, 1.55vw, 26px);
+  .slide[data-slide="5"] .stage-card h3,
+  .slide[data-slide="6"] .stage-card h3 {
+    font-size: clamp(18px, 1.35vw, 22px);
+    margin: 0 0 6px;
   }
   .slide[data-slide="4"] .stage-card > p,
-  .slide[data-slide="5"] .stage-card > p {
-    font-size: clamp(14px, 1.05vw, 17px);
-    line-height: 1.5;
+  .slide[data-slide="5"] .stage-card > p,
+  .slide[data-slide="6"] .stage-card > p {
+    font-size: clamp(12.5px, 0.95vw, 15px);
+    line-height: 1.4;
   }
   .slide[data-slide="4"] .stage-card .ps-block,
-  .slide[data-slide="5"] .stage-card .ps-block {
-    font-size: clamp(12.5px, 0.92vw, 14.5px);
-    line-height: 1.5;
+  .slide[data-slide="5"] .stage-card .ps-block,
+  .slide[data-slide="6"] .stage-card .ps-block {
+    font-size: clamp(11px, 0.82vw, 13px);
+    line-height: 1.4;
+    margin-top: 8px;
+    padding: 8px 10px;
+  }
+  .slide[data-slide="4"] .stage-card .ps-block + .ps-block,
+  .slide[data-slide="5"] .stage-card .ps-block + .ps-block,
+  .slide[data-slide="6"] .stage-card .ps-block + .ps-block {
+    margin-top: 6px;
   }
   .slide[data-slide="4"] .stage-card .ps-label,
-  .slide[data-slide="5"] .stage-card .ps-label {
-    font-size: 11px;
+  .slide[data-slide="5"] .stage-card .ps-label,
+  .slide[data-slide="6"] .stage-card .ps-label {
+    font-size: 9.5px;
+    margin-bottom: 3px;
+  }
+  .slide[data-slide="4"] .ps-block ul,
+  .slide[data-slide="5"] .ps-block ul,
+  .slide[data-slide="6"] .ps-block ul {
+    gap: 4px !important;
   }
 
-  /* Journey slides — dense Maetreya material. Allow per-slide vertical scroll. */
-  .slide[data-slide="4"],
-  .slide[data-slide="5"] {
-    overflow-y: auto;
-    overflow-x: hidden;
+  /* Brainwriting step cards (post-split, now slide 7) */
+  .slide[data-slide="7"] .step h3 {
+    font-size: clamp(20px, 1.7vw, 28px);
   }
-  .slide[data-slide="4"] .content,
-  .slide[data-slide="5"] .content {
-    height: auto;
-    min-height: calc(100vh - 110px - 180px);
-    padding-bottom: 40px;
+  .slide[data-slide="7"] .step p {
+    font-size: clamp(15px, 1.3vw, 21px);
+    line-height: 1.55;
   }
-  .slide[data-slide="4"] .content > .stages-grid,
-  .slide[data-slide="5"] .content > .stages-grid {
-    flex: 0 0 auto !important;
-    align-items: stretch !important;
+
+  /* Journey slides — 2 stage cards per slide for full Maetreya material */
+  .slide[data-slide="4"] .stages-grid,
+  .slide[data-slide="5"] .stages-grid,
+  .slide[data-slide="6"] .stages-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   .slide[data-slide="4"] .stage-card,
-  .slide[data-slide="5"] .stage-card {
+  .slide[data-slide="5"] .stage-card,
+  .slide[data-slide="6"] .stage-card {
     justify-content: flex-start;
   }
   /* Bullet lists inside Pain / Solution blocks */
   .slide[data-slide="4"] .ps-block ul,
-  .slide[data-slide="5"] .ps-block ul {
+  .slide[data-slide="5"] .ps-block ul,
+  .slide[data-slide="6"] .ps-block ul {
     list-style: none;
     margin: 6px 0 0;
     padding: 0;
@@ -2739,41 +2763,20 @@
     gap: 6px;
   }
   .slide[data-slide="4"] .ps-block ul li,
-  .slide[data-slide="5"] .ps-block ul li {
+  .slide[data-slide="5"] .ps-block ul li,
+  .slide[data-slide="6"] .ps-block ul li {
     position: relative;
     padding-left: 14px;
   }
   .slide[data-slide="4"] .ps-block ul li::before,
-  .slide[data-slide="5"] .ps-block ul li::before {
+  .slide[data-slide="5"] .ps-block ul li::before,
+  .slide[data-slide="6"] .ps-block ul li::before {
     content: "·";
     position: absolute;
     left: 4px;
     top: -2px;
     font-weight: 700;
     opacity: 0.7;
-  }
-  /* Scroll hint chip in the chrome-top of dense slides */
-  .slide[data-slide="4"] .scroll-hint,
-  .slide[data-slide="5"] .scroll-hint {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--fm);
-    font-size: 10.5px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    opacity: 0.65;
-    margin-top: 10px;
-  }
-
-  /* Slide 6 — brainwriting step cards */
-  .slide[data-slide="6"] .step h3 {
-    font-size: clamp(20px, 1.7vw, 28px);
-  }
-  .slide[data-slide="6"] .step p {
-    font-size: clamp(15px, 1.3vw, 21px);
-    line-height: 1.55;
   }
 
   /* Step cards: 3 cards, instruction-style */
@@ -2920,7 +2923,7 @@
     </div>
   </section>
 
-  <!-- ==================== 4 · THE JOURNEY, STAGES 1-3 ==================== -->
+  <!-- ==================== 4 · THE JOURNEY, STAGES 1-2 ==================== -->
   <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="4" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
@@ -2930,10 +2933,9 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">🗺️ The Margi Journey · Part 1</div>
-      <h2 class="headline">From <span class="acc">stranger</span> to first step.</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 70ch;">Stages 1 to 3. Full pain map and solution menu sourced from Dada Maetreya's research (300+ survey, 140-person newcomer study, 395 Russia respondents) and the 16 projects his global team is building.</p>
-      <div class="scroll-hint">↓ Scroll inside the slide for the full per-stage detail</div>
+      <div class="eyebrow">🗺️ The Margi Journey · Part 1 of 3</div>
+      <h2 class="headline">From <span class="acc">stranger</span> to first contact.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 70ch;">Stages 1 and 2. Pain map and solution menu sourced from Dada Maetreya's research (300+ survey, 140-person newcomer study, 395 Russia respondents) and the 16 projects his global team is building.</p>
 
       <div class="stages-grid">
         <div class="stage-card glass">
@@ -2946,7 +2948,7 @@
               <li>Targeting "everyone 18-65" with no defined ICP. The right person never sees us.</li>
               <li>No Portuguese content factory. The Portuguese-speaking seeker who would resonate finds nothing structured.</li>
               <li>Generic "spirituality" ad copy. Doesn't name a problem anyone is actively searching for.</li>
-              <li>"Is AM a sect?" confusion in cold audience — no public-facing answer in PT.</li>
+              <li>"Is AM a sect?" confusion in cold audience, no public-facing answer in PT.</li>
             </ul>
           </div>
           <div class="ps-block solution">
@@ -2967,7 +2969,7 @@
             <span class="ps-label">Pain points</span>
             <ul>
               <li>We talk philosophy. They arrive in pain. 60% of entrants are in anxiety/fear, 28.5% to escape a hard state, 29.9% to find meaning, only 7.3% to "feel God".</li>
-              <li>Warmth is what's sold (61.5% drawn by the warm atmosphere) but 32.2% report poor interpersonal interaction once inside. We make detractors out of what should convert.</li>
+              <li>Warmth is what's sold (61.5% drawn by the warm atmosphere) but 32.2% report poor interpersonal interaction once inside.</li>
               <li>Newcomers describe acharya tone as cold and directive.</li>
               <li>No single PT page that explains what AM is, who teaches, how to start, contacts.</li>
             </ul>
@@ -2976,33 +2978,10 @@
             <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
             <ul>
               <li><strong>Lead with the named outcome</strong> (sleep, calm, focus, relief) before the philosophy. Transcendence is what we offer after they walk in.</li>
-              <li><strong>AM Meditation Marathons (project #11).</strong> Russia version already passed by 10,000+. 24/day join the bot, 80/day apply for the course. English version filming next.</li>
-              <li><strong>"What is Yoga" entry course in PT.</strong> Based on the Eight Limbs. Adult language. Positions AM inside the yogic tradition, kills the "sect" confusion.</li>
-              <li><strong>One PT hub page that exists.</strong> Does not need to be beautiful. Needs to exist. What AM is, who teaches, how to start, contacts.</li>
-              <li><strong>AM Social Media (project #02).</strong> Instagram verified. Expand to TikTok, Facebook, X, YouTube — AM values clearly communicated online.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="stage-card glass">
-          <div class="num">Stage 3</div>
-          <h3>🚪 First Experience</h3>
-          <p>Shows up. Yoga class, kiirtan, retreat, workshop.</p>
-          <div class="ps-block pain">
-            <span class="ps-label">Pain points</span>
-            <ul>
-              <li>Retreats pushed too early in the journey. Cold retreat attendees were the leakiest part of the old funnel.</li>
-              <li>Only people who already meditated or watched AM YouTube before the retreat actually stayed.</li>
-              <li>Long-time members report "hypocrisy" and "everyone tries to look better than they are" — the strongest promise (warm community) becomes the biggest source of detractors.</li>
-              <li>No low-commitment first step between "saw an ad" and "show up to a retreat".</li>
-            </ul>
-          </div>
-          <div class="ps-block solution">
-            <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
-            <ul>
-              <li><strong>AM App (project #06).</strong> Pre-retreat learning app — newcomers learn meditation and philosophy before being invited to retreat. 3 specialists, MVP soon, 10,000 learners/month target.</li>
-              <li><strong>AM Online (project #09).</strong> Live online classes where acharyas teach philosophy and practices. In approval, launching soon.</li>
-              <li><strong>Paid cohort marathon</strong> with facilitator + homework. Materially higher conversion than self-paced version.</li>
-              <li><strong>Retreat moves to Stage 4</strong> in the new funnel, not the start. Germany shows the new shape works: 100+ per retreat once the order is right.</li>
+              <li><strong>AM Meditation Marathons (project #11).</strong> Russia version passed by 10,000+. 24/day join the bot, 80/day apply for the course.</li>
+              <li><strong>"What is Yoga" entry course in PT.</strong> Based on the Eight Limbs. Adult language. Positions AM inside the yogic tradition.</li>
+              <li><strong>One PT hub page that exists.</strong> What AM is, who teaches, how to start, contacts. Needs to exist before it needs to be beautiful.</li>
+              <li><strong>AM Social Media (project #02).</strong> Instagram verified. Expand to TikTok, Facebook, X, YouTube.</li>
             </ul>
           </div>
         </div>
@@ -3010,7 +2989,7 @@
     </div>
   </section>
 
-  <!-- ==================== 5 · THE JOURNEY, STAGES 4-6 ==================== -->
+  <!-- ==================== 5 · THE JOURNEY, STAGES 3-4 ==================== -->
   <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="5" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
@@ -3020,12 +2999,34 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">🗺️ The Margi Journey · Part 2</div>
-      <h2 class="headline">From returning to <span class="acc">committed practice</span>.</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 70ch;">Stages 4 to 6. The deeper end of the funnel, where Dada admits the global team still has the most open questions and where local PT data matters most.</p>
-      <div class="scroll-hint">↓ Scroll inside the slide for the full per-stage detail</div>
+      <div class="eyebrow">🗺️ The Margi Journey · Part 2 of 3</div>
+      <h2 class="headline">From first experience to <span class="acc">returning</span>.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 70ch;">Stages 3 and 4. The hardest two transitions in the funnel: from "saw us once" to "comes back". This is where Maetreya's old model leaked the most.</p>
 
       <div class="stages-grid">
+        <div class="stage-card glass">
+          <div class="num">Stage 3</div>
+          <h3>🚪 First Experience</h3>
+          <p>Shows up. Yoga class, kiirtan, retreat, workshop.</p>
+          <div class="ps-block pain">
+            <span class="ps-label">Pain points</span>
+            <ul>
+              <li>Retreats pushed too early in the journey. Cold retreat attendees were the leakiest part of the old funnel.</li>
+              <li>Only people who already meditated or watched AM YouTube before the retreat actually stayed.</li>
+              <li>Long-time members report "hypocrisy" and "everyone tries to look better than they are". The strongest promise (warm community) becomes the biggest source of detractors.</li>
+              <li>No low-commitment first step between "saw an ad" and "show up to a retreat".</li>
+            </ul>
+          </div>
+          <div class="ps-block solution">
+            <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
+            <ul>
+              <li><strong>AM App (project #06).</strong> Pre-retreat learning app, newcomers learn meditation and philosophy before being invited to retreat. 3 specialists, MVP soon, 10,000 learners/month target.</li>
+              <li><strong>AM Online (project #09).</strong> Live online classes where acharyas teach philosophy and practices. In approval, launching soon.</li>
+              <li><strong>Paid cohort marathon</strong> with facilitator + homework. Materially higher conversion than self-paced version.</li>
+              <li><strong>Retreat moves to the end of the funnel</strong>, not the start. Germany shows the new shape works: 100+ per retreat once the order is right.</li>
+            </ul>
+          </div>
+        </div>
         <div class="stage-card glass">
           <div class="num">Stage 4</div>
           <h3>🔁 Returning</h3>
@@ -3036,21 +3037,40 @@
               <li>Anxiety and fear are the #1 barrier to continued practice (140-person newcomer study).</li>
               <li>Nobody follows up. No mentor, no group, no easy next step after the first experience.</li>
               <li>Warmth was promised on entry. Theatre delivered inside. The 32% who report poor interpersonal interaction drop here.</li>
-              <li>Senior lay margis are invisible. The "people like me" who work, have families, speak plain adult language are missing — monastic-only model leaves this seat empty.</li>
+              <li>Senior lay margis are invisible. People who work, have families, speak plain adult language are missing. Monastic-only model leaves this seat empty.</li>
               <li>No defined first 90 days. No assigned mentor, no peer cohort, no small service tasks from week 1.</li>
             </ul>
           </div>
           <div class="ps-block solution">
             <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
             <ul>
-              <li><strong>AM Mentorship (project #10).</strong> Small groups of ~10. ISKCON-inspired cell-division model (bhakti vriksha): leaders spawn new groups. 100+ people already, Nirmal Krishna leads. Compounds without staff.</li>
-              <li><strong>Post-initiation 90 days, designed.</strong> Assigned mentor + peer cohort + small defined service tasks from week 1. Build before scaling outreach, not patched after.</li>
+              <li><strong>AM Mentorship (project #10).</strong> Small groups of ~10. ISKCON-inspired cell-division model (bhakti vriksha). 100+ people already, Nirmal Krishna leads. Compounds without paid staff.</li>
+              <li><strong>Post-initiation 90 days, designed.</strong> Assigned mentor + peer cohort + small defined service tasks from week 1.</li>
               <li><strong>Paid cohort marathon</strong> with facilitator + homework. Builds first accountability loop.</li>
-              <li><strong>Family teachers visible.</strong> Hakimov / Torsunov model — married, working teachers who explain practice in adult language. Fill the seat the monastic-only model leaves empty.</li>
-              <li><strong>AM CRM (project #14).</strong> Kommo handles ads today. Looking for a second platform for the broader margi community to track who returned and who didn't.</li>
+              <li><strong>Family teachers visible.</strong> Hakimov / Torsunov model: married, working teachers who explain practice in adult language.</li>
+              <li><strong>AM CRM (project #14).</strong> Kommo handles ads today. Searching for a second platform for the broader margi community.</li>
             </ul>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6 · THE JOURNEY, STAGES 5-6 ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="6" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -12vw;"></div>
+
+    <div class="chrome-top">
+
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">🗺️ The Margi Journey · Part 3 of 3</div>
+      <h2 class="headline">From initiation to <span class="acc">committed practice</span>.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 70ch;">Stages 5 and 6. The deepest end of the funnel, where Dada admits the global team still has the most open questions and where local PT data matters most.</p>
+
+      <div class="stages-grid">
         <div class="stage-card glass">
           <div class="num">Stage 5</div>
           <h3>🌼 Initiation</h3>
@@ -3060,16 +3080,16 @@
             <ul>
               <li>&lt;20% of yearly course participants get initiated. 20-30 start, ~20 finish, only 2-5 initiate. The leak is here.</li>
               <li>We don't bridge "course done" to "ready for mantra". No clear ladder.</li>
-              <li>AM has no equivalent to Sadhguru's Inner Engineering — the entry course that gives the whole picture in one programme.</li>
-              <li>"If AM disappeared, where would you go?" — 39% choose Buddhism. 3x bigger than any other alternative. We are not positioning against the real competitor.</li>
+              <li>AM has no equivalent to Sadhguru's Inner Engineering, the entry course that gives the whole picture in one programme.</li>
+              <li>"If AM disappeared, where would you go?" 39% choose Buddhism. 3x bigger than any other alternative. We are not positioning against the real competitor.</li>
             </ul>
           </div>
           <div class="ps-block solution">
             <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
             <ul>
-              <li><strong>AM Flagman Product (project #07).</strong> Sadhguru Inner Engineering equivalent — meditation + yoga + philosophy + neohumanism in one entry course. Currently scripting, 2 people. This is the bridge.</li>
+              <li><strong>AM Flagman Product (project #07).</strong> Sadhguru Inner Engineering equivalent: meditation + yoga + philosophy + neohumanism in one entry course. Currently scripting, 2 people. This is the bridge.</li>
               <li><strong>AM Academy (project #08).</strong> Peterson Academy-inspired platform: structured courses on Prout, neohumanism, Yama / Niyama, 16 points. For newcomers and margi. 3 people, looking for team leader.</li>
-              <li><strong>Position against Buddhism specifically.</strong> Our advantage: devotion + service + mission + collective structure. Buddhism wins on individual sobriety. Make our edge visible.</li>
+              <li><strong>Position against Buddhism specifically.</strong> Our advantage: devotion + service + mission + collective structure. Make our edge visible.</li>
               <li><strong>Lead with ethics.</strong> 91% of margis cite "moral reference points" as AM's strongest asset. In a cynical PT moment, this is a real differentiator.</li>
             </ul>
           </div>
@@ -3092,10 +3112,10 @@
             <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
             <ul>
               <li><strong>Cell-division mentorship at scale.</strong> When one margi finishes a stage, they lead the next group. Proven in Russia. Compounds without paid staff.</li>
-              <li><strong>Become A Monk (project #13).</strong> Direct ads + recruitment retreats for new monks and nuns. 2 retreats done in Sweden, 1 candidate; 2 more planned; sisters' programme in June.</li>
-              <li><strong>AM News (project #12).</strong> Weekly newsletter + queryable map of every master unit, jagrti, office, project. 350 → 1,000 subs target. 5 people. PT plugs in.</li>
-              <li><strong>AM Business (project #15).</strong> Self-sustainability and revenue infrastructure. $5k/month now, $20k target. The financial floor the other 15 projects sit on.</li>
-              <li><strong>AM Store (project #16).</strong> Worldwide shop for books, yoga gear, lotas, AM products. Blocked on legal-entity country choice. Unblocks once a country picks.</li>
+              <li><strong>Become A Monk (project #13).</strong> Direct ads + recruitment retreats. 2 retreats done in Sweden, 1 candidate; 2 more planned; sisters' programme in June.</li>
+              <li><strong>AM News (project #12).</strong> Weekly newsletter + queryable map of every master unit, jagrti, office, project. 350 → 1,000 subs target. 5 people.</li>
+              <li><strong>AM Business (project #15).</strong> Self-sustainability and revenue infrastructure. $5k/month now, $20k target.</li>
+              <li><strong>AM Store (project #16).</strong> Worldwide shop, blocked on legal-entity country choice.</li>
             </ul>
           </div>
         </div>
@@ -3104,7 +3124,7 @@
   </section>
 
   <!-- ==================== 5 · PAIN POINTS BRAINWRITING ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="6" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="7" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; top: -10vw;"></div>
 
@@ -3138,7 +3158,7 @@
   </section>
 
   <!-- ==================== 6 · PRESENT ALOUD ==================== -->
-  <section class="slide s-echo bg-light-cool" data-slide="7" data-bg="light">
+  <section class="slide s-echo bg-light-cool" data-slide="8" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -8vw;"></div>
 
@@ -3159,7 +3179,7 @@
   </section>
 
   <!-- ==================== 7 · CLUSTER + VOTE ==================== -->
-  <section class="slide s-echo has-grid bg-light bg-cluster" data-slide="8" data-bg="light">
+  <section class="slide s-echo has-grid bg-light bg-cluster" data-slide="9" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; top: -8vw;"></div>
 
@@ -3193,7 +3213,7 @@
   </section>
 
   <!-- ==================== 7 · BREAK (dark, manifesto) ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="9" data-bg="dark">
+  <section class="slide s-echo bg-dark" data-slide="10" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
     <div class="hairline-grid"></div>
@@ -3213,7 +3233,7 @@
   </section>
 
   <!-- ==================== 8 · IDEATE SOLUTIONS ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="10" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="11" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-sage" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
 
@@ -3247,7 +3267,7 @@
   </section>
 
   <!-- ==================== 9 · VOTE + TOP 3 ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="11" data-bg="light">
+  <section class="slide s-echo has-grid bg-light" data-slide="12" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 40vw; height: 40vw; left: -10vw; top: -10vw;"></div>
     <div class="orb orb-peach" style="width: 30vw; height: 30vw; right: -8vw; bottom: -10vw;"></div>
@@ -3294,7 +3314,7 @@
   </section>
 
   <!-- ==================== 10 · CLOSE (dark, manifesto) ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="12" data-bg="dark">
+  <section class="slide s-echo bg-dark" data-slide="13" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; right: -15vw; top: -20vw;"></div>
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
@@ -3320,7 +3340,7 @@
 
 <!-- =============== FOOTER NAV (always visible, attached to bottom) =============== -->
 <div class="footer">
-  <span id="counter">1 / 12</span>
+  <span id="counter">1 / 13</span>
   <div class="progress" id="progress"></div>
   <span class="nav-hint">← → para navegar</span>
 </div>
