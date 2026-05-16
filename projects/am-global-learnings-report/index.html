@@ -2528,6 +2528,43 @@
     max-width: 95ch !important;
   }
 
+  /* =============== PROJECT INVENTORY GRID (slide 7) =============== */
+  .slide[data-slide="7"] .content > .projects-grid {
+    flex: 1 1 auto !important;
+    align-items: stretch !important;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+  }
+  @media (max-width: 1100px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 700px)  { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px)  { .projects-grid { grid-template-columns: 1fr; } }
+  .project-tile {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: visible !important;
+  }
+  .project-tile .ptile-name {
+    font-family: var(--f);
+    font-weight: 700;
+    font-size: clamp(13px, 1.05vw, 16px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .project-tile .ptile-desc {
+    font-family: var(--f);
+    font-weight: 400;
+    font-size: clamp(11px, 0.85vw, 13px);
+    line-height: 1.35;
+    color: var(--ink-soft);
+  }
+
   /* =========== END SESSION ADDITIONS =========== */
 </style>
 </head>
@@ -2741,8 +2778,43 @@
     </div>
   </section>
 
-  <!-- ==================== 7 · PILLARS — What we copy ==================== -->
+  <!-- ==================== 7 · PROJECT INVENTORY — 16 named projects ==================== -->
   <section class="slide s-echo has-grid bg-light-quiet" data-slide="7" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -8vw; top: -10vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> AK · AM Global Learnings</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📋 The 16 projects in flight</div>
+      <h2 class="headline">Everything they are building, <span class="acc">in one place.</span></h2>
+      <p class="lede" style="max-width: 70ch;">Source: amglobalteam.org. Names as written by the team.</p>
+
+      <div class="projects-grid">
+        <div class="project-tile glass"><div class="ptile-name">01 · AM Retreat Marketing</div><div class="ptile-desc">Central marketing team driving programme attendance globally.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">02 · AM App</div><div class="ptile-desc">Pre-retreat learning app grounding newcomers in practice.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">03 · AM Website</div><div class="ptile-desc">Rebuilding AM's global web presence.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">04 · Become A Monk</div><div class="ptile-desc">Direct outreach inspiring people to embrace monastic life.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">05 · AM News</div><div class="ptile-desc">Operational news channel keeping the community informed and aligned.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">06 · AM Funnel</div><div class="ptile-desc">Centralised system guiding people through AM's offerings.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">07 · AM Flagman Product</div><div class="ptile-desc">Entry-point course giving a comprehensive overview of AM.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">08 · AM Online</div><div class="ptile-desc">Live online classes where acharyas teach philosophy and practices.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">09 · AM Academy</div><div class="ptile-desc">Unified learning platform for AM philosophy, yoga, practices.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">10 · AM Social Media</div><div class="ptile-desc">Main social media presence sharing AM values worldwide.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">11 · AM Content Fabric</div><div class="ptile-desc">Content production and distribution network across platforms.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">12 · AM Mentorship</div><div class="ptile-desc">Group support system helping practitioners stay on the path.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">13 · AM Business</div><div class="ptile-desc">Self-sustainability and revenue infrastructure for the org.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">14 · AM CRM</div><div class="ptile-desc">Community relationship management system.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">15 · AM Store</div><div class="ptile-desc">Worldwide online shop for books, yoga gear, AM products.</div></div>
+        <div class="project-tile glass"><div class="ptile-name">16 · AM Meditation Marathons</div><div class="ptile-desc">Guided marathons for beginners, supported by acharyas and margi.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8 · PILLARS — What we copy ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="8" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -8vw; top: -10vw;"></div>
 
@@ -2778,8 +2850,8 @@
     </div>
   </section>
 
-  <!-- ==================== 8 · CLOSING — Collaboration formats ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="8" data-bg="dark">
+  <!-- ==================== 9 · CLOSING — Collaboration formats ==================== -->
+  <section class="slide s-echo bg-dark" data-slide="9" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
     <div class="hairline-grid"></div>
@@ -2803,8 +2875,8 @@
     </div>
   </section>
 
-  <!-- ==================== 9 · CLOSING — Credit and next step ==================== -->
-  <section class="slide s-echo bg-light" data-slide="9" data-bg="light">
+  <!-- ==================== 10 · CLOSING — Credit and next step ==================== -->
+  <section class="slide s-echo bg-light" data-slide="10" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 50vw; height: 50vw; right: -15vw; bottom: -20vw;"></div>
     <div class="orb orb-cool" style="width: 30vw; height: 30vw; left: -8vw; top: -10vw;"></div>
