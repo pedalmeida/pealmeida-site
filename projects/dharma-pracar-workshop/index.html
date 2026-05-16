@@ -2700,64 +2700,6 @@
     letter-spacing: -0.005em;
   }
 
-  /* Stage example footer block, scoped to slides 6-11 */
-  .slide[data-slide="6"] .stage-example,
-  .slide[data-slide="7"] .stage-example,
-  .slide[data-slide="8"] .stage-example,
-  .slide[data-slide="9"] .stage-example,
-  .slide[data-slide="10"] .stage-example,
-  .slide[data-slide="11"] .stage-example {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 6px 12px;
-    margin: 10px auto 0;
-    max-width: 1180px;
-    padding: 10px 14px;
-    border-left: 3px solid var(--accent);
-    background: rgba(226, 84, 42, 0.05);
-    border-radius: 8px;
-  }
-  .slide[data-slide="6"] .stage-example .ex-label,
-  .slide[data-slide="7"] .stage-example .ex-label,
-  .slide[data-slide="8"] .stage-example .ex-label,
-  .slide[data-slide="9"] .stage-example .ex-label,
-  .slide[data-slide="10"] .stage-example .ex-label,
-  .slide[data-slide="11"] .stage-example .ex-label {
-    font-family: var(--fm);
-    font-size: 10.5px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    white-space: nowrap;
-  }
-  .slide[data-slide="6"] .stage-example .ex-name,
-  .slide[data-slide="7"] .stage-example .ex-name,
-  .slide[data-slide="8"] .stage-example .ex-name,
-  .slide[data-slide="9"] .stage-example .ex-name,
-  .slide[data-slide="10"] .stage-example .ex-name,
-  .slide[data-slide="11"] .stage-example .ex-name {
-    font-family: var(--f);
-    font-size: clamp(13px, 1vw, 16px);
-    font-weight: 700;
-    color: var(--ink);
-  }
-  .slide[data-slide="6"] .stage-example .ex-text,
-  .slide[data-slide="7"] .stage-example .ex-text,
-  .slide[data-slide="8"] .stage-example .ex-text,
-  .slide[data-slide="9"] .stage-example .ex-text,
-  .slide[data-slide="10"] .stage-example .ex-text,
-  .slide[data-slide="11"] .stage-example .ex-text {
-    font-family: var(--f);
-    font-size: clamp(11.5px, 0.85vw, 14px);
-    line-height: 1.35;
-    color: var(--ink-soft);
-    flex: 1 1 55%;
-    min-width: 260px;
-  }
-
   /* Slide 3 — 3 rules in one row instead of 2x2 */
   .slide[data-slide="4"] .rules-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -2809,6 +2751,16 @@
     line-height: 1.4;
     color: var(--ink-soft);
     margin: 0;
+  }
+  .stage-mini .pain-example {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.14);
+    font-size: clamp(11px, 0.82vw, 13px);
+    line-height: 1.4;
+    color: var(--orange);
+    font-style: italic;
+    font-weight: 500;
   }
 
   /* Scoped font sizing — journey slides 4–9 (1 stage per slide, wide card) */
@@ -3125,31 +3077,37 @@
           <div class="num">01</div>
           <h3>🌫️ Unaware</h3>
           <p>Has never heard of AM.</p>
+          <p class="pain-example">"No PT-language ad has ever named anxiety, sleep, or stress."</p>
         </div>
         <div class="stage-mini glass">
           <div class="num">02</div>
           <h3>🌱 First Contact</h3>
           <p>Hears about AM. Friend, ad, video, book.</p>
+          <p class="pain-example">"Someone googles 'meditation Portugal' and AM does not show up."</p>
         </div>
         <div class="stage-mini glass">
           <div class="num">03</div>
           <h3>🚪 First Experience</h3>
           <p>Shows up once. Class, kiirtan, retreat.</p>
+          <p class="pain-example">"A visitor comes to Sunday class and nobody asks for their name."</p>
         </div>
         <div class="stage-mini glass">
           <div class="num">04</div>
           <h3>🔁 Returning</h3>
           <p>Comes back. Familiarity builds.</p>
+          <p class="pain-example">"Three weeks later, no one has reached out."</p>
         </div>
         <div class="stage-mini glass">
           <div class="num">05</div>
           <h3>🌼 Initiation</h3>
           <p>Receives a personal mantra.</p>
+          <p class="pain-example">"The course ends and 'what now?' has no answer."</p>
         </div>
         <div class="stage-mini glass">
           <div class="num">06</div>
           <h3>🪷 Committed</h3>
           <p>Sustained practice. Serves the community.</p>
+          <p class="pain-example">"Initiated, then alone. No mentor, no peer group."</p>
         </div>
       </div>
     </div>
@@ -3194,11 +3152,6 @@
           </div>
         </div>
       </div>
-      <div class="stage-example">
-        <span class="ex-label">👀 Real-world example</span>
-        <span class="ex-name">Headspace · Stress less in 10 minutes</span>
-        <span class="ex-text">Their cold ads named a single feeling (stress, anxiety, can't sleep), not 'meditation app'. Built a billion-dollar audience off this exact shift.</span>
-      </div>
     </div>
   </section>
 
@@ -3242,11 +3195,6 @@
           </div>
         </div>
       </div>
-      <div class="stage-example">
-        <span class="ex-label">👀 Real-world example</span>
-        <span class="ex-name">Sadhguru · What is Inner Engineering?</span>
-        <span class="ex-text">The YouTube intro that converts cold viewers is not a philosophy lecture. It is the named outcome: 'engineer your inner self'. Reached 50M+ views.</span>
-      </div>
     </div>
   </section>
 
@@ -3288,11 +3236,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="stage-example">
-        <span class="ex-label">👀 Real-world example</span>
-        <span class="ex-name">Headspace · Take 10</span>
-        <span class="ex-text">A free 10-day starter pack, no payment, no upsell on day 1. The first experience asks for nothing except 10 minutes a day for 10 days.</span>
       </div>
     </div>
   </section>
@@ -3338,11 +3281,6 @@
           </div>
         </div>
       </div>
-      <div class="stage-example">
-        <span class="ex-label">👀 Real-world example</span>
-        <span class="ex-name">Calm · The streak</span>
-        <span class="ex-text">After session one: a daily reminder, a visible streak counter, a gentle re-engagement email after a 3-day pause. The mechanic that turns 'I tried it once' into 'I do this every day'.</span>
-      </div>
     </div>
   </section>
 
@@ -3384,11 +3322,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="stage-example">
-        <span class="ex-label">👀 Real-world example</span>
-        <span class="ex-name">Isha · Inner Engineering as the bridge to Shambhavi</span>
-        <span class="ex-text">You finish the 7-day immersion. Only then do you receive Shambhavi Mahamudra initiation. The course earns the right to the mantra. Clear ladder, no ambiguity.</span>
       </div>
     </div>
   </section>
@@ -3433,11 +3366,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="stage-example">
-        <span class="ex-label">👀 Real-world example</span>
-        <span class="ex-name">Brahma Kumaris · Every margi a teacher</span>
-        <span class="ex-text">Their committed practitioners volunteer as Rajyoga teachers, typically within 3 years of joining. Teaching is the retention mechanism, not a separate track for the elite few.</span>
       </div>
     </div>
   </section>
