@@ -2528,31 +2528,37 @@
     max-width: 95ch !important;
   }
 
-  /* =============== PROJECT INVENTORY GRID (slide 7) =============== */
-  .slide[data-slide="7"] .content > .projects-grid {
+  /* =============== PROJECT INVENTORY GRIDS (slides 7, 8, 9) =============== */
+  .slide[data-slide="7"] .content > .projects-grid,
+  .slide[data-slide="8"] .content > .projects-grid,
+  .slide[data-slide="9"] .content > .projects-grid {
     flex: 1 1 auto !important;
     align-items: stretch !important;
   }
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
     margin-top: 16px;
   }
-  @media (max-width: 1100px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 700px)  { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px)  { .projects-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .projects-grid { grid-template-columns: 1fr; } }
   .project-tile {
-    padding: 14px 16px;
+    padding: 22px 24px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
     overflow: visible !important;
+  }
+  .project-tile .ptile-emoji {
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1;
+    margin-bottom: 4px;
   }
   .project-tile .ptile-name {
     font-family: var(--f);
     font-weight: 700;
-    font-size: clamp(13px, 1.05vw, 16px);
+    font-size: clamp(15px, 1.25vw, 19px);
     line-height: 1.2;
     letter-spacing: -0.01em;
     color: var(--ink);
@@ -2560,8 +2566,8 @@
   .project-tile .ptile-desc {
     font-family: var(--f);
     font-weight: 400;
-    font-size: clamp(11px, 0.85vw, 13px);
-    line-height: 1.35;
+    font-size: clamp(12px, 0.95vw, 14px);
+    line-height: 1.45;
     color: var(--ink-soft);
   }
 
@@ -2778,7 +2784,7 @@
     </div>
   </section>
 
-  <!-- ==================== 7 · PROJECT INVENTORY — 16 named projects ==================== -->
+  <!-- ==================== 7 · PROJECT INVENTORY — Acquisition layer ==================== -->
   <section class="slide s-echo has-grid bg-light-quiet" data-slide="7" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -8vw; top: -10vw;"></div>
@@ -2788,33 +2794,135 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">📋 The 16 projects in flight</div>
-      <h2 class="headline">Everything they are building, <span class="acc">in one place.</span></h2>
-      <p class="lede" style="max-width: 70ch;">Source: amglobalteam.org. Names as written by the team.</p>
+      <div class="eyebrow">📋 The 16 projects in flight · 1 of 3</div>
+      <h2 class="headline">Reach + capture: <span class="acc">getting people in the door.</span></h2>
+      <p class="lede" style="max-width: 70ch;">Six projects covering the top of the funnel: how people first hear about AM and how they convert from curious to engaged.</p>
 
       <div class="projects-grid">
-        <div class="project-tile glass"><div class="ptile-name">01 · AM Retreat Marketing</div><div class="ptile-desc">Central marketing team driving programme attendance globally.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">02 · AM App</div><div class="ptile-desc">Pre-retreat learning app grounding newcomers in practice.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">03 · AM Website</div><div class="ptile-desc">Rebuilding AM's global web presence.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">04 · Become A Monk</div><div class="ptile-desc">Direct outreach inspiring people to embrace monastic life.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">05 · AM News</div><div class="ptile-desc">Operational news channel keeping the community informed and aligned.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">06 · AM Funnel</div><div class="ptile-desc">Centralised system guiding people through AM's offerings.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">07 · AM Flagman Product</div><div class="ptile-desc">Entry-point course giving a comprehensive overview of AM.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">08 · AM Online</div><div class="ptile-desc">Live online classes where acharyas teach philosophy and practices.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">09 · AM Academy</div><div class="ptile-desc">Unified learning platform for AM philosophy, yoga, practices.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">10 · AM Social Media</div><div class="ptile-desc">Main social media presence sharing AM values worldwide.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">11 · AM Content Fabric</div><div class="ptile-desc">Content production and distribution network across platforms.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">12 · AM Mentorship</div><div class="ptile-desc">Group support system helping practitioners stay on the path.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">13 · AM Business</div><div class="ptile-desc">Self-sustainability and revenue infrastructure for the org.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">14 · AM CRM</div><div class="ptile-desc">Community relationship management system.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">15 · AM Store</div><div class="ptile-desc">Worldwide online shop for books, yoga gear, AM products.</div></div>
-        <div class="project-tile glass"><div class="ptile-name">16 · AM Meditation Marathons</div><div class="ptile-desc">Guided marathons for beginners, supported by acharyas and margi.</div></div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">📣</div>
+          <div class="ptile-name">01 · AM Retreat Marketing</div>
+          <div class="ptile-desc">Central marketing team (9 people) running ads and social for any acharya / unit. Currently live in Sweden, Germany, Italy. Germany already books 100+ per retreat with problem-targeted ads.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">📱</div>
+          <div class="ptile-name">02 · AM Social Media</div>
+          <div class="ptile-desc">Central AM social presence. Instagram verified (blue check). 1 person managing today. Expanding to TikTok, Facebook, X, YouTube. Goal: AM values clearly communicated online.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🎬</div>
+          <div class="ptile-name">03 · AM Content Fabric</div>
+          <div class="ptile-desc">Network of 10+ accounts across platforms, posting daily. Target: 100M monthly views, which converts to 10–20k people/month entering the funnel. 2 people in team.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🧭</div>
+          <div class="ptile-name">04 · AM Funnel</div>
+          <div class="ptile-desc">The strategic spine. Awareness → interest → desire → action → loyalty → advocacy. Benchmarked against Isha, Art of Living, ISKCON, Brahma Kumaris. 4 people in team.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🌐</div>
+          <div class="ptile-name">05 · AM Website</div>
+          <div class="ptile-desc">Rebuilding AM's global web presence from scratch. 100+ pages on philosophy, Guru, "about us". 4 people, 3 month timeline.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">📲</div>
+          <div class="ptile-name">06 · AM App</div>
+          <div class="ptile-desc">Pre-retreat learning app where newcomers learn meditation and philosophy <em>before</em> being invited to retreat. 3 paid specialists. MVP soon. Target: 10,000 learners/month.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8 · PROJECT INVENTORY — Learning & community layer ==================== -->
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="8" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-cool" style="width: 35vw; height: 35vw; right: -10vw; top: -8vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> AK · AM Global Learnings</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📋 The 16 projects in flight · 2 of 3</div>
+      <h2 class="headline">Learn + practise: <span class="acc">depth once they are in.</span></h2>
+      <p class="lede" style="max-width: 70ch;">Six projects covering the middle of the funnel: how engaged newcomers learn, practise, and stay in community.</p>
+
+      <div class="projects-grid">
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🏁</div>
+          <div class="ptile-name">07 · AM Flagman Product</div>
+          <div class="ptile-desc">AM's answer to Sadhguru's Inner Engineering: one entry course with the whole picture of yoga + practices + philosophy. 2 people writing the script.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🎓</div>
+          <div class="ptile-name">08 · AM Academy</div>
+          <div class="ptile-desc">Peterson Academy-inspired platform: structured courses on Prout, neohumanism, Yama/Niyama, 16 points. For newcomers and margi both. 3 people. Looking for a team leader.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🎙️</div>
+          <div class="ptile-name">09 · AM Online</div>
+          <div class="ptile-desc">Live online classes where acharyas teach philosophy and practices to the global community. In approval; launching soon.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🤝</div>
+          <div class="ptile-name">10 · AM Mentorship</div>
+          <div class="ptile-desc">Small groups (~10 people) that study and support each other. Cell-division model (ISKCON-inspired): leaders spawn new groups. Nirmal Krishna leads. 100+ people currently.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🏃</div>
+          <div class="ptile-name">11 · AM Meditation Marathons</div>
+          <div class="ptile-desc">Guided beginner marathons taught by real monks (vs Calm/Headspace facilitators). Russia version already passed by 10,000+. English version filming next.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">📰</div>
+          <div class="ptile-name">12 · AM News</div>
+          <div class="ptile-desc">Weekly news channel + a queryable map of every master unit, jagrti, office, project. 350 → 1,000 subscribers target. 5 people in team.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9 · PROJECT INVENTORY — Infrastructure layer ==================== -->
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="9" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 35vw; height: 35vw; right: -10vw; bottom: -10vw;"></div>
+
+    <div class="chrome-top">
+      <div class="brand"><span class="brand-mark"></span> AK · AM Global Learnings</div>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">📋 The 16 projects in flight · 3 of 3</div>
+      <h2 class="headline">Backbone: <span class="acc">people, money, plumbing.</span></h2>
+      <p class="lede" style="max-width: 70ch;">Four projects covering the org backbone: new monks, customer data, revenue, and physical products.</p>
+
+      <div class="projects-grid">
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🧘</div>
+          <div class="ptile-name">13 · Become A Monk</div>
+          <div class="ptile-desc">Direct ads + recruitment retreats for new monks and nuns. Number of acharyas is shrinking. 2 retreats done in Sweden (1 candidate); 2 more planned + Italy programmes + sisters' programme in June.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🗂️</div>
+          <div class="ptile-name">14 · AM CRM</div>
+          <div class="ptile-desc">Central database for the entire community: who, what lessons, initiation status. Using Kommo for ads today. Looking for a second platform for the broader margi community.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">💼</div>
+          <div class="ptile-name">15 · AM Business</div>
+          <div class="ptile-desc">Self-sustainability and revenue infrastructure. Current burn $5k/month, target $20k. Builds the financial floor the other 15 projects sit on.</div>
+        </div>
+        <div class="project-tile glass">
+          <div class="ptile-emoji">🛒</div>
+          <div class="ptile-name">16 · AM Store</div>
+          <div class="ptile-desc">Worldwide online shop for books, yoga gear, lotas, AM products. Blocked on legal-entity country choice. Will ship globally once unblocked.</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== 8 · PILLARS — What we copy ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="8" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="10" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -8vw; top: -10vw;"></div>
 
@@ -2851,7 +2959,7 @@
   </section>
 
   <!-- ==================== 9 · CLOSING — Collaboration formats ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="9" data-bg="dark">
+  <section class="slide s-echo bg-dark" data-slide="11" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
     <div class="hairline-grid"></div>
@@ -2876,7 +2984,7 @@
   </section>
 
   <!-- ==================== 10 · CLOSING — Credit and next step ==================== -->
-  <section class="slide s-echo bg-light" data-slide="10" data-bg="light">
+  <section class="slide s-echo bg-light" data-slide="12" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 50vw; height: 50vw; right: -15vw; bottom: -20vw;"></div>
     <div class="orb orb-cool" style="width: 30vw; height: 30vw; left: -8vw; top: -10vw;"></div>
