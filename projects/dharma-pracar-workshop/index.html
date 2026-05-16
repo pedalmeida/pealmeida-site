@@ -2700,6 +2700,64 @@
     letter-spacing: -0.005em;
   }
 
+  /* Stage example footer block, scoped to slides 6-11 */
+  .slide[data-slide="6"] .stage-example,
+  .slide[data-slide="7"] .stage-example,
+  .slide[data-slide="8"] .stage-example,
+  .slide[data-slide="9"] .stage-example,
+  .slide[data-slide="10"] .stage-example,
+  .slide[data-slide="11"] .stage-example {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin: 10px auto 0;
+    max-width: 1180px;
+    padding: 10px 14px;
+    border-left: 3px solid var(--accent);
+    background: rgba(226, 84, 42, 0.05);
+    border-radius: 8px;
+  }
+  .slide[data-slide="6"] .stage-example .ex-label,
+  .slide[data-slide="7"] .stage-example .ex-label,
+  .slide[data-slide="8"] .stage-example .ex-label,
+  .slide[data-slide="9"] .stage-example .ex-label,
+  .slide[data-slide="10"] .stage-example .ex-label,
+  .slide[data-slide="11"] .stage-example .ex-label {
+    font-family: var(--fm);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .slide[data-slide="6"] .stage-example .ex-name,
+  .slide[data-slide="7"] .stage-example .ex-name,
+  .slide[data-slide="8"] .stage-example .ex-name,
+  .slide[data-slide="9"] .stage-example .ex-name,
+  .slide[data-slide="10"] .stage-example .ex-name,
+  .slide[data-slide="11"] .stage-example .ex-name {
+    font-family: var(--f);
+    font-size: clamp(13px, 1vw, 16px);
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .slide[data-slide="6"] .stage-example .ex-text,
+  .slide[data-slide="7"] .stage-example .ex-text,
+  .slide[data-slide="8"] .stage-example .ex-text,
+  .slide[data-slide="9"] .stage-example .ex-text,
+  .slide[data-slide="10"] .stage-example .ex-text,
+  .slide[data-slide="11"] .stage-example .ex-text {
+    font-family: var(--f);
+    font-size: clamp(11.5px, 0.85vw, 14px);
+    line-height: 1.35;
+    color: var(--ink-soft);
+    flex: 1 1 55%;
+    min-width: 260px;
+  }
+
   /* Slide 3 — 3 rules in one row instead of 2x2 */
   .slide[data-slide="4"] .rules-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -2984,11 +3042,11 @@
 
     <div class="content">
       <div class="eyebrow">🌉 Bridge from yesterday</div>
-      <h2 class="headline">Yesterday: <span class="acc">ourselves</span>. Today: <span class="acc">them</span>.</h2>
-      <p class="lede" style="margin-top: 24px; max-width: 78ch;">Yesterday we looked inward. What each of us is doing, where we can improve as a team. Today we turn the lens outward, to the margi journey, to the people we are here to serve, to where we lose them.</p>
+      <h2 class="headline">The organization, then <span class="acc">the audience</span>.</h2>
+      <p class="lede" style="margin-top: 24px; max-width: 78ch;">Yesterday we looked at the organization. How we work together, what each of us is doing, where we can sharpen things internally. Today we look at the audience. The margi journey, the people we are here to serve, where we lose them along the way.</p>
       <div class="meta-row" style="margin-top: 18px;">
-        <span class="chip">🪞 Yesterday · us, internally</span>
-        <span class="chip">🪷 Today · the margi, externally</span>
+        <span class="chip">🪞 Yesterday · the organization</span>
+        <span class="chip">🪷 Today · the audience</span>
       </div>
     </div>
   </section>
@@ -3136,6 +3194,11 @@
           </div>
         </div>
       </div>
+      <div class="stage-example">
+        <span class="ex-label">👀 Real-world example</span>
+        <span class="ex-name">Headspace · Stress less in 10 minutes</span>
+        <span class="ex-text">Their cold ads named a single feeling (stress, anxiety, can't sleep), not 'meditation app'. Built a billion-dollar audience off this exact shift.</span>
+      </div>
     </div>
   </section>
 
@@ -3179,6 +3242,11 @@
           </div>
         </div>
       </div>
+      <div class="stage-example">
+        <span class="ex-label">👀 Real-world example</span>
+        <span class="ex-name">Sadhguru · What is Inner Engineering?</span>
+        <span class="ex-text">The YouTube intro that converts cold viewers is not a philosophy lecture. It is the named outcome: 'engineer your inner self'. Reached 50M+ views.</span>
+      </div>
     </div>
   </section>
 
@@ -3220,6 +3288,11 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="stage-example">
+        <span class="ex-label">👀 Real-world example</span>
+        <span class="ex-name">Headspace · Take 10</span>
+        <span class="ex-text">A free 10-day starter pack, no payment, no upsell on day 1. The first experience asks for nothing except 10 minutes a day for 10 days.</span>
       </div>
     </div>
   </section>
@@ -3265,6 +3338,11 @@
           </div>
         </div>
       </div>
+      <div class="stage-example">
+        <span class="ex-label">👀 Real-world example</span>
+        <span class="ex-name">Calm · The streak</span>
+        <span class="ex-text">After session one: a daily reminder, a visible streak counter, a gentle re-engagement email after a 3-day pause. The mechanic that turns 'I tried it once' into 'I do this every day'.</span>
+      </div>
     </div>
   </section>
 
@@ -3306,6 +3384,11 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="stage-example">
+        <span class="ex-label">👀 Real-world example</span>
+        <span class="ex-name">Isha · Inner Engineering as the bridge to Shambhavi</span>
+        <span class="ex-text">You finish the 7-day immersion. Only then do you receive Shambhavi Mahamudra initiation. The course earns the right to the mantra. Clear ladder, no ambiguity.</span>
       </div>
     </div>
   </section>
@@ -3350,6 +3433,11 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="stage-example">
+        <span class="ex-label">👀 Real-world example</span>
+        <span class="ex-name">Brahma Kumaris · Every margi a teacher</span>
+        <span class="ex-text">Their committed practitioners volunteer as Rajyoga teachers, typically within 3 years of joining. Teaching is the retention mechanism, not a separate track for the elite few.</span>
       </div>
     </div>
   </section>
@@ -3420,8 +3508,8 @@
 
     <div class="content">
       <span class="timeline-pill"><span class="pulse"></span>Section 4 · 15 minutes</span>
-      <h2 class="headline">Cluster, read aloud, <span class="acc">5 dots each</span>.</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Kaoverii reads the wall back to us, one cluster at a time. Did we hear this right? Then everyone votes with 5 dots on the pains blocking our growth.</p>
+      <h2 class="headline">Cluster, read aloud, <span class="acc">3 votes each</span>.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Kaoverii reads the wall back to us, one cluster at a time. Did we hear this right? Then everyone votes with three dots on the pains blocking our growth.</p>
 
       <div class="steps-grid">
         <div class="step glass">
@@ -3436,35 +3524,15 @@
         </div>
         <div class="step glass">
           <div class="num">03</div>
-          <h3>🟢 Five dots each.</h3>
-          <p>Place them on the pain clusters you feel are most blocking. Spend them as you like.</p>
+          <h3>🟢 Three votes each.</h3>
+          <p>Three dots per person. Place them on the pain clusters you feel are most blocking. Spend them as you like.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 7 · BREAK (dark, manifesto) ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="15" data-bg="dark">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 60vw; height: 60vw; left: -15vw; bottom: -25vw;"></div>
-    <div class="hairline-grid"></div>
-
-    <div class="chrome-top">
-      
-    </div>
-
-    <div class="quote">
-      <div class="eyebrow">☕ Pause</div>
-      <h2 class="quote-text">Break. <span class="acc">10 minutes</span>.</h2>
-      <div class="attr">
-        <span class="attr-line"></span>
-        <span class="meta">Parantapa and Kaoverii turn the top pain into a single HMW while you stretch.</span>
-      </div>
-    </div>
-  </section>
-
   <!-- ==================== 8 · IDEATE SOLUTIONS ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="16" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="15" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-sage" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
 
@@ -3491,14 +3559,14 @@
         <div class="step glass">
           <div class="num">03</div>
           <h3>🟢 Then we vote.</h3>
-          <p>Five dots each, placed on the solutions you back. The next slide shows the vote in detail.</p>
+          <p>Three votes each, placed on the solutions you back. The next slide shows the vote in detail.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== 9 · VOTE + TOP 3 ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="17" data-bg="light">
+  <section class="slide s-echo has-grid bg-light" data-slide="16" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 40vw; height: 40vw; left: -10vw; top: -10vw;"></div>
     <div class="orb orb-peach" style="width: 30vw; height: 30vw; right: -8vw; bottom: -10vw;"></div>
@@ -3510,7 +3578,7 @@
     <div class="content">
       <span class="timeline-pill"><span class="pulse"></span>Sections 6 + 7 · 30 minutes</span>
       <h2 class="headline">Vote. Then commit to the <span class="acc">top 3</span>.</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Five dots each on solution clusters. Top three become real initiatives with a lead, supporters, a next step, and a date.</p>
+      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Three votes each on solution clusters. Top three become real initiatives with a lead, supporters, a next step, and a date.</p>
 
       <div class="commit-grid">
         <div class="commit glass">
@@ -3545,7 +3613,7 @@
   </section>
 
   <!-- ==================== 10 · CLOSE (dark, manifesto) ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="18" data-bg="dark">
+  <section class="slide s-echo bg-dark" data-slide="17" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; right: -15vw; top: -20vw;"></div>
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
@@ -3571,7 +3639,7 @@
 
 <!-- =============== FOOTER NAV (always visible, attached to bottom) =============== -->
 <div class="footer">
-  <span id="counter">1 / 18</span>
+  <span id="counter">1 / 17</span>
   <div class="progress" id="progress"></div>
   <span class="nav-hint">← → para navegar</span>
 </div>
