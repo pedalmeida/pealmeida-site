@@ -2753,18 +2753,25 @@
     border-color: rgba(244, 196, 48, 0.42);
   }
 
-  /* Slide 5 — rally line at the bottom */
+  /* Slide 5 — rally line at the bottom (highlighted) */
   .slide[data-slide="5"] .rules-rally {
     flex: 0 0 auto;
-    margin: 22px 0 0;
+    margin: 26px auto 0;
+    max-width: 940px;
+    padding: 20px 28px;
+    background: linear-gradient(135deg, rgba(226, 84, 42, 0.16) 0%, rgba(226, 84, 42, 0.08) 100%);
+    border: 1.5px solid rgba(226, 84, 42, 0.45);
+    border-left: 6px solid var(--orange);
+    border-radius: 14px;
     text-align: center;
     font-family: var(--f);
-    font-size: clamp(17px, 1.4vw, 23px);
+    font-size: clamp(19px, 1.6vw, 26px);
     line-height: 1.4;
-    font-weight: 500;
+    font-weight: 600;
     font-style: italic;
     color: var(--ink);
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
+    box-shadow: 0 4px 24px rgba(226, 84, 42, 0.08);
   }
 
   /* Problem / Solution two-column example block */
@@ -3287,9 +3294,9 @@
     </div>
 
     <div class="content">
-      <span class="timeline-pill"><span class="pulse"></span>Section 3 · 30 minutes</span>
+      <span class="timeline-pill"><span class="pulse"></span>Pain points · 10 minutes</span>
       <h2 class="headline">Where does it <span class="acc">hurt</span>?</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 70ch;">Individual brainwriting. Silent. Honest. One pain per sticky.</p>
+      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Individual brainwriting. Silent. Honest. One pain per sticky. Six minutes writing, four minutes on the post-it etiquette and the problem-versus-solution call.</p>
 
       <div class="steps-grid">
         <div class="step glass">
@@ -3321,7 +3328,7 @@
     </div>
 
     <div class="content">
-      <span class="timeline-pill"><span class="pulse"></span>Section 3 · still 30 minutes</span>
+      <span class="timeline-pill"><span class="pulse"></span>Reads + clusters · 5 minutes</span>
       <h2 class="headline">Parantapa reads, the room <span class="acc">elaborates</span>.</h2>
       <p class="lede" style="margin-top: 18px; max-width: 76ch;">Once the wall is full, Parantapa picks up the stickies one by one and reads them out loud. If anything is unclear, the room asks questions, gives examples, or expands the thought. In parallel, Kaoverii groups the stickies into clusters on the side as they get read.</p>
       <div class="meta-row" style="margin-top: 18px;">
@@ -3342,25 +3349,25 @@
     </div>
 
     <div class="content">
-      <span class="timeline-pill"><span class="pulse"></span>Section 4 · 15 minutes</span>
-      <h2 class="headline">Cluster, read aloud, <span class="acc">3 votes each</span>.</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Kaoverii reads the wall back to us, one cluster at a time. Did we hear this right? Then everyone votes with three dots on the pains blocking our growth.</p>
+      <span class="timeline-pill"><span class="pulse"></span>Vote on pains · 5 minutes</span>
+      <h2 class="headline">Vote: <span class="acc">3 dots each</span>.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Clusters are already on the wall. Now everyone gets three dots. Place them on the pain clusters you feel are most blocking. Spend them as you like, all on one cluster or one each.</p>
 
       <div class="steps-grid">
         <div class="step glass">
           <div class="num">01</div>
-          <h3>🔊 Read each cluster.</h3>
-          <p>Kaoverii names what it is in one phrase. Parantapa asks: did we miss anything?</p>
+          <h3>🟢 Three dots, place them.</h3>
+          <p>One person at a time, walk up, vote, sit down. Quietly. No lobbying.</p>
         </div>
         <div class="step glass">
           <div class="num">02</div>
-          <h3>➕ Add what is missing.</h3>
-          <p>New stickies on the fly. Better to surface it now than carry it later.</p>
+          <h3>👀 The wall decides.</h3>
+          <p>When everyone has voted, the top cluster is the one we solve next.</p>
         </div>
         <div class="step glass">
           <div class="num">03</div>
-          <h3>🟢 Three votes each.</h3>
-          <p>Three dots per person. Place them on the pain clusters you feel are most blocking. Spend them as you like.</p>
+          <h3>🎯 Top pain advances.</h3>
+          <p>Single top pain goes to the next block. The rest stays on the wall for later rounds.</p>
         </div>
       </div>
     </div>
@@ -3376,25 +3383,25 @@
     </div>
 
     <div class="content">
-      <span class="timeline-pill"><span class="pulse"></span>Section 5 · 30 minutes</span>
-      <h2 class="headline">Write, present, <span class="acc">vote</span>.</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Same format as the pains. Solution stickies, different color. Write as many ideas as you want, no cap. Then present, then vote.</p>
+      <span class="timeline-pill"><span class="pulse"></span>Solutions · 15 minutes</span>
+      <h2 class="headline">Write, then <span class="acc">cluster + read</span>.</h2>
+      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Solutions only address the top pain we just voted on. Write yellow stickies first, then we cluster and read aloud together. Vote comes next.</p>
 
       <div class="steps-grid">
         <div class="step glass">
           <div class="num">01</div>
-          <h3>✍️ Each one writes.</h3>
-          <p>Silent. Write as many solution stickies as you want, no limit. One idea per sticky. Volume now, filter later. Kiirtan plays low.</p>
+          <h3>✍️ Write solutions · 5 min.</h3>
+          <p>Silent. Yellow stickies, right side of the wall. As many ideas as you want. One per sticky. Kiirtan plays low.</p>
         </div>
         <div class="step glass">
           <div class="num">02</div>
-          <h3>🎤 Each one presents.</h3>
-          <p>Round-table. Each person reads their stickies out loud. Parantapa and Kaoverii cluster on the fly as ideas land.</p>
+          <h3>🧩 Cluster + read · 10 min.</h3>
+          <p>Parantapa reads each solution aloud. Anyone can clarify or expand. Kaoverii groups them into clusters in parallel.</p>
         </div>
         <div class="step glass">
           <div class="num">03</div>
-          <h3>🟢 Then we vote.</h3>
-          <p>Three votes each, placed on the solutions you back. The next slide shows the vote in detail.</p>
+          <h3>➡️ Then we vote.</h3>
+          <p>The next slide hosts the vote on the solution clusters.</p>
         </div>
       </div>
     </div>
@@ -3411,9 +3418,9 @@
     </div>
 
     <div class="content">
-      <span class="timeline-pill"><span class="pulse"></span>Sections 6 + 7 · 30 minutes</span>
+      <span class="timeline-pill"><span class="pulse"></span>Vote + next steps · 20 minutes</span>
       <h2 class="headline">Vote. Then commit to the <span class="acc">top 3</span>.</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 72ch;">Three votes each on solution clusters. Top three become real initiatives with a lead, supporters, a next step, and a date.</p>
+      <p class="lede" style="margin-top: 14px; max-width: 78ch;">Three votes each on the solution clusters (5 min). Then the top three become real initiatives. We spend the last 15 minutes naming a lead, supporters, a first concrete next step, and a date for each.</p>
 
       <div class="commit-grid">
         <div class="commit glass">
