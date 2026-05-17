@@ -2713,7 +2713,9 @@
     gap: 22px;
   }
   .slide[data-slide="5"] .rule {
-    padding: 28px 28px;
+    padding: 40px 32px;
+    justify-content: space-between;
+    gap: 18px;
   }
   .slide[data-slide="5"] .rule h3 {
     font-size: clamp(20px, 1.65vw, 26px);
@@ -2753,6 +2755,7 @@
 
   /* Slide 5 — rally line at the bottom */
   .slide[data-slide="5"] .rules-rally {
+    flex: 0 0 auto;
     margin: 22px 0 0;
     text-align: center;
     font-family: var(--f);
@@ -2888,109 +2891,59 @@
   }
 
   /* Scoped font sizing — journey slides 4–9 (1 stage per slide, wide card) */
-  .slide[data-slide="7"] .stage-card h3,
-  .slide[data-slide="8"] .stage-card h3,
-  .slide[data-slide="9"] .stage-card h3,
-  .slide[data-slide="10"] .stage-card h3,
-  .slide[data-slide="11"] .stage-card h3,
-  .slide[data-slide="12"] .stage-card h3 {
+  .slide[data-slide="7"] .stage-card h3,  .slide[data-slide="12"] .stage-card h3 {
     font-size: clamp(24px, 2vw, 34px);
     margin: 0 0 8px;
   }
-  .slide[data-slide="7"] .stage-card > p,
-  .slide[data-slide="8"] .stage-card > p,
-  .slide[data-slide="9"] .stage-card > p,
-  .slide[data-slide="10"] .stage-card > p,
-  .slide[data-slide="11"] .stage-card > p,
-  .slide[data-slide="12"] .stage-card > p {
+  .slide[data-slide="7"] .stage-card > p,  .slide[data-slide="12"] .stage-card > p {
     font-size: clamp(15px, 1.2vw, 19px);
     line-height: 1.45;
   }
-  .slide[data-slide="7"] .stage-card .ps-block,
-  .slide[data-slide="8"] .stage-card .ps-block,
-  .slide[data-slide="9"] .stage-card .ps-block,
-  .slide[data-slide="10"] .stage-card .ps-block,
-  .slide[data-slide="11"] .stage-card .ps-block,
-  .slide[data-slide="12"] .stage-card .ps-block {
+  .slide[data-slide="7"] .stage-card .ps-block,  .slide[data-slide="12"] .stage-card .ps-block {
     font-size: clamp(13px, 1vw, 16px);
     line-height: 1.5;
     padding: 14px 16px;
   }
-  .slide[data-slide="7"] .stage-card .ps-label,
-  .slide[data-slide="8"] .stage-card .ps-label,
-  .slide[data-slide="9"] .stage-card .ps-label,
-  .slide[data-slide="10"] .stage-card .ps-label,
-  .slide[data-slide="11"] .stage-card .ps-label,
-  .slide[data-slide="12"] .stage-card .ps-label {
+  .slide[data-slide="7"] .stage-card .ps-label,  .slide[data-slide="12"] .stage-card .ps-label {
     font-size: 11px;
     margin-bottom: 5px;
   }
-  .slide[data-slide="7"] .ps-block ul,
-  .slide[data-slide="8"] .ps-block ul,
-  .slide[data-slide="9"] .ps-block ul,
-  .slide[data-slide="10"] .ps-block ul,
-  .slide[data-slide="11"] .ps-block ul,
-  .slide[data-slide="12"] .ps-block ul {
+  .slide[data-slide="7"] .ps-block ul,  .slide[data-slide="12"] .ps-block ul {
     gap: 6px !important;
   }
 
   /* Brainwriting step cards (post-split, now slide 10) */
-  .slide[data-slide="13"] .step h3 {
+  .slide[data-slide="8"] .step h3 {
     font-size: clamp(20px, 1.7vw, 28px);
   }
-  .slide[data-slide="13"] .step p {
+  .slide[data-slide="8"] .step p {
     font-size: clamp(15px, 1.3vw, 21px);
     line-height: 1.55;
   }
 
   /* Journey slides — 1 stage card per slide, Pain + Solution side by side */
-  .slide[data-slide="7"] .stages-grid,
-  .slide[data-slide="8"] .stages-grid,
-  .slide[data-slide="9"] .stages-grid,
-  .slide[data-slide="10"] .stages-grid,
-  .slide[data-slide="11"] .stages-grid,
-  .slide[data-slide="12"] .stages-grid {
+  .slide[data-slide="7"] .stages-grid,  .slide[data-slide="12"] .stages-grid {
     grid-template-columns: 1fr;
     max-width: 1180px;
     margin-left: auto;
     margin-right: auto;
   }
-  .slide[data-slide="7"] .stage-card,
-  .slide[data-slide="8"] .stage-card,
-  .slide[data-slide="9"] .stage-card,
-  .slide[data-slide="10"] .stage-card,
-  .slide[data-slide="11"] .stage-card,
-  .slide[data-slide="12"] .stage-card {
+  .slide[data-slide="7"] .stage-card,  .slide[data-slide="12"] .stage-card {
     justify-content: flex-start;
     padding: 28px 32px 28px;
   }
   /* Pain + Solution blocks render in a 2-column grid inside the wide card */
-  .slide[data-slide="7"] .stage-card .ps-grid,
-  .slide[data-slide="8"] .stage-card .ps-grid,
-  .slide[data-slide="9"] .stage-card .ps-grid,
-  .slide[data-slide="10"] .stage-card .ps-grid,
-  .slide[data-slide="11"] .stage-card .ps-grid,
-  .slide[data-slide="12"] .stage-card .ps-grid {
+  .slide[data-slide="7"] .stage-card .ps-grid,  .slide[data-slide="12"] .stage-card .ps-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 14px;
   }
-  .slide[data-slide="7"] .stage-card .ps-grid .ps-block,
-  .slide[data-slide="8"] .stage-card .ps-grid .ps-block,
-  .slide[data-slide="9"] .stage-card .ps-grid .ps-block,
-  .slide[data-slide="10"] .stage-card .ps-grid .ps-block,
-  .slide[data-slide="11"] .stage-card .ps-grid .ps-block,
-  .slide[data-slide="12"] .stage-card .ps-grid .ps-block {
+  .slide[data-slide="7"] .stage-card .ps-grid .ps-block,  .slide[data-slide="12"] .stage-card .ps-grid .ps-block {
     margin-top: 0;
   }
   /* Bullet lists inside Pain / Solution blocks */
-  .slide[data-slide="7"] .ps-block ul,
-  .slide[data-slide="8"] .ps-block ul,
-  .slide[data-slide="9"] .ps-block ul,
-  .slide[data-slide="10"] .ps-block ul,
-  .slide[data-slide="11"] .ps-block ul,
-  .slide[data-slide="12"] .ps-block ul {
+  .slide[data-slide="7"] .ps-block ul,  .slide[data-slide="12"] .ps-block ul {
     list-style: none;
     margin: 6px 0 0;
     padding: 0;
@@ -2998,21 +2951,11 @@
     flex-direction: column;
     gap: 6px;
   }
-  .slide[data-slide="7"] .ps-block ul li,
-  .slide[data-slide="8"] .ps-block ul li,
-  .slide[data-slide="9"] .ps-block ul li,
-  .slide[data-slide="10"] .ps-block ul li,
-  .slide[data-slide="11"] .ps-block ul li,
-  .slide[data-slide="12"] .ps-block ul li {
+  .slide[data-slide="7"] .ps-block ul li,  .slide[data-slide="12"] .ps-block ul li {
     position: relative;
     padding-left: 14px;
   }
-  .slide[data-slide="7"] .ps-block ul li::before,
-  .slide[data-slide="8"] .ps-block ul li::before,
-  .slide[data-slide="9"] .ps-block ul li::before,
-  .slide[data-slide="10"] .ps-block ul li::before,
-  .slide[data-slide="11"] .ps-block ul li::before,
-  .slide[data-slide="12"] .ps-block ul li::before {
+  .slide[data-slide="7"] .ps-block ul li::before,  .slide[data-slide="12"] .ps-block ul li::before {
     content: "·";
     position: absolute;
     left: 4px;
@@ -3096,11 +3039,11 @@
     </div>
 
     <div class="content">
-      <div class="eyebrow">Ananda Marga Portugal · Castelo Branco</div>
+      <div class="eyebrow">Ananda Marga Portugal</div>
       <h1 class="display">Dharma Pracar <span class="acc">Workshop</span>.</h1>
       <p class="lede" style="margin-top: 28px; max-width: 70ch;">Mapping the journey of a Portuguese margi, from first contact to committed practice.</p>
       <div class="meta-row">
-        <span class="chip"><span class="dot"></span>Saturday · 2.5 hours</span>
+        <span class="chip"><span class="dot"></span>Saturday · 60 minutes</span>
         <span class="chip">~20 participants</span>
         <span class="chip">Parantapa and Kaoverii</span>
       </div>
@@ -3334,223 +3277,8 @@
     </div>
   </section>
 
-  <!-- ==================== 5 · STAGE 2 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="8" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">🗺️ The Margi Journey · Stage 2 of 6</div>
-      <h2 class="headline">🌱 First Contact</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 80ch;">Hears about AM. A friend, an ad, a video, a book. Pain points and possible solutions from Dada Maetreya's research and the 16 global projects.</p>
-
-      <div class="stages-grid">
-        <div class="stage-card glass">
-          <div class="num">Stage 2</div>
-          <div class="ps-grid">
-            <div class="ps-block pain">
-              <span class="ps-label">Pain points</span>
-              <ul>
-              <li>We talk philosophy. They arrive in pain. 60% of entrants are in anxiety/fear, 28.5% to escape a hard state, 29.9% to find meaning, only 7.3% to "feel God".</li>
-              <li>Warmth is what's sold (61.5% drawn by the warm atmosphere) but 32.2% report poor interpersonal interaction once inside.</li>
-              <li>Newcomers describe acharya tone as cold and directive.</li>
-              <li>No single PT page that explains what AM is, who teaches, how to start, contacts.</li>
-              </ul>
-            </div>
-            <div class="ps-block solution">
-              <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
-              <ul>
-              <li><strong>Lead with the named outcome</strong> (sleep, calm, focus, relief) before the philosophy. Transcendence is what we offer after they walk in.</li>
-              <li><strong>AM Meditation Marathons (project #11).</strong> Russia version passed by 10,000+. 24/day join the bot, 80/day apply for the course.</li>
-              <li><strong>"What is Yoga" entry course in PT.</strong> Based on the Eight Limbs. Adult language. Positions AM inside the yogic tradition.</li>
-              <li><strong>One PT hub page that exists.</strong> What AM is, who teaches, how to start, contacts. Needs to exist before it needs to be beautiful.</li>
-              <li><strong>AM Social Media (project #02).</strong> Instagram verified. Expand to TikTok, Facebook, X, YouTube.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 6 · STAGE 3 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="9" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">🗺️ The Margi Journey · Stage 3 of 6</div>
-      <h2 class="headline">🚪 First Experience</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 80ch;">Shows up. Yoga class, kiirtan, retreat, workshop. Pain points and possible solutions from Dada Maetreya's research and the 16 global projects.</p>
-
-      <div class="stages-grid">
-        <div class="stage-card glass">
-          <div class="num">Stage 3</div>
-          <div class="ps-grid">
-            <div class="ps-block pain">
-              <span class="ps-label">Pain points</span>
-              <ul>
-              <li>Retreats pushed too early in the journey. Cold retreat attendees were the leakiest part of the old funnel.</li>
-              <li>Only people who already meditated or watched AM YouTube before the retreat actually stayed.</li>
-              <li>Long-time members report "hypocrisy" and "everyone tries to look better than they are". The strongest promise (warm community) becomes the biggest source of detractors.</li>
-              <li>No low-commitment first step between "saw an ad" and "show up to a retreat".</li>
-              </ul>
-            </div>
-            <div class="ps-block solution">
-              <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
-              <ul>
-              <li><strong>AM App (project #06).</strong> Pre-retreat learning app, newcomers learn meditation and philosophy before being invited to retreat. 3 specialists, MVP soon, 10,000 learners/month target.</li>
-              <li><strong>AM Online (project #09).</strong> Live online classes where acharyas teach philosophy and practices. In approval, launching soon.</li>
-              <li><strong>Paid cohort marathon</strong> with facilitator + homework. Materially higher conversion than self-paced version.</li>
-              <li><strong>Retreat moves to the end of the funnel</strong>, not the start. Germany shows the new shape works: 100+ per retreat once the order is right.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 7 · STAGE 4 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="10" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">🗺️ The Margi Journey · Stage 4 of 6</div>
-      <h2 class="headline">🔁 Returning</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 80ch;">Comes back. Familiarity builds. Community starts to feel theirs. Pain points and possible solutions from Dada Maetreya's research and the 16 global projects.</p>
-
-      <div class="stages-grid">
-        <div class="stage-card glass">
-          <div class="num">Stage 4</div>
-          <div class="ps-grid">
-            <div class="ps-block pain">
-              <span class="ps-label">Pain points</span>
-              <ul>
-              <li>Anxiety and fear are the #1 barrier to continued practice (140-person newcomer study).</li>
-              <li>Nobody follows up. No mentor, no group, no easy next step after the first experience.</li>
-              <li>Warmth was promised on entry. Theatre delivered inside. The 32% who report poor interpersonal interaction drop here.</li>
-              <li>Senior lay margis are invisible. People who work, have families, speak plain adult language are missing. Monastic-only model leaves this seat empty.</li>
-              <li>No defined first 90 days. No assigned mentor, no peer cohort, no small service tasks from week 1.</li>
-              </ul>
-            </div>
-            <div class="ps-block solution">
-              <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
-              <ul>
-              <li><strong>AM Mentorship (project #10).</strong> Small groups of ~10. ISKCON-inspired cell-division model (bhakti vriksha). 100+ people already, Nirmal Krishna leads. Compounds without paid staff.</li>
-              <li><strong>Post-initiation 90 days, designed.</strong> Assigned mentor + peer cohort + small defined service tasks from week 1.</li>
-              <li><strong>Paid cohort marathon</strong> with facilitator + homework. Builds first accountability loop.</li>
-              <li><strong>Family teachers visible.</strong> Hakimov / Torsunov model: married, working teachers who explain practice in adult language.</li>
-              <li><strong>AM CRM (project #14).</strong> Kommo handles ads today. Searching for a second platform for the broader margi community.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 8 · STAGE 5 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="11" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">🗺️ The Margi Journey · Stage 5 of 6</div>
-      <h2 class="headline">🌼 Initiation</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 80ch;">Receives a personal mantra. Begins a daily sadhana. Pain points and possible solutions from Dada Maetreya's research and the 16 global projects.</p>
-
-      <div class="stages-grid">
-        <div class="stage-card glass">
-          <div class="num">Stage 5</div>
-          <div class="ps-grid">
-            <div class="ps-block pain">
-              <span class="ps-label">Pain points</span>
-              <ul>
-              <li>&lt;20% of yearly course participants get initiated. 20-30 start, ~20 finish, only 2-5 initiate. The leak is here.</li>
-              <li>We don't bridge "course done" to "ready for mantra". No clear ladder.</li>
-              <li>AM has no equivalent to Sadhguru's Inner Engineering, the entry course that gives the whole picture in one programme.</li>
-              <li>"If AM disappeared, where would you go?" 39% choose Buddhism. 3x bigger than any other alternative. We are not positioning against the real competitor.</li>
-              </ul>
-            </div>
-            <div class="ps-block solution">
-              <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
-              <ul>
-              <li><strong>AM Flagman Product (project #07).</strong> Sadhguru Inner Engineering equivalent: meditation + yoga + philosophy + neohumanism in one entry course. Currently scripting, 2 people. This is the bridge.</li>
-              <li><strong>AM Academy (project #08).</strong> Peterson Academy-inspired platform: structured courses on Prout, neohumanism, Yama / Niyama, 16 points. For newcomers and margi. 3 people, looking for team leader.</li>
-              <li><strong>Position against Buddhism specifically.</strong> Our advantage: devotion + service + mission + collective structure. Make our edge visible.</li>
-              <li><strong>Lead with ethics.</strong> 91% of margis cite "moral reference points" as AM's strongest asset. In a cynical PT moment, this is a real differentiator.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== 9 · STAGE 6 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="12" data-bg="light">
-    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
-    <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
-
-    <div class="chrome-top">
-
-    </div>
-
-    <div class="content">
-      <div class="eyebrow">🗺️ The Margi Journey · Stage 6 of 6</div>
-      <h2 class="headline">🪷 Committed</h2>
-      <p class="lede" style="margin-top: 14px; max-width: 80ch;">Sustained practice. Involved in community. May teach or serve. Pain points and possible solutions from Dada Maetreya's research and the 16 global projects.</p>
-
-      <div class="stages-grid">
-        <div class="stage-card glass">
-          <div class="num">Stage 6</div>
-          <div class="ps-grid">
-            <div class="ps-block pain">
-              <span class="ps-label">Pain points</span>
-              <ul>
-              <li>Post-initiation period is silence. No curator. No clear next step. The funnel converts, retention leaks.</li>
-              <li>Practice fades without a group. Life clash, no peer cohort, no mentor, no defined service role.</li>
-              <li>No clear ladder from practitioner → volunteer → teacher locally.</li>
-              <li>CSI exposes the outer infrastructure gap: family life 37%, public image 34%, employment fit 36%. Strong on the inside, fragile on the outside.</li>
-              <li>Number of acharyas is shrinking globally. PT has no recruitment pipeline.</li>
-              </ul>
-            </div>
-            <div class="ps-block solution">
-              <span class="ps-label">Possible solutions · From Maetreya's 16 projects</span>
-              <ul>
-              <li><strong>Cell-division mentorship at scale.</strong> When one margi finishes a stage, they lead the next group. Proven in Russia. Compounds without paid staff.</li>
-              <li><strong>Become A Monk (project #13).</strong> Direct ads + recruitment retreats. 2 retreats done in Sweden, 1 candidate; 2 more planned; sisters' programme in June.</li>
-              <li><strong>AM News (project #12).</strong> Weekly newsletter + queryable map of every master unit, jagrti, office, project. 350 → 1,000 subs target. 5 people.</li>
-              <li><strong>AM Business (project #15).</strong> Self-sustainability and revenue infrastructure. $5k/month now, $20k target.</li>
-              <li><strong>AM Store (project #16).</strong> Worldwide shop, blocked on legal-entity country choice.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ==================== 5 · PAIN POINTS BRAINWRITING ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="13" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="8" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; top: -10vw;"></div>
 
@@ -3584,7 +3312,7 @@
   </section>
 
   <!-- ==================== 6 · PRESENT ALOUD ==================== -->
-  <section class="slide s-echo bg-light-cool" data-slide="14" data-bg="light">
+  <section class="slide s-echo bg-light-cool" data-slide="9" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -8vw;"></div>
 
@@ -3605,7 +3333,7 @@
   </section>
 
   <!-- ==================== 7 · CLUSTER + VOTE ==================== -->
-  <section class="slide s-echo has-grid bg-light bg-cluster" data-slide="15" data-bg="light">
+  <section class="slide s-echo has-grid bg-light bg-cluster" data-slide="10" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; top: -8vw;"></div>
 
@@ -3639,7 +3367,7 @@
   </section>
 
   <!-- ==================== 8 · IDEATE SOLUTIONS ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="16" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="11" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-sage" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
 
@@ -3673,7 +3401,7 @@
   </section>
 
   <!-- ==================== 9 · VOTE + TOP 3 ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="17" data-bg="light">
+  <section class="slide s-echo has-grid bg-light" data-slide="12" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 40vw; height: 40vw; left: -10vw; top: -10vw;"></div>
     <div class="orb orb-peach" style="width: 30vw; height: 30vw; right: -8vw; bottom: -10vw;"></div>
@@ -3720,7 +3448,7 @@
   </section>
 
   <!-- ==================== 10 · CLOSE (dark, manifesto) ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="18" data-bg="dark">
+  <section class="slide s-echo bg-dark" data-slide="13" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; right: -15vw; top: -20vw;"></div>
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
@@ -3746,7 +3474,7 @@
 
 <!-- =============== FOOTER NAV (always visible, attached to bottom) =============== -->
 <div class="footer">
-  <span id="counter">1 / 18</span>
+  <span id="counter">1 / 13</span>
   <div class="progress" id="progress"></div>
   <span class="nav-hint">← → para navegar</span>
 </div>
