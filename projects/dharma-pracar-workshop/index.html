@@ -2700,6 +2700,117 @@
     letter-spacing: -0.005em;
   }
 
+  /* Slide 4 mindset — 3 rules in one row */
+  .slide[data-slide="4"] .rules-grid-mindset {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+
+  /* Slide 5 mechanics — Post-it etiquette (compact) + Problem/Solution (wide) */
+  .slide[data-slide="5"] .rules-grid-mechanics {
+    grid-template-columns: minmax(280px, 1fr) 1.85fr;
+    align-items: stretch;
+    gap: 22px;
+  }
+  .slide[data-slide="5"] .rule {
+    padding: 28px 28px;
+  }
+  .slide[data-slide="5"] .rule h3 {
+    font-size: clamp(20px, 1.65vw, 26px);
+  }
+  .slide[data-slide="5"] .rule > p {
+    font-size: clamp(13.5px, 1vw, 15.5px);
+    line-height: 1.45;
+  }
+
+  /* Sticky color key inside post-it etiquette card */
+  .slide[data-slide="5"] .sticky-key {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .slide[data-slide="5"] .sticky-chip {
+    font-family: var(--fm);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .slide[data-slide="5"] .sticky-pink {
+    background: rgba(236, 92, 168, 0.14);
+    color: #b13d7e;
+    border-color: rgba(236, 92, 168, 0.32);
+  }
+  .slide[data-slide="5"] .sticky-yellow {
+    background: rgba(244, 196, 48, 0.18);
+    color: #8a6308;
+    border-color: rgba(244, 196, 48, 0.42);
+  }
+
+  /* Problem / Solution two-column example block */
+  .slide[data-slide="5"] .ps-examples {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .slide[data-slide="5"] .ps-col {
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.02);
+  }
+  .slide[data-slide="5"] .ps-col-problems {
+    background: rgba(226, 84, 42, 0.07);
+    border-left: 3px solid var(--orange);
+  }
+  .slide[data-slide="5"] .ps-col-solutions {
+    background: rgba(15, 105, 90, 0.07);
+    border-left: 3px solid #0F695A;
+  }
+  .slide[data-slide="5"] .ps-col-label {
+    display: block;
+    font-family: var(--fm);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .slide[data-slide="5"] .ps-col-problems .ps-col-label {
+    color: var(--orange);
+  }
+  .slide[data-slide="5"] .ps-col-solutions .ps-col-label {
+    color: #0F695A;
+  }
+  .slide[data-slide="5"] .ps-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .slide[data-slide="5"] .ps-col ul li {
+    position: relative;
+    padding-left: 12px;
+    font-family: var(--f);
+    font-size: clamp(12px, 0.9vw, 14px);
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .slide[data-slide="5"] .ps-col ul li::before {
+    content: "·";
+    position: absolute;
+    left: 3px;
+    top: -2px;
+    font-weight: 700;
+    opacity: 0.65;
+  }
+
   /* Slide 3 — 3 rules in one row instead of 2x2 */
   .slide[data-slide="4"] .rules-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -2764,109 +2875,109 @@
   }
 
   /* Scoped font sizing — journey slides 4–9 (1 stage per slide, wide card) */
-  .slide[data-slide="6"] .stage-card h3,
   .slide[data-slide="7"] .stage-card h3,
   .slide[data-slide="8"] .stage-card h3,
   .slide[data-slide="9"] .stage-card h3,
   .slide[data-slide="10"] .stage-card h3,
-  .slide[data-slide="11"] .stage-card h3 {
+  .slide[data-slide="11"] .stage-card h3,
+  .slide[data-slide="12"] .stage-card h3 {
     font-size: clamp(24px, 2vw, 34px);
     margin: 0 0 8px;
   }
-  .slide[data-slide="6"] .stage-card > p,
   .slide[data-slide="7"] .stage-card > p,
   .slide[data-slide="8"] .stage-card > p,
   .slide[data-slide="9"] .stage-card > p,
   .slide[data-slide="10"] .stage-card > p,
-  .slide[data-slide="11"] .stage-card > p {
+  .slide[data-slide="11"] .stage-card > p,
+  .slide[data-slide="12"] .stage-card > p {
     font-size: clamp(15px, 1.2vw, 19px);
     line-height: 1.45;
   }
-  .slide[data-slide="6"] .stage-card .ps-block,
   .slide[data-slide="7"] .stage-card .ps-block,
   .slide[data-slide="8"] .stage-card .ps-block,
   .slide[data-slide="9"] .stage-card .ps-block,
   .slide[data-slide="10"] .stage-card .ps-block,
-  .slide[data-slide="11"] .stage-card .ps-block {
+  .slide[data-slide="11"] .stage-card .ps-block,
+  .slide[data-slide="12"] .stage-card .ps-block {
     font-size: clamp(13px, 1vw, 16px);
     line-height: 1.5;
     padding: 14px 16px;
   }
-  .slide[data-slide="6"] .stage-card .ps-label,
   .slide[data-slide="7"] .stage-card .ps-label,
   .slide[data-slide="8"] .stage-card .ps-label,
   .slide[data-slide="9"] .stage-card .ps-label,
   .slide[data-slide="10"] .stage-card .ps-label,
-  .slide[data-slide="11"] .stage-card .ps-label {
+  .slide[data-slide="11"] .stage-card .ps-label,
+  .slide[data-slide="12"] .stage-card .ps-label {
     font-size: 11px;
     margin-bottom: 5px;
   }
-  .slide[data-slide="6"] .ps-block ul,
   .slide[data-slide="7"] .ps-block ul,
   .slide[data-slide="8"] .ps-block ul,
   .slide[data-slide="9"] .ps-block ul,
   .slide[data-slide="10"] .ps-block ul,
-  .slide[data-slide="11"] .ps-block ul {
+  .slide[data-slide="11"] .ps-block ul,
+  .slide[data-slide="12"] .ps-block ul {
     gap: 6px !important;
   }
 
   /* Brainwriting step cards (post-split, now slide 10) */
-  .slide[data-slide="12"] .step h3 {
+  .slide[data-slide="13"] .step h3 {
     font-size: clamp(20px, 1.7vw, 28px);
   }
-  .slide[data-slide="12"] .step p {
+  .slide[data-slide="13"] .step p {
     font-size: clamp(15px, 1.3vw, 21px);
     line-height: 1.55;
   }
 
   /* Journey slides — 1 stage card per slide, Pain + Solution side by side */
-  .slide[data-slide="6"] .stages-grid,
   .slide[data-slide="7"] .stages-grid,
   .slide[data-slide="8"] .stages-grid,
   .slide[data-slide="9"] .stages-grid,
   .slide[data-slide="10"] .stages-grid,
-  .slide[data-slide="11"] .stages-grid {
+  .slide[data-slide="11"] .stages-grid,
+  .slide[data-slide="12"] .stages-grid {
     grid-template-columns: 1fr;
     max-width: 1180px;
     margin-left: auto;
     margin-right: auto;
   }
-  .slide[data-slide="6"] .stage-card,
   .slide[data-slide="7"] .stage-card,
   .slide[data-slide="8"] .stage-card,
   .slide[data-slide="9"] .stage-card,
   .slide[data-slide="10"] .stage-card,
-  .slide[data-slide="11"] .stage-card {
+  .slide[data-slide="11"] .stage-card,
+  .slide[data-slide="12"] .stage-card {
     justify-content: flex-start;
     padding: 28px 32px 28px;
   }
   /* Pain + Solution blocks render in a 2-column grid inside the wide card */
-  .slide[data-slide="6"] .stage-card .ps-grid,
   .slide[data-slide="7"] .stage-card .ps-grid,
   .slide[data-slide="8"] .stage-card .ps-grid,
   .slide[data-slide="9"] .stage-card .ps-grid,
   .slide[data-slide="10"] .stage-card .ps-grid,
-  .slide[data-slide="11"] .stage-card .ps-grid {
+  .slide[data-slide="11"] .stage-card .ps-grid,
+  .slide[data-slide="12"] .stage-card .ps-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 14px;
   }
-  .slide[data-slide="6"] .stage-card .ps-grid .ps-block,
   .slide[data-slide="7"] .stage-card .ps-grid .ps-block,
   .slide[data-slide="8"] .stage-card .ps-grid .ps-block,
   .slide[data-slide="9"] .stage-card .ps-grid .ps-block,
   .slide[data-slide="10"] .stage-card .ps-grid .ps-block,
-  .slide[data-slide="11"] .stage-card .ps-grid .ps-block {
+  .slide[data-slide="11"] .stage-card .ps-grid .ps-block,
+  .slide[data-slide="12"] .stage-card .ps-grid .ps-block {
     margin-top: 0;
   }
   /* Bullet lists inside Pain / Solution blocks */
-  .slide[data-slide="6"] .ps-block ul,
   .slide[data-slide="7"] .ps-block ul,
   .slide[data-slide="8"] .ps-block ul,
   .slide[data-slide="9"] .ps-block ul,
   .slide[data-slide="10"] .ps-block ul,
-  .slide[data-slide="11"] .ps-block ul {
+  .slide[data-slide="11"] .ps-block ul,
+  .slide[data-slide="12"] .ps-block ul {
     list-style: none;
     margin: 6px 0 0;
     padding: 0;
@@ -2874,21 +2985,21 @@
     flex-direction: column;
     gap: 6px;
   }
-  .slide[data-slide="6"] .ps-block ul li,
   .slide[data-slide="7"] .ps-block ul li,
   .slide[data-slide="8"] .ps-block ul li,
   .slide[data-slide="9"] .ps-block ul li,
   .slide[data-slide="10"] .ps-block ul li,
-  .slide[data-slide="11"] .ps-block ul li {
+  .slide[data-slide="11"] .ps-block ul li,
+  .slide[data-slide="12"] .ps-block ul li {
     position: relative;
     padding-left: 14px;
   }
-  .slide[data-slide="6"] .ps-block ul li::before,
   .slide[data-slide="7"] .ps-block ul li::before,
   .slide[data-slide="8"] .ps-block ul li::before,
   .slide[data-slide="9"] .ps-block ul li::before,
   .slide[data-slide="10"] .ps-block ul li::before,
-  .slide[data-slide="11"] .ps-block ul li::before {
+  .slide[data-slide="11"] .ps-block ul li::before,
+  .slide[data-slide="12"] .ps-block ul li::before {
     content: "·";
     position: absolute;
     left: 4px;
@@ -3025,41 +3136,95 @@
     </div>
   </section>
 
-  <!-- ==================== 3 · GROUND RULES (4 cards, 2x2) ==================== -->
+  <!-- ==================== 4 · GROUND RULES · MINDSET ==================== -->
   <section class="slide s-echo has-grid bg-light bg-rules" data-slide="4" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; top: -10vw;"></div>
     <div class="orb orb-sage"  style="width: 28vw; height: 28vw; left: -8vw; bottom: -10vw;"></div>
 
     <div class="chrome-top">
-      
+
     </div>
 
     <div class="content">
-      <div class="eyebrow">🌿 Ground rules</div>
-      <h2 class="headline">Three rules to keep the <span class="acc">room open</span>.</h2>
-      <div class="rules-grid">
+      <div class="eyebrow">🌿 Ground rules · Part 1 of 2 · Mindset</div>
+      <h2 class="headline">Empathy first. <span class="acc">Time and specifics</span> next.</h2>
+      <div class="rules-grid rules-grid-mindset">
         <div class="rule glass">
           <div class="num">01</div>
+          <h3>💞 An exercise in empathy.</h3>
+          <p>This is for our audience. Prospective and current margis, spiritualists, yoga and meditation practitioners wanting to go beyond the merely physical and connect to something higher. Step out of our individual duties as responsible for this or that area. Focus on the value we provide, the problems we solve, and how we get to people.</p>
+        </div>
+        <div class="rule glass">
+          <div class="num">02</div>
           <h3>⏱️ Respect the timebox.</h3>
           <p>Each block has a clock. When it ends, we move on, even if it hurts. Depth comes from the next block, not from this one.</p>
         </div>
         <div class="rule glass">
-          <div class="num">02</div>
-          <h3>💡 No idea is too small.</h3>
-          <p>Notice the obvious. Say the thing nobody is saying.</p>
-        </div>
-        <div class="rule glass">
           <div class="num">03</div>
-          <h3>🧘 Beginner's mindset.</h3>
-          <p>Do not judge ideas, yours or anyone else's. Hold them lightly. Curiosity first, filtering later.</p>
+          <h3>🔍 Be as specific as possible.</h3>
+          <p>Give enough detail so the idea is practical and everyone in the room understands exactly what you mean. Vague stickies do not survive the wall.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5 · GROUND RULES · MECHANICS ==================== -->
+  <section class="slide s-echo has-grid bg-light bg-rules" data-slide="5" data-bg="light">
+    <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
+    <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
+    <div class="orb orb-cool" style="width: 26vw; height: 26vw; right: -8vw; bottom: -10vw;"></div>
+
+    <div class="chrome-top">
+
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">🌿 Ground rules · Part 2 of 2 · Mechanics</div>
+      <h2 class="headline">How we work the <span class="acc">wall</span>.</h2>
+      <div class="rules-grid rules-grid-mechanics">
+        <div class="rule glass">
+          <div class="num">04</div>
+          <h3>📝 Post-it etiquette.</h3>
+          <p>One idea per post-it. Legible handwriting, ALL CAPS if possible. Pink stickies on the left for problems. Yellow stickies on the right for solutions.</p>
+          <div class="sticky-key">
+            <span class="sticky-chip sticky-pink">🟪 Pink · left · problems</span>
+            <span class="sticky-chip sticky-yellow">🟨 Yellow · right · solutions</span>
+          </div>
+        </div>
+        <div class="rule glass rule-wide">
+          <div class="num">05</div>
+          <h3>🩹 Problems vs ✨ Solutions.</h3>
+          <p>First we diagnose pain points: issues to solve, blockers, anything that prevents our audience from joining our flow. Then we ideate the things we can do to provide them value.</p>
+          <div class="ps-examples">
+            <div class="ps-col ps-col-problems">
+              <span class="ps-col-label">🩹 Problems · examples</span>
+              <ul>
+                <li>They do not know we exist.</li>
+                <li>They do not feel inspired by what we say.</li>
+                <li>They have no satsang nearby.</li>
+                <li>They do not like vegetarian food.</li>
+                <li>They prefer partying on weekends.</li>
+              </ul>
+            </div>
+            <div class="ps-col ps-col-solutions">
+              <span class="ps-col-label">✨ Solutions · examples</span>
+              <ul>
+                <li>Free online content.</li>
+                <li>Svadhyaya study groups.</li>
+                <li>Hikes, cultural nights, cultural exchanges.</li>
+                <li>Erasmus+ activities.</li>
+                <li>Books, podcasts, TikTok reels, interviews with other dadas.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== 4 · JOURNEY OVERVIEW (6 stages) ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="5" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="6" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 36vw; height: 36vw; right: -10vw; top: -10vw;"></div>
 
@@ -3114,7 +3279,7 @@
   </section>
 
   <!-- ==================== 5 · STAGE 1 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="6" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="7" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
 
@@ -3156,7 +3321,7 @@
   </section>
 
   <!-- ==================== 5 · STAGE 2 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="7" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="8" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
 
@@ -3199,7 +3364,7 @@
   </section>
 
   <!-- ==================== 6 · STAGE 3 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="8" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="9" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
 
@@ -3241,7 +3406,7 @@
   </section>
 
   <!-- ==================== 7 · STAGE 4 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="9" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="10" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
 
@@ -3285,7 +3450,7 @@
   </section>
 
   <!-- ==================== 8 · STAGE 5 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="10" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="11" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; right: -12vw; top: -10vw;"></div>
 
@@ -3327,7 +3492,7 @@
   </section>
 
   <!-- ==================== 9 · STAGE 6 ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="11" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet bg-journey" data-slide="12" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -10vw;"></div>
 
@@ -3371,7 +3536,7 @@
   </section>
 
   <!-- ==================== 5 · PAIN POINTS BRAINWRITING ==================== -->
-  <section class="slide s-echo has-grid bg-light-cool" data-slide="12" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-cool" data-slide="13" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-cool" style="width: 35vw; height: 35vw; left: -10vw; top: -10vw;"></div>
 
@@ -3405,7 +3570,7 @@
   </section>
 
   <!-- ==================== 6 · PRESENT ALOUD ==================== -->
-  <section class="slide s-echo bg-light-cool" data-slide="13" data-bg="light">
+  <section class="slide s-echo bg-light-cool" data-slide="14" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 38vw; height: 38vw; left: -12vw; top: -8vw;"></div>
 
@@ -3426,7 +3591,7 @@
   </section>
 
   <!-- ==================== 7 · CLUSTER + VOTE ==================== -->
-  <section class="slide s-echo has-grid bg-light bg-cluster" data-slide="14" data-bg="light">
+  <section class="slide s-echo has-grid bg-light bg-cluster" data-slide="15" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-peach" style="width: 40vw; height: 40vw; right: -12vw; top: -8vw;"></div>
 
@@ -3460,7 +3625,7 @@
   </section>
 
   <!-- ==================== 8 · IDEATE SOLUTIONS ==================== -->
-  <section class="slide s-echo has-grid bg-light-quiet" data-slide="15" data-bg="light">
+  <section class="slide s-echo has-grid bg-light-quiet" data-slide="16" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-sage" style="width: 35vw; height: 35vw; right: -10vw; top: -10vw;"></div>
 
@@ -3494,7 +3659,7 @@
   </section>
 
   <!-- ==================== 9 · VOTE + TOP 3 ==================== -->
-  <section class="slide s-echo has-grid bg-light" data-slide="16" data-bg="light">
+  <section class="slide s-echo has-grid bg-light" data-slide="17" data-bg="light">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 40vw; height: 40vw; left: -10vw; top: -10vw;"></div>
     <div class="orb orb-peach" style="width: 30vw; height: 30vw; right: -8vw; bottom: -10vw;"></div>
@@ -3541,7 +3706,7 @@
   </section>
 
   <!-- ==================== 10 · CLOSE (dark, manifesto) ==================== -->
-  <section class="slide s-echo bg-dark" data-slide="17" data-bg="dark">
+  <section class="slide s-echo bg-dark" data-slide="18" data-bg="dark">
     <img class="echo-lotus" src="media/lotus.png" alt="" aria-hidden="true">
     <div class="orb orb-warm" style="width: 60vw; height: 60vw; right: -15vw; top: -20vw;"></div>
     <div class="orb orb-peach" style="width: 35vw; height: 35vw; left: -10vw; bottom: -12vw;"></div>
@@ -3567,7 +3732,7 @@
 
 <!-- =============== FOOTER NAV (always visible, attached to bottom) =============== -->
 <div class="footer">
-  <span id="counter">1 / 17</span>
+  <span id="counter">1 / 18</span>
   <div class="progress" id="progress"></div>
   <span class="nav-hint">← → para navegar</span>
 </div>
