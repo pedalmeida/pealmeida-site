@@ -222,7 +222,8 @@ function renderAdsResults() {
 
   const rows = ads.map((a) => {
     const dur = a.duration_days != null ? `${a.duration_days}d` : "—";
-    const dates = `${a.started_at || "?"} → ${a.ended_at || (a.is_active ? "active" : "?")}`;
+    const endLabel = a.ended_at ? fmtDate(a.ended_at) : (a.is_active ? "active" : "?");
+    const dates = `${fmtDate(a.started_at)} → ${endLabel}`;
     const hookBadge = a.hook_angle ? `<span class="badge hook ${a.hook_angle}">${a.hook_angle}</span>` : "";
     const tempBadge = a.traffic_temperature ? `<span class="badge hook">${a.traffic_temperature}</span>` : "";
     const evergreen = a.is_evergreen_winner ? `<span class="badge evergreen">★ evergreen</span>` : "";
@@ -233,8 +234,17 @@ function renderAdsResults() {
       `<a href="${a.ad_library_url}" target="_blank" rel="noopener" class="col-library-id">${a.library_id}</a>` :
       `<span class="col-library-id">${a.library_id}</span>`;
 
+    // Thumbnail cell. asset_path may be null for the one ad with no CDN URL.
+    // Open the full ad on the Meta Ad Library when clicked.
+    const thumbCell = a.asset_path
+      ? `<a href="${a.ad_library_url || '#'}" target="_blank" rel="noopener" title="Open in Meta Ad Library">
+           <img src="${a.asset_path}" alt="" class="ad-thumb ${a.asset_type === 'creative-thumb' ? 'is-fallback' : ''}" loading="lazy" />
+         </a>`
+      : `<div class="ad-thumb no-asset" title="No image captured"></div>`;
+
     return `
       <tr>
+        <td class="col-thumb">${thumbCell}</td>
         <td class="col-duration">${dur}${variants}</td>
         <td>${statusDot}<a href="#/c/${a.competitor_id}">${escapeHtml(competitorName)}</a></td>
         <td>${hookBadge}${tempBadge}${evergreen}</td>
@@ -253,6 +263,7 @@ function renderAdsResults() {
     <table class="ads-table">
       <thead>
         <tr>
+          <th></th>
           <th data-sort="duration_days" class="${state.sort.field === "duration_days" ? "sorted " + state.sort.dir : ""}">Run</th>
           <th data-sort="competitor_id" class="${state.sort.field === "competitor_id" ? "sorted " + state.sort.dir : ""}">Competitor</th>
           <th>Hook</th>
@@ -467,6 +478,22 @@ function renderPatterns() {
 }
 
 // ---- Utils ----
+// Format an ISO date (or ISO timestamp from Postgres DATE casting) as
+// "15 Jun 2025". Returns "?" on bad input. Day-Month-Year because we
+// have mixed PT + EN sources and PT users expect DMY.
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function fmtDate(d) {
+  if (!d) return "?";
+  // Strip any time portion — DATE columns come back as ISO timestamps
+  // from @neondatabase/serverless, but the source value is just a date.
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(d);
+  if (!m) return String(d);
+  const year = m[1];
+  const month = MONTHS[parseInt(m[2], 10) - 1];
+  const day = parseInt(m[3], 10);
+  return `${day} ${month} ${year}`;
+}
+
 function escapeHtml(s) {
   if (s == null) return "";
   return String(s)

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T17:35:09.745Z",
+  "generated_at": "2026-05-18T18:06:01.566Z",
   "counts": {
     "competitors": 8,
     "ads": 126
@@ -763,7 +763,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=926456623430937",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/art-of-living/926456623430937.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "art-of-living-957958280006949",
@@ -786,7 +788,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/600367803_911771347858479_1132676628080693759_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9NnGQhuZ8xQQ7kNvwEfHQfj&_nc_oc=Adp3Bi-ybB627rnTsgzbZgfSHaQ34JXMcRhNS4XsaX_olW8C6ZzfWQn7FXXvceTjjJc&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=mIAGfVVLvXJm3o8uk3Xj1A&_nc_ss=7b289&oh=00_Af4QPE1gdzWFEpmcta-_4mpxTPMPsHzZoet-uaIMw0VELg&oe=6A10F66D",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=957958280006949",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/art-of-living/957958280006949.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "art-of-living-2676412222742901",
@@ -809,7 +813,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/612587407_1628954398119370_8863564059955447686_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=_QlfLOjWh4kQ7kNvwENmXBn&_nc_oc=AdrdUAVeOcrN0JRglR1NdqMOMYSQTBFd0gTy92DnyHqEQmSc5kGV7dd4Nq6tY1Lm7DU&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=mIAGfVVLvXJm3o8uk3Xj1A&_nc_ss=7b289&oh=00_Af4XY-9mb5qWkp2ZoxrAhX333xHkIKp4cv8fTL2FXKfNHA&oe=6A10FA3D",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2676412222742901",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/art-of-living/2676412222742901.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "art-of-living-1139629341576471",
@@ -832,7 +838,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/605339533_1336195804972291_2380753815974148685_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=W8SpIvVm0e0Q7kNvwEWVe8o&_nc_oc=AdpIRELllGgkVGYkBZeF6gJbP1CV0vGo6I2zvIOiu9gz94afaVlR6TPOHJ5qH8RpUUc&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=mIAGfVVLvXJm3o8uk3Xj1A&_nc_ss=7b289&oh=00_Af4mNYnnSIQR7VLj-WFXr4lU6xgVyURBmZwdeVBqe8_now&oe=6A10F96C",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1139629341576471",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/art-of-living/1139629341576471.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "art-of-living-3401806786641314",
@@ -855,7 +863,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/603857580_1590022308861952_2550430119321666625_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=SrwQjJ4zv68Q7kNvwE68LNq&_nc_oc=Adq_VrDugxszo-dKDjg2ck1kti-GVtziyZkQlCYV2EXgf07Tuv8tI62z2tu8RFlhUqU&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=mIAGfVVLvXJm3o8uk3Xj1A&_nc_ss=7b289&oh=00_Af4KGOm3vz_BFdrbEBtuKHIFJtmy5TmWPHRDUvn2t5xJPQ&oe=6A10F037",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3401806786641314",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/art-of-living/3401806786641314.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1229799108876533",
@@ -878,7 +888,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/508453060_1249850790097982_2980116618340640166_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=N1PDbaGdq8IQ7kNvwEcaxBw&_nc_oc=AdoYpyFE_q5Hc7Pn8plQQ2VN610IMB9wUEBlF68VaR9QqrNVih29jBYKOZ53PrwCgYo&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af43Z751iFRV5G9N43WOTo6pxnw8M8b3jpyn78ArlgzWMA&oe=6A1100DC",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1229799108876533",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1229799108876533.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-2223943874787163",
@@ -901,7 +913,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2223943874787163",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/2223943874787163.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-3105134006328162",
@@ -924,7 +938,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/509427690_724203543642098_2995104525061535304_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tgP4xtMtsC0Q7kNvwF02-fw&_nc_oc=AdruLVApxrsGkwsn95dKETwvHYHUhOIinUo3ffBOKAzpRq-Bolmit3AdMQPA-Jj7Izw&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af4xuUogXPo7xqh2TrKI41zT-lImwJL7erAg4xIyNlLMqA&oe=6A10F2E9",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3105134006328162",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/3105134006328162.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-3079969578827186",
@@ -947,7 +963,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/516397212_719258614055543_1981207285731645071_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=D1ViWAlXVYMQ7kNvwHuOgL4&_nc_oc=AdpllakKLNCL3viDOvDvGWDWHmYSePn8PueMsd82Dp-7m842uAAIXmxi9gHK77QsgqE&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af41Ttks0O2rI6My2-LDhXkMm0f9dD-36kw5zg2X0pagAw&oe=6A10E48D",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3079969578827186",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/3079969578827186.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-2461685650894296",
@@ -970,7 +988,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/511192242_710658218794248_4462118755488219177_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9bEJEwkCX10Q7kNvwHaK1E1&_nc_oc=AdrD1xzqTMAxEf7MvL4VIqOYIe0SG1r6Y5xBxHGothOdBnveMtJ_0QGZhhHESTag0Go&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af5Llk92tjseshnKB7LKVz9TJuTpre_WXj_tEAoJKnx2Bw&oe=6A10E0C8",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2461685650894296",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/2461685650894296.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1529397251358173",
@@ -993,7 +1013,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1529397251358173",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1529397251358173.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-1523081101987923",
@@ -1016,7 +1038,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/511192242_710658218794248_4462118755488219177_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9bEJEwkCX10Q7kNvwHaK1E1&_nc_oc=AdrD1xzqTMAxEf7MvL4VIqOYIe0SG1r6Y5xBxHGothOdBnveMtJ_0QGZhhHESTag0Go&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af5Llk92tjseshnKB7LKVz9TJuTpre_WXj_tEAoJKnx2Bw&oe=6A10E0C8",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1523081101987923",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1523081101987923.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1699273630709092",
@@ -1039,7 +1063,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1699273630709092",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1699273630709092.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-681473208243132",
@@ -1062,7 +1088,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=681473208243132",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/681473208243132.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-1458102378953208",
@@ -1085,7 +1113,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/690555333_1510835764156533_3882954978143802860_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=gcrAGeggNlkQ7kNvwGkwmOZ&_nc_oc=AdooMX4doUsZXUiiYCqpWnm2YbgeAm_dMw3fJGQ53ykpz0NcJxomkmSO024-Na8a6es&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=aeqZA3EvrXp4zSYigAtLXA&_nc_ss=7b289&oh=00_Af5gfwrL79rrxgjGTi3ct8RINn43Bg8xMP5tfvCQX_4N_w&oe=6A110895",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1458102378953208",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1458102378953208.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1751401335563005",
@@ -1128,7 +1158,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/568472830_1520183289113115_1832561909456373612_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=GDwK8Z4DlRIQ7kNvwG_wuky&_nc_oc=AdqVt_M_akJkzRDPCJEDD2zgk-Ae8y7TSp22U43bR0A37I4l0ZxGUVF88dyRAUdpUB4&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af4K5NfwQGhKDtchJOjniwH9brTeS2CYB_5wN8eaqLrfzg&oe=6A10FABC",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1751401335563005",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1751401335563005.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1511567693373697",
@@ -1163,7 +1195,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/561986849_1493825998607602_477750221522899888_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=2dwQ0U1yR5QQ7kNvwEVp_LB&_nc_oc=Adrv8DBVCuOwDIZEp0TKbXOYV14cxinOt8_YAmEfJ9W_LyM_3z7Ww3xBiTU1DYlktO4&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af7XZZcRZoAK5tINd-MTlCmkaF9HJ7thV_VJQ39qnHPMsw&oe=6A1103B1",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1511567693373697",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1511567693373697.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1913961302482813",
@@ -1206,7 +1240,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/562046229_1768618453823999_2541612198559204500_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=hGXzH5YzgCgQ7kNvwHRGjfO&_nc_oc=AdqP66f1QPnLAOGpsLeyVK7pxP6HGliqhJPryxUvrL3jHMUxeEW4EZ6ujaiWwXZVnCw&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af5SwU669xfx9xwylLhri8SEEo7A67PKqTOpWMKC06Odaw&oe=6A110CA3",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1913961302482813",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1913961302482813.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-709318752155386",
@@ -1229,7 +1265,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=709318752155386",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/709318752155386.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-701310262399252",
@@ -1273,7 +1311,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/565795881_1522601595600372_544952075428740523_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tD0xzqPaurIQ7kNvwEBWlLL&_nc_oc=AdquELANUBBxJxEVTulfF4qMoV8L2pMOQcFQXPuSmSBe3JBEYZ8DbrJbHJ-zvjiAa-g&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af6oJCYzsh2qqUeP6fAxvdtb5zuJeCuKFRCfXsut31EfxQ&oe=6A11150E",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=701310262399252",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/701310262399252.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1716909265699784",
@@ -1311,7 +1351,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1716909265699784",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1716909265699784.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-2046358099101504",
@@ -1349,7 +1391,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/574445165_24623288004033342_8748309479197467550_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=8bjKaDyEwtkQ7kNvwF1vPtf&_nc_oc=AdpQ9neOr6qcmSvBjIXHYrQ7ujkGq7u_FZwySRey4jiOXdKWbdFw3H0V6TVmB4B6Tcw&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af6b5f30nWj86_0a7CEKrkCXrQqkZiWbJVvnCCZWGdiCWg&oe=6A1103F0",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2046358099101504",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/2046358099101504.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-2451124695293065",
@@ -1372,7 +1416,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/699256686_1903368917717635_7608750146374081418_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=s_YrEwlF0LgQ7kNvwHQf3km&_nc_oc=Adrc2y1AJXnH2fuQQW_32vr31WQFjuR--xM0pjUzuHrwqjHqwMpEnNwltil8CjRRryg&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=aeqZA3EvrXp4zSYigAtLXA&_nc_ss=7b289&oh=00_Af64ZT3UEV4jEPFY86XhDW2VJenH4t9F_6_AU63HlR6JDg&oe=6A10F9CA",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2451124695293065",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/2451124695293065.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-888881070920629",
@@ -1395,7 +1441,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/677191712_1248885243894255_3236581595056360161_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=SpJ4of21SUUQ7kNvwE1hqr6&_nc_oc=Adoq58eZkYczntQfbDJSoxSKAGzK4JwBPtidswgNzzP-Ve_mwp9wOAmfT4ZGEX6LsXk&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=aeqZA3EvrXp4zSYigAtLXA&_nc_ss=7b289&oh=00_Af45MJVzid15sn7TqZrwG9S8J8JVlFZNXh_3PZyPYi2epg&oe=6A10E050",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=888881070920629",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/888881070920629.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1020345227160412",
@@ -1418,7 +1466,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/698493415_1292727859636191_58401948492314201_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=t0e7KS6zBW8Q7kNvwGK2pky&_nc_oc=Adofr7otNwWkMkLmS5bLSZkcO2Azc_-Kvvs56BuZD4lXz7N0RdD_GtKYhI-YT64qSBM&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=aeqZA3EvrXp4zSYigAtLXA&_nc_ss=7b289&oh=00_Af6XodhfRFkR5vQ5mkokEtVOZ7Ymc2z541tcQDFQr1Pkbw&oe=6A111109",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1020345227160412",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1020345227160412.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1611140663304528",
@@ -1441,7 +1491,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/699559095_1718348559319370_4747164756434796243_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=lobMO111GesQ7kNvwFj0XA8&_nc_oc=AdqT38-2tBk0O265DjtPTV5VozCoVwySib50lsiAKzNTTPVSaozTHJADMizaI9zpmfo&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=aeqZA3EvrXp4zSYigAtLXA&_nc_ss=7b289&oh=00_Af51peKYfrd6T7CDHyS5a5PZ48SqdvLJEwPgdvSp2VqQ9g&oe=6A10FA5D",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1611140663304528",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1611140663304528.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1448311547333190",
@@ -1464,7 +1516,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1448311547333190",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1448311547333190.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-1005606365323606",
@@ -1487,7 +1541,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1005606365323606",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1005606365323606.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-586395694248385",
@@ -1510,7 +1566,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=586395694248385",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/586395694248385.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-1184389293460431",
@@ -1533,7 +1591,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1184389293460431",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1184389293460431.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-23957272693896303",
@@ -1556,7 +1616,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/506731244_1859538417942298_4906736757439455836_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=gMVSKWapf0UQ7kNvwG055yB&_nc_oc=Ado3htH4DKqOPDbLMIKQAyQFeVisuz7kNWpZyrphDvZaabWq2fSI1bhznd7PMZ3ocx8&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af7OuFQRWxfzQNSrWpSfnK0rEHiDNxu42HTAYxjVxGjSkQ&oe=6A10E181",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=23957272693896303",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/23957272693896303.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1510818336953605",
@@ -1579,7 +1641,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/515441947_23952649231067887_8273626369095940901_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=8v4SWy8nIssQ7kNvwFS3vlc&_nc_oc=Adp7M2XIzN3y2TUe6x6ckrmDsQpUECopCGxeGbb1ktmmVD1n-4CH3txM3Scw9muGOaE&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af6lUInMiHz5PKSuia6Rox6KRojKfZyRBax2CT--5RKD3w&oe=6A10F755",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1510818336953605",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1510818336953605.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-2287260478369157",
@@ -1623,7 +1687,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/558711749_1318863529723928_8552475901130487129_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ghAOrdRDULIQ7kNvwFc_Gyw&_nc_oc=AdpQPalIa1aqrQlViB2wQHQfXgnw-2nOmd9cJzd4PdPPxsDdI_vQCkwRceLFP-xJZ7s&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af6B7bHh5PYBcFOA0BRNjG24KFixxKaD5OMxLarSEw-THw&oe=6A10E636",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2287260478369157",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/2287260478369157.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-3570955289879385",
@@ -1646,7 +1712,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/515094672_1419007292667405_2454247574611907875_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zNUtM_NjqlUQ7kNvwEax_QY&_nc_oc=AdqvKsynob2Y4MTY0dVko88vdo4S3aWKwa7tj7NExk88xPaMlv56JdZTW9DMMvxgT7M&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af59fkPo4ht2hqceBlVhpEQ4LU8gz5vqHeZgM9he9r5EVg&oe=6A111511",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3570955289879385",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/3570955289879385.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-3952107245085745",
@@ -1669,7 +1737,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/699375874_966225892816865_5320166360988594200_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=QQSuIMurj3QQ7kNvwGO5VJ2&_nc_oc=Adqx5Ruty9yPe4PsyuudawW__u42cdDxDRS0XiPyabbooRxINqlicdSQ3fQ0lWaZF9M&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=aeqZA3EvrXp4zSYigAtLXA&_nc_ss=7b289&oh=00_Af4IWoIKHoJMdMKDx56Tkl8u3JtdU549QmLd-xzNUlwmWA&oe=6A10FE47",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3952107245085745",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/3952107245085745.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1672807283986063",
@@ -1692,7 +1762,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/700890616_1018901240577220_5391112896724932871_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=MsO9xgss8QoQ7kNvwEQjPYi&_nc_oc=AdqOa5tQATGwdWtyAJNeJx07u-OMk41bNhr4GL4hCrjq7ABgHq7DyIr_CAwGElj3Uqw&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=aeqZA3EvrXp4zSYigAtLXA&_nc_ss=7b289&oh=00_Af6fFBceG7_h__hwmPJ4nvXgYr5lW7WpmLX_KImSQodnTw&oe=6A10E156",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1672807283986063",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1672807283986063.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "bhakti-marga-1055354393488659",
@@ -1715,7 +1787,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1055354393488659",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1055354393488659.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-984596863970738",
@@ -1738,7 +1812,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=984596863970738",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/984596863970738.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-1745281243514416",
@@ -1761,7 +1837,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1745281243514416",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/1745281243514416.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "bhakti-marga-971337505542810",
@@ -1784,7 +1862,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=971337505542810",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/bhakti-marga/971337505542810.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "brahma-kumaris-pt-627841493697873",
@@ -1807,7 +1887,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/531571310_1470993704228602_5007097814467509008_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=CnIezfDkDnoQ7kNvwEu_zFh&_nc_oc=AdqLXKmxHMPfkQoRb7LF5oVebAY06Avujy5nA0EHBvApQMxno6K0F0LmEfiIt6OqNKw&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af7AO_V81Yaknz5vVoU7JNF3HrU-ImgYgNny1QiMFl-fog&oe=6A10FED8",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=627841493697873",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/brahma-kumaris-pt/627841493697873.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "brahma-kumaris-pt-1328435679017442",
@@ -1830,7 +1912,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/574524215_2215222532291456_5982180055690047696_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=qpr4y1NtM-4Q7kNvwFNWKr4&_nc_oc=AdqN-BPkpGiz7aB3SRpbK0HDrnXJ7zynbW2aDxsYeRbI4gIt93jou_I3ZBMTHrNp9s4&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af534jSK2VN8hbXRHWpD7ZPiafqdxyn_M_CrmFzZDD--vA&oe=6A1102B2",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1328435679017442",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/brahma-kumaris-pt/1328435679017442.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "brahma-kumaris-pt-4058410531076863",
@@ -1853,7 +1937,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/515497932_1881834189326942_1152596640088270677_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=oTEFyuxTUKQQ7kNvwFTkRn3&_nc_oc=AdpgBrAAxg1enVJmllKFnPA3z2R9k7ITesB02J9qJsXT0ZBXd7TGYXfaNvUXqFc3EVg&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af4fc1YnVn5OSfz2eWkLy4laTp_95LA7o-bw4_awCTg9ZQ&oe=6A110529",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=4058410531076863",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/brahma-kumaris-pt/4058410531076863.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "brahma-kumaris-pt-1267413104727091",
@@ -1876,7 +1962,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/501326549_1396298601824846_3431640784339217765_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=CU2Yhxi6IycQ7kNvwF64B_A&_nc_oc=Adr3mVePo_el1NFkBuswd2dQwZbHkakJK2m0j3Ktx4pMG7TEjyW3bErGL62a0YRWEA4&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af4t7ilgZMy6RoteAYNUsYUK9RyFKOJRIHLXWHFqnneyJQ&oe=6A11081F",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1267413104727091",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/brahma-kumaris-pt/1267413104727091.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "brahma-kumaris-pt-1406827327761850",
@@ -1899,7 +1987,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/600152148_3749504995343250_4504235604016348693_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=FM-JPFXTJbkQ7kNvwEQadlJ&_nc_oc=AdprSF4iu5uPYivGMLikMYS0CfcG7yol94xtJbJ8gSlo1jM7lWaUlSBGlwit6pOFGvE&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af7w5fODGGzit7CYtHgroitOVPQqg_NJ_XmN2M__cbQxvQ&oe=6A1112D8",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1406827327761850",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/brahma-kumaris-pt/1406827327761850.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "brahma-kumaris-pt-1449205623621866",
@@ -1928,7 +2018,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/699515280_826158773511187_4712316972191120793_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Mhji9clqNswQ7kNvwFaDXkK&_nc_oc=Adqx2cTGU9ANbqOmWiczc0ZcUupY7qURa8Rk13Fnd92DdKDICnuakA1gPfNZXxHTtIM&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af6ISu0etQMGDavA6THZVcN9iItR_ie23lsxkgYvy29ACg&oe=6A11059E",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1449205623621866",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/brahma-kumaris-pt/1449205623621866.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "brahma-kumaris-pt-730711580002288",
@@ -1951,7 +2043,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/598619068_826810423682423_2241458113648080376_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=WQlGLHhUvMsQ7kNvwEXxf3u&_nc_oc=AdpZqj-vuM7NioerO21vGJoBdxD50CX9WCiNedM5OmX3JMFMllrinmwFXFRzVaQqxVA&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af4ZB9LK2-C2RkADbvPHJdqdLXzniOoq0mjj6H97zzZApQ&oe=6A10F619",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=730711580002288",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/brahma-kumaris-pt/730711580002288.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-1747124409440213",
@@ -1974,7 +2068,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1747124409440213",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/1747124409440213.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-1413040833796444",
@@ -2003,7 +2099,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1413040833796444",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/1413040833796444.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-945494444480137",
@@ -2026,7 +2124,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=945494444480137",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/945494444480137.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-871276725901929",
@@ -2049,7 +2149,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/475977581_1045015284128318_3869215156817689344_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=gcoXDmPxDfgQ7kNvwHKvq1y&_nc_oc=AdpC5Bnp-vhXTDyylo3_3L9mGFdn3j9UJ9nMslJyLWqrX5en-JGFJS9-gLc2R-NlLeo&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af5Om6jvQZ16s-h8e15laTT41UvUVz_lRAuFGY48XWChUQ&oe=6A10F649",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=871276725901929",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/871276725901929.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-2699525637091436",
@@ -2072,7 +2174,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2699525637091436",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/2699525637091436.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-903859105773766",
@@ -2095,7 +2199,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=903859105773766",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/903859105773766.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-933896832869519",
@@ -2118,7 +2224,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/646052602_764318116409664_8003882164730583069_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LEhIy8KDglQQ7kNvwHbE7iG&_nc_oc=Adqo_uyRh94NxslZi_eiZL0ga_pnvEkeNa-nR1-WVnI8-aKJWEaELBVX2Tus9ruwBJc&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af4gzQpPkypS_uSr0R5c63Xez2E_wOzTyoOelfnwcm7WvQ&oe=6A110EE9",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=933896832869519",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/933896832869519.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-857118234046028",
@@ -2147,7 +2255,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=857118234046028",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/857118234046028.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-1462163672266914",
@@ -2170,7 +2280,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/648931060_1439389110899004_7552614170483080425_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=H2rKySPxdH0Q7kNvwHyx-Ww&_nc_oc=Adr5_3RBN7P5haUoSxG7GfvTgX0cGH8aWxgJHoYeT08zq3_9qJVlSjHwODIbzt4TOe4&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af4DOSoRLl2V1VRgvcoQ2Ayg0Yft1ASmy6E2_DpX9NJ4IA&oe=6A10FD44",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1462163672266914",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/1462163672266914.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-2111900652919249",
@@ -2193,7 +2305,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/646153149_1424217932579052_1577972863847943703_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Y0k8RL-W3W0Q7kNvwHIUqXI&_nc_oc=AdqXRUJikghWWXitKdhZFDpWmfuCeBcKw5beznXy9tJcPF2YuzpwMM57rW9TGSgLpuQ&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af72rE6Sr9zQyRFmiEpNnKLtMsG7w_3j3rkrx6PI6uw8Bg&oe=6A110676",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2111900652919249",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/2111900652919249.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-1374859308008019",
@@ -2216,7 +2330,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/645879808_2717835871948592_6789406659274679490_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=8uiizk6UCXcQ7kNvwFtaEx3&_nc_oc=Adoq5yU7Ey6X9ukbI7jGOjSW2hmQrKvJefLU9qbeUNVSz6rg6-uvXBga-K-BL32EVJE&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af5XhdG0JgJzhoDX6ZG5LsPGN8FNFTZkYUAJtJPl0HKtWg&oe=6A110744",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1374859308008019",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/1374859308008019.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-1628367798440900",
@@ -2239,7 +2355,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1628367798440900",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/1628367798440900.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-1149466651572859",
@@ -2262,7 +2380,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/670634452_938274082405878_8839305296098826679_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=RrnuIL-GzvYQ7kNvwH_jczh&_nc_oc=Adoqg9zNeCzpKmWROSSXs8_FuBwr4nD8N66i6UmDY4RkSdi3NRxEaW01pvKPQiMyTK0&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af5xpy-MhoicTCmXsO_zBZwC3HqCE3SLLpixZtrV--r6sQ&oe=6A1114A0",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1149466651572859",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/1149466651572859.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-972697602372027",
@@ -2285,7 +2405,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/671542512_1641363633727761_3524430817648903071_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=YJprJ9mFoHkQ7kNvwH_HDzG&_nc_oc=AdofcbmZII-wd-6n_zY5EPox0w6DVEFHJPSGSkUlqUQss3M8M0esZJxSBExPzumVAE8&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af6mDtSRGpW5j4BC0Vcr2ElmJO4_0WYhDXkFGzdLWbKSkQ&oe=6A10FAA2",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=972697602372027",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/972697602372027.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-25291813757094710",
@@ -2308,7 +2430,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=25291813757094710",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/25291813757094710.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-1294779279334070",
@@ -2331,7 +2455,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1294779279334070",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/1294779279334070.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-1493173065527532",
@@ -2354,7 +2480,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1493173065527532",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/1493173065527532.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-27454575084143532",
@@ -2377,7 +2505,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=27454575084143532",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/27454575084143532.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-2361882567633427",
@@ -2400,7 +2530,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/688765705_939452065390349_6857213824312156253_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=I0cHgjAVykcQ7kNvwG-P8_S&_nc_oc=AdoASybB9B7E6HsKbS109Hmr3Iq_hOCkQoEvYColyGglBXU-LabghTfUjQkIil5Uen8&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af6sAMIAgyu05fN6bnzxMrEbkeTcPbwx6chkkA-PL1OkPQ&oe=6A11039D",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2361882567633427",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/2361882567633427.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-4447156462269769",
@@ -2423,7 +2555,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/688838776_1403729614894380_5184091241182835985_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=c3Fd82ghE4kQ7kNvwFVc3qB&_nc_oc=AdqHs30dUPDPih4F5wcVCWBNI0_DMWpF7vWDXrJ8AsX_ZFdWpUuhTJmjueXEyUISJPI&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af7BzQIjLguK4oYmu-ppkfNAZ2MulQDnVDc3tpYLiuUCig&oe=6A111406",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=4447156462269769",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/4447156462269769.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "isha-foundation-2102505773863911",
@@ -2446,7 +2580,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2102505773863911",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/2102505773863911.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "isha-foundation-987776516975339",
@@ -2469,7 +2605,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/696302933_1258475119609548_8339782500515393465_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Ptxq_01yNlQQ7kNvwHiYgQV&_nc_oc=AdqqiSMI_gmucr3AO5Hy4qnSsfS44MIZPLeIoCCW8jEuPapKAL-qQpZyow3rdsfg7qc&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af5L8XocoPuz2FWOXsWU3OgdE_AqUvhw8mh9dx85hqSVoQ&oe=6A10FDE9",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=987776516975339",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/isha-foundation/987776516975339.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "iskcon-international-diaspora-3303965339765841",
@@ -2492,7 +2630,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/462048070_893151479365323_7774361414073547800_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zazMM-jTfAAQ7kNvwFyk5Am&_nc_oc=AdplCo2w458sXW9Q0itMNqXHmb9QWHL3Dl1GuoOCfI5nW8_v54UBsjW0fhjk0S0JXgM&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=GF8LaYzrN32x44evDYXhpA&_nc_ss=7b289&oh=00_Af4dUnAbQ-Br3Ma_Kth9lvPVV0SwUWDZC58rdgyqGODaow&oe=6A10F5D4",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3303965339765841",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/iskcon-international-diaspora/3303965339765841.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "iskcon-international-diaspora-1809629613261905",
@@ -2515,7 +2655,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/555076591_1425971275151914_7789897400116915077_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=y6y9svOXF3kQ7kNvwGcEwkt&_nc_oc=AdqCDHmWcDeCGezndZv0SleT8mrLjJEnwGaADZYfiEpkQQ4tRQuSTMSYiY_Mu40UFyU&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=GF8LaYzrN32x44evDYXhpA&_nc_ss=7b289&oh=00_Af4DOEcT9booIAekpkCOcrWQ8MBHASX4xn7FmWMvRKkIFQ&oe=6A10F4EB",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1809629613261905",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/iskcon-international-diaspora/1809629613261905.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "iskcon-international-diaspora-3984852071804895",
@@ -2538,7 +2680,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/699397781_1623881838873424_2241934841446831762_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=iGx4JvF_3CUQ7kNvwFlc2DP&_nc_oc=AdooSzpKK1_yM9AG8sgf-Qr5_u7H4MWHTe1c0ze4HAT2BvOU8hR4_ZKSAl28pFdcOvI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=GF8LaYzrN32x44evDYXhpA&_nc_ss=7b289&oh=00_Af7TRdIkjpJ0DTIqyQ8EYUn3xMT_SmXWR0sDHmFn2SaKpw&oe=6A10EDF4",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3984852071804895",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/iskcon-international-diaspora/3984852071804895.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "iskcon-international-diaspora-1317518080316417",
@@ -2561,7 +2705,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1317518080316417",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/iskcon-international-diaspora/1317518080316417.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "iskcon-international-diaspora-2961226497542177",
@@ -2584,7 +2730,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2961226497542177",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/iskcon-international-diaspora/2961226497542177.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-1038523914847299",
@@ -2618,7 +2766,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1038523914847299",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1038523914847299.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-1165430275028253",
@@ -2647,7 +2797,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1165430275028253",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1165430275028253.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-798055426435309",
@@ -2681,7 +2833,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=798055426435309",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/798055426435309.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-595472520294915",
@@ -2712,7 +2866,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=595472520294915",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/595472520294915.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-25017036694625392",
@@ -2743,7 +2899,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=25017036694625392",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/25017036694625392.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-684999760996371",
@@ -2780,7 +2938,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=684999760996371",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/684999760996371.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-1351620306048748",
@@ -2809,7 +2969,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1351620306048748",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1351620306048748.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-1934410534170294",
@@ -2843,7 +3005,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1934410534170294",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1934410534170294.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-2103241520485901",
@@ -2866,7 +3030,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2103241520485901",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/2103241520485901.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-917045273989737",
@@ -2889,7 +3055,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=917045273989737",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/917045273989737.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-1241039134847391",
@@ -2918,7 +3086,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1241039134847391",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1241039134847391.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-959017643353612",
@@ -2947,7 +3117,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=959017643353612",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/959017643353612.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-1342381190642290",
@@ -2991,7 +3163,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1342381190642290",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1342381190642290.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-802247069191960",
@@ -3029,7 +3203,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=802247069191960",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/802247069191960.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-1339482591109156",
@@ -3068,7 +3244,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1339482591109156",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1339482591109156.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-719173227230583",
@@ -3100,7 +3278,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/505110268_723362563565788_7190529327399425261_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=SlBBpQmVrEYQ7kNvwGB39J6&_nc_oc=Adp1TafG2rmmaoEZTgGylwcoBdP0X1diaQr86ZGgC8RZFhpnS1i5700UHz8UNoTPg8s&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=zIHRYDH_sGrukaHXuBnFZA&_nc_ss=7b289&oh=00_Af6qslzL-AkMj0KH8WN48W1tjC7l14SFmZWypSgmMjDAoQ&oe=6A11001F",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=719173227230583",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/719173227230583.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "kadampa-deuachen-1245584667595381",
@@ -3133,7 +3313,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1245584667595381",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1245584667595381.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-2116104172205434",
@@ -3174,7 +3356,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/503150569_24586760347582583_8279489089563334745_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=dPfuR2DhdycQ7kNvwF_z9Ei&_nc_oc=Adpj829hJsTeCrh9lE2HXnnfeUPmpolDJjGYLXJyphu_SycTgpLNgLcuJ9WBa3yjgaQ&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=zIHRYDH_sGrukaHXuBnFZA&_nc_ss=7b289&oh=00_Af5aQjbCW_icSSeluwdAurv5bZIIKNPNX0Li03a1BBL2Vg&oe=6A10EE76",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2116104172205434",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/2116104172205434.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "kadampa-deuachen-1287579356409487",
@@ -3207,7 +3391,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/530018389_599635786363143_1542626653574280296_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=6VqvVwJeExAQ7kNvwEMKCBr&_nc_oc=AdohFwyzOq3zkxs2MDm9bNAnTqnoaPrVZa87wDeSm1jMj7FD0e9C86lQw-3F6kJzCEs&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=zIHRYDH_sGrukaHXuBnFZA&_nc_ss=7b289&oh=00_Af42I4NYDarQhbbBCCoiSnMOOEsSxLH9P7MFxiX09Vuh1Q&oe=6A10EB4A",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1287579356409487",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1287579356409487.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "kadampa-deuachen-1195207089070043",
@@ -3239,7 +3425,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/504892836_1279612467117635_252054222080606670_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Tijc5jxINmIQ7kNvwGY7ulB&_nc_oc=AdpdVkvXBUyZ3YRImzSA5cJI06iS-kNZq2PfjngAEVILf0RGSHmsvAq-9UDHceMuvxc&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=zIHRYDH_sGrukaHXuBnFZA&_nc_ss=7b289&oh=00_Af56bC8FjcGOrnaX6288nooPaN-UM9ZVUH_6kpYJbsqvhg&oe=6A10E58D",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1195207089070043",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1195207089070043.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "kadampa-deuachen-1876359396615411",
@@ -3279,7 +3467,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1876359396615411",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/1876359396615411.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-2403935866673516",
@@ -3302,7 +3492,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2403935866673516",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/2403935866673516.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-3961035124030416",
@@ -3331,7 +3523,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3961035124030416",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/3961035124030416.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-627068723456030",
@@ -3370,7 +3564,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/536276336_806712158360133_9025957063330551801_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Wtu_bp-lGCAQ7kNvwFdi1Qe&_nc_oc=AdqkpKZliD4cNGPac4fgV8rNHE8AL8o4_oZjotaX1NE0-kXyoTbOuEzKj-lbREfgwAo&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=zIHRYDH_sGrukaHXuBnFZA&_nc_ss=7b289&oh=00_Af4EvfcqUFVXU1zcNpKVLsTzGAqIWpYmLrsxqyRff8taUA&oe=6A110B3F",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=627068723456030",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/627068723456030.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "kadampa-deuachen-839167031911404",
@@ -3399,7 +3595,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=839167031911404",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/839167031911404.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "kadampa-deuachen-2084407645437563",
@@ -3428,7 +3626,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2084407645437563",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/kadampa-deuachen/2084407645437563.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "sivananda-936943692015001",
@@ -3451,7 +3651,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=936943692015001",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/936943692015001.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "sivananda-736352159228898",
@@ -3474,7 +3676,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/540662959_1091986799267742_5856293383430617584_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ezBKJab3oaMQ7kNvwE3nPir&_nc_oc=AdqT3YYLn0Go5agYNnk4GgvuxVmXjbkcQWgVRKQxXE97aoOXGSFrTHmKLXPPNuV4I3Q&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7EQqcjAYGkguEQQG63KF_11rh6K4Mk2eflRvxNUH8gbQ&oe=6A10E26F",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=736352159228898",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/736352159228898.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-4291358857855485",
@@ -3497,7 +3701,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/537080124_1377834171010803_1725683043480119736_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ACOw5ufUM7cQ7kNvwHfnBVx&_nc_oc=AdohuuAvJ_GoQft4Pl-Iw4M3kslEbBnIt2q8o2utiWdyjDjlVYAE_2pGBTnLcIMZI0I&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af53rUoYTCBzm8D5t7MCMIKAMyODPmMKpv-uGb_XXkQjMg&oe=6A10E206",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=4291358857855485",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/4291358857855485.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1766384287583199",
@@ -3520,7 +3726,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/546151865_673620551814174_6555636914372033207_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=BJl9hG-kQTkQ7kNvwEBrUuN&_nc_oc=AdoGooErTM7eNX1xSrBQR8oobha4GAQBwaWvSCPYW4fc13nmLWmeB0WbgjlMx55-0Wg&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4MpzpmKgki6OqXL0GIb4Qn7wBNYdvtyi7PW9vsfLeCJA&oe=6A10E437",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1766384287583199",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1766384287583199.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1484069049949514",
@@ -3543,7 +3751,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1484069049949514",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1484069049949514.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "sivananda-1907007336615129",
@@ -3573,7 +3783,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/670275204_3856888374619628_988211675025521171_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Shid5SrUOgYQ7kNvwGjQvzK&_nc_oc=AdorAZqTWwtX8Y6wRaaFnonTHsan7aGHlaz3c_ksF7ZV3V5-mZc-cj6HPNPbSQD_mT0&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af6Sf05mvFZt7z4v6XRLij_-KEIogu0jmgMh60FoDprxQw&oe=6A10E510",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1907007336615129",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1907007336615129.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-4605180606376083",
@@ -3596,7 +3808,9 @@
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=4605180606376083",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/4605180606376083.jpg",
+      "asset_type": "creative-thumb"
     },
     {
       "id": "sivananda-3152154664941333",
@@ -3619,7 +3833,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/530879335_783627110865914_6216243421953773202_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Cph9qhRpBbIQ7kNvwGBhCCB&_nc_oc=AdqKFZ_EAgu58uX1hRT0fWKb6jeFId3udrmBKGuwecYdMEIX4SrPoa9gL49nVH5AiaU&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7XOYyx0GHt4U9p54kmhfBxx8LGodjrS3asejvOaNlEuA&oe=6A1107E0",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3152154664941333",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/3152154664941333.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1396306315224179",
@@ -3642,7 +3858,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/527730589_1029736319023166_1420684666405586519_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=2de8iol_-p4Q7kNvwG9m5np&_nc_oc=AdpjQxvQ5E5KxBGptxPO_92TSU_na8sPMzlT109OuhUCwL1f-bTr90Qpv-2pAzhVe1E&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4cJXNVvXfufGUZ_iYibPzPcTmrYYMTWNQ1mWm5wyCXqA&oe=6A10E3DC",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1396306315224179",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1396306315224179.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1154366869845555",
@@ -3665,7 +3883,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/539860965_1522129189143313_8085634919825290741_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=7S7pWiUE508Q7kNvwEtQS1f&_nc_oc=AdoTNWAUYoVEiQupi0or-gxv8b-57dRGStJGJwwCHHzs2yhjiueSTRA6DQ4lQV5PmLo&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4cBvycuhECpRCYWC2TGwdGJa28zGa5BzaSFElNCXbIcQ&oe=6A1103E1",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1154366869845555",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1154366869845555.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-3366120920203995",
@@ -3699,7 +3919,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/505138228_635761789261434_6365060737439619268_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=P1y4ibZNJTYQ7kNvwHcUuUH&_nc_oc=AdqpoSQjvGlT0vFa7ExTpfFVMbdtLjO8p8OgLeyRmUvyw2as02K4WmdsQI-iidGpH1I&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af57kzRbX0tyKFT4QXGdWq9qv_SIL1C8GVmBINEvvGDkIQ&oe=6A10E280",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3366120920203995",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/3366120920203995.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-2380100842406434",
@@ -3722,7 +3944,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/555966992_789060334049959_1069967354127720729_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=-DXGq7Yv2dgQ7kNvwF92QAS&_nc_oc=AdpAzb2DTN9kSrWhHxqbtCJtMUtbqUdWWaK5lmU5AfOeURLUOUPBuZnQJfMT-Cs-CAs&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af62yfbHJX0TwwLacXC1epk9q2dyz_pCNkh-5ar7PibNFw&oe=6A10FD3A",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2380100842406434",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/2380100842406434.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-794078176886253",
@@ -3745,7 +3969,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/558971984_784760997872303_3179001079338442303_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=7gKIKZeuEdQQ7kNvwGKk2oS&_nc_oc=AdrUEteEPRLvzMOo6Up7_ehmPGCsvV8ivwKPNhCzzTZn4tFqvqseHHAD3AXoOtoQHNQ&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7SABdCPpP8s0uA5_UjkvcPglB4tYv-AdBUIGZVZkmiyw&oe=6A110EC3",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=794078176886253",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/794078176886253.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1344962903648595",
@@ -3768,7 +3994,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/547026415_756460440645354_4731722559810998040_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=pjVW9GoAKqUQ7kNvwG67xox&_nc_oc=AdpYQc9PD0C_hzRw96uf5wg-mg74cD1xaloENIweErRIeIcvK_qMQ9cYqo-n51orOFA&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7aBvcy-KNkBQ6rACNVBrpio1Wag00gUuxrNDsXWmaLLw&oe=6A10F94E",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1344962903648595",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1344962903648595.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-811504844657386",
@@ -3791,7 +4019,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/549161109_1973362560181092_5670778752499433210_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=mYK1UFEDiQoQ7kNvwH2oy04&_nc_oc=AdpINDZGDhAQkPDFe68IInGcBfj7LIkefbgQ7-Vl3FXC4ncKe8iG6OzXdxwLmhKGzqI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4oWHbDG7PLpZP0K6ASuigi4DuRlNA42k2IMPwA3eOjUA&oe=6A111416",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=811504844657386",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/811504844657386.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1344215900881631",
@@ -3814,7 +4044,9 @@
       "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/687800516_1945317863526071_7864391188165371032_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=cHS-FB6K4e8Q7kNvwFxrXHA&_nc_oc=AdpbmeQ0ucyY9hjxFxqlSPWrAvH-yXwK1OsedrqUMiiBrvZRw2cj9VlW_sQjqKRb84A&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af6OZFP0OB04V2r-h018B6-j7kwAM-w5k8zS4skDc9bH4w&oe=6A11155A",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1344215900881631",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1344215900881631.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1065543751681978",
@@ -3837,7 +4069,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/509102374_496439633531704_7421612114101139545_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ay7q8OQMgUMQ7kNvwECjPaD&_nc_oc=AdqJaqG7yK1oRIx8BXur9-aM9UMY_yGgPTn3w5nfQ9EzDWWXZUjvlMYPxgS7NJj_Q6M&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4GT9mhGyOC1NMI6tNFe6oNk8OV2ESgOepI3cWntYlZ8g&oe=6A10EF23",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1065543751681978",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1065543751681978.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1577874733381380",
@@ -3863,7 +4097,9 @@
       "landing_url": "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-19/587490402_18192441922338834_6223895962282619700_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=100&ccb=7-5&_nc_sid=525117&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=l6BOcJrgKYQQ7kNvwHLCciN&_nc_oc=Adp9i_PhBAX8FSs9vBMukxgwtyleIyLvtIMLJRHQSEocWJ5CVQ7Xpo27acrqCzh-DnA&_nc_zt=24&_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af5Mwtxy9ExUZA3FOTnaZT1iTV5_YbQ8ugQqNR7wHIedqw&oe=6A11058E",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1577874733381380",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1577874733381380.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-505949292528327",
@@ -3897,7 +4133,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/504417905_1231917261676650_5177973861719294409_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=4tAuUaQcXu8Q7kNvwGDXIkb&_nc_oc=AdqAROI4yTU3vghZyhBwA5A4w1EsWyA_WBst1cLDOamYUHIArGFb3fP1AS8wBlBGYUg&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7aDZBLyCvUV97tEYG7uZwId0v2IE2Pz48_bT46BJpaMg&oe=6A10E2A8",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=505949292528327",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/505949292528327.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1127376326008404",
@@ -3920,7 +4158,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/541431327_1270228251039651_3307596649937991156_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=_si2EUKXjT8Q7kNvwH-Iowf&_nc_oc=AdpMVUm9rGB2YyXmlTHCqeQ2PkYfPjmH9h8InTnOBcHTAYtvfzGaKACs-090QLPIlGc&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7ddSxGWXNpIHnXsZDab_pLSL4SpK-LKEcYRfVCDqyorA&oe=6A110557",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1127376326008404",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1127376326008404.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1216471277060486",
@@ -3943,7 +4183,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/686355200_1290884222427556_3762654256121486943_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tfiisUZUdt0Q7kNvwHlhItP&_nc_oc=AdrpE3XTSVsGHHSu04QLDn4b3B-7hwPzmf17dVieXLBzwg0j-6C0aP3j-Hc5KV1C1Mo&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4hmsIMAh1iREfkTCJX8WgGXdlhq1hVpLApeB2phY9c7g&oe=6A10FB50",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1216471277060486",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1216471277060486.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1309048327917394",
@@ -3966,7 +4208,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/592904697_870769042141963_1400957087310303349_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=IAOxFXbn-FEQ7kNvwHgpNVt&_nc_oc=AdooV_4Mqs8-e8ZsCaT9Ijs_2KXWAPDss9COJnUn0OJli8TqVQYbGH7qdIdP_jefb3Q&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4B-dPvSxGp2SShel5-9DN_0didrpt9QZJj6WAbRxeoWQ&oe=6A10F9ED",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1309048327917394",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1309048327917394.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1455163482513753",
@@ -3989,7 +4233,9 @@
       "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/692421231_906393112424610_5126625730332073251_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=lpKC9nw-nF0Q7kNvwEBEDbc&_nc_oc=AdrG3kzuNc3BcJKeqKH88XYV-CXKVdf3tMzS2TYlb3LBBXzzgi8cU29zLrwe6Ffbb34&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af63-fnhcisQKhMr7OtCNlAmuRJrfCcNqJyxgdekYzPUcQ&oe=6A1107F8",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1455163482513753",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1455163482513753.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-879381451583746",
@@ -4012,7 +4258,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/626819651_1378278890282598_2080635504302329832_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ByeDaGGer70Q7kNvwFoWbAR&_nc_oc=Adqtwr3XyHwRTd2ksPz_54HIvw8ccdBOkz-qJyh-DK5H-hs74FklIdbcmQuHp2xURZk&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af6qDWyFY4Fux-VMmchCXEyRXasbcsfxZ3bQslkYYFE1Uw&oe=6A10FE43",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=879381451583746",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/879381451583746.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-2384814895316459",
@@ -4035,7 +4283,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/660430143_958254133274501_3019846449793923995_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=-CEGwRjfRgUQ7kNvwGhh-I-&_nc_oc=AdpX6NYdRtAJYYLgIswqYzVOF9A1WpSrIbRf_z-9k7ZSCFN8W01izdaZn1-nEYRdi04&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7rgailH6Ck9s4md5gDvZCj2rowYpbFKAhV1nEX_EXAAQ&oe=6A1113B4",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2384814895316459",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/2384814895316459.jpg",
+      "asset_type": "creative-image"
     },
     {
       "id": "sivananda-1491510262063708",
@@ -4067,7 +4317,9 @@
       "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/574309275_841437641906984_8017733716539614988_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=VizK3oPwk40Q7kNvwGuJhh0&_nc_oc=AdpyrndhBNw4uL8n6Bwtq309hdPRXNcJDNGBdPBVGJ11wQjHe1hHlMGcy36iq6HFJkQ&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af6TEkH509zXAKRP_PKgQYWoN7MbwIpfwx2dHpKxVjW7MQ&oe=6A10F618",
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1491510262063708",
-      "captured_at": "2026-05-17T23:00:00.000Z"
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": "assets/sivananda/1491510262063708.jpg",
+      "asset_type": "creative-image"
     }
   ],
   "patterns": {

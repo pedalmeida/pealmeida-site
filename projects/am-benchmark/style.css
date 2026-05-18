@@ -538,6 +538,39 @@ main {
   background: var(--surface-alt);
 }
 
+.ads-table .col-thumb {
+  width: 64px;
+  padding: 6px;
+}
+
+.ad-thumb {
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+}
+
+.ad-thumb.is-fallback {
+  /* Page profile picture — tiny circle look so user knows it's not the creative */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 6px;
+  opacity: 0.85;
+}
+
+.ad-thumb.no-asset {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 6px;
+  background: var(--surface-alt);
+  border: 1px dashed var(--border-strong);
+}
+
 .ads-table .col-duration {
   font-family: var(--mono);
   font-weight: 600;
@@ -708,7 +741,7 @@ main {
   .meta { display: none; }
   .nav { order: 3; flex-basis: 100%; }
   main { padding: 16px; }
-  .ads-table .col-library-id, .ads-table .col-cta { display: none; }
+  .ads-table .col-library-id, .ads-table .col-cta, .ads-table .col-thumb { display: none; }
   .ads-table th, .ads-table td { padding: 8px; font-size: 11px; }
   .ads-table .col-headline { max-width: none; }
 }
