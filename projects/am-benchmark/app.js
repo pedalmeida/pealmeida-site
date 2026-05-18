@@ -3,6 +3,35 @@
    Vanilla JS + Fuse.js. Hash-router. Read-only dossier browser.
    =============================================================== */
 
+// ---- Tooltip dictionaries ----
+const HOOK_TOOLTIPS = {
+  "direct": "Direct response hook: states the offer or benefit immediately. No storytelling or teasing — just 'come to X on date Y'. Works when the audience is already warm or when the event itself is the hook. Used by 67% of ads in this sample, making it the dominant but least differentiated approach.",
+  "religious-curiosity": "Insider hook: uses devotional language (darshan, mantra, Krishna) as the primary draw. Assumes the reader already has spiritual context. Targets warm-to-believer traffic who self-select in. Risky for cold audiences but highly efficient for retention and community ads.",
+  "emotional": "Emotion-first hook: opens with a feeling state (loneliness, stress, seeking, transformation) before naming the org or offer. Classic cold-traffic approach — meets the prospect where they are mentally. Works well as a first touch for audiences who wouldn't click on a brand name.",
+  "curiosity": "Curiosity gap hook: raises a question or incomplete thought that the audience wants resolved. 'Have you ever wondered...' or a provocative statement. Broad appeal — works across cold and warm. Often used as a bridge to a quiz or landing page opt-in.",
+  "authority-quote": "Social proof via teacher quote: uses a direct quote from the lineage founder or living master as the hook. Targets believers who respect that authority. High trust signal, but pre-supposes the reader already knows and trusts the source — best for warm/believer traffic.",
+  "identity": "Identity hook: leads with the org's full name and mission statement ('We are the X centre…'). Targets hot traffic who is already researching. Kadampa's 263-day evergreen winner uses this — it works because it speaks to people comparing options, not to strangers.",
+  "tourism": "Tourism/place hook: uses location imagery or retreat setting as the primary draw ('Escape to the mountains', 'Retreat in the Alentejo'). Converts wellness tourists who are searching for experiences, not beliefs. Low theology, high aspiration.",
+  "quiz": "Quiz/segmentation hook: invites the prospect to answer a few questions to find their personalised path. Art of Living's signature play. Most sophisticated cold-traffic hook — generates qualified leads and gives the org first-party data for follow-up sequences.",
+};
+
+const TEMP_TOOLTIPS = {
+  "cold": "Cold traffic: people who have never heard of this org. Ads in this tier use pain/aspiration hooks, minimal jargon, and typically point to a low-friction free offer (quiz, free class, free event). Requires the most creative spend to convert.",
+  "warm": "Warm traffic: people who have engaged before (website visit, social follow, past event). Ads in this tier can use brand name and specific offer names. Conversion rates are higher; CPL is lower. Often used for retargeting.",
+  "hot": "Hot traffic: people who have attended before or are actively comparing options. Can go straight to the offer, use identity language, and assume familiarity. Kadampa's identity ads ('We are the Kadampa…') target this tier — people who already know the centre.",
+  "believer": "Believer traffic: existing community members and devotees. Ads in this tier use insider vocabulary (darshan, mantra, satsang), quote the teacher, and promote community events. Not for acquisition — for retention and reactivation of lapsed members.",
+};
+
+const STRATEGY_TOOLTIPS = {
+  "always-on": "Always-on: runs a small set of evergreen ads continuously, 365 days a year. Optimises for CPL over time. Kadampa's approach — they've held the same identity ad live for 263+ days. Requires good creative testing up front, minimal maintenance after.",
+  "event-funnel": "Event funnel: builds a full paid-ad campaign around a single major event (annual darshan, festival, retreat). Ad spend spikes before the event, drops after. Bhakti Marga's model. High ROI if the event is sellable; risky if the event doesn't happen.",
+  "event-pulse": "Event pulse: short bursts of ad activity for each individual event or visiting speaker. No consistent presence — just spikes. Brahma Kumaris' pattern. Cost-efficient but no brand-building compound effect; audience never learns to expect a consistent presence.",
+  "multi-brand": "Multi-brand: runs separate ads under multiple sub-brands (Isha Europe, Isha Life, Save Soil, Sadhguru) to access different audience segments without cannibalising the main brand. Isha Foundation's architecture. Requires significant content and budget.",
+  "course-finder": "Course finder: uses a quiz or segmentation tool as the front-end lead magnet to route prospects into the right program. Art of Living's approach. Generates first-party data and personalises the funnel. Highest upfront complexity; best long-term CPL.",
+  "decentralized": "Decentralised: different centres and chapters run their own ads independently with no global coordination. Sivananda's pattern — Bahamas Ashram runs most of the global ad spend. No brand consistency; no compounding. AM currently has a similar problem.",
+  "none": "No paid acquisition: this org relies entirely on organic reach, word of mouth, and search. ISKCON Lisboa's situation. Zero Meta advertising history. Either a deliberate choice or a capability gap — either way, leaves acquisition entirely to chance.",
+};
+
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
@@ -98,7 +127,8 @@ function competitorCard(c) {
   const s = c.stats || { total: 0, active: 0, evergreen: 0, longest_run_days: 0 };
   const archetype = c.archetype ? `<span class="badge archetype">${c.archetype}</span>` : "";
   const country = c.hq_country ? `<span class="badge country">${c.hq_country}</span>` : "";
-  const strategy = c.ad_strategy ? `<span class="badge strategy-${c.ad_strategy}">${c.ad_strategy}</span>` : "";
+  const stratTip = STRATEGY_TOOLTIPS[c.ad_strategy] || "";
+  const strategy = c.ad_strategy ? `<span class="badge strategy-${c.ad_strategy}" data-tooltip="${escapeAttr(stratTip)}">${c.ad_strategy}</span>` : "";
   const evergreen = s.evergreen > 0 ? `<span class="badge evergreen">${s.evergreen} evergreen</span>` : "";
 
   return `
@@ -224,8 +254,12 @@ function renderAdsResults() {
     const dur = a.duration_days != null ? `${a.duration_days}d` : "—";
     const endLabel = a.ended_at ? fmtDate(a.ended_at) : (a.is_active ? "active" : "?");
     const dates = `${fmtDate(a.started_at)} → ${endLabel}`;
-    const hookBadge = a.hook_angle ? `<span class="badge hook ${a.hook_angle}">${a.hook_angle}</span>` : "";
-    const tempBadge = a.traffic_temperature ? `<span class="badge hook">${a.traffic_temperature}</span>` : "";
+    const hookTip = HOOK_TOOLTIPS[a.hook_angle] || "";
+    const hookBadge = a.hook_angle ? `<span class="badge hook ${a.hook_angle}" data-tooltip="${escapeAttr(hookTip)}">${a.hook_angle}</span>` : "";
+    const tempTip = TEMP_TOOLTIPS[a.traffic_temperature] || "";
+    const tempBadge = a.traffic_temperature ? `<span class="badge hook" data-tooltip="${escapeAttr(tempTip)}">${a.traffic_temperature}</span>` : "";
+    const adCat = inferAdCategory(a);
+    const adCatBadge = adCat ? `<span class="badge ad-cat">${adCat}</span>` : "";
     const evergreen = a.is_evergreen_winner ? `<span class="badge evergreen">★ evergreen</span>` : "";
     const statusDot = `<span class="status-dot ${a.is_active ? "active" : "inactive"}"></span>`;
     const variants = a.creative_variants > 1 ? ` <span class="muted">(${a.creative_variants}×)</span>` : "";
@@ -247,7 +281,7 @@ function renderAdsResults() {
         <td class="col-thumb">${thumbCell}</td>
         <td class="col-duration">${dur}${variants}</td>
         <td>${statusDot}<a href="#/c/${a.competitor_id}">${escapeHtml(competitorName)}</a></td>
-        <td>${hookBadge}${tempBadge}${evergreen}</td>
+        <td>${hookBadge}${tempBadge}${adCatBadge}${evergreen}</td>
         <td class="col-headline">
           <div class="headline">${escapeHtml(a.headline || "")}</div>
           <div class="body-preview">${escapeHtml((a.body || "").slice(0, 240))}</div>
@@ -314,7 +348,7 @@ function renderDossier(id) {
       <div class="badges">
         ${c.hq_country ? `<span class="badge country">${c.hq_country}${c.hq_city ? " · " + escapeHtml(c.hq_city) : ""}</span>` : ""}
         ${c.archetype ? `<span class="badge archetype">${c.archetype}</span>` : ""}
-        ${c.ad_strategy ? `<span class="badge strategy-${c.ad_strategy}">${c.ad_strategy}</span>` : ""}
+        ${c.ad_strategy ? `<span class="badge strategy-${c.ad_strategy}" data-tooltip="${escapeAttr(STRATEGY_TOOLTIPS[c.ad_strategy] || "")}">${c.ad_strategy}</span>` : ""}
         ${s.evergreen ? `<span class="badge evergreen">${s.evergreen} evergreen winners</span>` : ""}
       </div>
       <p class="summary">${escapeHtml(c.one_line_summary || "")}</p>
@@ -371,7 +405,7 @@ function renderOverview(c, s) {
         <h3>Hook angles used</h3>
         ${hookEntries.map(([k, v]) => `
           <div class="pattern-bar">
-            <span class="label">${k}</span>
+            <span class="label" data-tooltip="${escapeAttr(HOOK_TOOLTIPS[k] || "")}">${k}</span>
             <div class="bar"><div class="bar-fill" style="width:${(v / maxHook) * 100}%"></div></div>
             <span class="count">${v}</span>
           </div>
@@ -382,7 +416,7 @@ function renderOverview(c, s) {
         <h3>Traffic temperatures</h3>
         ${tempEntries.map(([k, v]) => `
           <div class="pattern-bar">
-            <span class="label">${k}</span>
+            <span class="label" data-tooltip="${escapeAttr(TEMP_TOOLTIPS[k] || "")}">${k}</span>
             <div class="bar"><div class="bar-fill" style="width:${(v / maxTemp) * 100}%"></div></div>
             <span class="count">${v}</span>
           </div>
@@ -419,14 +453,24 @@ function renderLadder(ladder) {
     return;
   }
   $("#tab-content").innerHTML = `
+    <p style="font-size:12px; color:var(--text-muted); margin:0 0 16px 0;">
+      Brunson's Value Ladder maps an org's offers from lowest-commitment (free) to highest-commitment (advanced programs, residency, ordination).
+      Each rung exists to ascend the prospect toward the next. Click any rung title to visit the offer page.
+    </p>
     <div class="ladder">
-      ${ladder.map((r) => `
+      ${ladder.map((r) => {
+        const offerHtml = r.url
+          ? `<a href="${escapeHtml(r.url)}" target="_blank" rel="noopener" style="font-weight:500;">${escapeHtml(r.offer || "")}</a>`
+          : `<span style="font-weight:500;">${escapeHtml(r.offer || "")}</span>`;
+        const typeHtml = r.type ? ` <span class="muted" style="font-size:11px;">(${escapeHtml(r.type)})</span>` : "";
+        const descHtml = r.description ? `<div class="rung-desc">${escapeHtml(r.description)}</div>` : "";
+        return `
         <div class="ladder-rung">
           <span class="rung-num">${r.rung}</span>
-          <span class="rung-offer">${escapeHtml(r.offer || "")}${r.type ? ` <span class="muted">(${escapeHtml(r.type)})</span>` : ""}</span>
+          <span class="rung-offer">${offerHtml}${typeHtml}${descHtml}</span>
           <span class="rung-price">${escapeHtml(r.price || "")}</span>
-        </div>
-      `).join("")}
+        </div>`;
+      }).join("")}
     </div>
   `;
 }
@@ -435,43 +479,197 @@ function renderLadder(ladder) {
 function renderPatterns() {
   const p = state.data.patterns;
   const competitorMap = new Map(state.data.competitors.map((c) => [c.id, c.name]));
+  const cs = state.data.competitors;
 
   const hooksMax = Math.max(1, ...p.hooks_global.map((h) => h.count));
   const stratMax = Math.max(1, ...p.strategies_count.map((s) => s.count));
 
+  // ---- Marketing intelligence: derived from competitor fields ----
+
+  // 1. Paid intro program: does the org have a paid (non-free) offer as their first paid rung?
+  function hasPaidIntro(c) {
+    const ladder = Array.isArray(c.value_ladder) ? c.value_ladder : [];
+    const paidRungs = ladder.filter((r) => r.price && !r.price.toLowerCase().includes("free") && !r.price.toLowerCase().includes("donation"));
+    if (!paidRungs.length) return false;
+    const firstPaid = paidRungs[0];
+    return firstPaid.type && (firstPaid.type.includes("intro") || firstPaid.type.includes("flagship"));
+  }
+
+  // 2. Email capture: inferred from having a continuity-type rung or newsletter
+  function hasEmailCapture(c) {
+    const ladder = Array.isArray(c.value_ladder) ? c.value_ladder : [];
+    return ladder.some((r) =>
+      r.type && (r.type.includes("continuity") || r.type.includes("content")) ||
+      (r.offer || "").toLowerCase().includes("newsletter")
+    );
+  }
+
+  // 3. Secular front door: non-religious entry point
+  function hasSecularFraming(c) {
+    return ["secular-mystical", "warm-secular", "calm-secular-friendly"].includes(c.voice_descriptor || "");
+  }
+
+  // 4. Living attractive character
+  function hasLivingCharacter(c) {
+    return c.attractive_character_alive === true;
+  }
+
+  // 5. Evergreen ads (runs continuously for >60 days)
+  function evergreenCount(c) {
+    return (c.stats && c.stats.evergreen) || 0;
+  }
+
+  // 6. Funnel archetype
+  function funnelLabel(c) {
+    return c.funnel_archetype || "—";
+  }
+
+  const intelRows = cs
+    .filter((c) => c.id !== "iskcon-international-diaspora") // exclude diaspora branch from strategic table
+    .map((c) => ({
+      id: c.id,
+      name: (competitorMap.get(c.id) || c.id).replace("Centro de Meditação Kadampa Deuachen", "Kadampa").replace("Brahma Kumaris Portugal", "BK Portugal").replace("The Art of Living Foundation", "Art of Living"),
+      paidIntro: hasPaidIntro(c),
+      email: hasEmailCapture(c),
+      secular: hasSecularFraming(c),
+      livingChar: hasLivingCharacter(c),
+      evergreen: evergreenCount(c),
+      funnel: funnelLabel(c),
+      adStrategy: c.ad_strategy || "—",
+    }));
+
+  function dot(val) {
+    if (val === true) return `<span class="intel-dot yes" title="Yes"></span>`;
+    if (val === false) return `<span class="intel-dot no" title="No"></span>`;
+    return `<span class="intel-dot partial" title="Partial"></span>`;
+  }
+
+  const intelTableRows = intelRows.map((r) => `
+    <tr>
+      <td class="org"><a href="#/c/${r.id}">${escapeHtml(r.name)}</a></td>
+      <td style="text-align:center">${dot(r.paidIntro)}</td>
+      <td style="text-align:center">${dot(r.email)}</td>
+      <td style="text-align:center">${dot(r.secular)}</td>
+      <td style="text-align:center">${dot(r.livingChar)}</td>
+      <td style="text-align:center; font-family:var(--mono); font-size:11px;">${r.evergreen || "—"}</td>
+      <td><span class="badge strategy-${r.adStrategy}" data-tooltip="${escapeAttr(STRATEGY_TOOLTIPS[r.adStrategy] || "")}" style="font-size:10px;">${r.adStrategy}</span></td>
+    </tr>
+  `).join("");
+
+  // ---- Brunson opportunity gaps ----
+  const gaps = [];
+  const hasAlwaysOn = cs.some((c) => c.ad_strategy === "always-on");
+  const hasCourseFinderQuiz = cs.some((c) => c.ad_strategy === "course-finder");
+  const hasPaidIntroAnyone = cs.some(hasPaidIntro);
+  const hasEmailSeq = cs.some(hasEmailCapture);
+  const hasEvergreenWinner = cs.some((c) => (c.stats && c.stats.evergreen > 0));
+
+  gaps.push({ label: "Evergreen winner gap", text: hasEvergreenWinner
+    ? `Kadampa holds the sample's strongest evergreen (263 days, identity hook). AM should test an identity hook using the 'Ananda Marga in Portugal' frame — same audience logic applies.`
+    : `No competitor in the sample has cracked an evergreen winner. First mover advantage available.`
+  });
+  gaps.push({ label: "Course-finder quiz", text: hasCourseFinderQuiz
+    ? `Art of Living is the only org using a quiz lead magnet ('Find your practice'). This is the most sophisticated cold-traffic play in the sample. AM's diverse programs (meditation, yoga, social service) are a natural fit for a segmentation quiz.`
+    : `No one is using a quiz funnel — blue ocean for AM.`
+  });
+  gaps.push({ label: "Paid intro program", text: hasPaidIntroAnyone
+    ? `Isha Foundation ($175 Inner Engineering Online) and Art of Living (~$395 SKY Breath) are the only orgs with a paid front-end program. This is the lever that funds their entire ad machine. AM has no equivalent — the whole ladder is free-or-donation today.`
+    : `No competitor has a paid intro program — opportunity for AM to pioneer one.`
+  });
+  gaps.push({ label: "Tourism / secular pre-frame", text: "Only 4 ads (Kadampa) use the tourism hook explicitly. Broader opportunity: AM's retreat properties and community centres are underused as wellness-tourism destinations in Portugal's growing market."});
+  gaps.push({ label: "Bhakti Marga analog risk", text: "Bhakti Marga has the most structurally similar model to AM: living Master, PT ashram, global organisation, event-funnel architecture. They are running 22-ad PT Meta campaigns and growing. AM's biggest competitive threat in Portugal — and the clearest model to study."});
+  gaps.push({ label: "Dream 100 / organic distribution gap", text: "No competitor in the sample is systematically working yoga studios, wellness influencers, or retreat booking platforms as distribution partners. This is the Dream 100 play — work your way in to where AM's buyers already congregate before buying ads."});
+
   $("#app").innerHTML = `
-    <h2 style="margin:0 0 16px 0; font-size:18px;">Cross-competitor patterns</h2>
+    <h2 style="margin:0 0 4px 0; font-size:18px;">Cross-competitor patterns</h2>
+    <p style="margin:0 0 20px 0; font-size:12px; color:var(--text-muted);">Hook angles, traffic temperatures, and strategies are classified using Russell Brunson's Hook/Story/Offer framework and traffic temperature ladder (cold → warm → hot → believer). Hover any label for the methodology definition.</p>
+
     <div class="patterns-grid">
       <div class="pattern-card">
         <h3>Top 20 evergreen winners (≥100 days)</h3>
+        <p style="margin:0 0 12px 0; font-size:11px; color:var(--text-muted);">Ads running continuously for 100+ days signal proven messaging that survived market testing. Longer = more confident the org is in the copy.</p>
         ${p.evergreen_winners_top_20.length === 0 ? '<p class="muted" style="margin:0;">None.</p>' : ""}
         ${p.evergreen_winners_top_20.map((w) => `
           <div class="evergreen-row">
             <span class="days">${w.duration_days}d</span>
-            <span class="competitor"><a href="#/c/${w.competitor_id}">${escapeHtml((competitorMap.get(w.competitor_id) || w.competitor_id).slice(0, 16))}</a></span>
+            <span class="competitor"><a href="#/c/${w.competitor_id}">${escapeHtml((competitorMap.get(w.competitor_id) || w.competitor_id).replace("Centro de Meditação Kadampa Deuachen", "Kadampa").slice(0, 18))}</a></span>
             <span class="headline-preview" title="${escapeHtml(w.headline)}">${escapeHtml(w.headline)}</span>
           </div>
         `).join("")}
       </div>
+
       <div class="pattern-card">
         <h3>Hook-angle distribution (all competitors)</h3>
+        <p style="margin:0 0 12px 0; font-size:11px; color:var(--text-muted);">Hook = the first thing the audience sees. Hover each label for the definition and strategic implications. Direct dominates (67%) — meaning most orgs are speaking to warm audiences who already know them.</p>
         ${p.hooks_global.map((h) => `
           <div class="pattern-bar">
-            <span class="label">${h.angle}</span>
+            <span class="label" data-tooltip="${escapeAttr(HOOK_TOOLTIPS[h.angle] || "")}">${h.angle}</span>
             <div class="bar"><div class="bar-fill" style="width:${(h.count / hooksMax) * 100}%"></div></div>
             <span class="count">${h.count}</span>
           </div>
         `).join("")}
       </div>
+
       <div class="pattern-card">
         <h3>Ad strategies in use</h3>
+        <p style="margin:0 0 12px 0; font-size:11px; color:var(--text-muted);">Strategy = the overall architecture of how an org uses paid ads over time. Hover each label for what it means and who uses it. Only 1 org (Kadampa) has an always-on strategy.</p>
         ${p.strategies_count.map((s) => `
           <div class="pattern-bar">
-            <span class="label">${s.strategy}</span>
+            <span class="label" data-tooltip="${escapeAttr(STRATEGY_TOOLTIPS[s.strategy] || "")}">${s.strategy}</span>
             <div class="bar"><div class="bar-fill" style="width:${(s.count / stratMax) * 100}%"></div></div>
             <span class="count">${s.count}</span>
           </div>
         `).join("")}
+      </div>
+    </div>
+
+    <h2 style="margin:28px 0 4px 0; font-size:18px;">Marketing intelligence</h2>
+    <p style="margin:0 0 16px 0; font-size:12px; color:var(--text-muted);">Structured comparison of acquisition infrastructure across all orgs. Derived from value ladders, ad strategy, voice descriptor, and ad data using Brunson's Linchpin model and Hormozi's Value Equation.</p>
+
+    <div class="intel-grid">
+      <div class="intel-card" style="grid-column: 1 / -1;">
+        <h3>Acquisition infrastructure comparison</h3>
+        <p class="card-intro">Green = yes, grey = no, orange = partial. 'Paid intro' = first paid offer is a low-ticket intro program. 'Email capture' = has a newsletter or free lead magnet with email. 'Secular framing' = non-religious front door for cold traffic. 'Living character' = org's brand is built around a living teacher.</p>
+        <table class="intel-table">
+          <thead>
+            <tr>
+              <th>Org</th>
+              <th style="text-align:center">Paid intro</th>
+              <th style="text-align:center">Email capture</th>
+              <th style="text-align:center">Secular framing</th>
+              <th style="text-align:center">Living character</th>
+              <th style="text-align:center">Evergreen ads</th>
+              <th>Ad strategy</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${intelTableRows}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="intel-card">
+        <h3>Strategic gaps and opportunities for AM</h3>
+        <p class="card-intro">Based on what's working across this competitor sample, filtered through Brunson's Linchpin model (continuity-first) and Hormozi's Dream 100 distribution logic.</p>
+        <ul class="insight-list">
+          ${gaps.map((g) => `
+            <li>
+              <span class="insight-label">${escapeHtml(g.label)}</span>
+              ${escapeHtml(g.text)}
+            </li>
+          `).join("")}
+        </ul>
+      </div>
+
+      <div class="intel-card">
+        <h3>Traffic temperature analysis</h3>
+        <p class="card-intro">Brunson's traffic ladder: cold (never heard of you) → warm (engaged before) → hot (comparing options) → believer (already in community). Most orgs in this sample are advertising almost exclusively to warm/believer. AM needs a cold-traffic machine first.</p>
+        <ul class="insight-list">
+          <li><span class="insight-label">Dominant temperature</span>Direct + religious-curiosity hooks = 83 of 126 ads (66%) are targeting warm/believer traffic. Almost no one is investing in cold acquisition.</li>
+          <li><span class="insight-label">Cold traffic opportunity</span>Emotional and quiz hooks (27 ads, 21%) are the only real cold-traffic plays in the sample. Both convert strangers by leading with pain/aspiration, not brand or theology.</li>
+          <li><span class="insight-label">Kadampa's model</span>Their 263-day winner uses an identity hook (hot traffic), but their tourism + curiosity ads do run cold. The genius is using cold ads to warm the audience, then identity ads to close them.</li>
+          <li><span class="insight-label">AM implication</span>AM has no cold traffic infrastructure. The first ad to write should be emotional or curiosity-hook, pointing to a free event or free meditation, not a branded mission statement.</li>
+        </ul>
       </div>
     </div>
   `;
@@ -502,6 +700,36 @@ function escapeHtml(s) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function escapeAttr(s) {
+  if (s == null) return "";
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// Infer what the ad is actually promoting from CTA + body + landing URL keywords.
+// Returns a short human-readable label ("free class", "retreat", "event", etc.)
+function inferAdCategory(a) {
+  const text = [a.headline, a.body, a.cta, a.landing_url].filter(Boolean).join(" ").toLowerCase();
+  if (/\b(retiro|retreat|ashram|residential|viver no|stay at)\b/.test(text)) return "retreat";
+  if (/\b(festival|just love fest|ratha yatra|narasimha|janmastami|navratri|diwali)\b/.test(text)) return "festival";
+  if (/\b(teacher training|teacher course|instrutor|formac|tcc|ttc|formation)\b/.test(text)) return "teacher training";
+  if (/\b(samyama|sanyam|advanced program|advanced course|bsp|bhava spandana)\b/.test(text)) return "advanced program";
+  if (/\b(inner engineering|happiness program|sky breath|sudarshan kriya|art of living part)\b/.test(text)) return "flagship course";
+  if (/\b(darshan|blessing|divine blessing|master.*available)\b/.test(text)) return "darshan event";
+  if (/\b(workshop|taller|atelier|minicurso)\b/.test(text)) return "workshop";
+  if (/\b(webinar|online session|livestream|live stream|aula online)\b/.test(text)) return "online session";
+  if (/\b(free class|aula gratuita|meditacao gratuita|free meditation|free session|try for free|experien)\b/.test(text)) return "free class";
+  if (/\b(quiz|find your|discover your path|qual.*caminho)\b/.test(text)) return "quiz / lead magnet";
+  if (/\b(app|download|install|google play|app store)\b/.test(text)) return "app install";
+  if (/\b(book|livro|loja|shop|merchandise|donate|donativo|donation|apoiar|give)\b/.test(text)) return "donation / merch";
+  if (/\b(volunteer|seva|bhumi|work with us|join us|work.*spirit)\b/.test(text)) return "volunteer";
+  if (/\b(weekly class|curso semanal|class.*week|regular.*class|drop.?in)\b/.test(text)) return "regular class";
+  if (/\b(event|evento|program|programa|upcoming|conference)\b/.test(text)) return "event";
+  return "";
 }
 
 boot();

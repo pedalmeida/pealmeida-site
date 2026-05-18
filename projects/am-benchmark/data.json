@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T18:06:01.566Z",
+  "generated_at": "2026-05-18T20:38:38.932Z",
   "counts": {
     "competitors": 8,
     "ads": 126
@@ -26,80 +26,104 @@
       "ad_strategy": "course-finder",
       "value_ladder": [
         {
+          "url": "https://www.artofliving.org/us-en/free-resources",
           "rung": 1,
           "type": "content",
           "offer": "Free meetups, guided meditations, daily practices via app",
-          "price": "free"
+          "price": "free",
+          "description": "The Art of Living app with breathing exercises and meditations; local free meetups and community events. Top of funnel for wellness seekers."
         },
         {
+          "url": "https://www.artofliving.org/us-en/beyondbreath",
           "rung": 2,
           "type": "intro",
           "offer": "Beyond Breath (breathwork intro)",
-          "price": "free"
+          "price": "free",
+          "description": "Free 90-min introductory session to SKY Breath Meditation — the main opt-in lead magnet that feeds the paid programs."
         },
         {
+          "url": "https://www.artofliving.org/us-en/meditation/types-of-meditation",
           "rung": 3,
           "type": "intro",
           "offer": "Secrets of Meditation intro",
-          "price": "free"
+          "price": "free",
+          "description": "Free intro to Sahaj Samadhi effortless meditation. Second opt-in path for people not resonating with the breathwork angle."
         },
         {
+          "url": "https://www.artofliving.org/us-en/sky-breath-meditation",
           "rung": 4,
           "type": "flagship-paid",
           "offer": "Art of Living Part 1 (SKY Breath / Happiness Program)",
-          "price": "~$395"
+          "price": "~$395",
+          "description": "The core paid program: 20+ hours learning SKY Breath Meditation (Sudarshan Kriya). Flagship revenue engine, anchored by the free Beyond Breath intro."
         },
         {
+          "url": "https://www.artofliving.org/us-en/sahaj-samadhi-meditation",
           "rung": 5,
           "type": "advanced",
           "offer": "Sahaj Samadhi Meditation",
-          "price": "higher"
+          "price": "higher",
+          "description": "Effortless mantra-based meditation course (similar to TM). Second core program — often taken by Part 1 graduates."
         },
         {
+          "url": "https://www.artofliving.org/us-en/sleep-anxiety-program",
           "rung": 6,
           "type": "specialty",
           "offer": "Sleep & Anxiety Protocol",
-          "price": "higher"
+          "price": "higher",
+          "description": "Specialty program for insomnia and anxiety — targets the medical/wellness adjacent market. Highest secular relevance in the lineup."
         },
         {
+          "url": "https://www.artofliving.org/us-en/yoga/sri-sri-yoga",
           "rung": 7,
           "type": "advanced",
           "offer": "Sri Sri Yoga Foundation",
-          "price": "higher"
+          "price": "higher",
+          "description": "Yoga program blending asana with AoL's Vedic approach. Third program track alongside breathwork and meditation."
         },
         {
+          "url": "https://www.artofliving.org/us-en/art-of-living-part-2",
           "rung": 8,
           "type": "retreat",
           "offer": "Art of Living Part 2 (silent retreat)",
-          "price": "higher tier"
+          "price": "higher tier",
+          "description": "Residential silent retreat deepening the SKY practice. The conversion event for Part 1 graduates — ~40% of graduates attend within 12 months."
         },
         {
+          "url": "https://www.artofliving.org/us-en/programs",
           "rung": 9,
           "type": "premium",
           "offer": "Advanced kriyas (Chakra, Sanyam, Shakti)",
-          "price": "premium"
+          "price": "premium",
+          "description": "Invitation-only advanced programs for dedicated long-term practitioners. Very small audience, very high LTV per person."
         },
         {
+          "url": "https://www.artofliving.org/us-en/teacher-training",
           "rung": 10,
           "type": "talent",
           "offer": "Teacher Training (21-day 200H Yoga cert)",
-          "price": "premium"
+          "price": "premium",
+          "description": "Residential 200H YTT for practitioners who want to teach AoL programs. Teachers then run local programs — the distribution multiplication model."
         },
         {
+          "url": "https://www.artofliving.org/us-en/retreat-centers",
           "rung": 11,
           "type": "residency",
           "offer": "Retreat center stays",
-          "price": "lodging"
+          "price": "lodging",
+          "description": "Stays at the Art of Living International Center in Bangalore or regional retreat centers. Community immersion for advanced students."
         },
         {
+          "url": "https://www.artofliving.org/us-en/donate",
           "rung": 12,
           "type": "donor",
           "offer": "Donations/endowment giving",
-          "price": "donor"
+          "price": "donor",
+          "description": "General donations supporting service projects (prison programs, rural education, post-trauma relief). Community contribution as seva."
         }
       ],
       "funnel_archetype": "opt-in",
-      "last_refreshed_at": "2026-05-18T17:26:17.870Z",
+      "last_refreshed_at": "2026-05-18T20:38:26.741Z",
       "stats": {
         "total": 5,
         "active": 5,
@@ -135,92 +159,120 @@
       "ad_strategy": "event-funnel",
       "value_ladder": [
         {
+          "url": "https://www.youtube.com/@BhaktiMarga",
           "rung": 1,
           "type": "content",
           "offer": "YouTube videos + 111 meditation playlist",
-          "price": "free"
+          "price": "free",
+          "description": "High-production YouTube channel with devotional music, kirtan, and Vishwananda darshan clips. The organic top-of-funnel that warms cold audiences."
         },
         {
+          "url": "https://www.bhaktimarga.org/events/online-darshan",
           "rung": 2,
           "type": "intro",
           "offer": "Online Darshan (recurring live blessing)",
-          "price": "free"
+          "price": "free",
+          "description": "Live-streamed darshan (blessing) from Vishwananda broadcast on YouTube/Facebook. Believers tune in regularly — the main warm-up mechanism."
         },
         {
+          "url": "https://omchanting.org/",
           "rung": 3,
           "type": "warm",
           "offer": "OM Chanting circles (local)",
-          "price": "free/donation"
+          "price": "free/donation",
+          "description": "Community-led chanting circles in cities worldwide. Decentralised, low-cost touchpoint that creates local community before the ashram visit."
         },
         {
+          "url": "https://www.bhaktimarga.org/",
           "rung": 4,
           "type": "continuity",
           "offer": "Newsletter",
-          "price": "free"
+          "price": "free",
+          "description": "Email list for darshan schedules, event announcements, and Vishwananda quotes. The email capture that enables retargeting outside Meta."
         },
         {
+          "url": "https://bhaktimarga.pt/eventos/",
           "rung": 5,
           "type": "intro-event",
           "offer": "Annual Darshan Portugal",
-          "price": "free event"
+          "price": "free event",
+          "description": "Free public darshan event in Portugal, typically in Lisbon or Porto. The centrepiece of the PT ad campaign — 22 ads in 2024/25 all point here."
         },
         {
+          "url": "https://bhaktimarga.pt/",
           "rung": 6,
           "type": "warm-event",
           "offer": "Ashram Open Day",
-          "price": "free"
+          "price": "free",
+          "description": "Open house at the Shri Peetha Nilaya ashram in Cadaval (PT) — the European HQ. Converts online followers into in-person community members."
         },
         {
+          "url": "https://www.bhaktimarga.org/events",
           "rung": 7,
           "type": "intro-paid",
           "offer": "Workshops & Sangha gatherings",
-          "price": "paid"
+          "price": "paid",
+          "description": "Day or weekend workshops in bhakti yoga, mantra, or devotional practice. First paid conversion point after the free events."
         },
         {
+          "url": "https://www.bhaktimarga.org/retreats/soul-awakening",
           "rung": 8,
           "type": "flagship",
           "offer": "Soul Awakening 4-day program",
-          "price": "paid intensive"
+          "price": "paid intensive",
+          "description": "4-day immersive residential program at the ashram. Core transformation offer — the Isha Inner Engineering equivalent. Flagship paid program."
         },
         {
+          "url": "https://www.bhaktimarga.org/just-love-festival",
           "rung": 9,
           "type": "retreat",
           "offer": "Just Love Festival",
-          "price": "paid + lodging"
+          "price": "paid + lodging",
+          "description": "Annual multi-day festival at Shri Peetha Nilaya with international participants, kirtan, darshan, workshops. Biggest revenue event of the year."
         },
         {
+          "url": "https://bhaktimarga.pt/estadias/",
           "rung": 10,
           "type": "residency",
           "offer": "Ashram stay (PT or Germany)",
-          "price": "paid lodging"
+          "price": "paid lodging",
+          "description": "Longer residential stays at the ashram. Guests participate in daily life, programs, and darshan."
         },
         {
+          "url": "https://bhumijobs.com/",
           "rung": 11,
           "type": "talent",
           "offer": "Bhumi Jobs / Seva (volunteer residency)",
-          "price": "commitment"
+          "price": "commitment",
+          "description": "Paid staff roles and volunteer seva positions at the ashram. Deep community integration — the talent pipeline."
         },
         {
+          "url": "https://bhaktishop.org/",
           "rung": 12,
           "type": "merch",
           "offer": "Bhakti Shop",
-          "price": "paid commerce"
+          "price": "paid commerce",
+          "description": "Online store for murtis, books, music, devotional items. Secondary revenue stream and community identity reinforcement."
         },
         {
+          "url": "https://bhaktimarga.pt/apoiar/",
           "rung": 13,
           "type": "donor",
           "offer": "Donations (Apoiar)",
-          "price": "donor"
+          "price": "donor",
+          "description": "General donation support for ashram projects and Vishwananda's mission. Community members contribute as an act of seva."
         },
         {
+          "url": "https://www.bhaktimarga.org/monastic-life",
           "rung": 14,
           "type": "ordination",
           "offer": "Swami / Swamini ordination",
-          "price": "ultimate commitment"
+          "price": "ultimate commitment",
+          "description": "Monastic ordination as a Swami or Swamini in Vishwananda's lineage. The deepest commitment rung — full renunciation and service."
         }
       ],
       "funnel_archetype": "application",
-      "last_refreshed_at": "2026-05-18T17:26:17.583Z",
+      "last_refreshed_at": "2026-05-18T20:38:26.418Z",
       "stats": {
         "total": 35,
         "active": 13,
@@ -260,50 +312,64 @@
       "ad_strategy": "event-pulse",
       "value_ladder": [
         {
+          "url": "https://www.brahmakumaris.pt/pensamento-do-dia/",
           "rung": 1,
           "type": "content",
           "offer": "Daily thoughts + Values Wheel",
-          "price": "free"
+          "price": "free",
+          "description": "Daily inspirational quotes and a values reflection tool on the website. Top-of-funnel content for curious self-development seekers."
         },
         {
+          "url": "https://www.youtube.com/@BrahmaKumarisPortugal",
           "rung": 2,
           "type": "content",
           "offer": "YouTube content",
-          "price": "free"
+          "price": "free",
+          "description": "Regular talks, meditations, and guided commentaries from BK teachers worldwide. Builds warm audience before in-person contact."
         },
         {
+          "url": "https://www.brahmakumaris.pt/contacto/",
           "rung": 3,
           "type": "continuity",
           "offer": "Newsletter",
-          "price": "free"
+          "price": "free",
+          "description": "Email list for event announcements, course schedules, and visiting speaker notices. The main retargeting mechanism."
         },
         {
+          "url": "https://www.brahmakumaris.pt/eventos/",
           "rung": 4,
           "type": "warm",
           "offer": "Weekly Sunday livestream",
-          "price": "free recurring"
+          "price": "free recurring",
+          "description": "Live Sunday morning spiritual gathering, streamed internationally. The consistent community touchpoint — BK's version of church."
         },
         {
+          "url": "https://www.brahmakumaris.pt/meditacao/raja-yoga/",
           "rung": 5,
           "type": "flagship",
           "offer": "Monthly Raja Yoga intro course",
-          "price": "free intensive"
+          "price": "free intensive",
+          "description": "7-day introductory Raja Yoga meditation course — the core BK offering, free globally. Converts curious visitors into regular practitioners."
         },
         {
+          "url": "https://www.brahmakumaris.pt/cursos/",
           "rung": 6,
           "type": "advanced",
           "offer": "Advanced courses + seminars",
-          "price": "free"
+          "price": "free",
+          "description": "Deeper courses in BK philosophy, spiritual values, and advanced meditation. For established students who want more structure."
         },
         {
+          "url": "https://www.brahmakumaris.pt/apoiar/",
           "rung": 7,
           "type": "donor",
           "offer": "Voluntary donations",
-          "price": "donor"
+          "price": "donor",
+          "description": "All BK programs are free — the organisation runs entirely on voluntary contributions from students. Donations = the business model."
         }
       ],
       "funnel_archetype": "continuity",
-      "last_refreshed_at": "2026-05-18T17:26:17.629Z",
+      "last_refreshed_at": "2026-05-18T20:38:26.471Z",
       "stats": {
         "total": 7,
         "active": 0,
@@ -340,86 +406,112 @@
       "ad_strategy": "multi-brand",
       "value_ladder": [
         {
+          "url": "https://sadhguru.org/",
           "rung": 1,
           "type": "content",
           "offer": "Miracle of Mind app, YouTube, blog",
-          "price": "free"
+          "price": "free",
+          "description": "Sadhguru's content empire: 10M+ YouTube subscribers, daily Instagram, Miracle of Mind app with guided meditations. World-class organic funnel."
         },
         {
+          "url": "https://isha.sadhguru.org/us/en/inner-engineering",
           "rung": 2,
           "type": "intro",
           "offer": "Free Inner Engineering intro session",
-          "price": "free"
+          "price": "free",
+          "description": "Free 90-min introductory session (online or in-person) explaining what Inner Engineering is. The opt-in / free session before the paid program."
         },
         {
+          "url": "https://isha.sadhguru.org/us/en/inner-engineering/inner-engineering-online",
           "rung": 3,
           "type": "flagship-paid",
           "offer": "Inner Engineering Online (7 steps, 22 hrs)",
-          "price": "$175 (anchor $375)"
+          "price": "$175 (anchor $375)",
+          "description": "The flagship program: 7 online sessions teaching Shambhavi Mahamudra kriya. The core revenue engine — ~$175 is the most accessible entry to a paid spiritual program in this sample."
         },
         {
+          "url": "https://isha.sadhguru.org/us/en/inner-engineering/inner-engineering-with-sadhguru",
           "rung": 4,
           "type": "advanced",
           "offer": "Inner Engineering In-Person (centers worldwide)",
-          "price": "higher"
+          "price": "higher",
+          "description": "Same curriculum delivered live at an Isha center. Includes the kriya initiation in person from a trained teacher."
         },
         {
+          "url": "https://isha.sadhguru.org/us/en/retreats",
           "rung": 5,
           "type": "retreat",
           "offer": "Inner Engineering Retreat (4 days India/USA)",
-          "price": "higher"
+          "price": "higher",
+          "description": "Residential 4-day retreat at Isha Yoga Center (Coimbatore) or USA center. The residential conversion — where online students go deeper."
         },
         {
+          "url": "https://isha.sadhguru.org/us/en/inner-engineering",
           "rung": 6,
           "type": "continuity",
           "offer": "40-day Shambhavi Mahamudra mandala",
-          "price": "included"
+          "price": "included",
+          "description": "40-day daily practice commitment with the kriya. Built into the IE program — the habit-formation mechanism that drives retention."
         },
         {
+          "url": "https://isha.sadhguru.org/us/en/programs/advanced",
           "rung": 7,
           "type": "advanced",
           "offer": "Advanced Programs (Bhava Spandana, Samyama)",
-          "price": "higher tier"
+          "price": "higher tier",
+          "description": "BSP (emotional body clearing, 4 days), Samyama (silent 8-day meditation intensive at Isha Yoga Center). For committed practitioners."
         },
         {
+          "url": "https://sadhguru.org/events",
           "rung": 8,
           "type": "continuity",
           "offer": "Monthly Satsangs",
-          "price": "free continuity"
+          "price": "free continuity",
+          "description": "Monthly Sadhguru live satsangs, streamed globally. Community retention mechanism — keeps graduates engaged between programs."
         },
         {
+          "url": "https://isha.sadhguru.org/exclusive",
           "rung": 9,
           "type": "subscription",
           "offer": "Sadhguru Exclusive subscription",
-          "price": "recurring"
+          "price": "recurring",
+          "description": "Paid subscription for premium content, early access to programs, and exclusive talks. The Linchpin continuity anchor."
         },
         {
+          "url": "https://sadhguru.org/events",
           "rung": 10,
           "type": "premium-event",
           "offer": "Join Sadhguru Live (in-person)",
-          "price": "premium"
+          "price": "premium",
+          "description": "In-person events with Sadhguru — talks, consecrations, global rallies (Rally for Rivers, Save Soil). High-ticket prestige rung."
         },
         {
+          "url": "https://isha.sadhguru.org/us/en/volunteering",
           "rung": 11,
           "type": "talent",
           "offer": "Volunteer pathway",
-          "price": "commitment"
+          "price": "commitment",
+          "description": "Isha volunteers support events, programs, and the Yoga Center. The talent and mission pipeline — deepest commitment without monastic life."
         },
         {
+          "url": "https://isha.sadhguru.org/us/en/donations",
           "rung": 12,
           "type": "donor",
           "offer": "Donations + Scholarship funding",
-          "price": "donor"
+          "price": "donor",
+          "description": "General donations support Isha's rural initiatives (Action for Rural Rejuvenation), environmental campaigns, and scholarships for IE."
         },
         {
+          "url": "https://isha.sadhguru.org/us/en/inner-engineering/inner-engineering-online",
           "rung": 13,
           "type": "accessibility",
           "offer": "Special pricing (veterans/students/seniors)",
-          "price": "tier"
+          "price": "tier",
+          "description": "Reduced pricing for Inner Engineering for veterans, students, seniors, and people from low-income countries. Widens the funnel mouth."
         }
       ],
       "funnel_archetype": "webinar",
-      "last_refreshed_at": "2026-05-18T17:26:17.779Z",
+      "last_refreshed_at": "2026-05-18T20:38:26.636Z",
       "stats": {
         "total": 22,
         "active": 20,
@@ -457,7 +549,7 @@
       "ad_strategy": "event-pulse",
       "value_ladder": [],
       "funnel_archetype": "continuity",
-      "last_refreshed_at": "2026-05-18T17:26:17.730Z",
+      "last_refreshed_at": "2026-05-18T20:38:26.585Z",
       "stats": {
         "total": 5,
         "active": 5,
@@ -494,56 +586,72 @@
       "ad_strategy": "none",
       "value_ladder": [
         {
+          "url": "https://iskconlisboa.pt/programa/",
           "rung": 1,
           "type": "intro",
           "offer": "Mantra meditation (in-person)",
-          "price": "free"
+          "price": "free",
+          "description": "Japa meditation with mala beads and kirtan — the first in-person touchpoint for visitors to the temple. Open to all."
         },
         {
+          "url": "https://iskconlisboa.pt/estudo/",
           "rung": 2,
           "type": "content",
           "offer": "Online courses & lectures",
-          "price": "free"
+          "price": "free",
+          "description": "Recorded lectures, Bhagavad Gita study, and philosophy classes available online. The digital front door — but not actively promoted."
         },
         {
+          "url": "https://iskconlisboa.pt/nama-hatta/",
           "rung": 3,
           "type": "warm",
           "offer": "Nama-Hatta community groups",
-          "price": "free"
+          "price": "free",
+          "description": "Home-based devotional gatherings in Lisbon and other cities. The local community multiplication model used across ISKCON globally."
         },
         {
+          "url": "https://iskconlisboa.pt/programa/",
           "rung": 4,
           "type": "warm-event",
           "offer": "Sunday programs (lecture + kirtan + prasadam)",
-          "price": "free"
+          "price": "free",
+          "description": "Weekly Sunday feast with philosophy lecture, singing, and free vegetarian lunch (prasadam). The main recurring community event."
         },
         {
+          "url": "https://iskconlisboa.pt/festivais/",
           "rung": 5,
           "type": "event",
           "offer": "Festivals (Ratha Yatra)",
-          "price": "free public"
+          "price": "free public",
+          "description": "Public chariot festival through Lisbon streets. Highest-visibility public event — potential cold-traffic acquisition moment."
         },
         {
+          "url": "https://iskconlisboa.pt/loja/",
           "rung": 6,
           "type": "merch",
           "offer": "Bazar (books, devotional items)",
-          "price": "paid commerce"
+          "price": "paid commerce",
+          "description": "Books by Srila Prabhupada, incense, deity items, and merchandise. Secondary revenue; also serves as a belief reinforcement mechanism."
         },
         {
+          "url": "https://iskconlisboa.pt/apoiar/",
           "rung": 7,
           "type": "donor",
           "offer": "Donations (Cuidar de Krishna)",
-          "price": "donor"
+          "price": "donor",
+          "description": "Deity worship sponsorship and general temple maintenance donations. Community members sponsor specific deity services."
         },
         {
+          "url": "https://iskconlisboa.pt/novo-templo/",
           "rung": 8,
           "type": "donor-major",
           "offer": "New Temple capital campaign",
-          "price": "major giving"
+          "price": "major giving",
+          "description": "Capital campaign to fund a permanent temple in Lisbon — the major-giving rung. Currently the main fundraising priority."
         }
       ],
       "funnel_archetype": "continuity",
-      "last_refreshed_at": "2026-05-18T17:26:17.679Z",
+      "last_refreshed_at": "2026-05-18T20:38:26.539Z",
       "stats": {
         "total": 0,
         "active": 0,
@@ -574,56 +682,72 @@
       "ad_strategy": "always-on",
       "value_ladder": [
         {
+          "url": "https://kadampa.pt/wp/meditacao-guiada/",
           "rung": 1,
           "type": "intro",
           "offer": "Free 30-min meditations (Wed/Fri/Sun)",
-          "price": "free"
+          "price": "free",
+          "description": "Drop-in guided meditations open to complete beginners. No booking, no belief required. The lowest-friction front door."
         },
         {
+          "url": "https://kadampa.pt/wp/programa-semanal/",
           "rung": 2,
           "type": "warm",
           "offer": "Weekly drop-in classes (Wed 19:30)",
-          "price": "drop-in"
+          "price": "drop-in",
+          "description": "Regular evening class combining Dharma teaching and meditation. The main community touchpoint for regular attendees."
         },
         {
+          "url": "https://kadampa.pt/wp/eventos/",
           "rung": 3,
           "type": "intro-paid",
           "offer": "Single workshops",
-          "price": "paid"
+          "price": "paid",
+          "description": "Half- or full-day themed workshops (stress, relationships, death and dying). First paid touchpoint — typically €10-25."
         },
         {
+          "url": "https://kadampa.pt/wp/cursos/",
           "rung": 4,
           "type": "flagship",
           "offer": "Multi-week courses",
-          "price": "paid"
+          "price": "paid",
+          "description": "Foundation Programme or Introduction to Buddhism courses (6-12 weeks). The core Kadampa curriculum for committed students."
         },
         {
+          "url": "https://kadampa.pt/wp/retiros/",
           "rung": 5,
           "type": "retreat",
           "offer": "Weekend retreats",
-          "price": "paid + lodging"
+          "price": "paid + lodging",
+          "description": "Residential retreats at the Sintra temple. Deep practice in community setting. Converts course-goers into sangha members."
         },
         {
+          "url": "https://www.kadampa.org/festivals",
           "rung": 6,
           "type": "advanced",
           "offer": "International festivals + advanced empowerments",
-          "price": "higher tier"
+          "price": "higher tier",
+          "description": "NKT International Festivals in UK or Spain — 5-7 days of teachings and initiations with the Gen-la Dekyong (NKT General Spiritual Director)."
         },
         {
+          "url": "https://kadampa.pt/wp/apoio/",
           "rung": 7,
           "type": "continuity",
           "offer": "Monthly membership cards",
-          "price": "recurring"
+          "price": "recurring",
+          "description": "Monthly subscription giving discounts on all courses and events. The Linchpin continuity anchor — stabilises recurring revenue."
         },
         {
+          "url": "https://kadampa.pt/wp/como-residir/",
           "rung": 8,
           "type": "residency",
           "offer": "Temple accommodation",
-          "price": "paid"
+          "price": "paid",
+          "description": "Live-in residency at the Sintra temple for committed practitioners. Deepest commitment rung — full immersion in community."
         }
       ],
       "funnel_archetype": "bridge",
-      "last_refreshed_at": "2026-05-18T17:26:17.539Z",
+      "last_refreshed_at": "2026-05-18T20:38:26.361Z",
       "stats": {
         "total": 26,
         "active": 11,
@@ -631,8 +755,8 @@
         "longest_run_days": 263,
         "hook_counts": {
           "identity": 4,
-          "religious-curiosity": 2,
           "curiosity": 5,
+          "religious-curiosity": 2,
           "tourism": 4,
           "authority-quote": 2,
           "direct": 7,
@@ -640,8 +764,8 @@
         },
         "temperature_counts": {
           "hot": 4,
-          "believer": 4,
           "warm": 14,
+          "believer": 4,
           "cold": 4
         }
       }
@@ -667,62 +791,80 @@
       "ad_strategy": "decentralized",
       "value_ladder": [
         {
+          "url": "https://sivananda.org/teachings/",
           "rung": 1,
           "type": "content",
           "offer": "Free articles + magazine archive",
-          "price": "free"
+          "price": "free",
+          "description": "Classic Yoga Vedanta magazine and articles on the Sivananda website. Old-school content marketing — not algorithmically distributed."
         },
         {
+          "url": "https://sivananda.org/programs/",
           "rung": 2,
           "type": "warm",
           "offer": "Workshops, Retreats, Programmes",
-          "price": "unpriced"
+          "price": "unpriced",
+          "description": "Short workshops and programs at individual centres (Lisbon, Paris, Berlin, etc). Front door is confusing — pricing not shown upfront."
         },
         {
+          "url": "https://sivananda.org/ashrams/",
           "rung": 3,
           "type": "retreat",
           "offer": "Yoga Vacation (residential multi-day)",
-          "price": "higher"
+          "price": "higher",
+          "description": "Multi-day residential stay at an ashram (Bahamas, India, Austria, Canada). Daily schedule: asanas, meditation, satsang, karma yoga. The core product."
         },
         {
+          "url": "https://sivananda.org/karma-yoga/",
           "rung": 4,
           "type": "talent",
           "offer": "Karma Yoga (volunteer residency)",
-          "price": "lodging only"
+          "price": "lodging only",
+          "description": "Extended ashram stay as a volunteer (karma yogi). Covers lodging in exchange for service. Builds the deep community."
         },
         {
+          "url": "https://sivananda.org/teacher-training/",
           "rung": 5,
           "type": "flagship-paid",
           "offer": "TTC Teacher Training Course",
-          "price": "higher tier"
+          "price": "higher tier",
+          "description": "28-day 200-hour residential YTT certification — the core revenue and impact product. Graduates become global ambassadors and most buy more."
         },
         {
+          "url": "https://sivananda.org/advanced-teacher-training/",
           "rung": 6,
           "type": "advanced",
           "offer": "Advanced TTC (post-certification)",
-          "price": "higher"
+          "price": "higher",
+          "description": "300-hour ATTC for TTC graduates. Deepens methodology and adds advanced pranayama and philosophy."
         },
         {
+          "url": "https://sivananda.org/programs/sadhana-intensive/",
           "rung": 7,
           "type": "advanced",
           "offer": "Sadhana Intensive",
-          "price": "higher"
+          "price": "higher",
+          "description": "Intensive personal practice retreat — for experienced practitioners who want to deepen beyond the standard YTT curriculum."
         },
         {
+          "url": "https://sivananda.org/yoga-health-educator/",
           "rung": 8,
           "type": "premium",
           "offer": "Ayurveda 800h Yoga Therapy (SYHET)",
-          "price": "premium"
+          "price": "premium",
+          "description": "Sivananda's 800-hour Yoga Health Educator Training — the premium professional certification. Long-term investment, small audience."
         },
         {
+          "url": "https://sivananda.org/ashrams/join/",
           "rung": 9,
           "type": "residency",
           "offer": "Long-term ashram residency",
-          "price": "lodging tier"
+          "price": "lodging tier",
+          "description": "Extended residency for committed practitioners who want to live the full ashram lifestyle. The deepest non-monastic commitment."
         }
       ],
       "funnel_archetype": "application",
-      "last_refreshed_at": "2026-05-18T17:26:17.826Z",
+      "last_refreshed_at": "2026-05-18T20:38:26.688Z",
       "stats": {
         "total": 26,
         "active": 1,
@@ -764,58 +906,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=926456623430937",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/art-of-living/926456623430937.jpg",
-      "asset_type": "creative-thumb"
-    },
-    {
-      "id": "art-of-living-957958280006949",
-      "competitor_id": "art-of-living",
-      "library_id": "957958280006949",
-      "country": "ALL",
-      "advertiser_page": "Intuition Process, Art of Living - Get a Call Back 05",
-      "started_at": "2026-03-25T00:00:00.000Z",
-      "ended_at": null,
-      "is_active": true,
-      "duration_days": 54,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "They sit with decisions but can’t seem to move forward. So many options - yet no clarity.",
-      "body": "They sit with decisions but can’t seem to move forward. So many options - yet no clarity.\n\nThrough the Intuition Process®, children learn how to tune in, trust themselves, and act with calm confidence. No more confusion. Just quiet knowing.\n\nThe Intuition Process® is taught in a playful setting and offered in 3 age groups:\n\n5-8 (juniors), 9-13 (kids), and 14-17 (teens) - with age-appropriate techniques for each.\n\n📍 Offline sessions are now happening in your city.\n\n🎉 Small groups, big impact. Enroll now - spaces fill quickly.\n\n👉 Tap Learn More to explore.",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/600367803_911771347858479_1132676628080693759_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9NnGQhuZ8xQQ7kNvwEfHQfj&_nc_oc=Adp3Bi-ybB627rnTsgzbZgfSHaQ34JXMcRhNS4XsaX_olW8C6ZzfWQn7FXXvceTjjJc&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=mIAGfVVLvXJm3o8uk3Xj1A&_nc_ss=7b289&oh=00_Af4QPE1gdzWFEpmcta-_4mpxTPMPsHzZoet-uaIMw0VELg&oe=6A10F66D",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=957958280006949",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/art-of-living/957958280006949.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "art-of-living-2676412222742901",
-      "competitor_id": "art-of-living",
-      "library_id": "2676412222742901",
-      "country": "ALL",
-      "advertiser_page": "Intuition Process, Art of Living - Get a Call Back 05",
-      "started_at": "2026-03-25T00:00:00.000Z",
-      "ended_at": null,
-      "is_active": true,
-      "duration_days": 54,
-      "creative_variants": 2,
-      "is_evergreen_winner": false,
-      "hook_angle": "curiosity",
-      "traffic_temperature": "warm",
-      "headline": "Does your child second-guess every decision they make?",
-      "body": "Does your child second-guess every decision they make?\n\nGive them inner calm and strength—the true foundation of confidence—with Intuition Process®.”\n\nThe Intuition Process® is taught in a playful setting and offered in 3 age groups:\n\n5-8 (juniors), 9-13 (kids), and 14-17 (teens) – with age-appropriate techniques for each.",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/612587407_1628954398119370_8863564059955447686_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=_QlfLOjWh4kQ7kNvwENmXBn&_nc_oc=AdrdUAVeOcrN0JRglR1NdqMOMYSQTBFd0gTy92DnyHqEQmSc5kGV7dd4Nq6tY1Lm7DU&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=mIAGfVVLvXJm3o8uk3Xj1A&_nc_ss=7b289&oh=00_Af4XY-9mb5qWkp2ZoxrAhX333xHkIKp4cv8fTL2FXKfNHA&oe=6A10FA3D",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=2676412222742901",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/art-of-living/2676412222742901.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "art-of-living-1139629341576471",
@@ -839,8 +931,58 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1139629341576471",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/art-of-living/1139629341576471.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "art-of-living-2676412222742901",
+      "competitor_id": "art-of-living",
+      "library_id": "2676412222742901",
+      "country": "ALL",
+      "advertiser_page": "Intuition Process, Art of Living - Get a Call Back 05",
+      "started_at": "2026-03-25T00:00:00.000Z",
+      "ended_at": null,
+      "is_active": true,
+      "duration_days": 54,
+      "creative_variants": 2,
+      "is_evergreen_winner": false,
+      "hook_angle": "curiosity",
+      "traffic_temperature": "warm",
+      "headline": "Does your child second-guess every decision they make?",
+      "body": "Does your child second-guess every decision they make?\n\nGive them inner calm and strength—the true foundation of confidence—with Intuition Process®.”\n\nThe Intuition Process® is taught in a playful setting and offered in 3 age groups:\n\n5-8 (juniors), 9-13 (kids), and 14-17 (teens) – with age-appropriate techniques for each.",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/612587407_1628954398119370_8863564059955447686_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=_QlfLOjWh4kQ7kNvwENmXBn&_nc_oc=AdrdUAVeOcrN0JRglR1NdqMOMYSQTBFd0gTy92DnyHqEQmSc5kGV7dd4Nq6tY1Lm7DU&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=mIAGfVVLvXJm3o8uk3Xj1A&_nc_ss=7b289&oh=00_Af4XY-9mb5qWkp2ZoxrAhX333xHkIKp4cv8fTL2FXKfNHA&oe=6A10FA3D",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2676412222742901",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "art-of-living-957958280006949",
+      "competitor_id": "art-of-living",
+      "library_id": "957958280006949",
+      "country": "ALL",
+      "advertiser_page": "Intuition Process, Art of Living - Get a Call Back 05",
+      "started_at": "2026-03-25T00:00:00.000Z",
+      "ended_at": null,
+      "is_active": true,
+      "duration_days": 54,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "They sit with decisions but can’t seem to move forward. So many options - yet no clarity.",
+      "body": "They sit with decisions but can’t seem to move forward. So many options - yet no clarity.\n\nThrough the Intuition Process®, children learn how to tune in, trust themselves, and act with calm confidence. No more confusion. Just quiet knowing.\n\nThe Intuition Process® is taught in a playful setting and offered in 3 age groups:\n\n5-8 (juniors), 9-13 (kids), and 14-17 (teens) - with age-appropriate techniques for each.\n\n📍 Offline sessions are now happening in your city.\n\n🎉 Small groups, big impact. Enroll now - spaces fill quickly.\n\n👉 Tap Learn More to explore.",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/600367803_911771347858479_1132676628080693759_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9NnGQhuZ8xQQ7kNvwEfHQfj&_nc_oc=Adp3Bi-ybB627rnTsgzbZgfSHaQ34JXMcRhNS4XsaX_olW8C6ZzfWQn7FXXvceTjjJc&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=mIAGfVVLvXJm3o8uk3Xj1A&_nc_ss=7b289&oh=00_Af4QPE1gdzWFEpmcta-_4mpxTPMPsHzZoet-uaIMw0VELg&oe=6A10F66D",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=957958280006949",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "art-of-living-3401806786641314",
@@ -864,8 +1006,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3401806786641314",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/art-of-living/3401806786641314.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1229799108876533",
@@ -889,8 +1031,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1229799108876533",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1229799108876533.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-2223943874787163",
@@ -914,8 +1056,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2223943874787163",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/2223943874787163.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-3105134006328162",
@@ -939,8 +1081,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3105134006328162",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/3105134006328162.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-3079969578827186",
@@ -964,58 +1106,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3079969578827186",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/3079969578827186.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "bhakti-marga-2461685650894296",
-      "competitor_id": "bhakti-marga",
-      "library_id": "2461685650894296",
-      "country": "PT",
-      "advertiser_page": "Bhakti Marga Portugal",
-      "started_at": "2025-06-21T23:00:00.000Z",
-      "ended_at": "2025-07-02T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 11,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Swipe up to follow @bhaktimarga\\_portugal on Instagram.",
-      "body": "Swipe up to follow @bhaktimarga\\_portugal on Instagram.",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/511192242_710658218794248_4462118755488219177_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9bEJEwkCX10Q7kNvwHaK1E1&_nc_oc=AdrD1xzqTMAxEf7MvL4VIqOYIe0SG1r6Y5xBxHGothOdBnveMtJ_0QGZhhHESTag0Go&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af5Llk92tjseshnKB7LKVz9TJuTpre_WXj_tEAoJKnx2Bw&oe=6A10E0C8",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=2461685650894296",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/2461685650894296.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "bhakti-marga-1529397251358173",
-      "competitor_id": "bhakti-marga",
-      "library_id": "1529397251358173",
-      "country": "PT",
-      "advertiser_page": "Bhakti Marga Portugal",
-      "started_at": "2025-06-07T23:00:00.000Z",
-      "ended_at": "2025-06-18T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 11,
-      "creative_variants": 3,
-      "is_evergreen_winner": false,
-      "hook_angle": "authority-quote",
-      "traffic_temperature": "believer",
-      "headline": "Uma mente calma pode ser a nossa melhor amiga — ou a pior inimiga.",
-      "body": "Uma mente calma pode ser a nossa melhor amiga — ou a pior inimiga.\n\nO Darshan com Paramahamsa Vishwananda é uma bênção que ajuda a acalmar a mente e a fazer escolhas com mais clareza e amor.\n\n19 e 20 de julho no Cadaval 📍\n\nVem receber este olhar transformador ✨\n\nInscreve-te em darshan.bhaktimarga.pt ou através do link na bio",
-      "hashtags": [],
-      "cta": "Saber mais",
-      "landing_url": "https://www.facebook.com/help/396404120401278/list",
-      "creative_type": "video",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=1529397251358173",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1529397251358173.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1523081101987923",
@@ -1039,8 +1131,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1523081101987923",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1523081101987923.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1699273630709092",
@@ -1064,8 +1156,58 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1699273630709092",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1699273630709092.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "bhakti-marga-2461685650894296",
+      "competitor_id": "bhakti-marga",
+      "library_id": "2461685650894296",
+      "country": "PT",
+      "advertiser_page": "Bhakti Marga Portugal",
+      "started_at": "2025-06-21T23:00:00.000Z",
+      "ended_at": "2025-07-02T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 11,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Swipe up to follow @bhaktimarga\\_portugal on Instagram.",
+      "body": "Swipe up to follow @bhaktimarga\\_portugal on Instagram.",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/511192242_710658218794248_4462118755488219177_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9bEJEwkCX10Q7kNvwHaK1E1&_nc_oc=AdrD1xzqTMAxEf7MvL4VIqOYIe0SG1r6Y5xBxHGothOdBnveMtJ_0QGZhhHESTag0Go&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=kXPOfrQuvev2cR5Tb4R1OQ&_nc_ss=7b289&oh=00_Af5Llk92tjseshnKB7LKVz9TJuTpre_WXj_tEAoJKnx2Bw&oe=6A10E0C8",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2461685650894296",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "bhakti-marga-1529397251358173",
+      "competitor_id": "bhakti-marga",
+      "library_id": "1529397251358173",
+      "country": "PT",
+      "advertiser_page": "Bhakti Marga Portugal",
+      "started_at": "2025-06-07T23:00:00.000Z",
+      "ended_at": "2025-06-18T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 11,
+      "creative_variants": 3,
+      "is_evergreen_winner": false,
+      "hook_angle": "authority-quote",
+      "traffic_temperature": "believer",
+      "headline": "Uma mente calma pode ser a nossa melhor amiga — ou a pior inimiga.",
+      "body": "Uma mente calma pode ser a nossa melhor amiga — ou a pior inimiga.\n\nO Darshan com Paramahamsa Vishwananda é uma bênção que ajuda a acalmar a mente e a fazer escolhas com mais clareza e amor.\n\n19 e 20 de julho no Cadaval 📍\n\nVem receber este olhar transformador ✨\n\nInscreve-te em darshan.bhaktimarga.pt ou através do link na bio",
+      "hashtags": [],
+      "cta": "Saber mais",
+      "landing_url": "https://www.facebook.com/help/396404120401278/list",
+      "creative_type": "video",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1529397251358173",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-681473208243132",
@@ -1089,8 +1231,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=681473208243132",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/681473208243132.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1458102378953208",
@@ -1114,8 +1256,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1458102378953208",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1458102378953208.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1751401335563005",
@@ -1159,8 +1301,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1751401335563005",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1751401335563005.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1511567693373697",
@@ -1196,8 +1338,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1511567693373697",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1511567693373697.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1913961302482813",
@@ -1241,33 +1383,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1913961302482813",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1913961302482813.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "bhakti-marga-709318752155386",
-      "competitor_id": "bhakti-marga",
-      "library_id": "709318752155386",
-      "country": "PT",
-      "advertiser_page": "Bhakti Marga Portugal",
-      "started_at": "2025-08-28T23:00:00.000Z",
-      "ended_at": "2025-09-04T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 7,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Volta onde foste feliz !",
-      "body": "Volta onde foste feliz !\n\nNo dia 13 de setembro, o Ashram abre as portas!\n\nUm dia para conhecer o espaço, acalmar a mente, participar em cerimónias sagradas e mergulhar na experiência completa do Ashram.\n\nUma oportunidade única para viver um dia diferente, num ambiente cheiiinho de amor!\n\nInscreve-te já! é gratuito !",
-      "hashtags": [],
-      "cta": "Saber mais",
-      "landing_url": "https://www.facebook.com/help/396404120401278/list",
-      "creative_type": "video",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=709318752155386",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/709318752155386.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-701310262399252",
@@ -1312,8 +1429,33 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=701310262399252",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/701310262399252.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "bhakti-marga-709318752155386",
+      "competitor_id": "bhakti-marga",
+      "library_id": "709318752155386",
+      "country": "PT",
+      "advertiser_page": "Bhakti Marga Portugal",
+      "started_at": "2025-08-28T23:00:00.000Z",
+      "ended_at": "2025-09-04T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 7,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Volta onde foste feliz !",
+      "body": "Volta onde foste feliz !\n\nNo dia 13 de setembro, o Ashram abre as portas!\n\nUm dia para conhecer o espaço, acalmar a mente, participar em cerimónias sagradas e mergulhar na experiência completa do Ashram.\n\nUma oportunidade única para viver um dia diferente, num ambiente cheiiinho de amor!\n\nInscreve-te já! é gratuito !",
+      "hashtags": [],
+      "cta": "Saber mais",
+      "landing_url": "https://www.facebook.com/help/396404120401278/list",
+      "creative_type": "video",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=709318752155386",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1716909265699784",
@@ -1352,8 +1494,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1716909265699784",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1716909265699784.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-2046358099101504",
@@ -1392,8 +1534,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2046358099101504",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/2046358099101504.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-2451124695293065",
@@ -1417,33 +1559,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2451124695293065",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/2451124695293065.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "bhakti-marga-888881070920629",
-      "competitor_id": "bhakti-marga",
-      "library_id": "888881070920629",
-      "country": "PT",
-      "advertiser_page": "Paramahamsa Sri Swami Vishwananda",
-      "started_at": "2026-05-13T23:00:00.000Z",
-      "ended_at": null,
-      "is_active": true,
-      "duration_days": 4,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Four days. Ancient practices. A living teacher. This is what Soul Awakening looks like from the inside.",
-      "body": "Four days. Ancient practices. A living teacher. This is what Soul Awakening looks like from the inside.",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/677191712_1248885243894255_3236581595056360161_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=SpJ4of21SUUQ7kNvwE1hqr6&_nc_oc=Adoq58eZkYczntQfbDJSoxSKAGzK4JwBPtidswgNzzP-Ve_mwp9wOAmfT4ZGEX6LsXk&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=aeqZA3EvrXp4zSYigAtLXA&_nc_ss=7b289&oh=00_Af45MJVzid15sn7TqZrwG9S8J8JVlFZNXh_3PZyPYi2epg&oe=6A10E050",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=888881070920629",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/888881070920629.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1020345227160412",
@@ -1467,8 +1584,33 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1020345227160412",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1020345227160412.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "bhakti-marga-888881070920629",
+      "competitor_id": "bhakti-marga",
+      "library_id": "888881070920629",
+      "country": "PT",
+      "advertiser_page": "Paramahamsa Sri Swami Vishwananda",
+      "started_at": "2026-05-13T23:00:00.000Z",
+      "ended_at": null,
+      "is_active": true,
+      "duration_days": 4,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Four days. Ancient practices. A living teacher. This is what Soul Awakening looks like from the inside.",
+      "body": "Four days. Ancient practices. A living teacher. This is what Soul Awakening looks like from the inside.",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/677191712_1248885243894255_3236581595056360161_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=SpJ4of21SUUQ7kNvwE1hqr6&_nc_oc=Adoq58eZkYczntQfbDJSoxSKAGzK4JwBPtidswgNzzP-Ve_mwp9wOAmfT4ZGEX6LsXk&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=aeqZA3EvrXp4zSYigAtLXA&_nc_ss=7b289&oh=00_Af45MJVzid15sn7TqZrwG9S8J8JVlFZNXh_3PZyPYi2epg&oe=6A10E050",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=888881070920629",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1611140663304528",
@@ -1492,13 +1634,13 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1611140663304528",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1611140663304528.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
-      "id": "bhakti-marga-1448311547333190",
+      "id": "bhakti-marga-971337505542810",
       "competitor_id": "bhakti-marga",
-      "library_id": "1448311547333190",
+      "library_id": "971337505542810",
       "country": "PT",
       "advertiser_page": "Bhakti Marga Latvia",
       "started_at": "2026-05-15T23:00:00.000Z",
@@ -1515,35 +1657,10 @@
       "cta": "Learn more",
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=1448311547333190",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=971337505542810",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1448311547333190.jpg",
-      "asset_type": "creative-thumb"
-    },
-    {
-      "id": "bhakti-marga-1005606365323606",
-      "competitor_id": "bhakti-marga",
-      "library_id": "1005606365323606",
-      "country": "PT",
-      "advertiser_page": "Bhakti Marga Latvia",
-      "started_at": "2026-05-15T23:00:00.000Z",
-      "ended_at": null,
-      "is_active": true,
-      "duration_days": 2,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "religious-curiosity",
-      "traffic_temperature": "believer",
-      "headline": "Piedzīvo garīgā Meistara klātbūtni un vadību saņemot personīgu svētību (Daršanu)",
-      "body": "Piedzīvo garīgā Meistara klātbūtni un vadību saņemot personīgu svētību (Daršanu)\n\n🇱🇻 Rīga, Latvija \\| 27. jūnijs\n\n🎟️ Reģistrējies tagad: bhaktimarga.lv\n\n🌸 Experience the presence and guidance of a living spiritual Master during a Personal Blessing (Darshan)\n\n🇱🇻 Riga, Latvia \\| June 27\n\n🎟️ Register now: bhaktimarga.lv",
-      "hashtags": [],
-      "cta": "Learn more",
-      "landing_url": "https://www.facebook.com/help/396404120401278/list",
-      "creative_type": "video",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=1005606365323606",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1005606365323606.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-586395694248385",
@@ -1567,8 +1684,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=586395694248385",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/586395694248385.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1184389293460431",
@@ -1592,8 +1709,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1184389293460431",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1184389293460431.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-23957272693896303",
@@ -1617,8 +1734,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=23957272693896303",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/23957272693896303.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1510818336953605",
@@ -1642,8 +1759,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1510818336953605",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1510818336953605.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-2287260478369157",
@@ -1688,8 +1805,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2287260478369157",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/2287260478369157.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-3570955289879385",
@@ -1713,8 +1830,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3570955289879385",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/3570955289879385.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-3952107245085745",
@@ -1738,8 +1855,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3952107245085745",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/3952107245085745.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1672807283986063",
@@ -1763,8 +1880,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1672807283986063",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1672807283986063.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1055354393488659",
@@ -1788,8 +1905,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1055354393488659",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1055354393488659.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-984596863970738",
@@ -1813,8 +1930,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=984596863970738",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/984596863970738.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "bhakti-marga-1745281243514416",
@@ -1838,13 +1955,13 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1745281243514416",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/1745281243514416.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
-      "id": "bhakti-marga-971337505542810",
+      "id": "bhakti-marga-1448311547333190",
       "competitor_id": "bhakti-marga",
-      "library_id": "971337505542810",
+      "library_id": "1448311547333190",
       "country": "PT",
       "advertiser_page": "Bhakti Marga Latvia",
       "started_at": "2026-05-15T23:00:00.000Z",
@@ -1861,10 +1978,35 @@
       "cta": "Learn more",
       "landing_url": "https://www.facebook.com/help/396404120401278/list",
       "creative_type": "video",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=971337505542810",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1448311547333190",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/bhakti-marga/971337505542810.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "bhakti-marga-1005606365323606",
+      "competitor_id": "bhakti-marga",
+      "library_id": "1005606365323606",
+      "country": "PT",
+      "advertiser_page": "Bhakti Marga Latvia",
+      "started_at": "2026-05-15T23:00:00.000Z",
+      "ended_at": null,
+      "is_active": true,
+      "duration_days": 2,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "religious-curiosity",
+      "traffic_temperature": "believer",
+      "headline": "Piedzīvo garīgā Meistara klātbūtni un vadību saņemot personīgu svētību (Daršanu)",
+      "body": "Piedzīvo garīgā Meistara klātbūtni un vadību saņemot personīgu svētību (Daršanu)\n\n🇱🇻 Rīga, Latvija \\| 27. jūnijs\n\n🎟️ Reģistrējies tagad: bhaktimarga.lv\n\n🌸 Experience the presence and guidance of a living spiritual Master during a Personal Blessing (Darshan)\n\n🇱🇻 Riga, Latvia \\| June 27\n\n🎟️ Register now: bhaktimarga.lv",
+      "hashtags": [],
+      "cta": "Learn more",
+      "landing_url": "https://www.facebook.com/help/396404120401278/list",
+      "creative_type": "video",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1005606365323606",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "brahma-kumaris-pt-627841493697873",
@@ -1888,8 +2030,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=627841493697873",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/brahma-kumaris-pt/627841493697873.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "brahma-kumaris-pt-1328435679017442",
@@ -1913,58 +2055,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1328435679017442",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/brahma-kumaris-pt/1328435679017442.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "brahma-kumaris-pt-4058410531076863",
-      "competitor_id": "brahma-kumaris-pt",
-      "library_id": "4058410531076863",
-      "country": "PT",
-      "advertiser_page": "Brahma Kumaris Portugal",
-      "started_at": "2025-07-04T23:00:00.000Z",
-      "ended_at": "2025-07-06T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 2,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Domingo, 06 Julho às 18h - Palestra Especial \"Liderança Interior: assumir o comando da sua vida\", com convidada internacional.",
-      "body": "Domingo, 06 Julho às 18h - Palestra Especial \"Liderança Interior: assumir o comando da sua vida\", com convidada internacional.\n\nBK Stefanía Ólafsdóttir é Presidente do Spirit of Humanity Forum. Coordenadora da BK na Islândia e na Noruega, com mais de 20 anos de experiência na prática e no ensino da Meditação Raja Yoga. Fundadora da Heillastjarna (Estrela da Sorte) para crianças.\n\n![](https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/516625962_1710333703175745_1808973036724942623_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=-8atXWsTKgIQ7kNvwE87Yvh&_nc_oc=AdpWAMTQ5u-dnzzpI0KoagdbJna3Ywul9ZN3R_PmN11idod-gdjtFb0Uf76L4lqEki0&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af5nNR9FxNfNbBpVB0-dgBjKwOo8aZp_t829Gdtz2NdsfQ&oe=6A1108D0)\n\n​\n\nInativo",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/515497932_1881834189326942_1152596640088270677_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=oTEFyuxTUKQQ7kNvwFTkRn3&_nc_oc=AdpgBrAAxg1enVJmllKFnPA3z2R9k7ITesB02J9qJsXT0ZBXd7TGYXfaNvUXqFc3EVg&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af4fc1YnVn5OSfz2eWkLy4laTp_95LA7o-bw4_awCTg9ZQ&oe=6A110529",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=4058410531076863",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/brahma-kumaris-pt/4058410531076863.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "brahma-kumaris-pt-1267413104727091",
-      "competitor_id": "brahma-kumaris-pt",
-      "library_id": "1267413104727091",
-      "country": "PT",
-      "advertiser_page": "Brahma Kumaris Portugal",
-      "started_at": "2025-05-29T23:00:00.000Z",
-      "ended_at": "2025-05-31T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 2,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "1 Junho às 18h00 - Evento especial na Sede da BK em Lisboa com convidados internacionais.",
-      "body": "1 Junho às 18h00 - Evento especial na Sede da BK em Lisboa com convidados internacionais.\n\n![](https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/500750090_1019337556588069_7534681920367898146_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=h1dwnm32_cwQ7kNvwGG51QZ&_nc_oc=Adp_slPxX0iz4HYHqvmVhVAKaMmqLFMUS3KAOhwWp6fdir8DSbC7585H8Hr6Lt5YK20&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af5qf3QDt5fPirmvE7UFQOpnMQAxK_FnR_C55llAiaUSFg&oe=6A10E2F2)\n\n​\n\nInativo",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/501326549_1396298601824846_3431640784339217765_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=CU2Yhxi6IycQ7kNvwF64B_A&_nc_oc=Adr3mVePo_el1NFkBuswd2dQwZbHkakJK2m0j3Ktx4pMG7TEjyW3bErGL62a0YRWEA4&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af4t7ilgZMy6RoteAYNUsYUK9RyFKOJRIHLXWHFqnneyJQ&oe=6A11081F",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=1267413104727091",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/brahma-kumaris-pt/1267413104727091.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "brahma-kumaris-pt-1406827327761850",
@@ -1988,8 +2080,58 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1406827327761850",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/brahma-kumaris-pt/1406827327761850.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "brahma-kumaris-pt-1267413104727091",
+      "competitor_id": "brahma-kumaris-pt",
+      "library_id": "1267413104727091",
+      "country": "PT",
+      "advertiser_page": "Brahma Kumaris Portugal",
+      "started_at": "2025-05-29T23:00:00.000Z",
+      "ended_at": "2025-05-31T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 2,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "1 Junho às 18h00 - Evento especial na Sede da BK em Lisboa com convidados internacionais.",
+      "body": "1 Junho às 18h00 - Evento especial na Sede da BK em Lisboa com convidados internacionais.\n\n![](https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/500750090_1019337556588069_7534681920367898146_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=h1dwnm32_cwQ7kNvwGG51QZ&_nc_oc=Adp_slPxX0iz4HYHqvmVhVAKaMmqLFMUS3KAOhwWp6fdir8DSbC7585H8Hr6Lt5YK20&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af5qf3QDt5fPirmvE7UFQOpnMQAxK_FnR_C55llAiaUSFg&oe=6A10E2F2)\n\n​\n\nInativo",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/501326549_1396298601824846_3431640784339217765_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=CU2Yhxi6IycQ7kNvwF64B_A&_nc_oc=Adr3mVePo_el1NFkBuswd2dQwZbHkakJK2m0j3Ktx4pMG7TEjyW3bErGL62a0YRWEA4&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af4t7ilgZMy6RoteAYNUsYUK9RyFKOJRIHLXWHFqnneyJQ&oe=6A11081F",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1267413104727091",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "brahma-kumaris-pt-4058410531076863",
+      "competitor_id": "brahma-kumaris-pt",
+      "library_id": "4058410531076863",
+      "country": "PT",
+      "advertiser_page": "Brahma Kumaris Portugal",
+      "started_at": "2025-07-04T23:00:00.000Z",
+      "ended_at": "2025-07-06T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 2,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Domingo, 06 Julho às 18h - Palestra Especial \"Liderança Interior: assumir o comando da sua vida\", com convidada internacional.",
+      "body": "Domingo, 06 Julho às 18h - Palestra Especial \"Liderança Interior: assumir o comando da sua vida\", com convidada internacional.\n\nBK Stefanía Ólafsdóttir é Presidente do Spirit of Humanity Forum. Coordenadora da BK na Islândia e na Noruega, com mais de 20 anos de experiência na prática e no ensino da Meditação Raja Yoga. Fundadora da Heillastjarna (Estrela da Sorte) para crianças.\n\n![](https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/516625962_1710333703175745_1808973036724942623_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=-8atXWsTKgIQ7kNvwE87Yvh&_nc_oc=AdpWAMTQ5u-dnzzpI0KoagdbJna3Ywul9ZN3R_PmN11idod-gdjtFb0Uf76L4lqEki0&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af5nNR9FxNfNbBpVB0-dgBjKwOo8aZp_t829Gdtz2NdsfQ&oe=6A1108D0)\n\n​\n\nInativo",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/515497932_1881834189326942_1152596640088270677_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=102&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=oTEFyuxTUKQQ7kNvwFTkRn3&_nc_oc=AdpgBrAAxg1enVJmllKFnPA3z2R9k7ITesB02J9qJsXT0ZBXd7TGYXfaNvUXqFc3EVg&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=prRpmtQ7mmUf8vCmzfaJsQ&_nc_ss=7b289&oh=00_Af4fc1YnVn5OSfz2eWkLy4laTp_95LA7o-bw4_awCTg9ZQ&oe=6A110529",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=4058410531076863",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "brahma-kumaris-pt-1449205623621866",
@@ -2019,8 +2161,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1449205623621866",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/brahma-kumaris-pt/1449205623621866.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "brahma-kumaris-pt-730711580002288",
@@ -2044,8 +2186,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=730711580002288",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/brahma-kumaris-pt/730711580002288.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-1747124409440213",
@@ -2069,8 +2211,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1747124409440213",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/1747124409440213.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-1413040833796444",
@@ -2100,8 +2242,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1413040833796444",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/1413040833796444.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-945494444480137",
@@ -2125,8 +2267,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=945494444480137",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/945494444480137.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-871276725901929",
@@ -2150,8 +2292,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=871276725901929",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/871276725901929.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-2699525637091436",
@@ -2175,8 +2317,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2699525637091436",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/2699525637091436.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-903859105773766",
@@ -2200,13 +2342,13 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=903859105773766",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/903859105773766.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
-      "id": "isha-foundation-933896832869519",
+      "id": "isha-foundation-1462163672266914",
       "competitor_id": "isha-foundation",
-      "library_id": "933896832869519",
+      "library_id": "1462163672266914",
       "country": "ALL",
       "advertiser_page": "Isha Life",
       "started_at": "2026-03-16T00:00:00.000Z",
@@ -2217,16 +2359,41 @@
       "is_evergreen_winner": false,
       "hook_angle": "direct",
       "traffic_temperature": "warm",
-      "headline": "Discover Mudra, Isha Life’s fine jewellery collection, inspired by the timeless architectural grace of the Isha Yoga Center and the elemental forces of the Pancha Bhutas - earth, water, fire, air, and space.",
-      "body": "Discover Mudra, Isha Life’s fine jewellery collection, inspired by the timeless architectural grace of the Isha Yoga Center and the elemental forces of the Pancha Bhutas - earth, water, fire, air, and space.",
+      "headline": "Shop Isha Life’s 100% pure, unfiltered, Raw Himalayan Honey. Limited stocks",
+      "body": "Shop Isha Life’s 100% pure, unfiltered, Raw Himalayan Honey. Limited stocks",
       "hashtags": [],
       "cta": null,
-      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/646052602_764318116409664_8003882164730583069_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LEhIy8KDglQQ7kNvwHbE7iG&_nc_oc=Adqo_uyRh94NxslZi_eiZL0ga_pnvEkeNa-nR1-WVnI8-aKJWEaELBVX2Tus9ruwBJc&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af4gzQpPkypS_uSr0R5c63Xez2E_wOzTyoOelfnwcm7WvQ&oe=6A110EE9",
+      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/648931060_1439389110899004_7552614170483080425_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=H2rKySPxdH0Q7kNvwHyx-Ww&_nc_oc=Adr5_3RBN7P5haUoSxG7GfvTgX0cGH8aWxgJHoYeT08zq3_9qJVlSjHwODIbzt4TOe4&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af4DOSoRLl2V1VRgvcoQ2Ayg0Yft1ASmy6E2_DpX9NJ4IA&oe=6A10FD44",
       "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=933896832869519",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1462163672266914",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/933896832869519.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "isha-foundation-2111900652919249",
+      "competitor_id": "isha-foundation",
+      "library_id": "2111900652919249",
+      "country": "ALL",
+      "advertiser_page": "Isha Life",
+      "started_at": "2026-03-16T00:00:00.000Z",
+      "ended_at": null,
+      "is_active": true,
+      "duration_days": 63,
+      "creative_variants": 3,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Bask in Devi’s grace with an intricately crafted & consecrated silver pendant. Explore now.",
+      "body": "Bask in Devi’s grace with an intricately crafted & consecrated silver pendant. Explore now.",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/646153149_1424217932579052_1577972863847943703_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Y0k8RL-W3W0Q7kNvwHIUqXI&_nc_oc=AdqXRUJikghWWXitKdhZFDpWmfuCeBcKw5beznXy9tJcPF2YuzpwMM57rW9TGSgLpuQ&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af72rE6Sr9zQyRFmiEpNnKLtMsG7w_3j3rkrx6PI6uw8Bg&oe=6A110676",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2111900652919249",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-857118234046028",
@@ -2256,13 +2423,13 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=857118234046028",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/857118234046028.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
-      "id": "isha-foundation-1462163672266914",
+      "id": "isha-foundation-933896832869519",
       "competitor_id": "isha-foundation",
-      "library_id": "1462163672266914",
+      "library_id": "933896832869519",
       "country": "ALL",
       "advertiser_page": "Isha Life",
       "started_at": "2026-03-16T00:00:00.000Z",
@@ -2273,41 +2440,16 @@
       "is_evergreen_winner": false,
       "hook_angle": "direct",
       "traffic_temperature": "warm",
-      "headline": "Shop Isha Life’s 100% pure, unfiltered, Raw Himalayan Honey. Limited stocks",
-      "body": "Shop Isha Life’s 100% pure, unfiltered, Raw Himalayan Honey. Limited stocks",
+      "headline": "Discover Mudra, Isha Life’s fine jewellery collection, inspired by the timeless architectural grace of the Isha Yoga Center and the elemental forces of the Pancha Bhutas - earth, water, fire, air, and space.",
+      "body": "Discover Mudra, Isha Life’s fine jewellery collection, inspired by the timeless architectural grace of the Isha Yoga Center and the elemental forces of the Pancha Bhutas - earth, water, fire, air, and space.",
       "hashtags": [],
       "cta": null,
-      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/648931060_1439389110899004_7552614170483080425_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=H2rKySPxdH0Q7kNvwHyx-Ww&_nc_oc=Adr5_3RBN7P5haUoSxG7GfvTgX0cGH8aWxgJHoYeT08zq3_9qJVlSjHwODIbzt4TOe4&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af4DOSoRLl2V1VRgvcoQ2Ayg0Yft1ASmy6E2_DpX9NJ4IA&oe=6A10FD44",
+      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/646052602_764318116409664_8003882164730583069_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LEhIy8KDglQQ7kNvwHbE7iG&_nc_oc=Adqo_uyRh94NxslZi_eiZL0ga_pnvEkeNa-nR1-WVnI8-aKJWEaELBVX2Tus9ruwBJc&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af4gzQpPkypS_uSr0R5c63Xez2E_wOzTyoOelfnwcm7WvQ&oe=6A110EE9",
       "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=1462163672266914",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=933896832869519",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/1462163672266914.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "isha-foundation-2111900652919249",
-      "competitor_id": "isha-foundation",
-      "library_id": "2111900652919249",
-      "country": "ALL",
-      "advertiser_page": "Isha Life",
-      "started_at": "2026-03-16T00:00:00.000Z",
-      "ended_at": null,
-      "is_active": true,
-      "duration_days": 63,
-      "creative_variants": 3,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Bask in Devi’s grace with an intricately crafted & consecrated silver pendant. Explore now.",
-      "body": "Bask in Devi’s grace with an intricately crafted & consecrated silver pendant. Explore now.",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/646153149_1424217932579052_1577972863847943703_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Y0k8RL-W3W0Q7kNvwHIUqXI&_nc_oc=AdqXRUJikghWWXitKdhZFDpWmfuCeBcKw5beznXy9tJcPF2YuzpwMM57rW9TGSgLpuQ&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=8fYCmk7Jz6tnFYnRFUop7Q&_nc_ss=7b289&oh=00_Af72rE6Sr9zQyRFmiEpNnKLtMsG7w_3j3rkrx6PI6uw8Bg&oe=6A110676",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=2111900652919249",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/2111900652919249.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-1374859308008019",
@@ -2331,8 +2473,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1374859308008019",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/1374859308008019.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-1628367798440900",
@@ -2356,8 +2498,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1628367798440900",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/1628367798440900.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-1149466651572859",
@@ -2381,8 +2523,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1149466651572859",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/1149466651572859.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-972697602372027",
@@ -2406,8 +2548,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=972697602372027",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/972697602372027.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-25291813757094710",
@@ -2431,8 +2573,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=25291813757094710",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/25291813757094710.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-1294779279334070",
@@ -2456,8 +2598,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1294779279334070",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/1294779279334070.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-1493173065527532",
@@ -2481,8 +2623,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1493173065527532",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/1493173065527532.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-27454575084143532",
@@ -2506,8 +2648,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=27454575084143532",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/27454575084143532.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-2361882567633427",
@@ -2531,8 +2673,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2361882567633427",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/2361882567633427.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-4447156462269769",
@@ -2556,8 +2698,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=4447156462269769",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/4447156462269769.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-2102505773863911",
@@ -2581,8 +2723,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2102505773863911",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/2102505773863911.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "isha-foundation-987776516975339",
@@ -2606,33 +2748,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=987776516975339",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/isha-foundation/987776516975339.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "iskcon-international-diaspora-3303965339765841",
-      "competitor_id": "iskcon-international-diaspora",
-      "library_id": "3303965339765841",
-      "country": "PT",
-      "advertiser_page": "ISKCON Dwarka New Delhi",
-      "started_at": "2025-09-25T23:00:00.000Z",
-      "ended_at": null,
-      "is_active": true,
-      "duration_days": 234,
-      "creative_variants": 1,
-      "is_evergreen_winner": true,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Continue to make a difference in the lives of hungry by feeding them. Donate now",
-      "body": "Continue to make a difference in the lives of hungry by feeding them. Donate now",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/462048070_893151479365323_7774361414073547800_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zazMM-jTfAAQ7kNvwFyk5Am&_nc_oc=AdplCo2w458sXW9Q0itMNqXHmb9QWHL3Dl1GuoOCfI5nW8_v54UBsjW0fhjk0S0JXgM&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=GF8LaYzrN32x44evDYXhpA&_nc_ss=7b289&oh=00_Af4dUnAbQ-Br3Ma_Kth9lvPVV0SwUWDZC58rdgyqGODaow&oe=6A10F5D4",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=3303965339765841",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/iskcon-international-diaspora/3303965339765841.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "iskcon-international-diaspora-1809629613261905",
@@ -2656,8 +2773,33 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1809629613261905",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/iskcon-international-diaspora/1809629613261905.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "iskcon-international-diaspora-3303965339765841",
+      "competitor_id": "iskcon-international-diaspora",
+      "library_id": "3303965339765841",
+      "country": "PT",
+      "advertiser_page": "ISKCON Dwarka New Delhi",
+      "started_at": "2025-09-25T23:00:00.000Z",
+      "ended_at": null,
+      "is_active": true,
+      "duration_days": 234,
+      "creative_variants": 1,
+      "is_evergreen_winner": true,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Continue to make a difference in the lives of hungry by feeding them. Donate now",
+      "body": "Continue to make a difference in the lives of hungry by feeding them. Donate now",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-1.xx.fbcdn.net/v/t39.35426-6/462048070_893151479365323_7774361414073547800_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zazMM-jTfAAQ7kNvwFyk5Am&_nc_oc=AdplCo2w458sXW9Q0itMNqXHmb9QWHL3Dl1GuoOCfI5nW8_v54UBsjW0fhjk0S0JXgM&_nc_zt=14&_nc_ht=scontent-lax3-1.xx&_nc_gid=GF8LaYzrN32x44evDYXhpA&_nc_ss=7b289&oh=00_Af4dUnAbQ-Br3Ma_Kth9lvPVV0SwUWDZC58rdgyqGODaow&oe=6A10F5D4",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=3303965339765841",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "iskcon-international-diaspora-3984852071804895",
@@ -2681,8 +2823,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3984852071804895",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/iskcon-international-diaspora/3984852071804895.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "iskcon-international-diaspora-1317518080316417",
@@ -2706,8 +2848,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1317518080316417",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/iskcon-international-diaspora/1317518080316417.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "iskcon-international-diaspora-2961226497542177",
@@ -2731,8 +2873,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2961226497542177",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/iskcon-international-diaspora/2961226497542177.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1038523914847299",
@@ -2767,8 +2909,74 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1038523914847299",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1038523914847299.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "kadampa-deuachen-595472520294915",
+      "competitor_id": "kadampa-deuachen",
+      "library_id": "595472520294915",
+      "country": "PT",
+      "advertiser_page": "Centro de Meditação Kadampa Deuachen",
+      "started_at": "2025-11-07T00:00:00.000Z",
+      "ended_at": null,
+      "is_active": true,
+      "duration_days": 192,
+      "creative_variants": 2,
+      "is_evergreen_winner": true,
+      "hook_angle": "curiosity",
+      "traffic_temperature": "warm",
+      "headline": "✨ Sabes por onde começar a desenvolver a tua paz interior?",
+      "body": "✨ Sabes por onde começar a desenvolver a tua paz interior?\n\nDescobre a programação completa do Templo — com destaque para:\n\n🪷 As aulas semanais às quartas-feiras, às 19h30\n\n🌿 As meditações gratuitas de quarta, sexta e domingo\n\n☀️ E as atividades de fim de semana, abertas a todos\n\nAqui no Templo encontrarás um ambiente seguro e inspirador, com professores qualificados e ensinamentos profundos para o teu crescimento interior.\n\nVem conhecer e dar o teu primeiro passo para uma mente mais serena.\n\n💛 Estamos à tua espera!\n\n#TemploKadampaDeSintra #PazInterior #Meditação #BudismoModerno #Autoconhecimento #BemEstar #Sintra",
+      "hashtags": [
+        "TemploKadampaDeSintra",
+        "PazInterior",
+        "Meditação",
+        "BudismoModerno",
+        "Autoconhecimento",
+        "BemEstar",
+        "Sintra"
+      ],
+      "cta": "Saber mais",
+      "landing_url": "https://www.facebook.com/help/396404120401278/list",
+      "creative_type": "video",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=595472520294915",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "kadampa-deuachen-25017036694625392",
+      "competitor_id": "kadampa-deuachen",
+      "library_id": "25017036694625392",
+      "country": "PT",
+      "advertiser_page": "Centro de Meditação Kadampa Deuachen",
+      "started_at": "2025-11-07T00:00:00.000Z",
+      "ended_at": null,
+      "is_active": true,
+      "duration_days": 192,
+      "creative_variants": 2,
+      "is_evergreen_winner": true,
+      "hook_angle": "curiosity",
+      "traffic_temperature": "warm",
+      "headline": "✨ Sabes por onde começar a desenvolver a tua paz interior?",
+      "body": "✨ Sabes por onde começar a desenvolver a tua paz interior?\n\nDescobre a programação completa do Templo — com destaque para:\n\n🪷 As aulas semanais às quartas-feiras, às 19h30\n\n🌿 As meditações gratuitas de quarta, sexta e domingo\n\n☀️ E as atividades de fim de semana, abertas a todos\n\nAqui no Templo encontrarás um ambiente seguro e inspirador, com professores qualificados e ensinamentos profundos para o teu crescimento interior.\n\nVem conhecer e dar o teu primeiro passo para uma mente mais serena.\n\n💛 Estamos à tua espera!\n\n#TemploKadampaDeSintra #PazInterior #Meditação #BudismoModerno #Autoconhecimento #BemEstar #Sintra",
+      "hashtags": [
+        "TemploKadampaDeSintra",
+        "PazInterior",
+        "Meditação",
+        "BudismoModerno",
+        "Autoconhecimento",
+        "BemEstar",
+        "Sintra"
+      ],
+      "cta": "Saber mais",
+      "landing_url": "https://www.facebook.com/help/396404120401278/list",
+      "creative_type": "video",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=25017036694625392",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1165430275028253",
@@ -2798,8 +3006,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1165430275028253",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1165430275028253.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-798055426435309",
@@ -2834,74 +3042,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=798055426435309",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/798055426435309.jpg",
-      "asset_type": "creative-thumb"
-    },
-    {
-      "id": "kadampa-deuachen-595472520294915",
-      "competitor_id": "kadampa-deuachen",
-      "library_id": "595472520294915",
-      "country": "PT",
-      "advertiser_page": "Centro de Meditação Kadampa Deuachen",
-      "started_at": "2025-11-07T00:00:00.000Z",
-      "ended_at": null,
-      "is_active": true,
-      "duration_days": 192,
-      "creative_variants": 2,
-      "is_evergreen_winner": true,
-      "hook_angle": "curiosity",
-      "traffic_temperature": "warm",
-      "headline": "✨ Sabes por onde começar a desenvolver a tua paz interior?",
-      "body": "✨ Sabes por onde começar a desenvolver a tua paz interior?\n\nDescobre a programação completa do Templo — com destaque para:\n\n🪷 As aulas semanais às quartas-feiras, às 19h30\n\n🌿 As meditações gratuitas de quarta, sexta e domingo\n\n☀️ E as atividades de fim de semana, abertas a todos\n\nAqui no Templo encontrarás um ambiente seguro e inspirador, com professores qualificados e ensinamentos profundos para o teu crescimento interior.\n\nVem conhecer e dar o teu primeiro passo para uma mente mais serena.\n\n💛 Estamos à tua espera!\n\n#TemploKadampaDeSintra #PazInterior #Meditação #BudismoModerno #Autoconhecimento #BemEstar #Sintra",
-      "hashtags": [
-        "TemploKadampaDeSintra",
-        "PazInterior",
-        "Meditação",
-        "BudismoModerno",
-        "Autoconhecimento",
-        "BemEstar",
-        "Sintra"
-      ],
-      "cta": "Saber mais",
-      "landing_url": "https://www.facebook.com/help/396404120401278/list",
-      "creative_type": "video",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=595472520294915",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/595472520294915.jpg",
-      "asset_type": "creative-thumb"
-    },
-    {
-      "id": "kadampa-deuachen-25017036694625392",
-      "competitor_id": "kadampa-deuachen",
-      "library_id": "25017036694625392",
-      "country": "PT",
-      "advertiser_page": "Centro de Meditação Kadampa Deuachen",
-      "started_at": "2025-11-07T00:00:00.000Z",
-      "ended_at": null,
-      "is_active": true,
-      "duration_days": 192,
-      "creative_variants": 2,
-      "is_evergreen_winner": true,
-      "hook_angle": "curiosity",
-      "traffic_temperature": "warm",
-      "headline": "✨ Sabes por onde começar a desenvolver a tua paz interior?",
-      "body": "✨ Sabes por onde começar a desenvolver a tua paz interior?\n\nDescobre a programação completa do Templo — com destaque para:\n\n🪷 As aulas semanais às quartas-feiras, às 19h30\n\n🌿 As meditações gratuitas de quarta, sexta e domingo\n\n☀️ E as atividades de fim de semana, abertas a todos\n\nAqui no Templo encontrarás um ambiente seguro e inspirador, com professores qualificados e ensinamentos profundos para o teu crescimento interior.\n\nVem conhecer e dar o teu primeiro passo para uma mente mais serena.\n\n💛 Estamos à tua espera!\n\n#TemploKadampaDeSintra #PazInterior #Meditação #BudismoModerno #Autoconhecimento #BemEstar #Sintra",
-      "hashtags": [
-        "TemploKadampaDeSintra",
-        "PazInterior",
-        "Meditação",
-        "BudismoModerno",
-        "Autoconhecimento",
-        "BemEstar",
-        "Sintra"
-      ],
-      "cta": "Saber mais",
-      "landing_url": "https://www.facebook.com/help/396404120401278/list",
-      "creative_type": "video",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=25017036694625392",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/25017036694625392.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-684999760996371",
@@ -2939,8 +3081,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=684999760996371",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/684999760996371.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1351620306048748",
@@ -2970,8 +3112,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1351620306048748",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1351620306048748.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1934410534170294",
@@ -3006,33 +3148,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1934410534170294",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1934410534170294.jpg",
-      "asset_type": "creative-thumb"
-    },
-    {
-      "id": "kadampa-deuachen-2103241520485901",
-      "competitor_id": "kadampa-deuachen",
-      "library_id": "2103241520485901",
-      "country": "PT",
-      "advertiser_page": "Centro de Meditação Kadampa Deuachen",
-      "started_at": "2026-01-22T00:00:00.000Z",
-      "ended_at": null,
-      "is_active": true,
-      "duration_days": 116,
-      "creative_variants": 1,
-      "is_evergreen_winner": true,
-      "hook_angle": "tourism",
-      "traffic_temperature": "cold",
-      "headline": "✨ Não sabes o que fazer no domingo à tarde? ✨",
-      "body": "✨ Não sabes o que fazer no domingo à tarde? ✨\n\nVem visitar o nosso Templo de Sintra, a apenas 30 minutos de Lisboa 🌿\n\n🧘‍♀️ Todos os domingos\n\n☕ Café e loja abertos a visitantes\n\n🕓 Meditação gratuita às 16h\n\nA entrada é gratuita e todos são bem-vindos 🤍\n\nVem conhecer um verdadeiro Templo Budista em Portugal\n\nEstamos à tua espera 🙏\n\n👉 Mais informações na bio ou em\n\n🌐 [www.kadampa.pt](http://www.kadampa.pt/)",
-      "hashtags": [],
-      "cta": "Saber mais",
-      "landing_url": "https://www.facebook.com/help/396404120401278/list",
-      "creative_type": "video",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=2103241520485901",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/2103241520485901.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-917045273989737",
@@ -3056,8 +3173,33 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=917045273989737",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/917045273989737.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "kadampa-deuachen-2103241520485901",
+      "competitor_id": "kadampa-deuachen",
+      "library_id": "2103241520485901",
+      "country": "PT",
+      "advertiser_page": "Centro de Meditação Kadampa Deuachen",
+      "started_at": "2026-01-22T00:00:00.000Z",
+      "ended_at": null,
+      "is_active": true,
+      "duration_days": 116,
+      "creative_variants": 1,
+      "is_evergreen_winner": true,
+      "hook_angle": "tourism",
+      "traffic_temperature": "cold",
+      "headline": "✨ Não sabes o que fazer no domingo à tarde? ✨",
+      "body": "✨ Não sabes o que fazer no domingo à tarde? ✨\n\nVem visitar o nosso Templo de Sintra, a apenas 30 minutos de Lisboa 🌿\n\n🧘‍♀️ Todos os domingos\n\n☕ Café e loja abertos a visitantes\n\n🕓 Meditação gratuita às 16h\n\nA entrada é gratuita e todos são bem-vindos 🤍\n\nVem conhecer um verdadeiro Templo Budista em Portugal\n\nEstamos à tua espera 🙏\n\n👉 Mais informações na bio ou em\n\n🌐 [www.kadampa.pt](http://www.kadampa.pt/)",
+      "hashtags": [],
+      "cta": "Saber mais",
+      "landing_url": "https://www.facebook.com/help/396404120401278/list",
+      "creative_type": "video",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=2103241520485901",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1241039134847391",
@@ -3087,8 +3229,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1241039134847391",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1241039134847391.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-959017643353612",
@@ -3118,8 +3260,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=959017643353612",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/959017643353612.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1342381190642290",
@@ -3164,8 +3306,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1342381190642290",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1342381190642290.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-802247069191960",
@@ -3204,8 +3346,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=802247069191960",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/802247069191960.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1339482591109156",
@@ -3245,8 +3387,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1339482591109156",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1339482591109156.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-719173227230583",
@@ -3279,8 +3421,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=719173227230583",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/719173227230583.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1245584667595381",
@@ -3314,8 +3456,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1245584667595381",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1245584667595381.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-2116104172205434",
@@ -3357,8 +3499,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2116104172205434",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/2116104172205434.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1287579356409487",
@@ -3392,8 +3534,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1287579356409487",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1287579356409487.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1195207089070043",
@@ -3426,8 +3568,39 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1195207089070043",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1195207089070043.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "kadampa-deuachen-3961035124030416",
+      "competitor_id": "kadampa-deuachen",
+      "library_id": "3961035124030416",
+      "country": "PT",
+      "advertiser_page": "Centro de Meditação Kadampa Deuachen",
+      "started_at": "2026-04-20T23:00:00.000Z",
+      "ended_at": "2026-04-29T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 9,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "✨MEDITAÇÃO AO AR LIVRE PELA PAZ MUNDIAL ✨",
+      "body": "✨MEDITAÇÃO AO AR LIVRE PELA PAZ MUNDIAL ✨\n\nAberta a todos – budistas e não budistas – um espaço para parar, respirar e acalmar a mente.\n\nÉ uma experiência simples, mas que pode fazer diferença no teu dia a dia.\n\nGarante o teu lugar, traz a tua energia, e vem fazer parte de algo maior.\n\nPorque um dia seremos tantos… que a paz vai ser o normal.\n\nℹ️ Informações Gerais\n\nSábado 09/05/2026\n\nHorário 19h — 19h30\n\nParticipação Presencial\n\n🧡Atividade Gratuita\n\n📍Jardim AMalia Rodrigues - Topo do Parque Eduardo VII, do outro lado da Alameda Cardeal Cerejeira\n\nPara mais informações acede à bio ou ao website [https://kadampa.pt/wp/meditacao-ao-ar-livre-lisboa/](https://kadampa.pt/wp/meditacao-ao-ar-livre-lisboa/)\n\n#kadampa #meditação #Lisboa #MeditaçãoParaTodos #carma pazinterior budismomoderno",
+      "hashtags": [
+        "kadampa",
+        "meditação",
+        "Lisboa",
+        "MeditaçãoParaTodos",
+        "carma"
+      ],
+      "cta": "Saber mais",
+      "landing_url": "https://www.facebook.com/help/396404120401278/list",
+      "creative_type": "video",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=3961035124030416",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-1876359396615411",
@@ -3468,8 +3641,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1876359396615411",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/1876359396615411.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-2403935866673516",
@@ -3493,39 +3666,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2403935866673516",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/2403935866673516.jpg",
-      "asset_type": "creative-thumb"
-    },
-    {
-      "id": "kadampa-deuachen-3961035124030416",
-      "competitor_id": "kadampa-deuachen",
-      "library_id": "3961035124030416",
-      "country": "PT",
-      "advertiser_page": "Centro de Meditação Kadampa Deuachen",
-      "started_at": "2026-04-20T23:00:00.000Z",
-      "ended_at": "2026-04-29T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 9,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "✨MEDITAÇÃO AO AR LIVRE PELA PAZ MUNDIAL ✨",
-      "body": "✨MEDITAÇÃO AO AR LIVRE PELA PAZ MUNDIAL ✨\n\nAberta a todos – budistas e não budistas – um espaço para parar, respirar e acalmar a mente.\n\nÉ uma experiência simples, mas que pode fazer diferença no teu dia a dia.\n\nGarante o teu lugar, traz a tua energia, e vem fazer parte de algo maior.\n\nPorque um dia seremos tantos… que a paz vai ser o normal.\n\nℹ️ Informações Gerais\n\nSábado 09/05/2026\n\nHorário 19h — 19h30\n\nParticipação Presencial\n\n🧡Atividade Gratuita\n\n📍Jardim AMalia Rodrigues - Topo do Parque Eduardo VII, do outro lado da Alameda Cardeal Cerejeira\n\nPara mais informações acede à bio ou ao website [https://kadampa.pt/wp/meditacao-ao-ar-livre-lisboa/](https://kadampa.pt/wp/meditacao-ao-ar-livre-lisboa/)\n\n#kadampa #meditação #Lisboa #MeditaçãoParaTodos #carma pazinterior budismomoderno",
-      "hashtags": [
-        "kadampa",
-        "meditação",
-        "Lisboa",
-        "MeditaçãoParaTodos",
-        "carma"
-      ],
-      "cta": "Saber mais",
-      "landing_url": "https://www.facebook.com/help/396404120401278/list",
-      "creative_type": "video",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=3961035124030416",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/3961035124030416.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-627068723456030",
@@ -3565,8 +3707,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=627068723456030",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/627068723456030.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-839167031911404",
@@ -3596,8 +3738,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=839167031911404",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/839167031911404.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "kadampa-deuachen-2084407645437563",
@@ -3627,8 +3769,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2084407645437563",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/kadampa-deuachen/2084407645437563.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-936943692015001",
@@ -3652,8 +3794,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=936943692015001",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/936943692015001.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-736352159228898",
@@ -3677,8 +3819,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=736352159228898",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/736352159228898.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-4291358857855485",
@@ -3702,8 +3844,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=4291358857855485",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/4291358857855485.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1766384287583199",
@@ -3727,8 +3869,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1766384287583199",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1766384287583199.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1484069049949514",
@@ -3752,8 +3894,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1484069049949514",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1484069049949514.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1907007336615129",
@@ -3784,8 +3926,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1907007336615129",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1907007336615129.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-4605180606376083",
@@ -3809,8 +3951,8 @@
       "creative_type": "video",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=4605180606376083",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/4605180606376083.jpg",
-      "asset_type": "creative-thumb"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-3152154664941333",
@@ -3834,8 +3976,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3152154664941333",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/3152154664941333.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1396306315224179",
@@ -3859,8 +4001,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1396306315224179",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1396306315224179.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1154366869845555",
@@ -3884,8 +4026,58 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1154366869845555",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1154366869845555.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "sivananda-794078176886253",
+      "competitor_id": "sivananda",
+      "library_id": "794078176886253",
+      "country": "ALL",
+      "advertiser_page": "Sivananda Ashram Yoga Retreat Bahamas",
+      "started_at": "2025-10-14T23:00:00.000Z",
+      "ended_at": "2025-10-22T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 8,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "religious-curiosity",
+      "traffic_temperature": "believer",
+      "headline": "\"The Bhagavata is, as Sri Ramakrishna aptly expressed it, ‘fried in the butter of Jnana and soaked in the syrup of Bhakti’. The study of such a book cannot but be of the greatest help to a seeker after Truth.\" 🧘",
+      "body": "\"The Bhagavata is, as Sri Ramakrishna aptly expressed it, ‘fried in the butter of Jnana and soaked in the syrup of Bhakti’. The study of such a book cannot but be of the greatest help to a seeker after Truth.\" 🧘\n\nIn this 12-week course, Rukmini Chaitanya will immerse you in these timeless teachings, while helping you anchor them in your own spiritual practice.\n\n🌟The Disciple’s Longing: Uddhava’s grief and devotion as Krishna prepares to leave the world. The Lord’s compassionate reply: turn inward, beyond illusion, and find Me there.\n\n🌟The Illusion of the World: How the gunas bind us to samsara. Seeing through maya with the light of Vedantic enquiry. Krishna’s vivid parables on attachment and release.\n\n🌟The Power of Bhakti: Why love of God is greater than austerity or knowledge alone. The qualities of the devotee who reaches liberation. Bhakti as the bridge between human longing and divine fulfillment.\n\n🌟Renunciation as Inner Freedom: What it means to live unattached in the midst of life. The spirit of the jivanmukta: free while embodied. Practical steps for integrating renunciation into daily life.\n\n......and more! Click learn more to sign-up for this course!\n\nOm Namah Shivaya",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/558971984_784760997872303_3179001079338442303_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=7gKIKZeuEdQQ7kNvwGKk2oS&_nc_oc=AdrUEteEPRLvzMOo6Up7_ehmPGCsvV8ivwKPNhCzzTZn4tFqvqseHHAD3AXoOtoQHNQ&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7SABdCPpP8s0uA5_UjkvcPglB4tYv-AdBUIGZVZkmiyw&oe=6A110EC3",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=794078176886253",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "sivananda-1344962903648595",
+      "competitor_id": "sivananda",
+      "library_id": "1344962903648595",
+      "country": "ALL",
+      "advertiser_page": "Korzenie",
+      "started_at": "2025-09-10T23:00:00.000Z",
+      "ended_at": "2025-09-18T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 8,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Zapraszam na niezwykłe spotkanie ze sztuką linorytu i jogą.",
+      "body": "Zapraszam na niezwykłe spotkanie ze sztuką linorytu i jogą.\n\nW świat linorytu wprowadzi nas Piotr Grzyb. Będziemy mieli szansę poczuć niesamowitą przyjemność płynącą z precyzyjnych cięć dłutem. Stworzymy kompozycję graficzną własnego projektu, by potem będziemy ją odbijać na papierze w różnych odcieniach i kolorach. Sztuka linorytu przypomina medytację, można odpłynąć w twórczym skupieniu.\n\nRankami i wieczorami w pełne rozluźnienie wprowadzi nas Gosia - delikatne rozciąganie i medytacja przywrócą spokój i skupienie potrzebne do drugiej części warsztatów.\n\nPory posiłków to będzie prawdziwe święto dla podniebienia, a w wolnych chwilach będzie można bujać się w hamakach albo leżeć na trawie 🙂🙃\n\nPiątek\n\n15:00-18:00 przyjazd - czas na zaaklimatyzowanie się\n\n16:00 zupa dla chętnych\n\n18:30 kolacja\n\n19:30 krąg powitalny\n\n20:00-21:00 medytacja\n\nSobota\n\n7:15-7:45 medytacja\n\n8:00-9:30 joga\n\n9:45 śniadanie\n\n11:15-15:15 linoryt\n\n15:30 obiad\n\nczas wolny\n\n19:00 kolacja\n\n20:00-21:00 medytacja\n\n21:00 ognisko\n\nNiedziela\n\n7:15-7:45 medytacja\n\n8:00-9:30 joga\n\n9:45 śniadanie\n\n11:15-15:15 linoryt\n\n15:30 obiad\n\n16:30 krąg pożegnalny\n\n17:30 wyjazd\n\n\\*wszystkie zajęcia nieobowiązkowe - zawsze można po prostu odpocząć\n\n📅 Termin: 19-21 września 2025\n\n🏡 Miejsce: Korzenie, Grabie 21, 32-740 Łapanów\n\n\\- dojazd w godzinę w Krakowa - zakwaterowanie w klimatycznych pokojach wieloosobowych\n\n🤑 Cena last minute:840 zł\n\nMaksymalna liczba uczestników: 10 osób\n\nZapisy: [https://docs.google.com/forms/d/e/1FAIpQLSeeJhmPKefFQ-YGMdX3MsfAvDTpPh75YRB9M5iXRft2ZIOpLg/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSeeJhmPKefFQ-YGMdX3MsfAvDTpPh75YRB9M5iXRft2ZIOpLg/viewform?usp=dialog)\n\nRezerwacja miejsca po wpłacie zaliczki 600 zł na konto: 17 1140 2004 0000 3502 6565 3421, tytułem: Warsztaty Korzenie 19-21.09, odbiorca: Barbara Wierzbanowska Art&Design, Grabie 21, 32-740 Łapanów\n\nW razie pytań proszę pisać: bwierzbanowska@gmail.com lub dzwonić: 502-120-364.",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/547026415_756460440645354_4731722559810998040_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=pjVW9GoAKqUQ7kNvwG67xox&_nc_oc=AdpYQc9PD0C_hzRw96uf5wg-mg74cD1xaloENIweErRIeIcvK_qMQ9cYqo-n51orOFA&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7aBvcy-KNkBQ6rACNVBrpio1Wag00gUuxrNDsXWmaLLw&oe=6A10F94E",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1344962903648595",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-3366120920203995",
@@ -3920,8 +4112,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=3366120920203995",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/3366120920203995.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-2380100842406434",
@@ -3945,83 +4137,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2380100842406434",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/2380100842406434.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "sivananda-794078176886253",
-      "competitor_id": "sivananda",
-      "library_id": "794078176886253",
-      "country": "ALL",
-      "advertiser_page": "Sivananda Ashram Yoga Retreat Bahamas",
-      "started_at": "2025-10-14T23:00:00.000Z",
-      "ended_at": "2025-10-22T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 8,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "religious-curiosity",
-      "traffic_temperature": "believer",
-      "headline": "\"The Bhagavata is, as Sri Ramakrishna aptly expressed it, ‘fried in the butter of Jnana and soaked in the syrup of Bhakti’. The study of such a book cannot but be of the greatest help to a seeker after Truth.\" 🧘",
-      "body": "\"The Bhagavata is, as Sri Ramakrishna aptly expressed it, ‘fried in the butter of Jnana and soaked in the syrup of Bhakti’. The study of such a book cannot but be of the greatest help to a seeker after Truth.\" 🧘\n\nIn this 12-week course, Rukmini Chaitanya will immerse you in these timeless teachings, while helping you anchor them in your own spiritual practice.\n\n🌟The Disciple’s Longing: Uddhava’s grief and devotion as Krishna prepares to leave the world. The Lord’s compassionate reply: turn inward, beyond illusion, and find Me there.\n\n🌟The Illusion of the World: How the gunas bind us to samsara. Seeing through maya with the light of Vedantic enquiry. Krishna’s vivid parables on attachment and release.\n\n🌟The Power of Bhakti: Why love of God is greater than austerity or knowledge alone. The qualities of the devotee who reaches liberation. Bhakti as the bridge between human longing and divine fulfillment.\n\n🌟Renunciation as Inner Freedom: What it means to live unattached in the midst of life. The spirit of the jivanmukta: free while embodied. Practical steps for integrating renunciation into daily life.\n\n......and more! Click learn more to sign-up for this course!\n\nOm Namah Shivaya",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/558971984_784760997872303_3179001079338442303_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=7gKIKZeuEdQQ7kNvwGKk2oS&_nc_oc=AdrUEteEPRLvzMOo6Up7_ehmPGCsvV8ivwKPNhCzzTZn4tFqvqseHHAD3AXoOtoQHNQ&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7SABdCPpP8s0uA5_UjkvcPglB4tYv-AdBUIGZVZkmiyw&oe=6A110EC3",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=794078176886253",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/794078176886253.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "sivananda-1344962903648595",
-      "competitor_id": "sivananda",
-      "library_id": "1344962903648595",
-      "country": "ALL",
-      "advertiser_page": "Korzenie",
-      "started_at": "2025-09-10T23:00:00.000Z",
-      "ended_at": "2025-09-18T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 8,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Zapraszam na niezwykłe spotkanie ze sztuką linorytu i jogą.",
-      "body": "Zapraszam na niezwykłe spotkanie ze sztuką linorytu i jogą.\n\nW świat linorytu wprowadzi nas Piotr Grzyb. Będziemy mieli szansę poczuć niesamowitą przyjemność płynącą z precyzyjnych cięć dłutem. Stworzymy kompozycję graficzną własnego projektu, by potem będziemy ją odbijać na papierze w różnych odcieniach i kolorach. Sztuka linorytu przypomina medytację, można odpłynąć w twórczym skupieniu.\n\nRankami i wieczorami w pełne rozluźnienie wprowadzi nas Gosia - delikatne rozciąganie i medytacja przywrócą spokój i skupienie potrzebne do drugiej części warsztatów.\n\nPory posiłków to będzie prawdziwe święto dla podniebienia, a w wolnych chwilach będzie można bujać się w hamakach albo leżeć na trawie 🙂🙃\n\nPiątek\n\n15:00-18:00 przyjazd - czas na zaaklimatyzowanie się\n\n16:00 zupa dla chętnych\n\n18:30 kolacja\n\n19:30 krąg powitalny\n\n20:00-21:00 medytacja\n\nSobota\n\n7:15-7:45 medytacja\n\n8:00-9:30 joga\n\n9:45 śniadanie\n\n11:15-15:15 linoryt\n\n15:30 obiad\n\nczas wolny\n\n19:00 kolacja\n\n20:00-21:00 medytacja\n\n21:00 ognisko\n\nNiedziela\n\n7:15-7:45 medytacja\n\n8:00-9:30 joga\n\n9:45 śniadanie\n\n11:15-15:15 linoryt\n\n15:30 obiad\n\n16:30 krąg pożegnalny\n\n17:30 wyjazd\n\n\\*wszystkie zajęcia nieobowiązkowe - zawsze można po prostu odpocząć\n\n📅 Termin: 19-21 września 2025\n\n🏡 Miejsce: Korzenie, Grabie 21, 32-740 Łapanów\n\n\\- dojazd w godzinę w Krakowa - zakwaterowanie w klimatycznych pokojach wieloosobowych\n\n🤑 Cena last minute:840 zł\n\nMaksymalna liczba uczestników: 10 osób\n\nZapisy: [https://docs.google.com/forms/d/e/1FAIpQLSeeJhmPKefFQ-YGMdX3MsfAvDTpPh75YRB9M5iXRft2ZIOpLg/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSeeJhmPKefFQ-YGMdX3MsfAvDTpPh75YRB9M5iXRft2ZIOpLg/viewform?usp=dialog)\n\nRezerwacja miejsca po wpłacie zaliczki 600 zł na konto: 17 1140 2004 0000 3502 6565 3421, tytułem: Warsztaty Korzenie 19-21.09, odbiorca: Barbara Wierzbanowska Art&Design, Grabie 21, 32-740 Łapanów\n\nW razie pytań proszę pisać: bwierzbanowska@gmail.com lub dzwonić: 502-120-364.",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/547026415_756460440645354_4731722559810998040_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=pjVW9GoAKqUQ7kNvwG67xox&_nc_oc=AdpYQc9PD0C_hzRw96uf5wg-mg74cD1xaloENIweErRIeIcvK_qMQ9cYqo-n51orOFA&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af7aBvcy-KNkBQ6rACNVBrpio1Wag00gUuxrNDsXWmaLLw&oe=6A10F94E",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=1344962903648595",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1344962903648595.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "sivananda-811504844657386",
-      "competitor_id": "sivananda",
-      "library_id": "811504844657386",
-      "country": "ALL",
-      "advertiser_page": "Sivananda Ashram Yoga Retreat Bahamas",
-      "started_at": "2025-09-17T23:00:00.000Z",
-      "ended_at": "2025-09-24T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 7,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Learn practical tools for developing equanimity and non-attachment for inner freedom and mental clarity 🧘",
-      "body": "Learn practical tools for developing equanimity and non-attachment for inner freedom and mental clarity 🧘\n\nJoin our spiritual community and our beloved teacher Swami Brahmananda as we dive into the Bhagavad Gita during an interactive free online event.\n\nTopics we will be discussing include --\n\n🌟How to cultivate an inspired, contemplative spiritual practice\n\n🌟How to overcome emotional disturbances and attachments\n\n🌟learn tools to cultivate mental equanimity and inner strength based on the teachings of Yoga and Vedanta as taught in the Bhagavad Gita.\n\nIf you are a new student or looking to share thoughts with some of the brightest spiritual leaders this event is for you.\n\nClick learn more to read about the event and to register! We hope to see you there and see our spiritual family grow.\n\nOm Namah Shivaya",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/549161109_1973362560181092_5670778752499433210_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=mYK1UFEDiQoQ7kNvwH2oy04&_nc_oc=AdpINDZGDhAQkPDFe68IInGcBfj7LIkefbgQ7-Vl3FXC4ncKe8iG6OzXdxwLmhKGzqI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4oWHbDG7PLpZP0K6ASuigi4DuRlNA42k2IMPwA3eOjUA&oe=6A111416",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=811504844657386",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/811504844657386.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1344215900881631",
@@ -4045,61 +4162,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1344215900881631",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1344215900881631.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "sivananda-1065543751681978",
-      "competitor_id": "sivananda",
-      "library_id": "1065543751681978",
-      "country": "ALL",
-      "advertiser_page": "Sivananda Ashram Yoga Retreat Bahamas",
-      "started_at": "2025-06-23T23:00:00.000Z",
-      "ended_at": "2025-06-30T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 7,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "“Fear not. The mind is no doubt extremely turbulent. Through repeated attempts you can perfectly subdue it. You are the master of the mind.” 🧘",
-      "body": "“Fear not. The mind is no doubt extremely turbulent. Through repeated attempts you can perfectly subdue it. You are the master of the mind.” 🧘\n\nJoin our spiritual community and our beloved teacher Rukmini Chaitanya for a FREE online event to help you master your mind.\n\nYou''ll uncover these essentials --\n\n🌟The real meaning of virtue and vice in Yoga and Vedanta\n\n🌟How to identify and overcome destructive habits like anger, pride, jealousy, and selfishness\n\n🌟Proven tools to cultivate virtues like kindness, patience, humility, and courage\n\n🌟How to balance self-effort with faith in divine grace\n\n🌟Simple daily practices for lasting mental clarity and peace\n\n🌟Why virtues are essential on the path to spiritual liberation\n\nThis free event is followed by a full 12-week course for students who want to further explore their true potential.\n\nOm Namah Shivaya",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/509102374_496439633531704_7421612114101139545_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ay7q8OQMgUMQ7kNvwECjPaD&_nc_oc=AdqJaqG7yK1oRIx8BXur9-aM9UMY_yGgPTn3w5nfQ9EzDWWXZUjvlMYPxgS7NJj_Q6M&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4GT9mhGyOC1NMI6tNFe6oNk8OV2ESgOepI3cWntYlZ8g&oe=6A10EF23",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=1065543751681978",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1065543751681978.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "sivananda-1577874733381380",
-      "competitor_id": "sivananda",
-      "library_id": "1577874733381380",
-      "country": "ALL",
-      "advertiser_page": null,
-      "started_at": "2025-11-06T00:00:00.000Z",
-      "ended_at": "2025-11-13T00:00:00.000Z",
-      "is_active": false,
-      "duration_days": 7,
-      "creative_variants": 1,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Estrenem podcast ✨",
-      "body": "Estrenem podcast ✨\n\nConversamos con Swami Dayananda sobre yoga, meditación y el camino hacia el silencio interior.\n\nPrimer capítulo disponible en Spotify.\n\n👉 Link en bio\n\n#iogasivanandabcn\n\n#sivanandabcnpodcast",
-      "hashtags": [
-        "iogasivanandabcn",
-        "sivanandabcnpodcast"
-      ],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-19/587490402_18192441922338834_6223895962282619700_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=100&ccb=7-5&_nc_sid=525117&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=l6BOcJrgKYQQ7kNvwHLCciN&_nc_oc=Adp9i_PhBAX8FSs9vBMukxgwtyleIyLvtIMLJRHQSEocWJ5CVQ7Xpo27acrqCzh-DnA&_nc_zt=24&_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af5Mwtxy9ExUZA3FOTnaZT1iTV5_YbQ8ugQqNR7wHIedqw&oe=6A11058E",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=1577874733381380",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1577874733381380.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-505949292528327",
@@ -4134,8 +4198,33 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=505949292528327",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/505949292528327.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "sivananda-811504844657386",
+      "competitor_id": "sivananda",
+      "library_id": "811504844657386",
+      "country": "ALL",
+      "advertiser_page": "Sivananda Ashram Yoga Retreat Bahamas",
+      "started_at": "2025-09-17T23:00:00.000Z",
+      "ended_at": "2025-09-24T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 7,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Learn practical tools for developing equanimity and non-attachment for inner freedom and mental clarity 🧘",
+      "body": "Learn practical tools for developing equanimity and non-attachment for inner freedom and mental clarity 🧘\n\nJoin our spiritual community and our beloved teacher Swami Brahmananda as we dive into the Bhagavad Gita during an interactive free online event.\n\nTopics we will be discussing include --\n\n🌟How to cultivate an inspired, contemplative spiritual practice\n\n🌟How to overcome emotional disturbances and attachments\n\n🌟learn tools to cultivate mental equanimity and inner strength based on the teachings of Yoga and Vedanta as taught in the Bhagavad Gita.\n\nIf you are a new student or looking to share thoughts with some of the brightest spiritual leaders this event is for you.\n\nClick learn more to read about the event and to register! We hope to see you there and see our spiritual family grow.\n\nOm Namah Shivaya",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax7-1.xx.fbcdn.net/v/t39.35426-6/549161109_1973362560181092_5670778752499433210_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=mYK1UFEDiQoQ7kNvwH2oy04&_nc_oc=AdpINDZGDhAQkPDFe68IInGcBfj7LIkefbgQ7-Vl3FXC4ncKe8iG6OzXdxwLmhKGzqI&_nc_zt=14&_nc_ht=scontent-lax7-1.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4oWHbDG7PLpZP0K6ASuigi4DuRlNA42k2IMPwA3eOjUA&oe=6A111416",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=811504844657386",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1127376326008404",
@@ -4159,8 +4248,61 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1127376326008404",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1127376326008404.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "sivananda-1065543751681978",
+      "competitor_id": "sivananda",
+      "library_id": "1065543751681978",
+      "country": "ALL",
+      "advertiser_page": "Sivananda Ashram Yoga Retreat Bahamas",
+      "started_at": "2025-06-23T23:00:00.000Z",
+      "ended_at": "2025-06-30T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 7,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "“Fear not. The mind is no doubt extremely turbulent. Through repeated attempts you can perfectly subdue it. You are the master of the mind.” 🧘",
+      "body": "“Fear not. The mind is no doubt extremely turbulent. Through repeated attempts you can perfectly subdue it. You are the master of the mind.” 🧘\n\nJoin our spiritual community and our beloved teacher Rukmini Chaitanya for a FREE online event to help you master your mind.\n\nYou''ll uncover these essentials --\n\n🌟The real meaning of virtue and vice in Yoga and Vedanta\n\n🌟How to identify and overcome destructive habits like anger, pride, jealousy, and selfishness\n\n🌟Proven tools to cultivate virtues like kindness, patience, humility, and courage\n\n🌟How to balance self-effort with faith in divine grace\n\n🌟Simple daily practices for lasting mental clarity and peace\n\n🌟Why virtues are essential on the path to spiritual liberation\n\nThis free event is followed by a full 12-week course for students who want to further explore their true potential.\n\nOm Namah Shivaya",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/509102374_496439633531704_7421612114101139545_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ay7q8OQMgUMQ7kNvwECjPaD&_nc_oc=AdqJaqG7yK1oRIx8BXur9-aM9UMY_yGgPTn3w5nfQ9EzDWWXZUjvlMYPxgS7NJj_Q6M&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af4GT9mhGyOC1NMI6tNFe6oNk8OV2ESgOepI3cWntYlZ8g&oe=6A10EF23",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1065543751681978",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "sivananda-1577874733381380",
+      "competitor_id": "sivananda",
+      "library_id": "1577874733381380",
+      "country": "ALL",
+      "advertiser_page": null,
+      "started_at": "2025-11-06T00:00:00.000Z",
+      "ended_at": "2025-11-13T00:00:00.000Z",
+      "is_active": false,
+      "duration_days": 7,
+      "creative_variants": 1,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Estrenem podcast ✨",
+      "body": "Estrenem podcast ✨\n\nConversamos con Swami Dayananda sobre yoga, meditación y el camino hacia el silencio interior.\n\nPrimer capítulo disponible en Spotify.\n\n👉 Link en bio\n\n#iogasivanandabcn\n\n#sivanandabcnpodcast",
+      "hashtags": [
+        "iogasivanandabcn",
+        "sivanandabcnpodcast"
+      ],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-19/587490402_18192441922338834_6223895962282619700_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=100&ccb=7-5&_nc_sid=525117&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=l6BOcJrgKYQQ7kNvwHLCciN&_nc_oc=Adp9i_PhBAX8FSs9vBMukxgwtyleIyLvtIMLJRHQSEocWJ5CVQ7Xpo27acrqCzh-DnA&_nc_zt=24&_nc_ht=scontent-lax3-2.cdninstagram.com&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af5Mwtxy9ExUZA3FOTnaZT1iTV5_YbQ8ugQqNR7wHIedqw&oe=6A11058E",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1577874733381380",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1216471277060486",
@@ -4184,8 +4326,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1216471277060486",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1216471277060486.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1309048327917394",
@@ -4209,33 +4351,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1309048327917394",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1309048327917394.jpg",
-      "asset_type": "creative-image"
-    },
-    {
-      "id": "sivananda-1455163482513753",
-      "competitor_id": "sivananda",
-      "library_id": "1455163482513753",
-      "country": "ALL",
-      "advertiser_page": "spazio\\_harmonico\\_",
-      "started_at": "2026-05-05T23:00:00.000Z",
-      "ended_at": "2026-05-08T23:00:00.000Z",
-      "is_active": false,
-      "duration_days": 3,
-      "creative_variants": 2,
-      "is_evergreen_winner": false,
-      "hook_angle": "direct",
-      "traffic_temperature": "warm",
-      "headline": "Para mais informações manda uma mensagem",
-      "body": "Para mais informações manda uma mensagem",
-      "hashtags": [],
-      "cta": null,
-      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/692421231_906393112424610_5126625730332073251_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=lpKC9nw-nF0Q7kNvwEBEDbc&_nc_oc=AdrG3kzuNc3BcJKeqKH88XYV-CXKVdf3tMzS2TYlb3LBBXzzgi8cU29zLrwe6Ffbb34&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af63-fnhcisQKhMr7OtCNlAmuRJrfCcNqJyxgdekYzPUcQ&oe=6A1107F8",
-      "creative_type": "image",
-      "ad_library_url": "https://www.facebook.com/ads/library/?id=1455163482513753",
-      "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1455163482513753.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-879381451583746",
@@ -4259,8 +4376,33 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=879381451583746",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/879381451583746.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
+    },
+    {
+      "id": "sivananda-1455163482513753",
+      "competitor_id": "sivananda",
+      "library_id": "1455163482513753",
+      "country": "ALL",
+      "advertiser_page": "spazio\\_harmonico\\_",
+      "started_at": "2026-05-05T23:00:00.000Z",
+      "ended_at": "2026-05-08T23:00:00.000Z",
+      "is_active": false,
+      "duration_days": 3,
+      "creative_variants": 2,
+      "is_evergreen_winner": false,
+      "hook_angle": "direct",
+      "traffic_temperature": "warm",
+      "headline": "Para mais informações manda uma mensagem",
+      "body": "Para mais informações manda uma mensagem",
+      "hashtags": [],
+      "cta": null,
+      "landing_url": "https://scontent-lax3-2.xx.fbcdn.net/v/t39.35426-6/692421231_906393112424610_5126625730332073251_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=lpKC9nw-nF0Q7kNvwEBEDbc&_nc_oc=AdrG3kzuNc3BcJKeqKH88XYV-CXKVdf3tMzS2TYlb3LBBXzzgi8cU29zLrwe6Ffbb34&_nc_zt=14&_nc_ht=scontent-lax3-2.xx&_nc_gid=9n3LajoUedkhZ7s6EZmyiA&_nc_ss=7b289&oh=00_Af63-fnhcisQKhMr7OtCNlAmuRJrfCcNqJyxgdekYzPUcQ&oe=6A1107F8",
+      "creative_type": "image",
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1455163482513753",
+      "captured_at": "2026-05-17T23:00:00.000Z",
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-2384814895316459",
@@ -4284,8 +4426,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=2384814895316459",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/2384814895316459.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     },
     {
       "id": "sivananda-1491510262063708",
@@ -4318,8 +4460,8 @@
       "creative_type": "image",
       "ad_library_url": "https://www.facebook.com/ads/library/?id=1491510262063708",
       "captured_at": "2026-05-17T23:00:00.000Z",
-      "asset_path": "assets/sivananda/1491510262063708.jpg",
-      "asset_type": "creative-image"
+      "asset_path": null,
+      "asset_type": null
     }
   ],
   "patterns": {
@@ -4340,31 +4482,17 @@
       },
       {
         "competitor_id": "iskcon-international-diaspora",
-        "library_id": "3303965339765841",
-        "duration_days": 234,
-        "hook_angle": "direct",
-        "headline": "Continue to make a difference in the lives of hungry by feeding them. Donate now"
-      },
-      {
-        "competitor_id": "iskcon-international-diaspora",
         "library_id": "1809629613261905",
         "duration_days": 234,
         "hook_angle": "direct",
         "headline": "Join us in making a difference in the lives of those in need. Your generous donation to our food donation program will h"
       },
       {
-        "competitor_id": "kadampa-deuachen",
-        "library_id": "1165430275028253",
-        "duration_days": 192,
-        "hook_angle": "religious-curiosity",
-        "headline": "JÁ EXPERIMENTASTE REZAR? 🙏✨"
-      },
-      {
-        "competitor_id": "kadampa-deuachen",
-        "library_id": "798055426435309",
-        "duration_days": 192,
-        "hook_angle": "identity",
-        "headline": "Somos o Centro de Meditação Kadampa Deuachen! ❤️"
+        "competitor_id": "iskcon-international-diaspora",
+        "library_id": "3303965339765841",
+        "duration_days": 234,
+        "hook_angle": "direct",
+        "headline": "Continue to make a difference in the lives of hungry by feeding them. Donate now"
       },
       {
         "competitor_id": "kadampa-deuachen",
@@ -4379,6 +4507,20 @@
         "duration_days": 192,
         "hook_angle": "curiosity",
         "headline": "✨ Sabes por onde começar a desenvolver a tua paz interior?"
+      },
+      {
+        "competitor_id": "kadampa-deuachen",
+        "library_id": "1165430275028253",
+        "duration_days": 192,
+        "hook_angle": "religious-curiosity",
+        "headline": "JÁ EXPERIMENTASTE REZAR? 🙏✨"
+      },
+      {
+        "competitor_id": "kadampa-deuachen",
+        "library_id": "798055426435309",
+        "duration_days": 192,
+        "hook_angle": "identity",
+        "headline": "Somos o Centro de Meditação Kadampa Deuachen! ❤️"
       },
       {
         "competitor_id": "kadampa-deuachen",
@@ -4410,14 +4552,14 @@
       },
       {
         "competitor_id": "kadampa-deuachen",
-        "library_id": "2103241520485901",
+        "library_id": "917045273989737",
         "duration_days": 116,
         "hook_angle": "tourism",
         "headline": "✨ Não sabes o que fazer no domingo à tarde? ✨"
       },
       {
         "competitor_id": "kadampa-deuachen",
-        "library_id": "917045273989737",
+        "library_id": "2103241520485901",
         "duration_days": 116,
         "hook_angle": "tourism",
         "headline": "✨ Não sabes o que fazer no domingo à tarde? ✨"
