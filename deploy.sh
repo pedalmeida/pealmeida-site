@@ -6,6 +6,15 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
+TOKEN_FILE="$HOME/.config/cloudflare/pealmeida-token"
+if [[ -r "$TOKEN_FILE" ]]; then
+  export CLOUDFLARE_API_TOKEN="$(tr -d '[:space:]' < "$TOKEN_FILE")"
+  export CLOUDFLARE_ACCOUNT_ID="469f814c7e8bc68027bda7c6247a9f39"
+  echo "Using API token from $TOKEN_FILE"
+else
+  echo "No token at $TOKEN_FILE — falling back to wrangler OAuth login"
+fi
+
 echo "Staging .deploy/ ..."
 rm -rf .deploy
 mkdir -p .deploy
