@@ -1325,6 +1325,20 @@
     margin-bottom: 4px;
   }
 
+  /* Slide 10 (Investimento) — tighter padding + spacing so all card content
+     fits within a single 100vh frame without bottom clipping. */
+  .slide[data-slide="10"].has-grid {
+    padding-top: max(8vh, 80px);
+    padding-bottom: max(8vh, 80px);
+  }
+  .slide[data-slide="10"] .content { gap: 12px; }
+  .slide[data-slide="10"] .pricing-grid { gap: 14px; margin-top: 4px; }
+  .slide[data-slide="10"] .price-card { gap: 8px; padding: clamp(16px, 2vh, 22px) clamp(16px, 1.9vw, 22px) !important; }
+  .slide[data-slide="10"] .price-card.recommended { padding: clamp(18px, 2.2vh, 26px) clamp(18px, 2.1vw, 26px) !important; }
+  .slide[data-slide="10"] .price-card .price { font-size: clamp(32px, 3.6vw, 50px); }
+  .slide[data-slide="10"] .price-card.recommended .price { font-size: clamp(36px, 4vw, 56px); }
+  .slide[data-slide="10"] .price-card .features { gap: 6px; }
+
   /* =============== 13 · VALUE STACK (Hormozi) =============== */
   .value-stack {
     display: flex; flex-direction: column; gap: 10px;
@@ -1373,9 +1387,6 @@
   .stack-total .value {
     font-size: clamp(20px, 1.8vw, 28px);
     font-weight: 700;
-    text-decoration: line-through;
-    text-decoration-color: rgba(0,0,0,0.4);
-    text-decoration-thickness: 2px;
   }
   .stack-price {
     margin-top: 8px;
