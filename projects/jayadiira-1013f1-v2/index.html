@@ -109,7 +109,7 @@
   /* Header (eyebrow + h2 + lede) anchored at top, body grid expands to fill remaining space.
      The body distributes its available height across cards via flex/grid stretch.
      2 cards = each gets 50% height. 3 cards = 33%. The slide adapts to whatever's inside. */
-  .slide.has-grid { justify-content: flex-start; padding-top: max(12vh, 110px); padding-bottom: max(18vh, 180px); }
+  .slide.has-grid { justify-content: flex-start; padding-top: max(7vh, 70px); padding-bottom: max(8vh, 80px); }
 
   @media (max-width: 900px) {
     /* Mobile: slides become scrollable cards instead of fixed-height presentations.
@@ -1325,12 +1325,9 @@
     margin-bottom: 4px;
   }
 
-  /* Slide 10 (Investimento) — tighter padding + spacing so all card content
-     fits within a single 100vh frame without bottom clipping. */
-  .slide[data-slide="10"].has-grid {
-    padding-top: max(8vh, 80px);
-    padding-bottom: max(8vh, 80px);
-  }
+  /* Slide 10 (Investimento) — pricing cards are content-dense (3 cards,
+     5 features each + middle has badge + strikethrough row). Tighter
+     internal spacing keeps it in one viewport. */
   .slide[data-slide="10"] .content { gap: 12px; }
   .slide[data-slide="10"] .pricing-grid { gap: 14px; margin-top: 4px; }
   .slide[data-slide="10"] .price-card { gap: 8px; padding: clamp(16px, 2vh, 22px) clamp(16px, 1.9vw, 22px) !important; }
