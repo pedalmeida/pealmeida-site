@@ -1,0 +1,11 @@
+{
+  "name": "pealmeida-site",
+  "compatibility_date": "2026-05-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./.deploy"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

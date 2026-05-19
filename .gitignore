@@ -1,0 +1,6 @@
+.deploy/
+.wrangler/
+.gstack/
+.DS_Store
+**/.DS_Store
+**/node_modules
