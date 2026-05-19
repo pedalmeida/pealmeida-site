@@ -2030,6 +2030,9 @@
   .price-card .tier-icon svg { width: 18px !important; height: 18px !important; }
   .price-card .tier-eyebrow { font-size: clamp(14px, 1.1vw, 17px) !important; }
   .price-card .price { font-size: clamp(30px, 3.0vw, 42px) !important; line-height: 1 !important; }
+  .price-card .price-original { font-size: clamp(11px, 0.85vw, 13px); color: var(--ink-quiet); margin-top: 2px; }
+  .price-card .price-original s { color: var(--ink-quiet); opacity: 0.65; }
+  .price-card .price-note { font-style: italic; opacity: 0.8; }
   .price-card.recommended .price { font-size: clamp(32px, 3.2vw, 46px) !important; }
   .price-card .price .unit { font-size: 0.32em !important; }
   .price-card .features { gap: 8px !important; }
@@ -2899,7 +2902,7 @@
         <div class="price-card glass">
           <div class="tier-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
           <div class="tier-eyebrow">Essencial</div>
-          <div class="price">€450<span class="unit">projeto</span></div>
+          <div class="price">€350<span class="unit">projeto</span></div>
           <ul class="features with-icons">
             <li><span class="ico">🌐</span><span>Site pessoal contemporâneo e moderno</span></li>
             <li><span class="ico">🎨</span><span>Identidade visual: logo, palete, tipografia</span></li>
@@ -2913,7 +2916,8 @@
           <span class="badge">Recomendado</span>
           <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
           <div class="tier-eyebrow">Estúdio</div>
-          <div class="price">€800<span class="unit">projeto</span></div>
+          <div class="price">€700<span class="unit">projeto</span></div>
+          <div class="price-original"><s>€800</s> <span class="price-note">preço praticado com clientes</span></div>
           <ul class="features with-icons">
             <li><span class="ico">✅</span><span>Tudo do plano Essencial</span></li>
             <li><span class="ico">📷</span><span>Sessão foto e vídeo no consultório</span></li>
@@ -2951,7 +2955,7 @@
 
     <div class="content">
       <div class="eyebrow">📦 Entregáveis · pack Base</div>
-      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Cinco peças no pack <span class="acc">Essencial (€450)</span>.</h2>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Cinco peças no pack <span class="acc">Essencial (€350)</span>.</h2>
       <p class="lede" style="max-width: 72ch; font-size: clamp(14px, 1.1vw, 17px); color: var(--ink-quiet);">O site, a identidade e a estrutura de conteúdo prontos a lançar. O que vem no Estúdio aparece em baixo, claramente marcado.</p>
 
       <div class="addons-grid">
@@ -3003,7 +3007,7 @@
 
     <div class="content">
       <div class="eyebrow">📦 Entregáveis · pack Estúdio</div>
-      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Nove peças no pack <span class="acc">Estúdio (€800)</span>.</h2>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Nove peças no pack <span class="acc">Estúdio (€700)</span>.</h2>
       <p class="lede" style="max-width: 72ch;">Inclui tudo o que vem no pack Essencial (site, identidade, casos clínicos, email de reativação, analytics) e adiciona quatro peças extra, focadas em conversão, autoridade e operação.</p>
 
       <div class="addons-grid">
@@ -3042,7 +3046,7 @@
 
     <div class="content">
       <div class="eyebrow">🔄 Avença mensal</div>
-      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Avença <span class="acc">opcional · €50/mês</span> — recomendada.</h2>
+      <h2 class="headline" style="font-size: clamp(28px, 3.2vw, 44px);">Avença <span class="acc">opcional · €30/mês</span> — recomendada.</h2>
       <p class="lede" style="max-width: 72ch;">Manter um site vivo dá trabalho contínuo, mesmo depois de lançado. Esta avença é opcional, mas <strong>fortemente recomendada</strong> para preservar o investimento. Sem fidelização — cancela quando quiseres.</p>
 
       <div class="addons-grid">
@@ -3134,7 +3138,7 @@
               <td class="lib">~€5.000-10.000</td>
             </tr>
             <tr class="row-payback">
-              <th class="row-label">Payback do pack Estúdio (€800)</th>
+              <th class="row-label">Payback do pack Estúdio (€700)</th>
               <td class="cons" colspan="2">~8 meses (após ramp completo)</td>
               <td class="lib" colspan="2">~4 meses (após ramp completo)</td>
             </tr>
@@ -3177,7 +3181,7 @@
           <span class="cell-icon">🪙</span>
           <div class="num">~€8<span class="unit">/mês</span></div>
           <div class="label">Custo amortizado</div>
-          <div class="sub">€800 dividido por 8 anos. Menos do que um café por semana, distribuído ao longo da vida útil do site.</div>
+          <div class="sub">€700 dividido por 8 anos. Menos do que um café por semana, distribuído ao longo da vida útil do site.</div>
         </div>
         <div class="number-cell glass">
           <span class="cell-icon">📈</span>
@@ -3245,7 +3249,7 @@
         </div>
         <div class="stack-price">
           <span class="label">✦ Pack Estúdio, chave-na-mão</span>
-          <span class="price">€800</span>
+          <span class="price">€700</span>
         </div>
       </div>
 
