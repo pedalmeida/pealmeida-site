@@ -1,3 +1,5 @@
+import { isFiniteNumber } from "../lib/format.js";
+
 /** Deterministic wobble so charts look hand-drawn without being random on each render. */
 function jig(i, amp = 1.2) {
   return Math.sin(i * 12.9898) * amp + Math.cos(i * 78.233) * (amp * 0.35);
@@ -28,7 +30,8 @@ export function SpendBars({ campaigns, currency = "EUR" }) {
   const width = 520;
   const height = 232;
   const pad = { l: 28, r: 12, t: 18, b: 70 };
-  const max = Math.max(...campaigns.map((c) => c.spend), 1);
+  const spends = campaigns.map((c) => (isFiniteNumber(c.spend) ? c.spend : 0));
+  const max = Math.max(...spends, 1);
   const innerW = width - pad.l - pad.r;
   const innerH = height - pad.t - pad.b;
   const gap = 28;
@@ -80,7 +83,7 @@ export function CprSparkline({ campaigns, target }) {
   const width = 420;
   const height = 220;
   const pad = { l: 36, r: 16, t: 22, b: 40 };
-  const plotted = campaigns.filter((c) => typeof c.costPerResult === "number");
+  const plotted = campaigns.filter((c) => isFiniteNumber(c.costPerResult));
   const skipped = campaigns.length - plotted.length;
 
   if (plotted.length === 0) {

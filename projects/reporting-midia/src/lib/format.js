@@ -1,5 +1,9 @@
+export function isFiniteNumber(value) {
+  return typeof value === "number" && Number.isFinite(value);
+}
+
 export function money(value, currency = "EUR") {
-  if (value == null || Number.isNaN(value)) return "—";
+  if (!isFiniteNumber(value)) return "—";
   return new Intl.NumberFormat("pt-PT", {
     style: "currency",
     currency,

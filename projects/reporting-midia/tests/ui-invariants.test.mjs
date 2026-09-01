@@ -50,4 +50,10 @@ describe("UI never recalculates contract inputs", () => {
     }
     assert.deepEqual(hits, []);
   });
+
+  it("sparkline skips non-finite costPerResult (vault IG post is null)", () => {
+    const charts = fs.readFileSync(path.join(SRC, "components/HandCharts.jsx"), "utf8");
+    assert.match(charts, /isFiniteNumber\(c\.costPerResult\)/);
+    assert.doesNotMatch(charts, /Math\.max\(\.\.\.campaigns\.map\(\(c\) => c\.costPerResult/);
+  });
 });

@@ -388,6 +388,9 @@ nav a:hover {
 .campaign-head h3 {
   font-size: 1rem;
   font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  flex: 1 1 16rem;
 }
 
 .meta-row {

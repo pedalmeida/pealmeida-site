@@ -107,4 +107,22 @@ describe("validateSeed rejects broken inputs", () => {
     });
     assert.ok(errors.some((e) => e.includes("status")));
   });
+
+  it("rejects a numeric costPerResult when result is 0 (must be null)", () => {
+    const client = baseClient();
+    client.campaigns[2] = {
+      ...client.campaigns[2],
+      result: 0,
+      costPerResult: 0,
+    };
+    const errors = validateSeed({
+      seedVersion: "x",
+      frozenAt: "2026-09-01T00:00:00.000Z",
+      notice: "exemplos até o pipeline Meta → seed estar activo",
+      metaAccount: { accountId: "2089804794903235", currency: "EUR", timezone: "Europe/Lisbon" },
+      period: { label: "a", start: "2026-08-02", end: "2026-08-31", comparison: "b" },
+      clients: [client],
+    });
+    assert.ok(errors.some((e) => e.includes("must be null when result is 0")));
+  });
 });
