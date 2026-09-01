@@ -1,0 +1,2 @@
+# Cloudflare Pages-style SPA fallback (harmless if ignored by Workers assets).
+/projects/reporting-midia/*  /projects/reporting-midia/index.html  200

@@ -1,0 +1,148 @@
+{
+  "seedVersion": "2026.09.01-pedro-phase1",
+  "frozenAt": "2026-09-01T12:00:00.000Z",
+  "notice": "Estes números são exemplos até o pipeline Meta → seed estar activo. Não são dados reais da conta Ads.",
+  "period": {
+    "label": "25–31 ago 2026",
+    "start": "2026-08-25",
+    "end": "2026-08-31",
+    "comparison": "18–24 ago 2026"
+  },
+  "clients": [
+    {
+      "id": "pedro",
+      "name": "Pedro Almeida",
+      "descriptor": "Lead gen — pedroalmeida.ai",
+      "isPilot": true,
+      "needsAttention": true,
+      "attentionReason": "A campanha fria de coaching está 64% acima do alvo de 15 EUR/lead e concentra o maior investimento da semana.",
+      "targets": {
+        "costPerResult": 15,
+        "currency": "EUR"
+      },
+      "sources": [
+        "meta"
+      ],
+      "kpisBySource": [
+        {
+          "platform": "meta",
+          "spend": 1771,
+          "results": 121,
+          "resultLabel": "leads",
+          "costPerResult": 14.64,
+          "deltaPct": 6
+        }
+      ],
+      "campaigns": [
+        {
+          "id": "meta-clareza-lal-pt",
+          "name": "Lead gen — Sessão de clareza | Lookalike PT",
+          "platform": "meta",
+          "spend": 420,
+          "result": 38,
+          "resultLabel": "leads",
+          "deltaPct": -18,
+          "verdict": "boa",
+          "reason": "CPL bem abaixo do alvo de 15 EUR, com volume estável de leads.",
+          "recommendation": {
+            "kind": "reforcar",
+            "suggestedAction": "Aumentar o orçamento diário desta lookalike em ~20% e manter os criativos actuais.",
+            "evidence": "CPL 11,05 EUR vs alvo 15 EUR; variação −18% face ao período anterior."
+          },
+          "costPerResult": 11.05
+        },
+        {
+          "id": "meta-quiz-advantage",
+          "name": "Lead gen — Quiz oferta | Advantage+",
+          "platform": "meta",
+          "spend": 310,
+          "result": 24,
+          "resultLabel": "leads",
+          "deltaPct": -7,
+          "verdict": "boa",
+          "reason": "Advantage+ continua a entregar abaixo do alvo, ainda que com menos volume.",
+          "recommendation": {
+            "kind": "reforcar",
+            "suggestedAction": "Duplicar o conjunto de criativos do quiz e deixar o Advantage+ optimizar.",
+            "evidence": "CPL 12,92 EUR (abaixo de 15) e −7% vs período anterior."
+          },
+          "costPerResult": 12.92
+        },
+        {
+          "id": "meta-ugc-testemunhos",
+          "name": "Lead gen — Testemunhos | Criativos UGC",
+          "platform": "meta",
+          "spend": 220,
+          "result": 19,
+          "resultLabel": "leads",
+          "deltaPct": -12,
+          "verdict": "boa",
+          "reason": "UGC baixa o CPL sem canibalizar a lookalike principal.",
+          "recommendation": null,
+          "costPerResult": 11.58
+        },
+        {
+          "id": "meta-retarget-30d",
+          "name": "Lead gen — Retargeting 30d | Visitantes do site",
+          "platform": "meta",
+          "spend": 185,
+          "result": 12,
+          "resultLabel": "leads",
+          "deltaPct": 4,
+          "verdict": "neutra",
+          "reason": "CPL à volta do alvo; volume baixo para decidir reforço ou corte.",
+          "recommendation": null,
+          "costPerResult": 15.42
+        },
+        {
+          "id": "meta-remarketing-ghl",
+          "name": "Lead gen — Remarketing leads GHL",
+          "platform": "meta",
+          "spend": 96,
+          "result": 6,
+          "resultLabel": "leads",
+          "deltaPct": 2,
+          "verdict": "neutra",
+          "reason": "Audiência pequena; custo por lead aceitável mas sem sinal claro de escala.",
+          "recommendation": null,
+          "costPerResult": 16
+        },
+        {
+          "id": "meta-cold-coaching-pt",
+          "name": "Lead gen — Cold — Interesse coaching PT",
+          "platform": "meta",
+          "spend": 540,
+          "result": 22,
+          "resultLabel": "leads",
+          "deltaPct": 31,
+          "verdict": "ma",
+          "reason": "CPL disparou acima do alvo e o interesse frio está a absorver o maior spend.",
+          "recommendation": {
+            "kind": "corrigir",
+            "suggestedAction": "Cortar o orçamento diário para metade e pausar o conjunto de anúncios com CPL > 25 EUR.",
+            "evidence": "CPL 24,55 EUR vs alvo 15 EUR; +31% vs período anterior; 540 EUR de spend."
+          },
+          "costPerResult": 24.55
+        }
+      ],
+      "alerts": [
+        {
+          "id": "alert-cold-cpl",
+          "campaignId": "meta-cold-coaching-pt",
+          "condition": "CPL acima do alvo de 15 EUR",
+          "channel": "telegram",
+          "status": "aberto",
+          "createdAt": "2026-08-30T09:15:00.000Z"
+        },
+        {
+          "id": "alert-cold-delta",
+          "campaignId": "meta-cold-coaching-pt",
+          "condition": "Custo por resultado +30% vs período anterior",
+          "channel": "email",
+          "status": "aberto",
+          "createdAt": "2026-08-31T08:02:00.000Z"
+        }
+      ]
+    }
+  ]
+}

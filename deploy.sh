@@ -17,8 +17,33 @@ fi
 
 echo "Staging .deploy/ ..."
 rm -rf .deploy
-mkdir -p .deploy
-cp -R index.html robots.txt projects .deploy/
+mkdir -p .deploy/projects
+cp index.html robots.txt .deploy/
+
+# Static projects copy as-is. The Reporting Mídia Vite app is overlaid from dist/.
+for dir in projects/*; do
+  name="$(basename "$dir")"
+  if [[ "$name" == "reporting-midia" ]]; then
+    continue
+  fi
+  cp -R "$dir" .deploy/projects/
+done
+
+REPORTING_MIDIA="projects/reporting-midia"
+if [[ -f "$REPORTING_MIDIA/package.json" ]]; then
+  echo "Building Reporting Mídia ..."
+  (
+    cd "$REPORTING_MIDIA"
+    if [[ -f package-lock.json ]]; then
+      npm ci
+    else
+      npm install
+    fi
+    npm run build
+  )
+  mkdir -p .deploy/projects/reporting-midia
+  cp -R "$REPORTING_MIDIA/dist/." .deploy/projects/reporting-midia/
+fi
 
 echo "Deploying via wrangler ..."
 wrangler deploy --keep-vars

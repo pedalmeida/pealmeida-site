@@ -1,0 +1,26 @@
+{
+  "name": "reporting-midia",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Reporting Mídia — personal Paid Media Intelligence dashboard (Phase 1)",
+  "scripts": {
+    "seed": "node tools/build-seed.mjs",
+    "dev": "npm run seed && vite",
+    "build": "npm run seed && vite build",
+    "preview": "vite preview",
+    "test": "npm run seed && node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^6.4.3"
+  }
+}
