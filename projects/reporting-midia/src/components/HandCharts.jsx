@@ -15,15 +15,26 @@ function barPath(x, y, w, h) {
   ].join(" ");
 }
 
+function shortLabel(name, max = 26) {
+  return name
+    .replace(/^LEADS OFFER - /i, "")
+    .replace(/^Lead gen — /i, "")
+    .replace(/^Meta · /i, "")
+    .replace(/^Instagram post: /i, "IG · ")
+    .slice(0, max);
+}
+
 export function SpendBars({ campaigns, currency = "EUR" }) {
   const width = 520;
-  const height = 220;
-  const pad = { l: 28, r: 12, t: 18, b: 58 };
+  const height = 232;
+  const pad = { l: 28, r: 12, t: 18, b: 70 };
   const max = Math.max(...campaigns.map((c) => c.spend), 1);
   const innerW = width - pad.l - pad.r;
   const innerH = height - pad.t - pad.b;
-  const gap = 10;
-  const barW = Math.min(48, (innerW - gap * (campaigns.length - 1)) / campaigns.length);
+  const gap = 28;
+  const barW = Math.min(72, (innerW - gap * Math.max(campaigns.length - 1, 0)) / Math.max(campaigns.length, 1));
+  const groupW = campaigns.length * barW + gap * Math.max(campaigns.length - 1, 0);
+  const offset = pad.l + Math.max((innerW - groupW) / 2, 0);
 
   return (
     <div className="chart-card">
@@ -38,7 +49,7 @@ export function SpendBars({ campaigns, currency = "EUR" }) {
         />
         {campaigns.map((c, i) => {
           const h = (c.spend / max) * innerH;
-          const x = pad.l + i * (barW + gap);
+          const x = offset + i * (barW + gap);
           const y = pad.t + innerH - h;
           const fill = c.verdict === "ma" ? "#e15a4a" : c.verdict === "boa" ? "#3dba7a" : "#c4a35a";
           return (
@@ -46,13 +57,13 @@ export function SpendBars({ campaigns, currency = "EUR" }) {
               <path d={barPath(x, y, barW, h)} fill={fill} opacity="0.82" />
               <text
                 x={x + barW / 2}
-                y={height - 28}
+                y={height - 36}
                 textAnchor="middle"
                 fill="#8a8680"
-                fontSize="9"
-                transform={`rotate(-28 ${x + barW / 2} ${height - 28})`}
+                fontSize="10"
+                transform={`rotate(-18 ${x + barW / 2} ${height - 36})`}
               >
-                {c.name.replace(/^LEADS OFFER - /, "").replace(/^Instagram post: /, "IG · ").slice(0, 20)}
+                {shortLabel(c.name, 24)}
               </text>
             </g>
           );
@@ -68,8 +79,19 @@ export function SpendBars({ campaigns, currency = "EUR" }) {
 export function CprSparkline({ campaigns, target }) {
   const width = 420;
   const height = 220;
-  const pad = { l: 36, r: 16, t: 22, b: 28 };
+  const pad = { l: 36, r: 16, t: 22, b: 40 };
   const plotted = campaigns.filter((c) => typeof c.costPerResult === "number");
+  const skipped = campaigns.length - plotted.length;
+
+  if (plotted.length === 0) {
+    return (
+      <div className="chart-card">
+        <h3>Custo por lead vs alvo (pré-computado)</h3>
+        <p className="reason">Nenhuma campanha com custo por resultado neste seed.</p>
+      </div>
+    );
+  }
+
   const values = plotted.map((c) => c.costPerResult);
   const max = Math.max(...values, target, 1) * 1.12;
   const min = 0;
@@ -110,17 +132,28 @@ export function CprSparkline({ campaigns, target }) {
         </text>
         <path d={d} fill="none" stroke="#f4f1ea" strokeWidth="2.3" strokeLinecap="round" />
         {pts.map((p) => (
-          <circle
-            key={p.c.id}
-            cx={p.x}
-            cy={p.y}
-            r="4.2"
-            fill={p.c.verdict === "ma" ? "#e15a4a" : p.c.verdict === "boa" ? "#3dba7a" : "#c4a35a"}
-            stroke="#0e0e10"
-            strokeWidth="1.2"
-          />
+          <g key={p.c.id}>
+            <circle
+              cx={p.x}
+              cy={p.y}
+              r="4.2"
+              fill={p.c.verdict === "ma" ? "#e15a4a" : p.c.verdict === "boa" ? "#3dba7a" : "#c4a35a"}
+              stroke="#0e0e10"
+              strokeWidth="1.2"
+            />
+            <text x={p.x} y={height - 12} textAnchor="middle" fill="#8a8680" fontSize="9">
+              {shortLabel(p.c.name, 16)}
+            </text>
+          </g>
         ))}
       </svg>
+      {skipped > 0 ? (
+        <p className="chart-note">
+          {skipped === 1
+            ? "1 campanha sem custo por resultado (0 leads) fica de fora da linha."
+            : `${skipped} campanhas sem custo por resultado (0 leads) ficam de fora da linha.`}
+        </p>
+      ) : null}
     </div>
   );
 }

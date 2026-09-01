@@ -3,6 +3,7 @@
 export const PLATFORMS = ["meta", "google"];
 export const VERDICTS = ["boa", "neutra", "ma"];
 export const REC_KINDS = ["reforcar", "corrigir"];
+export const CAMPAIGN_STATUSES = ["ACTIVE", "PAUSED"];
 
 export function roundCostPerResult(spend, results) {
   if (results == null || results === 0) return null;
@@ -42,6 +43,12 @@ export function validateSeed(seed) {
   if (account?.currency !== "EUR") fail(errors, "metaAccount.currency", 'must be "EUR"');
   if (account?.timezone !== "Europe/Lisbon") {
     fail(errors, "metaAccount.timezone", 'must be "Europe/Lisbon"');
+  }
+  if (account?.attributionSetting != null && typeof account.attributionSetting !== "string") {
+    fail(errors, "metaAccount.attributionSetting", "string required when present");
+  }
+  if (account?.apiVersion != null && !/^v\d+\.\d+$/.test(account.apiVersion)) {
+    fail(errors, "metaAccount.apiVersion", 'must look like "v21.0" when present');
   }
 
   const period = seed.period;
@@ -190,6 +197,9 @@ function validateCampaign(campaign, path, errors, campaignIds) {
   }
   if (!PLATFORMS.includes(campaign.platform)) {
     fail(errors, `${path}.platform`, `invalid "${campaign.platform}"`);
+  }
+  if (campaign.status != null && !CAMPAIGN_STATUSES.includes(campaign.status)) {
+    fail(errors, `${path}.status`, `must be ${CAMPAIGN_STATUSES.join(" | ")} when present`);
   }
 
   assertNumber(campaign.spend, `${path}.spend`, errors);

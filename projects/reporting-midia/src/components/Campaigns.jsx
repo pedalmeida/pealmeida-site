@@ -1,11 +1,13 @@
-import { formatDelta, money, number } from "../lib/format.js";
+import { formatDelta, money, number, statusLabel } from "../lib/format.js";
 import { VerdictBadge } from "./VerdictBadge.jsx";
 
-export function Campaigns({ client, highlightId }) {
+export function Campaigns({ client, highlightId, compact = false }) {
   const currency = client.targets.currency;
   return (
     <section className="panel" id="campanhas">
-      <h2>Campanhas</h2>
+      <h2>
+        Campanhas <em className="count">{client.campaigns.length}</em>
+      </h2>
       <div className="campaigns">
         {client.campaigns.map((campaign) => {
           const delta = formatDelta(campaign.deltaPct);
@@ -14,14 +16,16 @@ export function Campaigns({ client, highlightId }) {
             <article
               key={campaign.id}
               id={`campanha-${campaign.id}`}
-              className={`campaign${highlightId === campaign.id ? " highlight" : ""}`}
+              className={`campaign verdict-${campaign.verdict}${highlightId === campaign.id ? " highlight" : ""}`}
             >
               <div className="campaign-head">
                 <h3>{campaign.name}</h3>
-                <span style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                  {campaign.status ? <span className="pill">{campaign.status}</span> : null}
+                <div className="campaign-tags">
+                  {campaign.status ? (
+                    <span className={`pill status-${campaign.status}`}>{statusLabel(campaign.status)}</span>
+                  ) : null}
                   <VerdictBadge verdict={campaign.verdict} />
-                </span>
+                </div>
               </div>
               <div className="meta-row">
                 <div>
@@ -35,17 +39,16 @@ export function Campaigns({ client, highlightId }) {
                 <div>
                   <span>Custo por resultado</span>
                   {money(campaign.costPerResult, currency)}
+                  {campaign.result === 0 ? <em className="flat">sem leads</em> : null}
                 </div>
                 <div>
                   <span>vs período anterior</span>
-                  <em className={delta.tone} style={{ fontStyle: "normal" }}>
-                    {delta.text}
-                  </em>
+                  <em className={delta.tone}>{delta.text}</em>
                 </div>
               </div>
               <p className="reason">{campaign.reason}</p>
-              {rec ? (
-                <div className="reco">
+              {!compact && rec ? (
+                <div className={`reco reco-${rec.kind}`}>
                   <strong>{rec.kind === "reforcar" ? "Reforçar" : "Corrigir"}.</strong>{" "}
                   {rec.suggestedAction} <em>({rec.evidence})</em>
                 </div>

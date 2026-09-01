@@ -25,6 +25,7 @@ clients[]
     platform, spend, results, resultLabel, costPerResult, deltaPct
   campaigns[]
     id, name, platform, spend, result, resultLabel, costPerResult, deltaPct
+    status?: "ACTIVE" | "PAUSED"          // extra Agrippa/Meta; a UI só mostra
     verdict: "boa" | "neutra" | "ma"
     reason
     recommendation: null | { kind: "reforcar" | "corrigir", suggestedAction, evidence }
@@ -33,6 +34,8 @@ clients[]
 ```
 
 `deltaPct` = variação do custo por resultado vs `period.comparison`. **Negativo = BOM** (mais barato).
+
+`metaAccount` extras (`attributionSetting`, `apiVersion`) e `campaigns[].status` são opcionais: se existirem, o validador confirma o formato e a UI mostra-os sem recalcular.
 
 ## Fase 1 — Pedro (compact pilot)
 

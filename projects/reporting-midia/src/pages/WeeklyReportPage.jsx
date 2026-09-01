@@ -1,88 +1,42 @@
 import { Link } from "react-router-dom";
-import { VerdictBadge } from "../components/VerdictBadge.jsx";
-import { formatDelta, money, number } from "../lib/format.js";
+import { Alerts } from "../components/Alerts.jsx";
+import { Campaigns } from "../components/Campaigns.jsx";
+import { KpiStrip } from "../components/KpiStrip.jsx";
+import { formatWhen } from "../lib/format.js";
 
 export function WeeklyReportPage({ client, seed }) {
-  const currency = client.targets.currency;
-  const meta = client.kpisBySource.find((k) => k.platform === "meta");
-
   return (
-    <main>
-      <p className="notice">{seed.notice}</p>
-      <div className="hero">
-        <div>
-          <h1>Relatório semanal</h1>
-          <p>
-            {client.name} · {seed.period.label} vs {seed.period.comparison}
-          </p>
-        </div>
-        <div className="pills">
-          <span className="pill">Meta</span>
-          <span className="pill">conta {seed.metaAccount?.accountId}</span>
+    <main className="report">
+      <div className="report-toolbar no-print">
+        <p>Resumo do seed · sem recalcular veredictos</p>
+        <div className="report-actions">
+          <button type="button" className="print-btn" onClick={() => window.print()}>
+            Imprimir / PDF
+          </button>
+          <Link to="/">← Visão geral</Link>
         </div>
       </div>
 
-      {meta ? (
-        <section className="kpis" aria-label="Resumo Meta">
-          <article className="kpi">
-            <div className="label">Investimento</div>
-            <div className="value">{money(meta.spend, currency)}</div>
-          </article>
-          <article className="kpi">
-            <div className="label">{meta.resultLabel}</div>
-            <div className="value">{number(meta.results)}</div>
-          </article>
-          <article className="kpi">
-            <div className="label">Custo por lead</div>
-            <div className="value">{money(meta.costPerResult, currency)}</div>
-            <div className="hint">alvo {money(client.targets.costPerResult, currency)}</div>
-          </article>
-        </section>
-      ) : null}
+      <header className="report-masthead">
+        <p className="eyebrow">Reporting Mídia · relatório semanal</p>
+        <h1>{client.name}</h1>
+        <p>
+          {client.descriptor}
+          {seed.metaAccount?.accountId ? ` · conta ${seed.metaAccount.accountId}` : ""}
+          {seed.metaAccount?.attributionSetting ? ` · ${seed.metaAccount.attributionSetting}` : ""}
+        </p>
+        <p className="period">
+          {seed.period.label} vs {seed.period.comparison}
+        </p>
+      </header>
 
-      <section className="panel">
-        <h2>Campanhas</h2>
-        <div className="campaigns">
-          {client.campaigns.map((campaign) => {
-            const delta = formatDelta(campaign.deltaPct);
-            return (
-              <article key={campaign.id} className="campaign">
-                <div className="campaign-head">
-                  <h3>{campaign.name}</h3>
-                  <span style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                    {campaign.status ? <span className="pill">{campaign.status}</span> : null}
-                    <VerdictBadge verdict={campaign.verdict} />
-                  </span>
-                </div>
-                <div className="meta-row">
-                  <div>
-                    <span>Investimento</span>
-                    {money(campaign.spend, currency)}
-                  </div>
-                  <div>
-                    <span>{campaign.resultLabel}</span>
-                    {number(campaign.result)}
-                  </div>
-                  <div>
-                    <span>Custo por resultado</span>
-                    {money(campaign.costPerResult, currency)}
-                  </div>
-                  <div>
-                    <span>vs período anterior</span>
-                    <em className={delta.tone} style={{ fontStyle: "normal" }}>
-                      {delta.text}
-                    </em>
-                  </div>
-                </div>
-                <p className="reason">{campaign.reason}</p>
-              </article>
-            );
-          })}
-        </div>
-      </section>
+      <p className="notice">{seed.notice}</p>
+      <KpiStrip client={client} />
+      <Campaigns client={client} compact />
+      <Alerts client={client} fromReport />
 
-      <p style={{ marginTop: "1rem" }}>
-        <Link to="/">← Visão geral</Link>
+      <p className="report-meta">
+        seed {seed.seedVersion} · congelado {formatWhen(seed.frozenAt)}
       </p>
     </main>
   );

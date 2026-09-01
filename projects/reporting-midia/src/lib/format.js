@@ -45,3 +45,9 @@ export function verdictLabel(verdict) {
   if (verdict === "ma") return "Má";
   return "Neutra";
 }
+
+export function statusLabel(status) {
+  if (status === "ACTIVE") return "Activa";
+  if (status === "PAUSED") return "Pausada";
+  return status;
+}

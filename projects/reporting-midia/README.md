@@ -30,7 +30,7 @@ npm run build
 - `npm test` — contrato + invariantes da UI
 - `npm run build` — seed + Vite → `dist/` (`base: /projects/reporting-midia/`)
 
-## Publicar
+## Publicar (um passo)
 
 Na raiz do repo:
 
@@ -39,6 +39,13 @@ Na raiz do repo:
 ```
 
 Isto faz `npm ci && npm run build` em `projects/reporting-midia/`, copia `dist/` para `.deploy/projects/reporting-midia/`, e corre `wrangler deploy`. Depois: `https://pealmeida.com/projects/reporting-midia/`
+
+Workers Builds no Cloudflare **não** pode fazer `npx wrangler deploy` directo: `wrangler.jsonc` aponta `assets.directory` para `.deploy/` (gitignored). Sem um passo de stage, o check falha e o Vite app não vai para produção.
+
+- Local / one-step: `./deploy.sh`
+- Só stage (CI): `./deploy.sh --stage` ou `npm run build` na raiz
+- `wrangler.jsonc` `build.command` corre o stage antes do upload
+- Dashboard **Build command** (recomendado): `npm run build`
 
 Rotas conhecidas da Fase 1:
 

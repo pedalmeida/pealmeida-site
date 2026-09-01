@@ -93,4 +93,18 @@ describe("validateSeed rejects broken inputs", () => {
     });
     assert.ok(errors.some((e) => e.includes("costPerResult")));
   });
+
+  it("rejects an unknown campaign status when the extra is present", () => {
+    const client = baseClient();
+    client.campaigns[0] = { ...client.campaigns[0], status: "ENABLED" };
+    const errors = validateSeed({
+      seedVersion: "x",
+      frozenAt: "2026-09-01T00:00:00.000Z",
+      notice: "exemplos até o pipeline Meta → seed estar activo",
+      metaAccount: { accountId: "2089804794903235", currency: "EUR", timezone: "Europe/Lisbon" },
+      period: { label: "a", start: "2026-08-02", end: "2026-08-31", comparison: "b" },
+      clients: [client],
+    });
+    assert.ok(errors.some((e) => e.includes("status")));
+  });
 });

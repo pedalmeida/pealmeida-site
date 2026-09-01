@@ -2,6 +2,9 @@
   "name": "pealmeida-site",
   "compatibility_date": "2026-05-18",
   "compatibility_flags": ["nodejs_compat"],
+  "build": {
+    "command": "bash ./deploy.sh --stage"
+  },
   "assets": {
     "directory": "./.deploy"
   },

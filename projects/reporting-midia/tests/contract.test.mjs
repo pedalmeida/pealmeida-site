@@ -95,6 +95,14 @@ describe("data contract", () => {
     assert.equal(zeroLead.result, 0);
     assert.equal(zeroLead.costPerResult, null);
     assert.equal(pedro.alerts[0].campaignId, "pedro-cmp-ig-claude-post");
+    assert.equal(seed.metaAccount.attributionSetting, "7d_click_1d_view");
+    assert.equal(seed.metaAccount.apiVersion, "v21.0");
+    const statuses = new Set(pedro.campaigns.map((c) => c.status).filter(Boolean));
+    for (const status of statuses) {
+      assert.ok(["ACTIVE", "PAUSED"].includes(status), status);
+    }
+    const verdicts = new Set(pedro.campaigns.map((c) => c.verdict));
+    assert.ok(verdicts.has("boa") && verdicts.has("neutra") && verdicts.has("ma"));
   });
 
   it("links alerts to existing campaign ids", () => {
