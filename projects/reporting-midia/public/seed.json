@@ -33,7 +33,7 @@
       "kpisBySource": [
         {
           "platform": "meta",
-          "spend": 393,
+          "spend": 393.18,
           "results": 26,
           "resultLabel": "leads",
           "costPerResult": 15.12,
@@ -45,7 +45,7 @@
           "id": "pedro-cmp-01",
           "name": "Meta · Engine Auditoria grátis",
           "platform": "meta",
-          "spend": 148.32,
+          "spend": 148.38,
           "result": 12,
           "resultLabel": "leads",
           "deltaPct": -8.1,
@@ -54,28 +54,28 @@
           "recommendation": {
             "kind": "reforcar",
             "suggestedAction": "Subir o orçamento diário desta campanha e manter os criativos actuais.",
-            "evidence": "CPL 12,36 EUR vs alvo 15 EUR; −8,1% vs período anterior; 12 leads."
+            "evidence": "CPL 12,37 EUR vs alvo 15 EUR; −8,1% vs período anterior; 12 leads."
           },
-          "costPerResult": 12.36
+          "costPerResult": 12.37
         },
         {
           "id": "pedro-cmp-02",
           "name": "Meta · Watch Agencies reporting",
           "platform": "meta",
-          "spend": 112.02,
+          "spend": 112.08,
           "result": 6,
           "resultLabel": "leads",
           "deltaPct": 6.4,
           "verdict": "neutra",
           "reason": "CPL acima do midpoint mas ainda dentro da banda; volume baixo para decidir.",
           "recommendation": null,
-          "costPerResult": 18.67
+          "costPerResult": 18.68
         },
         {
           "id": "pedro-cmp-03",
           "name": "Meta · Terapeutas + coaches",
           "platform": "meta",
-          "spend": 132.66,
+          "spend": 132.72,
           "result": 8,
           "resultLabel": "leads",
           "deltaPct": 22,
@@ -84,9 +84,9 @@
           "recommendation": {
             "kind": "corrigir",
             "suggestedAction": "Cortar o orçamento e rever o conjunto de anúncios com pior CPL.",
-            "evidence": "CPL 16,58 EUR; +22% vs período anterior; 132,66 EUR de spend."
+            "evidence": "CPL 16,59 EUR; +22% vs período anterior; 132,72 EUR de spend."
           },
-          "costPerResult": 16.58
+          "costPerResult": 16.59
         }
       ],
       "alerts": [

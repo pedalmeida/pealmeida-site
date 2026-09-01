@@ -86,7 +86,7 @@ describe("data contract", () => {
     );
     assert.ok(pedro.campaigns.every((c) => c.platform === "meta"));
     const kpi = pedro.kpisBySource.find((k) => k.platform === "meta");
-    assert.equal(kpi.spend, 393);
+    assert.equal(kpi.spend, 393.18);
     assert.equal(kpi.results, 26);
     assert.equal(kpi.costPerResult, 15.12);
     assert.equal(kpi.deltaPct, -4.2);

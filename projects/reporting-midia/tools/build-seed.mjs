@@ -20,7 +20,7 @@ const campaigns = [
     id: "pedro-cmp-01",
     name: "Meta · Engine Auditoria grátis",
     platform: "meta",
-    spend: 148.32,
+    spend: 148.38,
     result: 12,
     resultLabel: RESULT_LABEL,
     deltaPct: -8.1,
@@ -29,14 +29,14 @@ const campaigns = [
     recommendation: {
       kind: "reforcar",
       suggestedAction: "Subir o orçamento diário desta campanha e manter os criativos actuais.",
-      evidence: "CPL 12,36 EUR vs alvo 15 EUR; −8,1% vs período anterior; 12 leads.",
+      evidence: "CPL 12,37 EUR vs alvo 15 EUR; −8,1% vs período anterior; 12 leads.",
     },
   }),
   campaign({
     id: "pedro-cmp-02",
     name: "Meta · Watch Agencies reporting",
     platform: "meta",
-    spend: 112.02,
+    spend: 112.08,
     result: 6,
     resultLabel: RESULT_LABEL,
     deltaPct: 6.4,
@@ -48,7 +48,7 @@ const campaigns = [
     id: "pedro-cmp-03",
     name: "Meta · Terapeutas + coaches",
     platform: "meta",
-    spend: 132.66,
+    spend: 132.72,
     result: 8,
     resultLabel: RESULT_LABEL,
     deltaPct: 22,
@@ -57,12 +57,12 @@ const campaigns = [
     recommendation: {
       kind: "corrigir",
       suggestedAction: "Cortar o orçamento e rever o conjunto de anúncios com pior CPL.",
-      evidence: "CPL 16,58 EUR; +22% vs período anterior; 132,66 EUR de spend.",
+      evidence: "CPL 16,59 EUR; +22% vs período anterior; 132,72 EUR de spend.",
     },
   }),
 ];
 
-const accountSpend = 393;
+const accountSpend = 393.18;
 const accountResults = 26;
 
 const seed = {
