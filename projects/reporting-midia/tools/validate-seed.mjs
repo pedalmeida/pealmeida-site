@@ -28,17 +28,19 @@ export function validateSeed(seed) {
 
   if (typeof seed.notice === "string") {
     const n = seed.notice.toLowerCase();
-    const mentionsExample =
-      n.includes("exemplo") || n.includes("exemplos") || n.includes("example");
-    const mentionsPipeline = n.includes("pipeline") || n.includes("meta");
-    if (!mentionsExample || !mentionsPipeline) {
-      fail(
-        errors,
-        "notice",
-        "must state these are example numbers until the Meta → seed pipeline is live",
-      );
+    const mentionsDemo =
+      n.includes("demo") || n.includes("exemplo") || n.includes("exemplos") || n.includes("fixture");
+    const mentionsLive = n.includes("refresh") || n.includes("pipeline") || n.includes("meta");
+    if (!mentionsDemo || !mentionsLive) {
+      fail(errors, "notice", "must say this is a demo seed until live Meta refresh");
     }
   }
+
+  const accountId = seed.metaAccount?.accountId;
+  if (accountId !== "2089804794903235") {
+    fail(errors, "metaAccount.accountId", 'must be "2089804794903235"');
+  }
+  if (!seed.metaAccount?.currency) fail(errors, "metaAccount.currency", "required");
 
   const period = seed.period;
   if (period) {
@@ -142,8 +144,12 @@ function validateClient(client, path, errors, ids) {
     if (client.targets?.costPerResult !== 15 || client.targets?.currency !== "EUR") {
       fail(errors, `${path}.targets`, "Phase 1 target is 15 EUR per lead");
     }
-    if (client.campaigns?.length < 4 || client.campaigns?.length > 6) {
-      fail(errors, `${path}.campaigns`, "Phase 1 placeholder is 4–6 Meta lead-gen campaigns");
+    if (client.campaigns?.length !== 3) {
+      fail(errors, `${path}.campaigns`, "Phase 1 compact pilot is exactly 3 campaigns (boa / neutra / ma)");
+    }
+    const mix = new Set(client.campaigns?.map((c) => c.verdict));
+    if (!mix.has("boa") || !mix.has("neutra") || !mix.has("ma")) {
+      fail(errors, `${path}.campaigns`, "need one boa, one neutra, one ma");
     }
     if (client.campaigns?.some((c) => c.platform !== "meta")) {
       fail(errors, `${path}.campaigns`, "Phase 1 campaigns must all be Meta");

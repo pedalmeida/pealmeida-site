@@ -14,7 +14,10 @@ export function formatDelta(deltaPct) {
   if (deltaPct == null || Number.isNaN(deltaPct)) {
     return { text: "sem comparação", tone: "flat" };
   }
-  const abs = Math.abs(deltaPct).toLocaleString("pt-PT", { maximumFractionDigits: 0 });
+  const abs = Math.abs(deltaPct).toLocaleString("pt-PT", {
+    maximumFractionDigits: 1,
+    minimumFractionDigits: Number.isInteger(deltaPct) ? 0 : 1,
+  });
   if (deltaPct < 0) {
     return { text: `−${abs}% mais barato`, tone: "good" };
   }

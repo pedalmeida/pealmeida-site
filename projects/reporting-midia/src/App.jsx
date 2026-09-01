@@ -39,7 +39,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<ClientPage seed={seed} client={client} />} />
-        <Route path="/relatorio" element={<WeeklyReportPage client={client} />} />
+        <Route path="/relatorio" element={<WeeklyReportPage seed={seed} client={client} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 

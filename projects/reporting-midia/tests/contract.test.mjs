@@ -62,11 +62,11 @@ describe("data contract", () => {
     const seed = loadSeed();
     const names = seed.clients.flatMap((c) => c.campaigns.map((x) => x.name));
     assert.ok(names.every((n) => typeof n === "string" && n.trim() === n));
-    assert.ok(names.includes("Lead gen — Sessão de clareza | Lookalike PT"));
+    assert.ok(names.includes("Lead gen — Engine Auditoria grátis"));
     assert.equal(new Set(names).size, names.length);
   });
 
-  it("seeds Pedro as Meta-only Phase 1 pilot at 15 EUR/lead", () => {
+  it("seeds Pedro as Meta-only compact pilot (3 campaigns, 15 EUR/lead)", () => {
     const seed = loadSeed();
     const pedro = seed.clients.find((c) => c.id === "pedro");
     assert.ok(pedro);
@@ -76,9 +76,14 @@ describe("data contract", () => {
     assert.deepEqual(pedro.sources, ["meta"]);
     assert.equal(pedro.targets.costPerResult, 15);
     assert.equal(pedro.targets.currency, "EUR");
-    assert.ok(pedro.campaigns.length >= 4 && pedro.campaigns.length <= 6);
+    assert.equal(pedro.campaigns.length, 3);
+    assert.deepEqual(
+      [...new Set(pedro.campaigns.map((c) => c.verdict))].sort(),
+      ["boa", "ma", "neutra"],
+    );
     assert.ok(pedro.campaigns.every((c) => c.platform === "meta"));
-    assert.ok(/exemplo/i.test(seed.notice));
+    assert.equal(seed.metaAccount.accountId, "2089804794903235");
+    assert.ok(/demo/i.test(seed.notice));
   });
 
   it("links alerts to existing campaign ids", () => {

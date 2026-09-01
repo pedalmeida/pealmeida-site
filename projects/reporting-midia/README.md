@@ -16,7 +16,7 @@ npm run dev
 
 Abrir `http://localhost:5173/projects/reporting-midia/` (o `base` do Vite é esse path, igual ao da produção).
 
-O cliente piloto na UI é **Pedro Almeida** (`id: pedro`), Meta-only, alvo 15 EUR/lead. Os números do seed são exemplos até existir pipeline Meta → seed.
+O cliente piloto na UI é **Pedro Almeida** (`id: pedro`), Meta-only, alvo ~15 EUR/lead, 3 campanhas. Seed de demo até existir refresh live.
 
 ## Testes e build
 
@@ -27,34 +27,25 @@ npm run build
 ```
 
 - `npm run seed` — valida invariantes e escreve `public/seed.json`
-- `npm test` — contrato + invariantes da UI (não recalcular CPR / veredictos)
-- `npm run build` — seed + Vite → `dist/`, com cópia de `index.html` em `dist/relatorio/` para o fallback estático
+- `npm test` — contrato + invariantes da UI
+- `npm run build` — seed + Vite → `dist/` (`base: /projects/reporting-midia/`)
 
-## Contrato
+## Publicar
 
-Ver [`CONTRATO-DADOS.md`](./CONTRATO-DADOS.md). Resumo:
+Na raiz do repo:
 
-1. `verdict` / `reason` / `recommendation` são inputs
-2. `costPerResult` = `round(spend / result, 2)` no build do seed
-3. Nunca somar Meta + Google
-4. Nomes de campanha literais
+```bash
+./deploy.sh
+```
 
-## Deploy no pealmeida-site
-
-O Worker (`wrangler.jsonc`) serve o directório `.deploy/` como assets estáticos. `deploy.sh` na raiz do repo:
-
-1. Copia `index.html`, `robots.txt` e os projectos estáticos
-2. Faz `npm ci && npm run build` **neste** pacote
-3. Substitui `.deploy/projects/reporting-midia/` pelo conteúdo de `dist/`
-
-Assim `/projects/reporting-midia/` é a SPA compilada, não a árvore-fonte (nem `node_modules`).
+Isto faz `npm ci && npm run build` em `projects/reporting-midia/`, copia `dist/` para `.deploy/projects/reporting-midia/`, e corre `wrangler deploy`. Depois: `https://pealmeida.com/projects/reporting-midia/`
 
 Rotas conhecidas da Fase 1:
 
 | URL | O quê |
 | --- | --- |
 | `/projects/reporting-midia/` | visão do cliente piloto |
-| `/projects/reporting-midia/relatorio/` | placeholder do relatório semanal (Fase 3) |
+| `/projects/reporting-midia/relatorio/` | relatório semanal simples (mesmo seed) |
 
 Refresh profundo noutros paths não tem rewrite global no Worker (o site inteiro não é uma SPA). Novas rotas: acrescentar a pasta em `spaRouteCopies` no `vite.config.js`.
 

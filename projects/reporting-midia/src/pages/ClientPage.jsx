@@ -41,6 +41,9 @@ export function ClientPage({ seed, client }) {
               {src === "meta" ? "Meta · Fase 1" : "Google"}
             </span>
           ))}
+          {seed.metaAccount?.accountId ? (
+            <span className="pill">conta {seed.metaAccount.accountId}</span>
+          ) : null}
         </div>
       </div>
       <AttentionBanner client={client} />
