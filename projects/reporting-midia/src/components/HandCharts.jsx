@@ -52,7 +52,7 @@ export function SpendBars({ campaigns, currency = "EUR" }) {
                 fontSize="9"
                 transform={`rotate(-28 ${x + barW / 2} ${height - 28})`}
               >
-                {c.name.split("|")[0].replace("Lead gen — ", "").trim().slice(0, 18)}
+                {c.name.replace(/^LEADS OFFER - /, "").replace(/^Instagram post: /, "IG · ").slice(0, 20)}
               </text>
             </g>
           );
@@ -69,14 +69,15 @@ export function CprSparkline({ campaigns, target }) {
   const width = 420;
   const height = 220;
   const pad = { l: 36, r: 16, t: 22, b: 28 };
-  const values = campaigns.map((c) => c.costPerResult);
-  const max = Math.max(...values, target) * 1.12;
+  const plotted = campaigns.filter((c) => typeof c.costPerResult === "number");
+  const values = plotted.map((c) => c.costPerResult);
+  const max = Math.max(...values, target, 1) * 1.12;
   const min = 0;
   const innerW = width - pad.l - pad.r;
   const innerH = height - pad.t - pad.b;
-  const step = innerW / Math.max(campaigns.length - 1, 1);
+  const step = innerW / Math.max(plotted.length - 1, 1);
 
-  const pts = campaigns.map((c, i) => {
+  const pts = plotted.map((c, i) => {
     const x = pad.l + i * step + jig(i, 1.4);
     const y = pad.t + innerH - ((c.costPerResult - min) / (max - min)) * innerH + jig(i + 4, 1.1);
     return { x, y, c };

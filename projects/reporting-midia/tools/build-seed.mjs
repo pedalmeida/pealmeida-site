@@ -8,56 +8,55 @@ const OUT = path.join(ROOT, "public", "seed.json");
 const RESULT_LABEL = "leads";
 
 function campaign(raw) {
-  const costPerResult = roundCostPerResult(raw.spend, raw.result);
-  if (costPerResult == null) {
-    throw new Error(`Campaign ${raw.id}: cannot precompute costPerResult`);
-  }
-  return { ...raw, costPerResult };
+  return { ...raw, costPerResult: roundCostPerResult(raw.spend, raw.result) };
 }
 
 const campaigns = [
   campaign({
-    id: "pedro-cmp-01",
-    name: "Meta · Engine Auditoria grátis",
+    id: "pedro-cmp-agencias-pmes",
+    name: "LEADS OFFER - Agências + PMEs Ago 2026",
     platform: "meta",
-    spend: 148.38,
-    result: 12,
+    status: "ACTIVE",
+    spend: 289.11,
+    result: 19,
     resultLabel: RESULT_LABEL,
-    deltaPct: -8.1,
-    verdict: "boa",
-    reason: "CPL abaixo do alvo de 15 EUR, com o melhor volume da conta.",
-    recommendation: {
-      kind: "reforcar",
-      suggestedAction: "Subir o orçamento diário desta campanha e manter os criativos actuais.",
-      evidence: "CPL 12,37 EUR vs alvo 15 EUR; −8,1% vs período anterior; 12 leads.",
-    },
-  }),
-  campaign({
-    id: "pedro-cmp-02",
-    name: "Meta · Watch Agencies reporting",
-    platform: "meta",
-    spend: 112.08,
-    result: 6,
-    resultLabel: RESULT_LABEL,
-    deltaPct: 6.4,
+    deltaPct: 0,
     verdict: "neutra",
-    reason: "CPL acima do midpoint mas ainda dentro da banda; volume baixo para decidir.",
+    reason: "CPL €15,22 no alvo com volume sólido (19 leads).",
     recommendation: null,
   }),
   campaign({
-    id: "pedro-cmp-03",
-    name: "Meta · Terapeutas + coaches",
+    id: "pedro-cmp-ig-claude-post",
+    name: "Instagram post: O Claude sozinho é um chatbot...",
     platform: "meta",
-    spend: 132.72,
-    result: 8,
+    status: "ACTIVE",
+    spend: 57.85,
+    result: 0,
     resultLabel: RESULT_LABEL,
-    deltaPct: 22,
+    deltaPct: 0,
     verdict: "ma",
-    reason: "Custo por lead a subir depressa; esta campanha puxa o CPL da conta.",
+    reason: "Spend sem leads (não é objetivo lead) — dilui o CPL da conta.",
     recommendation: {
       kind: "corrigir",
-      suggestedAction: "Cortar o orçamento e rever o conjunto de anúncios com pior CPL.",
-      evidence: "CPL 16,59 EUR; +22% vs período anterior; 132,72 EUR de spend.",
+      suggestedAction: "Pausar ou tirar do orçamento de lead gen.",
+      evidence: "€57,85 spend / 0 leads",
+    },
+  }),
+  campaign({
+    id: "pedro-cmp-escolas-terapeutas",
+    name: "LEADS OFFER - Escolas + Terapeutas / Coaches - Ago 2026",
+    platform: "meta",
+    status: "PAUSED",
+    spend: 46.22,
+    result: 7,
+    resultLabel: RESULT_LABEL,
+    deltaPct: -20,
+    verdict: "boa",
+    reason: "CPL €6,60 excelente mas campanha em pausa.",
+    recommendation: {
+      kind: "reforcar",
+      suggestedAction: "Reavaliar reativação com guardrails de orçamento.",
+      evidence: "7 leads a €6,60 CPL lifetime",
     },
   }),
 ];
@@ -66,10 +65,10 @@ const accountSpend = 393.18;
 const accountResults = 26;
 
 const seed = {
-  seedVersion: "0.1.0-pedro-pilot",
-  frozenAt: "2026-09-01T18:00:00.000Z",
+  seedVersion: "0.1.1-pedro-vault-2026-08-31",
+  frozenAt: "2026-08-31T23:59:00.000Z",
   notice:
-    "Estes números são exemplos até o pipeline Meta → seed estar activo. Não são dados reais da conta Ads.",
+    "Vault snapshot 2026-08-31. Estes números são exemplos até o pipeline Meta → seed estar activo.",
   metaAccount: {
     accountId: "2089804794903235",
     currency: "EUR",
@@ -78,7 +77,7 @@ const seed = {
     apiVersion: "v21.0",
   },
   period: {
-    label: "2–31 ago 2026",
+    label: "lifetime até 31 ago 2026",
     start: "2026-08-02",
     end: "2026-08-31",
     comparison: "3 jul – 1 ago 2026 (30d anteriores)",
@@ -91,7 +90,7 @@ const seed = {
       isPilot: true,
       needsAttention: true,
       attentionReason:
-        "Terapeutas + coaches está +22% no CPL e é a campanha a corrigir nesta janela.",
+        "O post de Instagram gastou €57,85 sem leads e dilui o CPL da conta. A oferta Escolas + Terapeutas (CPL €6,60) está em pausa.",
       targets: { costPerResult: 15, currency: "EUR" },
       sources: ["meta"],
       kpisBySource: [
@@ -107,12 +106,12 @@ const seed = {
       campaigns,
       alerts: [
         {
-          id: "alert-pedro-cmp-03",
-          campaignId: "pedro-cmp-03",
-          condition: "CPL +22% vs período anterior",
+          id: "alert-ig-claude-post",
+          campaignId: "pedro-cmp-ig-claude-post",
+          condition: "Spend sem leads no post Instagram",
           channel: "telegram",
           status: "aberto",
-          createdAt: "2026-08-31T09:00:00.000Z",
+          createdAt: "2026-08-31T18:00:00.000Z",
         },
       ],
     },

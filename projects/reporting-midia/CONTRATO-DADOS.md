@@ -7,7 +7,7 @@ Regras do bot Telegram / demo web: seed congelado, veredictos como **inputs**, n
 ## Invariantes
 
 1. **`verdict`, `reason` e `recommendation` são INPUTS.** A UI nunca os recalcula.
-2. **`costPerResult` é pré-computado** em `tools/build-seed.mjs`: `round(spend / result, 2)`. A UI não faz a divisão.
+2. **`costPerResult` é pré-computado** em `tools/build-seed.mjs`: `round(spend / result, 2)`. Se `result` é 0 (campanha sem leads), `costPerResult` é **`null`**. A UI não faz a divisão.
 3. **Nunca somar Meta + Google** num total único. KPIs só em `kpisBySource[]`.
 4. **Nomes de campanha são literais.**
 

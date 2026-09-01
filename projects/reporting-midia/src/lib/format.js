@@ -1,4 +1,5 @@
 export function money(value, currency = "EUR") {
+  if (value == null || Number.isNaN(value)) return "—";
   return new Intl.NumberFormat("pt-PT", {
     style: "currency",
     currency,

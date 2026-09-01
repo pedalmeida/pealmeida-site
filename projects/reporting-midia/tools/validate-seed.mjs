@@ -198,7 +198,11 @@ function validateCampaign(campaign, path, errors, campaignIds) {
   assertNumber(campaign.deltaPct, `${path}.deltaPct`, errors, true);
 
   const expected = roundCostPerResult(campaign.spend, campaign.result);
-  if (campaign.costPerResult !== expected) {
+  if (campaign.result === 0) {
+    if (campaign.costPerResult !== null) {
+      fail(errors, `${path}.costPerResult`, "must be null when result is 0");
+    }
+  } else if (campaign.costPerResult !== expected) {
     fail(
       errors,
       `${path}.costPerResult`,

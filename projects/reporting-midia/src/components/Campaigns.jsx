@@ -18,7 +18,10 @@ export function Campaigns({ client, highlightId }) {
             >
               <div className="campaign-head">
                 <h3>{campaign.name}</h3>
-                <VerdictBadge verdict={campaign.verdict} />
+                <span style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+                  {campaign.status ? <span className="pill">{campaign.status}</span> : null}
+                  <VerdictBadge verdict={campaign.verdict} />
+                </span>
               </div>
               <div className="meta-row">
                 <div>

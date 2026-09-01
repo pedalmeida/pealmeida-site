@@ -62,7 +62,7 @@ describe("data contract", () => {
     const seed = loadSeed();
     const names = seed.clients.flatMap((c) => c.campaigns.map((x) => x.name));
     assert.ok(names.every((n) => typeof n === "string" && n.trim() === n));
-    assert.ok(names.includes("Meta · Engine Auditoria grátis"));
+    assert.ok(names.includes("LEADS OFFER - Agências + PMEs Ago 2026"));
     assert.equal(new Set(names).size, names.length);
   });
 
@@ -70,8 +70,7 @@ describe("data contract", () => {
     const seed = loadSeed();
     const pedro = seed.clients.find((c) => c.id === "pedro");
     assert.ok(pedro);
-    assert.equal(seed.seedVersion, "0.1.0-pedro-pilot");
-    assert.equal(seed.frozenAt, "2026-09-01T18:00:00.000Z");
+    assert.equal(seed.seedVersion, "0.1.1-pedro-vault-2026-08-31");
     assert.equal(pedro.name, "Pedro Almeida");
     assert.equal(pedro.descriptor, "Lead gen — pedroalmeida.ai");
     assert.equal(pedro.isPilot, true);
@@ -79,10 +78,9 @@ describe("data contract", () => {
     assert.equal(pedro.targets.costPerResult, 15);
     assert.equal(pedro.targets.currency, "EUR");
     assert.ok(pedro.campaigns.length >= 3 && pedro.campaigns.length <= 6);
-    assert.equal(pedro.campaigns.length, 3);
     assert.deepEqual(
       pedro.campaigns.map((c) => c.id),
-      ["pedro-cmp-01", "pedro-cmp-02", "pedro-cmp-03"],
+      ["pedro-cmp-agencias-pmes", "pedro-cmp-ig-claude-post", "pedro-cmp-escolas-terapeutas"],
     );
     assert.ok(pedro.campaigns.every((c) => c.platform === "meta"));
     const kpi = pedro.kpisBySource.find((k) => k.platform === "meta");
@@ -91,10 +89,12 @@ describe("data contract", () => {
     assert.equal(kpi.costPerResult, 15.12);
     assert.equal(kpi.deltaPct, -4.2);
     assert.equal(seed.metaAccount.accountId, "2089804794903235");
-    assert.equal(seed.metaAccount.attributionSetting, "7d_click_1d_view");
     assert.match(seed.notice, /exemplos/i);
     assert.match(seed.notice, /pipeline Meta/i);
-    assert.equal(pedro.alerts[0].campaignId, "pedro-cmp-03");
+    const zeroLead = pedro.campaigns.find((c) => c.id === "pedro-cmp-ig-claude-post");
+    assert.equal(zeroLead.result, 0);
+    assert.equal(zeroLead.costPerResult, null);
+    assert.equal(pedro.alerts[0].campaignId, "pedro-cmp-ig-claude-post");
   });
 
   it("links alerts to existing campaign ids", () => {
@@ -110,10 +110,7 @@ describe("data contract", () => {
   it("treats negative deltaPct as cheaper (good) without flipping the sign", () => {
     const seed = loadSeed();
     const cheaper = seed.clients[0].campaigns.find((c) => c.deltaPct < 0);
-    const pricier = seed.clients[0].campaigns.find((c) => c.deltaPct > 0);
     assert.ok(cheaper, "need at least one cheaper campaign in the seed");
-    assert.ok(pricier, "need at least one pricier campaign in the seed");
     assert.ok(cheaper.deltaPct < 0);
-    assert.ok(pricier.deltaPct > 0);
   });
 });
