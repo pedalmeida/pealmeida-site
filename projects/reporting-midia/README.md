@@ -1,0 +1,63 @@
+# Reporting Mídia
+
+Dashboard pessoal de inteligência de mídia paga — **Pedro Almeida**. Sem marca de cliente. Não é a demo SAVAGE.
+
+SPA React 19 + Vite 6, a viver inteiramente em `projects/reporting-midia/`. Dados via seed estático (`public/seed.json`). A UI **não** recalcula veredictos nem `costPerResult`.
+
+Live (depois do deploy do site): `https://pealmeida.com/projects/reporting-midia/`
+
+## Correr localmente
+
+```bash
+cd projects/reporting-midia
+npm install
+npm run dev
+```
+
+Abrir `http://localhost:5173/projects/reporting-midia/` (o `base` do Vite é esse path, igual ao da produção).
+
+O cliente piloto na UI é **Pedro Almeida** (`id: pedro`), Meta-only, alvo 15 EUR/lead (banda €10–20), 3 campanhas. Números de exemplo até o pipeline Meta estar activo.
+
+## Testes e build
+
+```bash
+cd projects/reporting-midia
+npm test
+npm run build
+```
+
+- `npm run seed` — valida invariantes e escreve `public/seed.json`
+- `npm test` — contrato + invariantes da UI
+- `npm run build` — seed + Vite → `dist/` (`base: /projects/reporting-midia/`)
+
+## Publicar (um passo)
+
+Na raiz do repo:
+
+```bash
+./deploy.sh
+```
+
+Isto faz `npm ci && npm run build` em `projects/reporting-midia/`, copia `dist/` para `.deploy/projects/reporting-midia/`, e corre `wrangler deploy`. Depois: `https://pealmeida.com/projects/reporting-midia/`
+
+Workers Builds no Cloudflare **não** pode fazer `npx wrangler deploy` directo: `wrangler.jsonc` aponta `assets.directory` para `.deploy/` (gitignored). Sem um passo de stage, o check falha e o Vite app não vai para produção.
+
+- Local / one-step: `./deploy.sh`
+- Só stage (CI): `./deploy.sh --stage` ou `npm run build` na raiz
+- `wrangler.jsonc` `build.command` corre o stage antes do upload
+- Dashboard **Build command** (recomendado): `npm run build`
+
+Rotas conhecidas da Fase 1:
+
+| URL | O quê |
+| --- | --- |
+| `/projects/reporting-midia/` | visão do cliente piloto |
+| `/projects/reporting-midia/relatorio/` | relatório semanal simples (mesmo seed) |
+
+Refresh profundo noutros paths não tem rewrite global no Worker (o site inteiro não é uma SPA). Novas rotas: acrescentar a pasta em `spaRouteCopies` no `vite.config.js`.
+
+## Fora de âmbito (Fase 1)
+
+- API real da Meta
+- Bot Telegram / PDF por email
+- Qualquer coisa `savage-*`

@@ -1,0 +1,107 @@
+{
+  "seedVersion": "0.1.1-pedro-vault-2026-08-31",
+  "frozenAt": "2026-08-31T23:59:00.000Z",
+  "notice": "Vault snapshot 2026-08-31. Estes números são exemplos até o pipeline Meta → seed estar activo.",
+  "metaAccount": {
+    "accountId": "2089804794903235",
+    "currency": "EUR",
+    "timezone": "Europe/Lisbon",
+    "attributionSetting": "7d_click_1d_view",
+    "apiVersion": "v21.0"
+  },
+  "period": {
+    "label": "lifetime até 31 ago 2026",
+    "start": "2026-08-02",
+    "end": "2026-08-31",
+    "comparison": "3 jul – 1 ago 2026 (30d anteriores)"
+  },
+  "clients": [
+    {
+      "id": "pedro",
+      "name": "Pedro Almeida",
+      "descriptor": "Lead gen — pedroalmeida.ai",
+      "isPilot": true,
+      "needsAttention": true,
+      "attentionReason": "O post de Instagram gastou €57,85 sem leads e dilui o CPL da conta. A oferta Escolas + Terapeutas (CPL €6,60) está em pausa.",
+      "targets": {
+        "costPerResult": 15,
+        "currency": "EUR"
+      },
+      "sources": [
+        "meta"
+      ],
+      "kpisBySource": [
+        {
+          "platform": "meta",
+          "spend": 393.18,
+          "results": 26,
+          "resultLabel": "leads",
+          "costPerResult": 15.12,
+          "deltaPct": -4.2
+        }
+      ],
+      "campaigns": [
+        {
+          "id": "pedro-cmp-agencias-pmes",
+          "name": "LEADS OFFER - Agências + PMEs Ago 2026",
+          "platform": "meta",
+          "status": "ACTIVE",
+          "spend": 289.11,
+          "result": 19,
+          "resultLabel": "leads",
+          "deltaPct": 0,
+          "verdict": "neutra",
+          "reason": "CPL €15,22 no alvo com volume sólido (19 leads).",
+          "recommendation": null,
+          "costPerResult": 15.22
+        },
+        {
+          "id": "pedro-cmp-ig-claude-post",
+          "name": "Instagram post: O Claude sozinho é um chatbot...",
+          "platform": "meta",
+          "status": "ACTIVE",
+          "spend": 57.85,
+          "result": 0,
+          "resultLabel": "leads",
+          "deltaPct": 0,
+          "verdict": "ma",
+          "reason": "Spend sem leads (não é objetivo lead) — dilui o CPL da conta.",
+          "recommendation": {
+            "kind": "corrigir",
+            "suggestedAction": "Pausar ou tirar do orçamento de lead gen.",
+            "evidence": "€57,85 spend / 0 leads"
+          },
+          "costPerResult": null
+        },
+        {
+          "id": "pedro-cmp-escolas-terapeutas",
+          "name": "LEADS OFFER - Escolas + Terapeutas / Coaches - Ago 2026",
+          "platform": "meta",
+          "status": "PAUSED",
+          "spend": 46.22,
+          "result": 7,
+          "resultLabel": "leads",
+          "deltaPct": -20,
+          "verdict": "boa",
+          "reason": "CPL €6,60 excelente mas campanha em pausa.",
+          "recommendation": {
+            "kind": "reforcar",
+            "suggestedAction": "Reavaliar reativação com guardrails de orçamento.",
+            "evidence": "7 leads a €6,60 CPL lifetime"
+          },
+          "costPerResult": 6.6
+        }
+      ],
+      "alerts": [
+        {
+          "id": "alert-ig-claude-post",
+          "campaignId": "pedro-cmp-ig-claude-post",
+          "condition": "Spend sem leads no post Instagram",
+          "channel": "telegram",
+          "status": "aberto",
+          "createdAt": "2026-08-31T18:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}

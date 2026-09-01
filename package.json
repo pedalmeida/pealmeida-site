@@ -1,0 +1,12 @@
+{
+  "name": "pealmeida-site",
+  "private": true,
+  "description": "pealmeida.com — static Worker assets. Reporting Mídia is built via ./deploy.sh --stage.",
+  "scripts": {
+    "build": "bash ./deploy.sh --stage",
+    "deploy": "bash ./deploy.sh"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
