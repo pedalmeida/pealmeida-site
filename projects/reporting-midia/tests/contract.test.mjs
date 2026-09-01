@@ -62,28 +62,39 @@ describe("data contract", () => {
     const seed = loadSeed();
     const names = seed.clients.flatMap((c) => c.campaigns.map((x) => x.name));
     assert.ok(names.every((n) => typeof n === "string" && n.trim() === n));
-    assert.ok(names.includes("Lead gen — Engine Auditoria grátis"));
+    assert.ok(names.includes("Meta · Engine Auditoria grátis"));
     assert.equal(new Set(names).size, names.length);
   });
 
-  it("seeds Pedro as Meta-only compact pilot (3 campaigns, 15 EUR/lead)", () => {
+  it("seeds Pedro as Meta-only compact pilot (3–6 campaigns, 15 EUR/lead)", () => {
     const seed = loadSeed();
     const pedro = seed.clients.find((c) => c.id === "pedro");
     assert.ok(pedro);
+    assert.equal(seed.seedVersion, "0.1.0-pedro-pilot");
+    assert.equal(seed.frozenAt, "2026-09-01T18:00:00.000Z");
     assert.equal(pedro.name, "Pedro Almeida");
     assert.equal(pedro.descriptor, "Lead gen — pedroalmeida.ai");
     assert.equal(pedro.isPilot, true);
     assert.deepEqual(pedro.sources, ["meta"]);
     assert.equal(pedro.targets.costPerResult, 15);
     assert.equal(pedro.targets.currency, "EUR");
+    assert.ok(pedro.campaigns.length >= 3 && pedro.campaigns.length <= 6);
     assert.equal(pedro.campaigns.length, 3);
     assert.deepEqual(
-      [...new Set(pedro.campaigns.map((c) => c.verdict))].sort(),
-      ["boa", "ma", "neutra"],
+      pedro.campaigns.map((c) => c.id),
+      ["pedro-cmp-01", "pedro-cmp-02", "pedro-cmp-03"],
     );
     assert.ok(pedro.campaigns.every((c) => c.platform === "meta"));
+    const kpi = pedro.kpisBySource.find((k) => k.platform === "meta");
+    assert.equal(kpi.spend, 393);
+    assert.equal(kpi.results, 26);
+    assert.equal(kpi.costPerResult, 15.12);
+    assert.equal(kpi.deltaPct, -4.2);
     assert.equal(seed.metaAccount.accountId, "2089804794903235");
-    assert.ok(/demo/i.test(seed.notice));
+    assert.equal(seed.metaAccount.attributionSetting, "7d_click_1d_view");
+    assert.match(seed.notice, /exemplos/i);
+    assert.match(seed.notice, /pipeline Meta/i);
+    assert.equal(pedro.alerts[0].campaignId, "pedro-cmp-03");
   });
 
   it("links alerts to existing campaign ids", () => {

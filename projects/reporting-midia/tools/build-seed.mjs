@@ -15,24 +15,10 @@ function campaign(raw) {
   return { ...raw, costPerResult };
 }
 
-function kpiFor(platform, campaigns, deltaPct) {
-  const rows = campaigns.filter((c) => c.platform === platform);
-  const spend = rows.reduce((s, c) => s + c.spend, 0);
-  const results = rows.reduce((s, c) => s + c.result, 0);
-  return {
-    platform,
-    spend: Math.round(spend * 100) / 100,
-    results,
-    resultLabel: RESULT_LABEL,
-    costPerResult: roundCostPerResult(spend, results),
-    deltaPct,
-  };
-}
-
 const campaigns = [
   campaign({
-    id: "meta-engine-auditoria",
-    name: "Lead gen — Engine Auditoria grátis",
+    id: "pedro-cmp-01",
+    name: "Meta · Engine Auditoria grátis",
     platform: "meta",
     spend: 148.32,
     result: 12,
@@ -47,20 +33,20 @@ const campaigns = [
     },
   }),
   campaign({
-    id: "meta-watch-agencies",
-    name: "Lead gen — Watch Agencies reporting",
+    id: "pedro-cmp-02",
+    name: "Meta · Watch Agencies reporting",
     platform: "meta",
     spend: 112.02,
     result: 6,
     resultLabel: RESULT_LABEL,
     deltaPct: 6.4,
     verdict: "neutra",
-    reason: "CPL acima do midpoint mas ainda dentro de uma leitura aceitável; volume baixo.",
+    reason: "CPL acima do midpoint mas ainda dentro da banda; volume baixo para decidir.",
     recommendation: null,
   }),
   campaign({
-    id: "meta-terapeutas-coaches",
-    name: "Lead gen — Terapeutas + coaches",
+    id: "pedro-cmp-03",
+    name: "Meta · Terapeutas + coaches",
     platform: "meta",
     spend: 132.66,
     result: 8,
@@ -76,21 +62,26 @@ const campaigns = [
   }),
 ];
 
+const accountSpend = 393;
+const accountResults = 26;
+
 const seed = {
   seedVersion: "0.1.0-pedro-pilot",
-  frozenAt: "2026-09-01T12:00:00.000Z",
+  frozenAt: "2026-09-01T18:00:00.000Z",
   notice:
-    "Seed de demo até existir refresh live da conta Meta. Números de fixture — não são dados em tempo real.",
+    "Estes números são exemplos até o pipeline Meta → seed estar activo. Não são dados reais da conta Ads.",
   metaAccount: {
     accountId: "2089804794903235",
     currency: "EUR",
     timezone: "Europe/Lisbon",
+    attributionSetting: "7d_click_1d_view",
+    apiVersion: "v21.0",
   },
   period: {
     label: "2–31 ago 2026",
     start: "2026-08-02",
     end: "2026-08-31",
-    comparison: "3 jul – 1 ago 2026",
+    comparison: "3 jul – 1 ago 2026 (30d anteriores)",
   },
   clients: [
     {
@@ -103,12 +94,21 @@ const seed = {
         "Terapeutas + coaches está +22% no CPL e é a campanha a corrigir nesta janela.",
       targets: { costPerResult: 15, currency: "EUR" },
       sources: ["meta"],
-      kpisBySource: [kpiFor("meta", campaigns, 4.2)],
+      kpisBySource: [
+        {
+          platform: "meta",
+          spend: accountSpend,
+          results: accountResults,
+          resultLabel: RESULT_LABEL,
+          costPerResult: roundCostPerResult(accountSpend, accountResults),
+          deltaPct: -4.2,
+        },
+      ],
       campaigns,
       alerts: [
         {
-          id: "alert-terapeutas-delta",
-          campaignId: "meta-terapeutas-coaches",
+          id: "alert-pedro-cmp-03",
+          campaignId: "pedro-cmp-03",
           condition: "CPL +22% vs período anterior",
           channel: "telegram",
           status: "aberto",

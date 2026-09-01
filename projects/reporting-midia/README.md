@@ -16,7 +16,7 @@ npm run dev
 
 Abrir `http://localhost:5173/projects/reporting-midia/` (o `base` do Vite é esse path, igual ao da produção).
 
-O cliente piloto na UI é **Pedro Almeida** (`id: pedro`), Meta-only, alvo ~15 EUR/lead, 3 campanhas. Seed de demo até existir refresh live.
+O cliente piloto na UI é **Pedro Almeida** (`id: pedro`), Meta-only, alvo 15 EUR/lead (banda €10–20), 3 campanhas. Números de exemplo até o pipeline Meta estar activo.
 
 ## Testes e build
 

@@ -15,11 +15,11 @@ Regras do bot Telegram / demo web: seed congelado, veredictos como **inputs**, n
 
 ```
 seedVersion, frozenAt, notice
-metaAccount { accountId, currency, timezone }
+metaAccount { accountId, currency, timezone, attributionSetting, apiVersion }
 period { label, start, end, comparison }
 clients[]
   id, name, descriptor, isPilot, needsAttention, attentionReason
-  targets { costPerResult, currency }   // piloto: 15 EUR (midpoint)
+  targets { costPerResult, currency }   // midpoint 15 EUR; banda €10–20
   sources[]                             // "meta" | "google"
   kpisBySource[]                        // por plataforma, nunca cruzado
     platform, spend, results, resultLabel, costPerResult, deltaPct
@@ -34,19 +34,20 @@ clients[]
 
 `deltaPct` = variação do custo por resultado vs `period.comparison`. **Negativo = BOM** (mais barato).
 
-## Fase 1 — Pedro (demo)
+## Fase 1 — Pedro (compact pilot)
 
 | Campo | Valor |
 | --- | --- |
 | `clients[].id` | `pedro` |
 | Nome | Pedro Almeida |
+| Descriptor | `Lead gen — pedroalmeida.ai` |
 | Fontes | Meta only |
-| Conta | `metaAccount.accountId` = `2089804794903235` |
-| Alvo CPL | `targets.costPerResult = 15` EUR |
-| Campanhas | **3** (boa / neutra / ma) |
+| Conta | `metaAccount.accountId` = `2089804794903235` (EUR, Europe/Lisbon) |
+| Banda CPL | **€10–20** (midpoint `targets.costPerResult = 15`) |
+| Campanhas | **3** no seed actual (boa / neutra / ma). O validador aceita **3–6**. |
 
-`notice` deve dizer que isto é um **seed de demo** até existir refresh live da conta Meta.
+`notice` deve dizer que os números são **exemplos** até o **pipeline Meta** estar activo.
 
 ## Validação
 
-`npm run seed` / `npm test` recusam o seed se `costPerResult` não bater certo, se o veredicto for inválido, se um alerta apontar para campanha inexistente, ou se `pedro` não for Meta-only com exactamente 3 campanhas e a conta `2089804794903235`.
+`npm run seed` / `npm test` recusam o seed se `costPerResult` não bater certo, se o veredicto for inválido, se um alerta apontar para campanha inexistente, ou se `pedro` não for Meta-only com 3–6 campanhas e a conta `2089804794903235`.

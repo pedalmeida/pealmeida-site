@@ -28,19 +28,21 @@ export function validateSeed(seed) {
 
   if (typeof seed.notice === "string") {
     const n = seed.notice.toLowerCase();
-    const mentionsDemo =
-      n.includes("demo") || n.includes("exemplo") || n.includes("exemplos") || n.includes("fixture");
-    const mentionsLive = n.includes("refresh") || n.includes("pipeline") || n.includes("meta");
-    if (!mentionsDemo || !mentionsLive) {
-      fail(errors, "notice", "must say this is a demo seed until live Meta refresh");
+    const mentionsExemplos = n.includes("exemplo") || n.includes("exemplos");
+    const mentionsPipeline = n.includes("pipeline") && n.includes("meta");
+    if (!mentionsExemplos || !mentionsPipeline) {
+      fail(errors, "notice", "must say these are exemplos until the pipeline Meta is live");
     }
   }
 
-  const accountId = seed.metaAccount?.accountId;
-  if (accountId !== "2089804794903235") {
+  const account = seed.metaAccount;
+  if (account?.accountId !== "2089804794903235") {
     fail(errors, "metaAccount.accountId", 'must be "2089804794903235"');
   }
-  if (!seed.metaAccount?.currency) fail(errors, "metaAccount.currency", "required");
+  if (account?.currency !== "EUR") fail(errors, "metaAccount.currency", 'must be "EUR"');
+  if (account?.timezone !== "Europe/Lisbon") {
+    fail(errors, "metaAccount.timezone", 'must be "Europe/Lisbon"');
+  }
 
   const period = seed.period;
   if (period) {
@@ -132,8 +134,8 @@ function validateClient(client, path, errors, ids) {
     if (client.name !== "Pedro Almeida") {
       fail(errors, `${path}.name`, 'must be "Pedro Almeida"');
     }
-    if (!/lead gen/i.test(client.descriptor) || !/pedroalmeida\.ai/i.test(client.descriptor)) {
-      fail(errors, `${path}.descriptor`, 'must be "Lead gen — pedroalmeida.ai" (or equivalent)');
+    if (client.descriptor !== "Lead gen — pedroalmeida.ai") {
+      fail(errors, `${path}.descriptor`, 'must be exactly "Lead gen — pedroalmeida.ai"');
     }
     if (client.isPilot !== true) {
       fail(errors, `${path}.isPilot`, "Pedro is the Phase 1 pilot");
@@ -144,12 +146,9 @@ function validateClient(client, path, errors, ids) {
     if (client.targets?.costPerResult !== 15 || client.targets?.currency !== "EUR") {
       fail(errors, `${path}.targets`, "Phase 1 target is 15 EUR per lead");
     }
-    if (client.campaigns?.length !== 3) {
-      fail(errors, `${path}.campaigns`, "Phase 1 compact pilot is exactly 3 campaigns (boa / neutra / ma)");
-    }
-    const mix = new Set(client.campaigns?.map((c) => c.verdict));
-    if (!mix.has("boa") || !mix.has("neutra") || !mix.has("ma")) {
-      fail(errors, `${path}.campaigns`, "need one boa, one neutra, one ma");
+    const n = client.campaigns?.length ?? 0;
+    if (n < 3 || n > 6) {
+      fail(errors, `${path}.campaigns`, "Phase 1 compact pilot allows 3–6 Meta campaigns");
     }
     if (client.campaigns?.some((c) => c.platform !== "meta")) {
       fail(errors, `${path}.campaigns`, "Phase 1 campaigns must all be Meta");

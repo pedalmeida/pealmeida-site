@@ -73,8 +73,8 @@ describe("validateSeed rejects broken inputs", () => {
     const errors = validateSeed({
       seedVersion: "x",
       frozenAt: "2026-09-01T00:00:00.000Z",
-      notice: "seed de demo até existir refresh live da conta Meta",
-      metaAccount: { accountId: "2089804794903235", currency: "EUR" },
+      notice: "exemplos até o pipeline Meta → seed estar activo",
+      metaAccount: { accountId: "2089804794903235", currency: "EUR", timezone: "Europe/Lisbon" },
       period: { label: "a", start: "2026-08-02", end: "2026-08-31", comparison: "b" },
       clients: [
         baseClient({
