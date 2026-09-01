@@ -1,4 +1,4 @@
-import { formatDelta, money, number } from "../lib/format.js";
+import { formatDelta, isFiniteNumber, money, number } from "../lib/format.js";
 
 export function KpiStrip({ client }) {
   const currency = client.targets.currency;
@@ -21,7 +21,9 @@ export function KpiStrip({ client }) {
               </article>
               <article className="kpi">
                 <div className="label">Custo por lead</div>
-                <div className="value">{money(kpi.costPerResult, currency)}</div>
+                <div className="value">
+                  {isFiniteNumber(kpi.costPerResult) ? money(kpi.costPerResult, currency) : "—"}
+                </div>
                 <div className={`hint ${delta.tone}`}>
                   alvo {money(client.targets.costPerResult, currency)} · {delta.text}
                 </div>

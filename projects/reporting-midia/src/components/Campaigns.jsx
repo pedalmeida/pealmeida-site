@@ -1,4 +1,4 @@
-import { formatDelta, money, number, statusLabel } from "../lib/format.js";
+import { formatDelta, isFiniteNumber, money, number, statusLabel } from "../lib/format.js";
 import { VerdictBadge } from "./VerdictBadge.jsx";
 
 export function Campaigns({ client, highlightId, compact = false }) {
@@ -38,7 +38,9 @@ export function Campaigns({ client, highlightId, compact = false }) {
                 </div>
                 <div>
                   <span>Custo por resultado</span>
-                  {money(campaign.costPerResult, currency)}
+                  {isFiniteNumber(campaign.costPerResult)
+                    ? money(campaign.costPerResult, currency)
+                    : "—"}
                   {campaign.result === 0 ? <em className="flat">sem leads</em> : null}
                 </div>
                 <div>

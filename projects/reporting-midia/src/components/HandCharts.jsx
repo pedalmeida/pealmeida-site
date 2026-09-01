@@ -51,7 +51,8 @@ export function SpendBars({ campaigns, currency = "EUR" }) {
           strokeLinecap="round"
         />
         {campaigns.map((c, i) => {
-          const h = (c.spend / max) * innerH;
+          const spend = isFiniteNumber(c.spend) ? c.spend : 0;
+          const h = (spend / max) * innerH;
           const x = offset + i * (barW + gap);
           const y = pad.t + innerH - h;
           const fill = c.verdict === "ma" ? "#e15a4a" : c.verdict === "boa" ? "#3dba7a" : "#c4a35a";
